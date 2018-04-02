@@ -62,6 +62,7 @@ public class ConnectionPool {
             finalConnection.setRequestMethod(METHOD);
             finalConnection.setDoOutput(false);
             finalConnection.setDoInput(true);
+
             finalConnection.setRequestProperty("Content-Type", TYPE);
             finalConnection.setRequestProperty("Charset", "UTF-8");
             finalConnection.setRequestProperty("Authorization", OAUTH2);

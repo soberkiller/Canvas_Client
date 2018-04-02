@@ -9,18 +9,25 @@ public class connectCanvas {
 
         String[] fields = {
                 "courses",
-                "10300000000000133",
-                "users"
+                "10300000000000133",    // course id
+                "assignments",
+                "10300000000089948",    // assignment id
+                "submissions",
+                "10300000000030943",    // user id
+                "?submission[posted_grade]=50"  // the points grader wants to submit
 
         };
 
         String[] rawResp;
         ConnectionPool connection = new ConnectionPool(fields, url, version);
 //        System.out.println(connection.getEndpoints());
+        connection.setMethod("PUT");
         String response =  connection.buildConnection();
         rawResp = response.split(",");
-        for (String s : rawResp)
-            System.out.println(s);
+        if(rawResp != null)
+            for (String s : rawResp)
+                System.out.println(s);
+
 
     }
 
