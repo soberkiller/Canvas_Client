@@ -9,14 +9,18 @@ public class connectCanvas {
 
         String[] fields = {
                 "courses",
+                "10300000000000133",
+                "users"
 
         };
 
-
+        String[] rawResp;
         ConnectionPool connection = new ConnectionPool(fields, url, version);
 //        System.out.println(connection.getEndpoints());
         String response =  connection.buildConnection();
-        System.out.println(response);
+        rawResp = response.split(",");
+        for (String s : rawResp)
+            System.out.println(s);
 
     }
 
