@@ -30,10 +30,6 @@ public class ConnectionPool {
 //        fields.put("version", String.valueOf(version));
 
         for(int i = 0; i < endpoint.length; i++) {
-//            String[] points = endpoint[i].split(";");
-//            for(int j = 0; j < points.length; j++) {
-//                fields.put(points[j].split(":")[0], points[j].split(":")[1]);
-//            }
             fields += '/' + endpoint[i];
         }
         API += fields;
@@ -42,18 +38,8 @@ public class ConnectionPool {
     public String buildConnection() {
         StringBuilder  content = new StringBuilder();
         if(!this.getEndpoints().equalsIgnoreCase("") && !this.getEndpoints().isEmpty()) {
-//            String vars = "";
-//            String vals = "";
             try {
-//                for(Map.Entry<String, String> entry : fields.entrySet()) {
-//                    vars = entry.getKey();
-//                    vals = entry.getValue();
-//                    data += ("&" + vars + "=" + vals);
-//                }
-//                if(data.startsWith("&")) {
-//                    data = data.replaceFirst("&", "");
-//                }
-                // data += fields;
+
                 connection = new URL(API);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(readWithAccess(connection, data)));
                 String line;
@@ -78,7 +64,6 @@ public class ConnectionPool {
             finalConnection.setRequestMethod(METHOD);
             finalConnection.setDoOutput(false);
             finalConnection.setDoInput(true);
-            //finalConnection.addRequestProperty("User-Agent", USER_AGENT);
             finalConnection.setRequestProperty("Content-Type", TYPE);
             finalConnection.setRequestProperty("Charset", "UTF-8");
             finalConnection.setRequestProperty("Authorization", OAUTH2);
@@ -108,10 +93,6 @@ public class ConnectionPool {
     public String getEndpoints() {
         return fields;
     }
-
-//    public String getEndpointValue(String Key) {
-//        return fields.get(Key);
-//    }
 
     public void setUserAgent(String userAgent) {
         this.USER_AGENT = userAgent;
