@@ -1,0 +1,103 @@
+"id":10300000000031012
+"name":"Siyu Chen"
+"sortable_name":"Chen
+ Siyu"
+"short_name":"Siyu Chen"
+"sis_user_id":"10429118"
+"integration_id":null
+"login_id":"schen61@stevens.edu"}
+=======================================================
+{"id":10300000000030939
+"name":"Long Huang"
+"sortable_name":"Huang
+ Long"
+"short_name":"Long Huang"
+"sis_user_id":"10428270"
+"integration_id":null
+"login_id":"lhuang14@stevens.edu"}
+=======================================================
+{"id":10300000000000287
+"name":"Dov Kruger"
+"sortable_name":"Kruger
+ Dov"
+"short_name":"Dov Kruger"
+"sis_user_id":"10017477"
+"integration_id":null
+"login_id":"dkruger@stevens.edu"}
+=======================================================
+{"id":10300000000032214
+"name":"Xiao Liu"
+"sortable_name":"Liu
+ Xiao"
+"short_name":"Xiao Liu"}
+=======================================================
+{"id":10300000000030940
+"name":"Tianqi Lv"
+"sortable_name":"Lv
+ Tianqi"
+"short_name":"Tianqi Lv"
+"sis_user_id":"10428282"
+"integration_id":null
+"login_id":"tlv1@stevens.edu"}
+=======================================================
+{"id":10300000000024207
+"name":"Michael Manis"
+"sortable_name":"Manis
+ Michael"
+"short_name":"Michael Manis"
+"sis_user_id":"10412710"
+"integration_id":null
+"login_id":"mmanis@stevens.edu"}
+=======================================================
+{"id":10300000000024266
+"name":"Mateusz Mroczkowski"
+"sortable_name":"Mroczkowski
+ Mateusz"
+"short_name":"Mateusz Mroczkowski"
+"sis_user_id":"10412925"
+"integration_id":null
+"login_id":"mmroczko@stevens.edu"}
+=======================================================
+{"id":10300000000019499
+"name":"Matthew Sorrentino"
+"sortable_name":"Sorrentino
+ Matthew"
+"short_name":"Matthew Sorrentino"
+"sis_user_id":"10407515"
+"integration_id":null
+"login_id":"msorren2@stevens.edu"}
+=======================================================
+{"id":10300000000030943
+"name":"Yifang Yuan"
+"sortable_name":"Yuan
+ Yifang"
+"short_name":"Yifang Yuan"
+"sis_user_id":"10428293"
+"integration_id":null
+"login_id":"yyuan17@stevens.edu"}
+-------
+{"id":10300000004256319
+"body":null
+"url":null
+"grade":"100"
+"score":100.0
+"submitted_at":"2018-04-02T20:54:29Z"
+"assignment_id":10300000000089948
+"user_id":10300000000030943
+"submission_type":"online_upload"
+"workflow_state":"graded"
+"grade_matches_current_submission":true
+"graded_at":"2018-04-02T21:06:09Z"
+"grader_id":10300000000026278
+"attempt":1
+"cached_due_date":"2018-09-08T03:59:00Z"
+"excused":false
+"late_policy_status":null
+"points_deducted":null
+"grading_period_id":null
+"late":false
+"missing":false
+"seconds_late":0
+"entered_grade":"100"
+"entered_score":100.0
+"preview_url":"https://canvas.instructure.com/courses/1030~133/assignments/1030~89948/submissions/30943?preview=1\u0026version=1"}
