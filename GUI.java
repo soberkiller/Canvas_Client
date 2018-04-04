@@ -20,6 +20,9 @@ import javax.imageio.ImageIO;
  * @author MattSorrentino
  */
 
+//runtime r = Runtime.getRuntime();
+//r.exec("Plagarism Dir");
+
 /**
  *
  * @class GUI
@@ -53,7 +56,7 @@ public class GUI extends JFrame
         //topBar.setLayout(new GridLayout(1, 3, 50, 0));
         
         JPanel logoPanel = new JPanel();
-        logoPanel.setPreferredSize(new Dimension(250, 100));
+        logoPanel.setPreferredSize(new Dimension(180, 100));
         logoPanel.setBackground(Color.WHITE);
         
         BufferedImage stevensLogo;
@@ -63,7 +66,7 @@ public class GUI extends JFrame
             Image dimg = stevensLogo.getScaledInstance(180, 90, Image.SCALE_SMOOTH);
             ImageIcon imageIcon1 = new ImageIcon(dimg);
             JLabel logoLabel = new JLabel(imageIcon1);
-            logoPanel.add(BorderLayout.WEST, logoLabel);  
+            logoPanel.add(BorderLayout.CENTER, logoLabel);  
         } 
         catch (IOException ex) 
         {
@@ -89,7 +92,7 @@ public class GUI extends JFrame
         //topBarCourseSubPanel.add(BorderLayout.WEST, spacer);
         
         JPanel titlePanel = new JPanel();
-        titlePanel.setPreferredSize(new Dimension(400, 100));
+        titlePanel.setPreferredSize(new Dimension(500, 100));
         titlePanel.setBackground(Color.WHITE);
                 // temporary course name
 
@@ -98,7 +101,7 @@ public class GUI extends JFrame
         Font courseTitleFont = new Font("Helvetica", Font.BOLD, 36);
 
         JLabel currentCourseName = new JLabel(courseTitle);
-        //currentCourseName.setHorizontalAlignment(SwingConstants.RIGHT);
+        currentCourseName.setHorizontalAlignment(SwingConstants.RIGHT);
         currentCourseName.setFont(courseTitleFont);
         
         //currentCourseName.setAlignmentY(Component.RIGHT_ALIGNMENT);
@@ -119,10 +122,14 @@ public class GUI extends JFrame
 
         
         JButton switchCourseButton = new JButton("Switch Course");
-        switchCourseButton.setPreferredSize(new Dimension(125, 80));
+        switchCourseButton.setPreferredSize(new Dimension(120, 80));
+        JButton pushChangesToCanvasButton = new JButton("Push To Canvas");
+        pushChangesToCanvasButton.setPreferredSize(new Dimension(120, 80));
         //switchCourseButton.setBackground(Color.RED);
         //clearButton.addActionListener(new ButtonListener());
-        switchPanel.add(BorderLayout.CENTER, switchCourseButton);
+        switchPanel.add(BorderLayout.WEST, switchCourseButton);
+        switchPanel.add(BorderLayout.EAST, pushChangesToCanvasButton);
+
         //switchCourseButton.setAlignmentY(100);
         topBar.add(switchPanel);
 
