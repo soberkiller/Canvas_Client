@@ -163,11 +163,11 @@ public class GUI extends JFrame
         //  Contains buttons
         //  
         ////////////////////////////////////////////////////////////////////////
-        
+        /*
         JPanel leftToolbar = new JPanel();
         leftToolbar.setPreferredSize(new Dimension(100, 768));
-        leftToolbar.setLayout(new GridLayout(2, 1, 0, 0));
-        currentCoursePanel.setBorder(new EmptyBorder(20, 20, 20, 20));
+        leftToolbar.setLayout(new GridLayout(3, 1, 0, 0));
+        leftToolbar.setBorder(new EmptyBorder(0, 0, 0, 0));
         leftToolbar.setBackground(Color.GRAY);
         
         
@@ -177,12 +177,18 @@ public class GUI extends JFrame
         editAssignmentButton.setBackground(Color.lightGray);
         leftToolbar.add(editAssignmentButton);
         
-        JButton newAssignmentButton = new JButton("New");
+        JButton newAssignmentButton = new JButton("New Assignment");
         newAssignmentButton.setPreferredSize(new Dimension(80, 80));
         newAssignmentButton.setBackground(Color.lightGray);
         leftToolbar.add(newAssignmentButton);
         
+        JButton courseSettingsButton = new JButton("Course Settings");
+        courseSettingsButton.setPreferredSize(new Dimension(80, 80));
+        courseSettingsButton.setBackground(Color.lightGray);
+        leftToolbar.add(courseSettingsButton);
+        
         c.add(BorderLayout.WEST, leftToolbar);
+        */
 
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
@@ -191,47 +197,88 @@ public class GUI extends JFrame
         
         
         
-        JTextField tf = new JTextField();
-        c.add(BorderLayout.CENTER, tf);
+        ////////////////////////////////////////////////////////////////////////
+        //
+        //  main Panel - The main panel of the main window
+        //
+        //  Author: Matt Sorrentino
+        //
+        //  Contains whatever content is necessary for the current view
+        //  
+        ////////////////////////////////////////////////////////////////////////
+        
+        JPanel main = new JPanel();
+        main.setBackground(Color.gray);
+        c.add(BorderLayout.CENTER, main);
+        
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
         
         
         
         
+        
+        
+        
+        
+        ////////////////////////////////////////////////////////////////////////
+        //
+        //  assignmentsPanel - The panel containing the scrollview of assignments
+        //
+        //  Author: Matt Sorrentino
+        //
+        //  Contains JScrollPane which has a list of assignments for the current class
+        //  Contains the New Assignment button 
+        //  
+        ////////////////////////////////////////////////////////////////////////
+        
+        
+        
+        //temporary value for the number of assignments a class has
         int numberOfButtons=15;
 
-
+        JPanel assignmentsPanel = new JPanel();
+        
+        /*
+        JButton newAssignmentButton = new JButton("New Assignment");
+        newAssignmentButton.setBackground(Color.lightGray);
+        assignmentsPanel.add(BorderLayout.NORTH, newAssignmentButton);
+        */
+        
         // Label to display the message indicating which button generated the event.
 
         //JLabel label=new JLabel();
 
         // Panel to accomodate the labels
 
-        JPanel panel=new JPanel(); 
+        JPanel assignmentsListPanel = new JPanel(); 
         //panel.setMaximumSize(new Dimension(100, 768));
-        panel.setBackground(Color.WHITE);
+        assignmentsListPanel.setBackground(Color.WHITE);
 
-        panel.setLayout(new GridLayout(numberOfButtons, 1));
+        assignmentsListPanel.setLayout(new GridLayout(numberOfButtons+1, 1));
 
         JButton buttons[]=new JButton[numberOfButtons]; 
 
-        //Using a for loop we create JButtons.    
-
+        //Using a for loop we create temporary JButtons.    
+        
+        JButton newAssignmentButton = new JButton("New Assignment");
+        newAssignmentButton.setBackground(Color.lightGray);
+        assignmentsListPanel.add(newAssignmentButton);
+        
         for(int i=0;i<numberOfButtons;i++){
-            buttons[i] = new JButton("Assignment"+i);
+            buttons[i] = new JButton("Assignment "+i);
             buttons[i].setPreferredSize(new Dimension(180, 50));
             buttons[i].setBackground(Color.WHITE);
-
-            panel.add(buttons[i]);
+            
+            assignmentsListPanel.add(buttons[i]);
         }
 
      
-       JScrollPane scroller = new JScrollPane(panel);
-       scroller.setPreferredSize(new Dimension(200, 768));
-       c.add(BorderLayout.EAST, scroller);     
-
-        
-        
-        
+       JScrollPane scroller = new JScrollPane(assignmentsListPanel);
+       scroller.setPreferredSize(new Dimension(254, 768));
+       c.add(BorderLayout.WEST, scroller);             
         
         setVisible(true);
 
