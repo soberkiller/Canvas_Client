@@ -51,6 +51,37 @@ public class Course {
     {
         return assignmentsList;
     }
+
+    public ArrayList<LocalDateTime> getClassDateTime() 
+    {
+        return classDateTime;
+    }
+
+    public void setClassDateTime(ArrayList<LocalDateTime> classDateTime) 
+    {
+        this.classDateTime = classDateTime;
+    }
+
+    public boolean isDueDateIsMidnightAfter() 
+    {
+        return dueDateIsMidnightAfter;
+    }
+
+    public boolean isDueDateIsNextClassPeriod() 
+    {
+        return dueDateIsNextClassPeriod;
+    }
+
+    public void setDueDateIsMidnightAfter(boolean dueDateIsMidnightAfter) 
+    {
+        this.dueDateIsMidnightAfter = dueDateIsMidnightAfter;
+    }
+
+    public void setDueDateIsNextClassPeriod(boolean dueDateIsNextClassPeriod) 
+    {
+        this.dueDateIsNextClassPeriod = dueDateIsNextClassPeriod;
+    }
+    
     
     
 }
