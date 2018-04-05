@@ -72,7 +72,7 @@ public class GUI extends JFrame
         topBar.setPreferredSize(new Dimension(1024, 100));
         topBar.setBackground(Color.WHITE);
 
-        topBar.setLayout(new GridLayout(1, 3, 100, 25));
+        topBar.setLayout(new GridLayout(1, 3, 70, 25));
         
 
         ////////////////////////////////////////////////////////////////////////
@@ -92,10 +92,25 @@ public class GUI extends JFrame
         Font courseTitleFont = new Font("Helvetica", Font.BOLD, 16);
         currentCourseNameLabel.setFont(courseTitleFont);
 
+        JPanel courseOptionsPanel = new JPanel();
+        courseOptionsPanel.setBackground(Color.WHITE);
+        courseOptionsPanel.setLayout(new GridLayout(1, 2, 10, 0));
+                
+        JButton courseSettingsButton = new JButton("Settings");
+        //courseSettingsButton.setPreferredSize(new Dimension(70,40));
+        courseSettingsButton.setBackground(Color.WHITE);
+        courseOptionsPanel.add(courseSettingsButton);
+        
         JButton switchCourseButton = new JButton("Switch Course");
-        switchCourseButton.setPreferredSize(new Dimension(120,40));
+        //switchCourseButton.setPreferredSize(new Dimension(120,40));
         switchCourseButton.setBackground(Color.WHITE);
-        currentCoursePanel.add(switchCourseButton);
+        courseOptionsPanel.add(switchCourseButton);
+        
+        
+        
+        
+        
+        currentCoursePanel.add(courseOptionsPanel);
         
         topBar.add(currentCoursePanel);
         
