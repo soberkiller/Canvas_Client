@@ -19,6 +19,7 @@ public class ConnectionPool {
     private String data = "";
     private URL connection;
     private HttpURLConnection finalConnection;
+    public int haha;
 
 //    private HashMap<String, String> fields = new HashMap<String, String>();
     private String fields = "";
@@ -99,6 +100,13 @@ public class ConnectionPool {
 
     public void setMethod(String method) {
         this.METHOD = method;
+    }
+    public  void setAPI(String[] field) {
+        this.API = "https://canvas.instructure.com/api/v1";
+        for(int i = 0; i < field.length; i++) {
+            fields += '/' + field[i];
+        }
+        API += fields;
     }
 
     public void setSubmissionType(String type) {
