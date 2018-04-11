@@ -15,7 +15,7 @@ public class ConnectionPool {
     private String METHOD = "GET";
     private String TYPE = "application/json";
     private String USER_AGENT = "Mozilla/5.0";
-    private String OAUTH2 = "Bearer 1030~8XEzXvKON2BZHsr18b9uuw7lxoohyEKnMcftyNF49mrGZs51BhIqCPmzDQCo2Jbj";  // Token
+    private String OAUTH2 = "Bearer 1030~fbR2aVe1dHcAchNxElgU01CgqYpb3snPKZLwKp3UOWyUhcQS2x4nT5tdxEL76t5o";  // Token
     private String data = "";
     private URL connection;
     private HttpURLConnection finalConnection;
@@ -99,6 +99,16 @@ public class ConnectionPool {
 
     public void setMethod(String method) {
         this.METHOD = method;
+    }
+    public  void setAPI(String[] field) {
+        this.API = "";
+        this.fields = "";
+        this.API = "https://canvas.instructure.com/api/v1";
+        for(int i = 0; i < field.length; i++) {
+            fields += '/' + field[i];
+
+        }
+        API += fields;
     }
 
     public void setSubmissionType(String type) {

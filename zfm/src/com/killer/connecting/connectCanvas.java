@@ -18,17 +18,18 @@ public class connectCanvas {
 
         };
 
-        String[] rawResp;
-        ConnectionPool connection = new ConnectionPool(fields, url, version);
-//        System.out.println(connection.getEndpoints());
-        connection.setMethod("PUT");
-        String response =  connection.buildConnection();
-        rawResp = response.split(",");
-        if(rawResp != null)
-            for (String s : rawResp)
-                System.out.println(s);
+//        String[] rawResp;
+//        ConnectionPool connection = new ConnectionPool(fields, url, version);
+////        System.out.println(connection.getEndpoints());
+//        connection.setMethod("PUT");
+//        String response =  connection.buildConnection();
+//        rawResp = response.split(",");
+//        if(rawResp != null)
+//            for (String s : rawResp)
+//                System.out.println(s);
 
-
+        appDemo app = new appDemo();
+        app.setVisible(true);
     }
 
 }
