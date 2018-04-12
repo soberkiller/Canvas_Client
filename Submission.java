@@ -19,8 +19,8 @@ public class Submission {
     //SUBMISSION DATA IS TAKEN FROM CANVAS
     
 
-    // name of student who made the submission
-    private String studentName;
+    // Sudent object of student who made the submission
+    private Student student;
     
     // time and date of submission
     private LocalDateTime submissionTime;
@@ -39,9 +39,9 @@ public class Submission {
         attachedFiles = new ArrayList<>(1);
     }
     
-    public String getStudentName()
+    public Student getStudent()
     {
-        return studentName;
+        return student;
     }
           
     public LocalDateTime getSubmissionTime()
