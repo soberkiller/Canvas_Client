@@ -18,6 +18,9 @@ public class Course {
     // the name of the Course, data from Canvas
     private String courseName;
     
+    // the ID of the Course, data from Canvas
+    private String courseID;
+    
     // ArrayList of Assignment objects, one for each assignment
     private ArrayList<Assignment> assignmentsList = new ArrayList<>(50);
     
@@ -47,6 +50,11 @@ public class Course {
         return courseName;
     }
 
+    public String getCourseID() 
+    {
+        return courseID;
+    }
+    
     public ArrayList<Assignment> getAssignmentsList()
     {
         return assignmentsList;
