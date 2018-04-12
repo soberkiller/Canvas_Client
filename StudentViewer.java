@@ -27,10 +27,7 @@ public class StudentViewer extends JFrame
 
         setSize(768,768);
         c = getContentPane();
-        
-        addWindowListener(new MyWindowListener());
-        
-        
+
         
         JPanel studentListPanel = new JPanel();
 
