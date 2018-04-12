@@ -1,3 +1,11 @@
+4/12/18
+
+branch: dev4
+
+In this ver, I added download class called downloadFile.java. By putting its methods into main function, you can get single submission from canvas, according to previous responses from Canvas.In the main function, there are two steps you need to do. First, declare a obj for download. Second, set up url by using method .setAPI(String). Last thing is method .setDownload(String filename). filename is the name for the submission you downloaded. You can get it from previous response from Canvas or rename it what ever you want. 
+
+===================================
+
 4/8/18
 
 branch: dev3
