@@ -14,6 +14,16 @@ public class CanvasClient {
     /**
      * @param args the command line arguments
      */
+    
+    private static Course currentCourse;
+    
+    public static Course getCurrentCourse()
+    {
+        return currentCourse;
+    }
+    
+    
+    
     public static void main(String[] args) {
         GUI myGUI = new GUI();
     }
