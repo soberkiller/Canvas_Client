@@ -17,6 +17,7 @@ public class SubmissionGrader {
     private boolean didCompile;
     private boolean didRun;
     private boolean outputMatches;
+    private boolean didPassPlagarismCheck;
     
     public SubmissionGrader(Submission submission)
     {
@@ -25,6 +26,12 @@ public class SubmissionGrader {
     
     
     private boolean runCode()
+    {
+        //Runtime r = new Runtime();
+        return true;
+    }
+    
+    private boolean checkPlagarism()
     {
         return true;
     }
