@@ -18,6 +18,9 @@ public class Assignment {
     // name of assignment
     private String assignmentName;
     
+    // ID of assignment, from Canvas
+    private String assignmentID;
+    
     //long text description of assignment
     private String assignmentDescription;
     
@@ -42,9 +45,15 @@ public class Assignment {
          submissionsList = new ArrayList<>(50);
     }
 
-    public String getAssignmentName() {
+    public String getAssignmentName() 
+    {
         return assignmentName;
     }
+
+    public String getAssignmentID() 
+    {
+        return assignmentID;
+    } 
 
     public void setAssignmentName(String assignmentName) 
     {
