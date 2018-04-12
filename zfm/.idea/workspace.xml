@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80aadb85-9c12-418e-9002-16bdb4c13dd1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/killer/connecting/downloadFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReadMe.MD" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReadMe.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/appDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/appDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -21,8 +22,8 @@
       <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1139">
-              <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="105" />
+            <state relative-caret-position="697">
+              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,11 +31,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectCanvas.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="downloadFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/downloadFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1281#1282#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connectCanvas.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="34" selection-start-line="20" selection-start-column="2" selection-end-line="28" selection-end-column="40" />
+            <state relative-caret-position="357">
+              <caret line="21" column="79" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -42,7 +57,7 @@
       <file leaf-file-name="appDemo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/appDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="-833">
               <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,13 +81,13 @@
       <file leaf-file-name="JSON temp.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="102" column="84" selection-start-line="102" selection-start-column="84" selection-end-line="102" selection-end-column="84" />
+            <state relative-caret-position="151">
+              <caret line="404" column="16" selection-start-line="404" selection-start-column="12" selection-end-line="404" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadMe.MD" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReadMe.MD" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ReadMe.MD">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -98,6 +113,10 @@
       <find>TYPE</find>
       <find>listmodel</find>
       <find>addListSelectionListener</find>
+      <find>3689674</find>
+      <find>download</find>
+      <find>4256319</find>
+      <find>3671236</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,11 +126,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt" />
-        <option value="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" />
-        <option value="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/com/killer/connecting/appDemo.java" />
         <option value="$PROJECT_DIR$/src/ReadMe.MD" />
+        <option value="$PROJECT_DIR$/src/com/killer/connecting/downloadfile.java" />
+        <option value="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt" />
+        <option value="$PROJECT_DIR$/src/com/killer/connecting/downloadFile.java" />
+        <option value="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" />
       </list>
     </option>
   </component>
@@ -322,12 +343,12 @@
       <workItem from="1522694901577" duration="5602000" />
       <workItem from="1522720659475" duration="819000" />
       <workItem from="1522957764861" duration="7442000" />
-      <workItem from="1522965808700" duration="41929000" />
+      <workItem from="1522965808700" duration="75116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77637000" />
+    <option name="totallyTimeSpent" value="110824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -347,7 +368,7 @@
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.32859176" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.24934895" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.2488263" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
@@ -368,10 +389,10 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="REST Client" order="12" weight="0.43663913" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.33333334" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.3328592" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.24934895" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.2488263" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -586,20 +607,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/Demo.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="102" column="84" selection-start-line="102" selection-start-column="84" selection-end-line="102" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="34" selection-start-line="20" selection-start-column="2" selection-end-line="28" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/security/ProtectionDomain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-924">
@@ -609,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1139">
-          <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="105" />
+        <state relative-caret-position="697">
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -619,7 +626,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/appDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="-833">
           <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -646,6 +653,32 @@
             <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="404" column="16" selection-start-line="404" selection-start-column="12" selection-end-line="404" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/downloadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="79" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="79" />
         </state>
       </provider>
     </entry>
