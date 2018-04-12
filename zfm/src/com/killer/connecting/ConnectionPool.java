@@ -45,6 +45,7 @@ public class ConnectionPool {
                     content.append(line + "\n");
                 }
                 reader.close();
+                finalConnection.disconnect();
                 return content.toString();
             } catch (Exception e) {
                 System.err.println(e.getMessage());
