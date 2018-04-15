@@ -22,6 +22,11 @@ public class CanvasClient {
         return currentCourse;
     }
     
+    public void setCurrentCourse(Course currentCourse)
+    {
+        this.currentCourse = currentCourse;
+    }
+    
     
     
     public static void main(String[] args) {
