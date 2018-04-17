@@ -5,17 +5,33 @@
  */
 package canvasclient;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author MattSorrentino
  */
+
 public class CanvasClient {
 
-    /**
-     * @param args the command line arguments
-     */
-    
     private static Course currentCourse;
+    
+    public ArrayList<Course> courseList = new ArrayList<Course>(5);
+    
+    
+    public CanvasClient()
+    {
+        //create instance of main GUI
+        GUI myGUI = new GUI();
+        
+        //fetch all courses from canvas
+        //create course object for each course
+        //add course to courseList
+        
+        //currentCourse = courseList(0);
+        
+        
+    }
     
     public static Course getCurrentCourse()
     {
@@ -28,9 +44,9 @@ public class CanvasClient {
     }
     
     
-    
-    public static void main(String[] args) {
-        GUI myGUI = new GUI();
+    public static void main(String[] args) 
+    {
+        new CanvasClient();
     }
     
 }
