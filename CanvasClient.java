@@ -16,7 +16,7 @@ public class CanvasClient {
 
     private static Course currentCourse;
     
-    private ArrayList<Course> courseList = new ArrayList<Course>(5);
+    public ArrayList<Course> courseList = new ArrayList<Course>(5);
     
     
     public CanvasClient()
@@ -42,15 +42,11 @@ public class CanvasClient {
     {
         this.currentCourse = currentCourse;
     }
-
-    public ArrayList<Course> getCourseList() {
-        return courseList;
-    }
     
     
     public static void main(String[] args) 
     {
-        CanvasClient canvasClient = new CanvasClient();
+        new CanvasClient();
     }
     
 }

@@ -106,6 +106,16 @@ public class GUI extends JFrame
         //switchCourseButton.setPreferredSize(new Dimension(120,40));
         switchCourseButton.setBackground(Color.WHITE);
         courseOptionsPanel.add(switchCourseButton);
+        switchCourseButton.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e)
+                {
+                    CourseSelector courseSelector = new CourseSelector();
+                    
+                }
+            }    
+        );
         
         
         
