@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80aadb85-9c12-418e-9002-16bdb4c13dd1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AppCanvas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AppGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AssignmentDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/DownloadSubmission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AppCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AppCanvas.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
