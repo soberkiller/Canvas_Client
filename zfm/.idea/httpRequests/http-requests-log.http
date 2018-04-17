@@ -1,0 +1,21 @@
+GET https://canvas.instructure.com/api/v1/courses?=
+Accept: */*
+: no-cache
+Authorization: Bearer 1030~8XEzXvKON2BZHsr18b9uuw7lxoohyEKnMcftyNF49mrGZs51BhIqCPmzDQCo2Jbj
+
+###
+
+GET https://canvas.instructure.com/api/v1/courses?=
+Accept: */*
+: no-cache
+Authorization: Bearer 1030~8XEzXvKON2BZHsr18b9uuw7lxoohyEKnMcftyNF49mrGZs51BhIqCPmzDQCo2Jbj
+
+###
+
+GET https://canvas.instructure.com/api/v1/courses/133?=
+Accept: */*
+: no-cache
+Authorization: Bearer 1030~8XEzXvKON2BZHsr18b9uuw7lxoohyEKnMcftyNF49mrGZs51BhIqCPmzDQCo2Jbj
+
+###
+
