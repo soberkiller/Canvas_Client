@@ -37,11 +37,13 @@ public class Course {
     private boolean dueDateIsMidnightAfter;
     
     
-    public Course() 
+    public Course(String courseName, String courseID) 
     {
         
         //fetch name of course from Canvas
         //fetch all Assignments from Canvas
+        this.courseName = courseName;
+        this.courseID = courseID;
         
         classDateTime = new ArrayList<>(1);
         

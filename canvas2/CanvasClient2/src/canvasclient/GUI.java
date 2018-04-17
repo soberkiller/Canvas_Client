@@ -11,6 +11,7 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -36,11 +37,12 @@ public class GUI extends JFrame
     private Container c;
     
     
-    public GUI ()
+    public GUI (Course currentCourse, ArrayList<Course> courseList)
     {
-        super("Canvas Client");
+        super(currentCourse.getCourseName());
 
         setSize(1024,768);
+        this.setLocationRelativeTo(null);
         c = getContentPane();
         
         addWindowListener(new MyWindowListener());
@@ -85,10 +87,8 @@ public class GUI extends JFrame
 
 
         //currentCoursePanel.add(spacer1);
-
-        final String currentCourseName = "Java (EE 522)";
         
-        JLabel currentCourseNameLabel = new JLabel(" " + currentCourseName);
+        JLabel currentCourseNameLabel = new JLabel(" " + currentCourse.getCourseName());
         currentCoursePanel.add(currentCourseNameLabel);
         Font courseTitleFont = new Font("Helvetica", Font.BOLD, 16);
         currentCourseNameLabel.setFont(courseTitleFont);
@@ -100,25 +100,24 @@ public class GUI extends JFrame
         JButton courseSettingsButton = new JButton("Settings");
         //courseSettingsButton.setPreferredSize(new Dimension(70,40));
         courseSettingsButton.setBackground(Color.WHITE);
+        courseSettingsButton.setFocusable(false);
         courseOptionsPanel.add(courseSettingsButton);
         
         JButton switchCourseButton = new JButton("Switch Course");
         //switchCourseButton.setPreferredSize(new Dimension(120,40));
         switchCourseButton.setBackground(Color.WHITE);
+        switchCourseButton.setFocusable(false);
         courseOptionsPanel.add(switchCourseButton);
         switchCourseButton.addActionListener(
             new ActionListener()
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    CourseSelector courseSelector = new CourseSelector();
+                    CourseSelector courseSelector = new CourseSelector(courseList);
                     
                 }
             }    
         );
-        
-        
-        
         
         
         currentCoursePanel.add(courseOptionsPanel);
