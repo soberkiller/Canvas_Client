@@ -1,5 +1,4 @@
-package com.killer.connecting;
-
+package team.canvasgroup.appcanvas;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
