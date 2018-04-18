@@ -307,11 +307,19 @@ public class GUI extends JFrame
         JButton newAssignmentButton = new JButton("New Assignment");
         newAssignmentButton.setBackground(Color.lightGray);
         assignmentsListPanel.add(newAssignmentButton);
-        
-        for(int i=0;i<numberOfAssignments;i++)
+
+        for(int i = 0; i < numberOfAssignments; i++)
         {
-            buttons[i] = new JButton("Assignment "+i);
-            buttons[i].setPreferredSize(new Dimension(180, 50));
+            String openTags = "<html><body><h3>";
+            String middleTags = "</h3><p>";
+            String closingTags = "</p></body></html>";
+            
+            String assignmentTitle = currentCourse.getAssignmentsList().get(i).getAssignmentName();
+            String assignmentDueDate = "due: 4/25/18 [TEMP]";
+            
+            buttons[i] = new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + closingTags);
+            buttons[i].setHorizontalAlignment(SwingConstants.LEFT);
+            buttons[i].setPreferredSize(new Dimension(180, 80));
             buttons[i].setBackground(Color.WHITE);
             
             assignmentsListPanel.add(buttons[i]);
