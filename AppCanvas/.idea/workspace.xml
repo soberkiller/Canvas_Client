@@ -20,6 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AppGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppGUI.java">
@@ -29,6 +30,14 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+    <leaf>
+      <file leaf-file-name="AppGUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -40,7 +49,10 @@
               <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+<<<<<<< HEAD
                 <element signature="e#195#196#0" expanded="true" />
+=======
+>>>>>>> master
               </folding>
             </state>
           </provider>
@@ -49,7 +61,11 @@
       <file leaf-file-name="AppCanvas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="51">
+=======
+            <state relative-caret-position="85">
+>>>>>>> master
               <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
             </state>
           </provider>
@@ -101,6 +117,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+>>>>>>> master
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,15 +145,21 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+=======
+>>>>>>> master
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+>>>>>>> master
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -216,12 +244,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523934650194</updated>
+<<<<<<< HEAD
       <workItem from="1523934654818" duration="9609000" />
       <workItem from="1524068699189" duration="32000" />
+=======
+      <workItem from="1523934654818" duration="8144000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="9641000" />
   </component>
   <component name="TodoView">
@@ -232,10 +265,14 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+=======
+    <option name="totallyTimeSpent" value="8144000" />
+>>>>>>> master
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32859176" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -281,6 +318,53 @@
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
+=======
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" weight="0.32859176" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32859176" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32859176" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32859176" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24949698" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32859176" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.24949698" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+>>>>>>> master
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
@@ -288,9 +372,15 @@
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32905984" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32859176" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="Message" order="5" />
+=======
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="bottom" id="Find" order="6" />
+>>>>>>> master
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32859176" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info id="Favorites" order="4" side_tool="true" />
@@ -303,16 +393,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+>>>>>>> master
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -320,10 +418,33 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#195#196#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AssignmentDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+            <element signature="e#437#467#0" expanded="true" />
+            <element signature="e#472#561#0" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+            <element signature="e#1866#1867#0" expanded="true" />
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2404#2405#0" expanded="true" />
+            <element signature="e#2891#2892#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#3325#3326#0" expanded="true" />
+            <element signature="e#3385#3386#0" expanded="true" />
+            <element signature="e#15906#15993#0" expanded="true" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17482#17483#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppCanvas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -333,34 +454,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/ConnectionPool.java" />
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AssignmentDetail.java" />
+=======
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#195#196#0" expanded="true" />
+=======
+>>>>>>> master
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppCanvas.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
+=======
+        <state relative-caret-position="85">
+>>>>>>> master
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/DownloadSubmission.java" />
     <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="8" selection-start-column="8" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/DownloadSubmission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+>>>>>>> master
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/appcanvas/AppGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> master
   </component>
 </project>

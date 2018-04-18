@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80aadb85-9c12-418e-9002-16bdb4c13dd1" name="Default" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../CanvasClient/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CanvasClient/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CanvasClient/.idea/workspace.xml" afterDir="false" />
@@ -22,6 +23,16 @@
       <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Submission.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/SubmissionGrader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../AppCanvas/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AppCanvas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/AppGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AppCanvas/src/team/canvasgroup/appcanvas/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/zfm/ReadMe.MD" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zfm/ReadMe.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/ReadConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" afterDir="false" />
+>>>>>>> master
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -351,16 +362,23 @@
       <workItem from="1522720659475" duration="819000" />
       <workItem from="1522957764861" duration="7442000" />
       <workItem from="1522965808700" duration="75116000" />
+<<<<<<< HEAD
       <workItem from="1523932969161" duration="5397000" />
+=======
+      <workItem from="1523932969161" duration="5323000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="119449000" />
+=======
+    <option name="totallyTimeSpent" value="119375000" />
+>>>>>>> master
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
