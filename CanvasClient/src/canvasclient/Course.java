@@ -40,13 +40,46 @@ public class Course {
     public Course(String courseName, String courseID) 
     {
         
-        //fetch name of course from Canvas
-        //fetch all Assignments from Canvas
         this.courseName = courseName;
         this.courseID = courseID;
         
         classDateTime = new ArrayList<>(1);
         
+        //fetch name and ID of course from Canvas
+        //fetch all Assignments from Canvas and add to assignmentsList : new Assignment(assignmentName, assignmentID);
+        //fetch all Students from Canvas and add to studentsList
+        
+        //adding fake assignments to test
+        assignmentsList.add(new Assignment("first assignment", "1043295"));
+        assignmentsList.add(new Assignment("2 assignment", "1043295"));
+        assignmentsList.add(new Assignment("3 assignment", "1043295"));
+        assignmentsList.add(new Assignment("4 assignment", "1043295"));
+        assignmentsList.add(new Assignment("5 assignment", "1043295"));
+        assignmentsList.add(new Assignment("6 assignment", "1043295"));
+        assignmentsList.add(new Assignment("7 assignment", "1043295"));
+        assignmentsList.add(new Assignment("8 assignment", "1043295"));
+        assignmentsList.add(new Assignment("9 assignment", "1043295"));
+        assignmentsList.add(new Assignment("10 assignment", "1043295"));
+        assignmentsList.add(new Assignment("11 assignment", "1043295"));
+        assignmentsList.add(new Assignment("12 assignment", "1043295"));
+        assignmentsList.add(new Assignment("13 assignment", "1043295"));
+        
+        //adding fake students to test
+        studentsList.add(new Student("student 1", "133463"));
+        studentsList.add(new Student("student 2", "133463"));
+        studentsList.add(new Student("student 3", "133463"));
+        studentsList.add(new Student("student 4", "133463"));
+        studentsList.add(new Student("student 5", "133463"));
+        studentsList.add(new Student("student 6", "133463"));
+        studentsList.add(new Student("student 7", "133463"));
+        studentsList.add(new Student("student 8", "133463"));
+        studentsList.add(new Student("student 9", "133463"));
+        studentsList.add(new Student("student 10", "133463"));
+        studentsList.add(new Student("student 11", "133463"));
+        studentsList.add(new Student("student 12", "133463"));
+        studentsList.add(new Student("student 13", "133463"));
+        
+       
     }
     
     

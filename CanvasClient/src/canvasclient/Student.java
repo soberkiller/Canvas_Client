@@ -16,7 +16,15 @@ public class Student {
     
     private String studentID;
     
+    //grade the student has in the course
+    private double courseGrade;
     
+    
+    public Student(String studentName, String studentID)
+    {
+        this.studentName = studentName;
+        this.studentID = studentID;
+    }
 
     public String getStudentName() 
     {
@@ -27,6 +35,12 @@ public class Student {
     {
         return studentID;
     }
+
+    public double getCourseGrade() 
+    {
+        return courseGrade;
+    }
      
+    
     
 }

@@ -25,6 +25,9 @@ public class Submission {
     // time and date of submission
     private LocalDateTime submissionTime;
     
+    //the grade given for the submission
+    private double submissionGrade;
+    
     // comments the student added to the submission
     private String comments;
     
@@ -58,5 +61,21 @@ public class Submission {
     {
         return attachedFiles;
     }
+
+    public ArrayList<File> getAttachedFiles() 
+    {
+        return attachedFiles;
+    }
+
+    public double getSubmissionGrade() 
+    {
+        return submissionGrade;
+    }
+
+    public void setSubmissionGrade(double submissionGrade) 
+    {
+        this.submissionGrade = submissionGrade;
+    }
+   
     
 }

@@ -40,9 +40,13 @@ public class Assignment {
     private ArrayList<Submission> submissionsList;
 
     
-    public Assignment() 
+    public Assignment(String assignmentName, String assignmentID) 
     {
          submissionsList = new ArrayList<>(50);
+         
+         this.assignmentName = assignmentName;
+         this.assignmentID = assignmentID;
+         
     }
 
     public String getAssignmentName() 

@@ -154,13 +154,28 @@ public class GUI extends JFrame
         majorActionsPanel.setLayout(new GridLayout(1, 1, 0, 0));
         majorActionsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        
+        /*
         //majorActionsPanel.add(spacer2);
         JButton pushChangesToCanvas = new JButton("Push To Canvas");
         //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
         majorActionsPanel.add(pushChangesToCanvas);
         pushChangesToCanvas.setBackground(Color.lightGray);
-
+        */
+        
+        JButton launchStudentViewer = new JButton("View Students");
+        //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
+        majorActionsPanel.add(launchStudentViewer);
+        launchStudentViewer.setBackground(Color.lightGray);
+        launchStudentViewer.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e)
+                {
+                    StudentViewer sv = new StudentViewer(currentCourse);
+                }
+            }
+        );
+        
         
         topBar.add(majorActionsPanel);
         
@@ -261,10 +276,11 @@ public class GUI extends JFrame
         
         
         
-        //temporary value for the number of assignments a class has
-        int numberOfButtons=15;
+        //fetch number of assignments the course has
+        int numberOfAssignments = currentCourse.getAssignmentsList().size();
 
         JPanel assignmentsPanel = new JPanel();
+        
         
         /*
         JButton newAssignmentButton = new JButton("New Assignment");
@@ -282,9 +298,9 @@ public class GUI extends JFrame
         //panel.setMaximumSize(new Dimension(100, 768));
         assignmentsListPanel.setBackground(Color.WHITE);
 
-        assignmentsListPanel.setLayout(new GridLayout(numberOfButtons+1, 1));
+        assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments+1, 1));
 
-        JButton buttons[]=new JButton[numberOfButtons]; 
+        JButton buttons[]=new JButton[numberOfAssignments]; 
 
         //Using a for loop we create temporary JButtons.    
         
@@ -292,7 +308,8 @@ public class GUI extends JFrame
         newAssignmentButton.setBackground(Color.lightGray);
         assignmentsListPanel.add(newAssignmentButton);
         
-        for(int i=0;i<numberOfButtons;i++){
+        for(int i=0;i<numberOfAssignments;i++)
+        {
             buttons[i] = new JButton("Assignment "+i);
             buttons[i].setPreferredSize(new Dimension(180, 50));
             buttons[i].setBackground(Color.WHITE);
@@ -301,9 +318,9 @@ public class GUI extends JFrame
         }
 
      
-       JScrollPane scroller = new JScrollPane(assignmentsListPanel);
-       scroller.setPreferredSize(new Dimension(254, 768));
-       c.add(BorderLayout.WEST, scroller);             
+        JScrollPane scroller = new JScrollPane(assignmentsListPanel);
+        scroller.setPreferredSize(new Dimension(254, 768));
+        c.add(BorderLayout.WEST, scroller);             
         
         setVisible(true);
 
