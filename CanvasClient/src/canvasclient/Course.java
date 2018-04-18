@@ -66,6 +66,7 @@ public class Course {
         
         //adding fake students to test
         studentsList.add(new Student("student 1", "133463"));
+        studentsList.get(0).setStudentEmail("emailme@stevens.edu");
         studentsList.add(new Student("student 2", "133463"));
         studentsList.add(new Student("student 3", "133463"));
         studentsList.add(new Student("student 4", "133463"));

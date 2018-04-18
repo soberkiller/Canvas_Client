@@ -16,6 +16,8 @@ public class Student {
     
     private String studentID;
     
+    private String studentEmail;
+    
     //grade the student has in the course
     private double courseGrade;
     
@@ -40,7 +42,18 @@ public class Student {
     {
         return courseGrade;
     }
+
+    public String getStudentEmail() 
+    {
+        return studentEmail;
+    }
+
+    public void setStudentEmail(String studentEmail) 
+    {
+        this.studentEmail = studentEmail;
+    }
      
+    
     
     
 }
