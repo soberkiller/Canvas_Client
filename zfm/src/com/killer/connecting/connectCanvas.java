@@ -28,11 +28,11 @@ public class connectCanvas {
 //            for (String s : rawResp)
 //                System.out.println(s);
 
-//        appDemo app = new appDemo();
-//        app.setVisible(true);
-        downloadFile dF = new downloadFile();
-        dF.setAPI("https://sit.instructure.com/files/3581818/download?download_frd=1&verifier=Td2n7Tmg3KoOtmz4TUgQWREFDJpH87Bre0NclYz2");
-        dF.setDownload("hw1d.cpp");
+        appDemo app = new appDemo();
+        app.setVisible(true);
+//        downloadFile dF = new downloadFile();
+//        dF.setAPI("https://sit.instructure.com/files/3581818/download?download_frd=1&verifier=Td2n7Tmg3KoOtmz4TUgQWREFDJpH87Bre0NclYz2");
+//        dF.setDownload("hw1d.cpp");
     }
 
 }
