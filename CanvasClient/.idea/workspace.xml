@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67665cf9-ddf4-407d-be5c-32e8370ccf61" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CourseSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/DownloadSubmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/MySupplementalWindowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MyWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/MyWindowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/StudentViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Submission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Submission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/SubmissionGrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SubmissionGrader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zfm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../zfm/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="67665cf9-ddf4-407d-be5c-32e8370ccf61" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="303">
@@ -81,17 +63,26 @@
       <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="663">
               <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CourseSelector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="260" column="59" lean-forward="true" selection-start-line="260" selection-start-column="59" selection-end-line="260" selection-end-column="59" />
+            <state relative-caret-position="133">
+              <caret line="226" column="71" lean-forward="true" selection-start-line="226" selection-start-column="71" selection-end-line="226" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -278,12 +269,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524068124325</updated>
-      <workItem from="1524068129379" duration="23843000" />
+      <workItem from="1524068129379" duration="26326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23843000" />
+    <option name="totallyTimeSpent" value="26326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -380,13 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/MySupplementalWindowListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -398,23 +382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1021">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="260" column="59" lean-forward="true" selection-start-line="260" selection-start-column="59" selection-end-line="260" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -449,6 +416,30 @@
             <element signature="e#3883#3884#0" expanded="true" />
             <element signature="e#3959#3960#0" expanded="true" />
             <element signature="e#4009#4010#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="226" column="71" lean-forward="true" selection-start-line="226" selection-start-column="71" selection-end-line="226" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
