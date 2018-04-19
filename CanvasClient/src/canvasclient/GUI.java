@@ -97,11 +97,19 @@ public class GUI extends JFrame
         courseOptionsPanel.setBackground(Color.WHITE);
         courseOptionsPanel.setLayout(new GridLayout(1, 2, 10, 0));
                 
-        JButton courseSettingsButton = new JButton("Settings");
-        //courseSettingsButton.setPreferredSize(new Dimension(70,40));
-        courseSettingsButton.setBackground(Color.WHITE);
-        courseSettingsButton.setFocusable(false);
-        courseOptionsPanel.add(courseSettingsButton);
+        JButton settingsButton = new JButton("Settings");
+        settingsButton.setBackground(Color.WHITE);
+        settingsButton.setFocusable(false);
+        courseOptionsPanel.add(settingsButton);
+        settingsButton.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e)
+                {
+                    new SettingsPane(currentCourse);
+                }
+            }  
+        );
         
         JButton switchCourseButton = new JButton("Switch Course");
         //switchCourseButton.setPreferredSize(new Dimension(120,40));
@@ -114,7 +122,7 @@ public class GUI extends JFrame
                 public void actionPerformed(ActionEvent e)
                 {
                     CourseSelector courseSelector = new CourseSelector(courseList);
-                    
+                    setVisible(false); //closes previous GUI, garbage collector will delete instance eventually
                 }
             }    
         );
