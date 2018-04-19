@@ -288,7 +288,7 @@ public class GUI extends JFrame {
             String closingTags = "</p></body></html>";
 
             String assignmentTitle = currentCourse.getAssignmentsList().get(i).getAssignmentName();
-            String assignmentDueDate = "due: 4/25/18 [TEMP]";
+            String assignmentDueDate = "due: " + currentCourse.getAssignmentsList().get(i).getDueDate();             // "due: 4/25/18 [TEMP]";
 
             buttons[i] = new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + closingTags);
             buttons[i].setHorizontalAlignment(SwingConstants.LEFT);

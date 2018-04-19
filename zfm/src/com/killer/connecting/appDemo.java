@@ -33,8 +33,7 @@ public class appDemo extends JFrame implements ListSelectionListener, ActionList
     private String[] field = {
             "courses"
     };
-    String url = "https://canvas.instructure.com/api/v1";
-    ConnectionPool connection = new ConnectionPool(field, url, 0.1);
+    ConnectionPool connection = new ConnectionPool(field, 0.1);
 
     public appDemo() {
 
@@ -98,7 +97,7 @@ public class appDemo extends JFrame implements ListSelectionListener, ActionList
                 "students"
         };
         connection.setMethod("GET");                        // set method
-        connection.setAPI(fields);                           // set endpoint
+        connection.setURL(fields);                           // set endpoint
         String response = connection.buildConnection();     // connect to server
         String[] rawResp = response.split(",");       // get response
         user_info.clear();
@@ -185,6 +184,7 @@ public class appDemo extends JFrame implements ListSelectionListener, ActionList
                     if(s.startsWith("\"name\"")) {
                         strName.add(s.substring(8, s.length() - 1));
                     }
+                    System.out.println(s);
                 }
                 if(!strID.isEmpty() && !strName.isEmpty()) {
                     for (int i = 0; i < strID.size(); i++) {

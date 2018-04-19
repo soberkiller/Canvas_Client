@@ -24,11 +24,11 @@ public class Assignment {
     private String assignmentDescription;
 
     //date the assigment becomes available
-    private LocalDateTime openDate;
+    private String openDate;
     //date the assigment is due
-    private LocalDateTime dueDate;
+    private String dueDate;
     //date the assigment closes (no more submissions)
-    private LocalDateTime closeDate;
+    private String closeDate;
 
     // percentage penalty for late submission
     private int percentPenalty;
@@ -40,7 +40,7 @@ public class Assignment {
 
 
     public Assignment(String assignmentName, String assignmentID) {
-        submissionsList = new ArrayList<>(50);
+        submissionsList = new ArrayList<>();
 
         this.assignmentName = assignmentName;
         this.assignmentID = assignmentID;
@@ -67,27 +67,27 @@ public class Assignment {
         this.assignmentDescription = assignmentDescription;
     }
 
-    public LocalDateTime getOpenDate() {
+    public String getOpenDate() {
         return openDate;
     }
 
-    public void setOpenDate(LocalDateTime openDate) {
+    public void setOpenDate(String openDate) {
         this.openDate = openDate;
     }
 
-    public LocalDateTime getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
-    public LocalDateTime getCloseDate() {
+    public String getCloseDate() {
         return closeDate;
     }
 
-    public void setCloseDate(LocalDateTime closeDate) {
+    public void setCloseDate(String closeDate) {
         this.closeDate = closeDate;
     }
 

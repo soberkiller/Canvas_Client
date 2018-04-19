@@ -7,6 +7,8 @@ package team.canvasgroup.canvasclient;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 
 /**
@@ -24,16 +26,24 @@ public class Course {
     private ArrayList<Student> studentsList = new ArrayList<>(50);
 
     // ArrayList of Assignment objects, one for each assignment
-    private ArrayList<Assignment> assignmentsList = new ArrayList<>(50);
+    private List<Assignment> assignmentsList = new ArrayList<>();
 
     //to determine when class is, used for assignment scheduling feature we will implement
-    private ArrayList<LocalDateTime> classDateTime;
+    private ArrayList<String> classDateTime;
 
     // sets new assignment due dates to be due on next class day by default
     private boolean dueDateIsNextClassPeriod;
 
     // sets new assignment due time to be midnight after next class
     private boolean dueDateIsMidnightAfter;
+
+    // set up connection
+    private List<String> fields = new ArrayList<String>();
+    public ConnectionPool connection;
+    private String responses = "";
+    private static final String GET = "GET";
+    private static final String PUT = "PUT";
+    private static final String POST = "POST";
 
 
     public Course(String courseName, String courseID) {
@@ -47,20 +57,28 @@ public class Course {
         //fetch all Assignments from Canvas and add to assignmentsList : new Assignment(assignmentName, assignmentID);
         //fetch all Students from Canvas and add to studentsList
 
+        fields.add("courses");
+        fields.add(courseID);
+        fields.add("assignments");
+        connection = new ConnectionPool(fields, 0.1);
+        connection.setMethod(GET);
+        getAssignments(assignmentsList);
+        fields.clear();
+
         //adding fake assignments to test
-        assignmentsList.add(new Assignment("first assignment", "1043295"));
-        assignmentsList.add(new Assignment("2 assignment", "1043295"));
-        assignmentsList.add(new Assignment("3 assignment", "1043295"));
-        assignmentsList.add(new Assignment("4 assignment", "1043295"));
-        assignmentsList.add(new Assignment("5 assignment", "1043295"));
-        assignmentsList.add(new Assignment("6 assignment", "1043295"));
-        assignmentsList.add(new Assignment("7 assignment", "1043295"));
-        assignmentsList.add(new Assignment("8 assignment", "1043295"));
-        assignmentsList.add(new Assignment("9 assignment", "1043295"));
-        assignmentsList.add(new Assignment("10 assignment", "1043295"));
-        assignmentsList.add(new Assignment("11 assignment", "1043295"));
-        assignmentsList.add(new Assignment("12 assignment", "1043295"));
-        assignmentsList.add(new Assignment("13 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("first assignment", "1043295"));
+//        assignmentsList.add(new Assignment("2 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("3 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("4 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("5 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("6 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("7 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("8 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("9 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("10 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("11 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("12 assignment", "1043295"));
+//        assignmentsList.add(new Assignment("13 assignment", "1043295"));
 
         //adding fake students to test
         studentsList.add(new Student("student 1", "133463"));
@@ -90,7 +108,7 @@ public class Course {
         return courseID;
     }
 
-    public ArrayList<Assignment> getAssignmentsList() {
+    public List<Assignment> getAssignmentsList() {
         return assignmentsList;
     }
 
@@ -98,11 +116,11 @@ public class Course {
         return studentsList;
     }
 
-    public ArrayList<LocalDateTime> getClassDateTime() {
+    public ArrayList<String> getClassDateTime() {
         return classDateTime;
     }
 
-    public void setClassDateTime(ArrayList<LocalDateTime> classDateTime) {
+    public void setClassDateTime(ArrayList<String> classDateTime) {
         this.classDateTime = classDateTime;
     }
 
@@ -122,5 +140,82 @@ public class Course {
         this.dueDateIsNextClassPeriod = dueDateIsNextClassPeriod;
     }
 
+    public void getAssignments(List<Assignment> assignmentsList) {
+        if(responses != "")
+            responses = "";
+        responses = connection.buildConnection();
+        String[] rawResp = responses.split(",");
+        if(rawResp != null) {
+            List<String> strID = new ArrayList<>();
+            List<String> strName = new ArrayList<>();
+            List<String> openDate = new ArrayList<>();
+            List<String> closeDate = new ArrayList<>();
+            List<String> dueDate = new ArrayList<>();
+            List<String> descrip = new ArrayList<>();
+            String des= "";
+
+            for (String s : rawResp) {
+                if (s.startsWith("{"))
+                    s = s.substring(1);
+                if (s.charAt(s.length() - 1) == '}')
+                    s = s.substring(0, s.length() - 1);
+                if (s.startsWith("[{"))
+                    s = s.substring(2);
+                if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
+                    s = s.substring(0, s.length() - 3);
+                if (!s.startsWith("\""))
+                    if(!des.isEmpty())
+                        des += s;
+
+                // get useful information from responses
+                if (s.startsWith("\"id\"")) {
+                    strID.add(s.substring(5));
+                }
+                if (s.startsWith("\"name\"")) {
+                    strName.add(s.substring(8, s.length() - 1));
+                }
+                if (s.startsWith("\"created_at\"")) {
+                    openDate.add((s.substring(14, s.length() - 1)));
+                }
+                if (s.startsWith("\"due_at\"")) {
+                    if(!des.isEmpty()) {
+                        descrip.add(des);
+                        System.out.println(des + "this is test!");
+                        des = "";
+                    }
+                    if(s.substring(9).equals("null")) {
+                        dueDate.add(s.substring(9));
+                    } else {
+                        dueDate.add(s.substring(10, s.length() - 1));
+                    }
+                }
+                if (s.startsWith("\"lock_at\"")) {
+                    if(s.substring(10).equals("null")) {
+                        closeDate.add(s.substring(10));
+                        closeDate.add(s.substring(10));
+                    } else {
+                        closeDate.add(s.substring(11, s.length() - 1));
+                    }
+                }
+                if (s.startsWith("\"description\"")) {
+                    if(!des.isEmpty()) {
+                        des  = "";
+                        des += s.substring(14);
+                    } else {
+                        des += s.substring(14);
+                    }
+
+                }
+//                System.out.println(s);
+            }
+            for(int i = 0; i < strID.size(); i++) {
+                assignmentsList.add(new Assignment(strName.get(i), strID.get(i)));
+                assignmentsList.get(i).setAssignmentDescription(descrip.get(i));
+                assignmentsList.get(i).setCloseDate(closeDate.get(i*2));
+                assignmentsList.get(i).setDueDate(dueDate.get(i));
+                assignmentsList.get(i).setOpenDate(openDate.get(i));
+            }
+        }
+    }
 
 }
