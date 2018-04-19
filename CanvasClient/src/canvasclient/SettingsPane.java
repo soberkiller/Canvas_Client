@@ -8,6 +8,7 @@ package canvasclient;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -37,16 +38,27 @@ public class SettingsPane extends JFrame
         
         
         JPanel programSettingsPanel = new JPanel();
-        JPanel courseSettingsPanel = new JPanel();
+        programSettingsPanel.setLayout(new GridLayout(2, 2, 10, 10));
+        programSettingsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         
         
-        JButton importDatesButton = new JButton("Import Assignment Dates");
+        JLabel tokenLabel = new JLabel("Token");
+        JTextField tokenField = new JTextField();
+        programSettingsPanel.add(tokenLabel);
+        programSettingsPanel.add(tokenField);
+        
+        JLabel importDatesLabel = new JLabel("Import Assignment Dates");
+        JButton importDatesButton = new JButton("Select File (.txt)");
         importDatesButton.setBackground(Color.white);
         importDatesButton.setFocusable(false);
+        programSettingsPanel.add(importDatesLabel);
         programSettingsPanel.add(importDatesButton);
         
         
         c.add(BorderLayout.NORTH, programSettingsPanel);
+        
+        
+        JPanel courseSettingsPanel = new JPanel();
         c.add(courseSettingsPanel);
         
         setVisible(true);
