@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="867246f3-7ccf-4d7f-8143-797915194a4d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/DownloadSubmission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CanvasClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Assignment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/CanvasClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/CourseSelector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/GUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/MySupplementalWindowListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/MyWindowListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/StudentViewer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Submission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/SubmissionGrader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/CanvasClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/CanvasClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/CourseSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/CourseSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/MyWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/MyWindowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Submission.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/Submission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/SubmissionGrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/team/canvasgroup/canvasclient/SubmissionGrader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/JSON temp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/appDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/appDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/killer/connecting/connectCanvas.java" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

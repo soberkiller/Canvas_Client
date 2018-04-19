@@ -1,4 +1,4 @@
-package team.canvasgroup.canvasclient;
+package canvasclient;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;

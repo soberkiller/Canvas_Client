@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package team.canvasgroup.canvasclient;
+package canvasclient;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 
@@ -180,7 +178,6 @@ public class Course {
                 if (s.startsWith("\"due_at\"")) {
                     if(!des.isEmpty()) {
                         descrip.add(des);
-                        System.out.println(des + "this is test!");
                         des = "";
                     }
                     if(s.substring(9).equals("null")) {

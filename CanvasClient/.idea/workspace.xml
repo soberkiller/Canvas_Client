@@ -2,38 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67665cf9-ddf4-407d-be5c-32e8370ccf61" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/DownloadSubmission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Assignment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/MySupplementalWindowListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/MyWindowListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Submission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/SubmissionGrader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CourseSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CourseSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MyWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MyWindowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Submission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Submission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/SubmissionGrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/SubmissionGrader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CourseSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/DownloadSubmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/MySupplementalWindowListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MyWindowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/MyWindowListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/StudentViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Submission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Submission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/SubmissionGrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SubmissionGrader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../zfm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../zfm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/JSON temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/JSON temp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/appDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/appDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/connectCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../zfm/src/com/killer/connecting/connectCanvas.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,9 +31,9 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="CanvasClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
+            <state relative-caret-position="218">
               <caret line="92" selection-start-line="92" selection-end-line="92" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="213" column="72" lean-forward="true" selection-start-line="213" selection-start-column="72" selection-end-line="213" selection-end-column="72" />
+            <state relative-caret-position="303">
+              <caret line="180" selection-start-line="180" selection-end-line="180" />
               <folding>
                 <element signature="e#1230#1238#0" expanded="true" />
                 <element signature="e#3847#3848#0" expanded="true" />
@@ -82,7 +67,7 @@
         </entry>
       </file>
       <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/ConnectionPool.java">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1021">
               <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
@@ -94,19 +79,19 @@
         </entry>
       </file>
       <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Assignment.java">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="278" column="60" lean-forward="true" selection-start-line="278" selection-start-column="60" selection-end-line="278" selection-end-column="60" />
+            <state relative-caret-position="711">
+              <caret line="260" column="59" lean-forward="true" selection-start-line="260" selection-start-column="59" selection-end-line="260" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,7 +115,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" />
         <option value="$PROJECT_DIR$/src/team/canvasgroup/canvasclient1/CanvasClient.java" />
         <option value="$PROJECT_DIR$/src/canvasclient1/CanvasClient.java" />
@@ -141,6 +125,9 @@
         <option value="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java" />
         <option value="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java" />
         <option value="$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient1/GUI.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
       </list>
     </option>
   </component>
@@ -206,7 +193,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CanvasClient (1)">
+  <component name="RunManager" selected="Application.CanvasClient">
     <configuration name="CanvasClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="team.canvasgroup.canvasclient.CanvasClient" />
       <module name="CanvasClient" />
@@ -276,8 +263,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CanvasClient (1)" />
         <item itemvalue="Application.CanvasClient" />
+        <item itemvalue="Application.CanvasClient (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -291,12 +278,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524068124325</updated>
-      <workItem from="1524068129379" duration="22600000" />
+      <workItem from="1524068129379" duration="23843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22600000" />
+    <option name="totallyTimeSpent" value="23843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -311,12 +298,12 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.28307256" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.28307256" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.24949698" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24949698" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
@@ -376,7 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/DownloadSubmission.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
@@ -386,30 +373,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/StudentViewer.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CourseSelector.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/MySupplementalWindowListener.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/MySupplementalWindowListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/CanvasClient.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
+        <state relative-caret-position="-1021">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="260" column="59" lean-forward="true" selection-start-line="260" selection-start-column="59" selection-end-line="260" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
           <caret line="92" selection-start-line="92" selection-end-line="92" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -425,43 +439,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Course.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="213" column="72" lean-forward="true" selection-start-line="213" selection-start-column="72" selection-end-line="213" selection-end-column="72" />
+        <state relative-caret-position="303">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
           <folding>
             <element signature="e#1230#1238#0" expanded="true" />
             <element signature="e#3847#3848#0" expanded="true" />
             <element signature="e#3883#3884#0" expanded="true" />
             <element signature="e#3959#3960#0" expanded="true" />
             <element signature="e#4009#4010#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1021">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/Assignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/team/canvasgroup/canvasclient/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="278" column="60" lean-forward="true" selection-start-line="278" selection-start-column="60" selection-end-line="278" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
