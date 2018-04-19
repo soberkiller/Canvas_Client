@@ -5,6 +5,11 @@
  */
 package gui;
 
+//import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.All;
+
+import java.awt.BorderLayout;
+
+
 /**
  *
  * @author Xiao
@@ -56,6 +61,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        //jButton1.add(BorderLayout.NORTH, jPanel1);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -105,8 +111,14 @@ public class Main extends javax.swing.JFrame {
         jLabel2.setText("Discription");
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton3.setText("All Submitions");
+        jButton3.setText("All Submissions");
         jButton3.setToolTipText("");
+        jButton3.addActionListener(new java.awt.event.ActionListener(){
+           public void actionPerformed (java.awt.event.ActionEvent evt){
+           jButton3ActionPerformed(evt);
+          
+        }}
+        );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Available");
@@ -241,7 +253,13 @@ public class Main extends javax.swing.JFrame {
         jButton1.setEnabled(true);
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+  /*  public void allsubmission(){
+        JFrame studentsub = new JFrame();
+       // studentsub.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        studentsub.setSize(100,199);
+        setVisible(true);
+    }*/
+       private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         enable();// make textfields editable;
         buttonEnable();
     }                                        
@@ -258,6 +276,13 @@ public class Main extends javax.swing.JFrame {
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
     }                                            
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {  
+        new AllSubmissions();
+       // setSize(1000,1000);
+        
+       }                                        
+                     
 
     /**
      * @param args the command line arguments
@@ -276,13 +301,13 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AssignmentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AssignmentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AssignmentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AssignmentDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
