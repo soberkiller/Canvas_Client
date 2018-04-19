@@ -90,12 +90,20 @@ public class GUI extends JFrame {
         JPanel courseOptionsPanel = new JPanel();
         courseOptionsPanel.setBackground(Color.WHITE);
         courseOptionsPanel.setLayout(new GridLayout(1, 2, 10, 0));
-
-        JButton courseSettingsButton = new JButton("Settings");
-        //courseSettingsButton.setPreferredSize(new Dimension(70,40));
-        courseSettingsButton.setBackground(Color.WHITE);
-        courseSettingsButton.setFocusable(false);
-        courseOptionsPanel.add(courseSettingsButton);
+                
+        JButton settingsButton = new JButton("Settings");
+        settingsButton.setBackground(Color.WHITE);
+        settingsButton.setFocusable(false);
+        courseOptionsPanel.add(settingsButton);
+        settingsButton.addActionListener(
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e)
+                {
+                    new SettingsPane(currentCourse);
+                }
+            }  
+        );
 
         JButton switchCourseButton = new JButton("Switch Course");
         //switchCourseButton.setPreferredSize(new Dimension(120,40));
@@ -103,12 +111,14 @@ public class GUI extends JFrame {
         switchCourseButton.setFocusable(false);
         courseOptionsPanel.add(switchCourseButton);
         switchCourseButton.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        CourseSelector courseSelector = new CourseSelector(courseList);
-
-                    }
+            new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e)
+                {
+                    new CourseSelector(courseList);
+                    setVisible(false); //closes previous GUI, garbage collector will delete instance eventually
                 }
+            }
         );
 
 
@@ -154,6 +164,7 @@ public class GUI extends JFrame {
         JButton launchStudentViewer = new JButton("View Students");
         //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
         majorActionsPanel.add(launchStudentViewer);
+        launchStudentViewer.setFocusable(false);
         launchStudentViewer.setBackground(Color.lightGray);
         launchStudentViewer.addActionListener(
                 new ActionListener() {
@@ -282,17 +293,20 @@ public class GUI extends JFrame {
         newAssignmentButton.setBackground(Color.lightGray);
         assignmentsListPanel.add(newAssignmentButton);
 
-        for (int i = 0; i < numberOfAssignments; i++) {
-            String openTags = "<html><body><h3>";
+        for(int i = 0; i < numberOfAssignments; i++)
+        {
+            String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
             String middleTags = "</h3><p>";
             String closingTags = "</p></body></html>";
-
+            String lineBreak = "<br/>";
+            
             String assignmentTitle = currentCourse.getAssignmentsList().get(i).getAssignmentName();
-            String assignmentDueDate = "due: " + currentCourse.getAssignmentsList().get(i).getDueDate();             // "due: 4/25/18 [TEMP]";
-
-            buttons[i] = new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + closingTags);
+            String assignmentDueDate = "due: " + currentCourse.getAssignmentsList().get(i).getDueDate();  
+            String assignmentCloseDate = "closes: " + currentCourse.getAssignmentsList().get(i).getCloseDate();  
+            
+            buttons[i] = new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
             buttons[i].setHorizontalAlignment(SwingConstants.LEFT);
-            buttons[i].setPreferredSize(new Dimension(180, 80));
+            buttons[i].setPreferredSize(new Dimension(180, 100));
             buttons[i].setBackground(Color.WHITE);
 
             assignmentsListPanel.add(buttons[i]);
