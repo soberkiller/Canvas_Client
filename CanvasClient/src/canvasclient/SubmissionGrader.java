@@ -17,7 +17,6 @@ public class SubmissionGrader {
     private boolean didCompile;
     private boolean didRun;
     private boolean outputMatches;
-    private boolean didPassPlagarismCheck;
     
     public SubmissionGrader(Submission submission)
     {
@@ -33,7 +32,7 @@ public class SubmissionGrader {
     
     private boolean checkPlagarism()
     {
-        return true;
+        return true; //if passes, false if not
     }
     
     private boolean applyGrade()

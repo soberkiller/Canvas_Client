@@ -121,7 +121,7 @@ public class GUI extends JFrame
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    CourseSelector courseSelector = new CourseSelector(courseList);
+                    new CourseSelector(courseList);
                     setVisible(false); //closes previous GUI, garbage collector will delete instance eventually
                 }
             }    
