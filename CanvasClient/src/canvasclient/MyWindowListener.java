@@ -9,16 +9,14 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 /**
- *
  * @author MattSorrentino
- * 
  */
 
 /**
  *
  * @class MyWindowListener
  * Listener for the main window of the CanvasClient Application.
- * 
+ *
  */
 
 class MyWindowListener implements WindowListener {
@@ -29,7 +27,7 @@ class MyWindowListener implements WindowListener {
     }
 
     @Override
-    public void windowClosing(WindowEvent e) { 
+    public void windowClosing(WindowEvent e) {
         System.exit(0);
     }
 
@@ -57,5 +55,5 @@ class MyWindowListener implements WindowListener {
     public void windowDeactivated(WindowEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

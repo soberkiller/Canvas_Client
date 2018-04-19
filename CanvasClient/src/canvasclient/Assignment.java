@@ -5,135 +5,115 @@
  */
 package canvasclient;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
- *
  * @author MattSorrentino
  */
 
 public class Assignment {
-    
+
     // name of assignment
     private String assignmentName;
-    
+
     // ID of assignment, from Canvas
     private String assignmentID;
-    
+
     //long text description of assignment
     private String assignmentDescription;
-    
+
     //date the assigment becomes available
-    private LocalDateTime openDate;
+    private String openDate;
     //date the assigment is due
-    private LocalDateTime dueDate;
+    private String dueDate;
     //date the assigment closes (no more submissions)
-    private LocalDateTime closeDate;
-    
+    private String closeDate;
+
     // percentage penalty for late submission
     private int percentPenalty;
-    
+
     //array of strings containing the 
     private String[] submissionTypes;
-    
+
     private ArrayList<Submission> submissionsList;
 
-    
-    public Assignment(String assignmentName, String assignmentID) 
-    {
-         submissionsList = new ArrayList<>(50);
-         
-         this.assignmentName = assignmentName;
-         this.assignmentID = assignmentID;
-         
+
+    public Assignment(String assignmentName, String assignmentID) {
+        submissionsList = new ArrayList<>();
+
+        this.assignmentName = assignmentName;
+        this.assignmentID = assignmentID;
+
     }
 
-    public String getAssignmentName() 
-    {
+    public String getAssignmentName() {
         return assignmentName;
     }
 
-    public String getAssignmentID() 
-    {
-        return assignmentID;
-    } 
-
-    public void setAssignmentName(String assignmentName) 
-    {
+    public void setAssignmentName(String assignmentName) {
         this.assignmentName = assignmentName;
     }
-    
-    public String getAssignmentDescription() 
-    {
+
+    public String getAssignmentID() {
+        return assignmentID;
+    }
+
+    public String getAssignmentDescription() {
         return assignmentDescription;
     }
 
-    public void setAssignmentDescription(String assignmentDescription) 
-    {
+    public void setAssignmentDescription(String assignmentDescription) {
         this.assignmentDescription = assignmentDescription;
     }
-    
-    public LocalDateTime getOpenDate() 
-    {
+
+    public String getOpenDate() {
         return openDate;
     }
 
-    public void setOpenDate(LocalDateTime openDate) 
-    {
+    public void setOpenDate(String openDate) {
         this.openDate = openDate;
     }
 
-    public LocalDateTime getDueDate() 
-    {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) 
-    {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
-    public LocalDateTime getCloseDate() 
-    {
+    public String getCloseDate() {
         return closeDate;
     }
 
-    public void setCloseDate(LocalDateTime closeDate) 
-    {
+    public void setCloseDate(String closeDate) {
         this.closeDate = closeDate;
     }
 
-    public int getPercentPenalty() 
-    {
+    public int getPercentPenalty() {
         return percentPenalty;
     }
 
-    public void setPercentPenalty(int percentPenalty) 
-    {
+    public void setPercentPenalty(int percentPenalty) {
         this.percentPenalty = percentPenalty;
-    }    
-    
-    
-    public String[] getSubmissionTypes() 
-    {
+    }
+
+
+    public String[] getSubmissionTypes() {
         return submissionTypes;
     }
 
-    public void setSubmissionTypes(String[] submissionTypes) 
-    {
+    public void setSubmissionTypes(String[] submissionTypes) {
         this.submissionTypes = submissionTypes;
     }
 
-    public ArrayList<Submission> getSubmissionsList() 
-    {
+    public ArrayList<Submission> getSubmissionsList() {
         return submissionsList;
     }
 
-    public void setSubmissionsList(ArrayList<Submission> submissionsList) 
-    {
+    public void setSubmissionsList(ArrayList<Submission> submissionsList) {
         this.submissionsList = submissionsList;
     }
-    
-    
+
+
 }

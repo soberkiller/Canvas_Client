@@ -1,10 +1,11 @@
-package com.killer.connecting;
+package canvasclient;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 
 /**
@@ -25,9 +26,9 @@ public class ConnectionPool {
     private HttpURLConnection finalConnection;
 
     private String fields = "";
-    public ConnectionPool(String[] endpoint, double version) {
+    public ConnectionPool(List<String> endpoint, double version) {
         this.API_VERSSION = version;
-        // ini url
+    // ini url
         setURL(endpoint);
     }
 
@@ -99,14 +100,14 @@ public class ConnectionPool {
     public void setMethod(String method) {
         this.METHOD = method;
     }
-    public  void setURL(String[] field) {
+    public  void setURL(List<String> field) {
         if(fields != "")
             this.fields = "";
         if(url != "")
             url = "";
         url += API;
-        for(int i = 0; i < field.length; i++) {
-            fields += '/' + field[i];
+        for(int i = 0; i < field.size(); i++) {
+            fields += '/' + field.get(i);
         }
         url += fields;
     }

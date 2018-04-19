@@ -1,4 +1,4 @@
-package com.killer.connecting;
+package team.canvasgroup.appcanvas;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -6,16 +6,10 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
-/**
- * @author Fangming Zhao
- * April. 2018
- */
-
 public class ConnectionPool {
     private double API_VERSSION = 0;
-    private static final String API = "https://sit.instructure.com/api/v1";
-    private String url = "";
+    private String API = "";
+
     private String METHOD = "GET";
     private String TYPE = "application/json";
     private String USER_AGENT = "Mozilla/5.0";
@@ -25,10 +19,14 @@ public class ConnectionPool {
     private HttpURLConnection finalConnection;
 
     private String fields = "";
-    public ConnectionPool(String[] endpoint, double version) {
+    public ConnectionPool(String[] endpoint, String url, double version) {
         this.API_VERSSION = version;
-        // ini url
-        setURL(endpoint);
+        this.API = url;
+
+        for(int i = 0; i < endpoint.length; i++) {
+            fields += '/' + endpoint[i];
+        }
+        API += fields;
     }
 
     public String buildConnection() {
@@ -36,7 +34,7 @@ public class ConnectionPool {
         if(!this.getEndpoints().equalsIgnoreCase("") && !this.getEndpoints().isEmpty()) {
             try {
 
-                connection = new URL(url);
+                connection = new URL(API);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(readWithAccess(connection, data)));
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -99,16 +97,15 @@ public class ConnectionPool {
     public void setMethod(String method) {
         this.METHOD = method;
     }
-    public  void setURL(String[] field) {
-        if(fields != "")
-            this.fields = "";
-        if(url != "")
-            url = "";
-        url += API;
+    public  void setAPI(String[] field) {
+        this.API = "";
+        this.fields = "";
+        this.API = "https://canvas.instructure.com/api/v1";
         for(int i = 0; i < field.length; i++) {
             fields += '/' + field[i];
+
         }
-        url += fields;
+        API += fields;
     }
 
     public void setSubmissionType(String type) {

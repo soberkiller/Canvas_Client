@@ -5,43 +5,36 @@
  */
 package canvasclient;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.*;
 
 /**
- *
  * @author MattSorrentino
  */
-public class CourseSelector extends JFrame 
-{
+public class CourseSelector extends JFrame {
     ArrayList<JButton> buttonArray = new ArrayList(5);
-    
-    public CourseSelector(ArrayList<Course> courseList)
-    {
+
+    public CourseSelector(ArrayList<Course> courseList) {
         super("Course Selector");
-        setSize(200, courseList.size()*50);
+        setSize(200, courseList.size() * 50);
         this.setLocationRelativeTo(null);
-        
+
         Container c = getContentPane();
-        
-        try 
-        {
-           UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } 
-        catch (Exception e) 
-        {
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (Exception e) {
             e.printStackTrace();
         }
-       
-        
+
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(courseList.size(), 1, 0, 0));
-        
-        for (int i = 0; i < courseList.size(); i++)
-        {
+
+        for (int i = 0; i < courseList.size(); i++) {
             String s = courseList.get(i).getCourseName();
             buttonArray.add(new JButton(s));
             buttonPanel.add(buttonArray.get(i));
@@ -49,27 +42,23 @@ public class CourseSelector extends JFrame
             buttonArray.get(i).setBackground(Color.white);
             buttonArray.get(i).setFocusable(false);
             buttonArray.get(i).addActionListener(
-                new ActionListener()
-                {
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        for(int j = 0; j < courseList.size(); j++)
-                        {
-                            if(buttonArray.get(a).getText() == courseList.get(j).getCourseName())
-                            { 
-                                //create a new instance of the program with the selected course
-                                CanvasClient canvasClient = new CanvasClient(courseList.get(j));
+                    new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            for (int j = 0; j < courseList.size(); j++) {
+                                if (buttonArray.get(a).getText() == courseList.get(j).getCourseName()) {
+                                    //create a new instance of the program with the selected course
+                                    CanvasClient canvasClient = new CanvasClient(courseList.get(j));
+                                }
                             }
-                        } 
+                        }
                     }
-                }
             );
         }
-        
+
         c.add(buttonPanel);
-        
+
         setVisible(true);
     }
-    
+
 }
 

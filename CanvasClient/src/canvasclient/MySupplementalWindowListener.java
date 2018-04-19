@@ -6,9 +6,8 @@
 package canvasclient;
 
 /**
- *
  * @author MattSorrentino
  */
 public class MySupplementalWindowListener {
-    
+
 }
