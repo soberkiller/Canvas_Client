@@ -53,7 +53,6 @@ public class Course {
 
         //fetch name and ID of course from Canvas
         //fetch all Assignments from Canvas and add to assignmentsList : new Assignment(assignmentName, assignmentID);
-        //fetch all Students from Canvas and add to studentsList
 
         fields.add("courses");
         fields.add(courseID);
@@ -78,6 +77,8 @@ public class Course {
 //        assignmentsList.add(new Assignment("12 assignment", "1043295"));
 //        assignmentsList.add(new Assignment("13 assignment", "1043295"));
 
+        //fetch all Students from Canvas and add to studentsList
+        
         //adding fake students to test
         studentsList.add(new Student("student 1", "133463"));
         studentsList.get(0).setStudentEmail("emailme@stevens.edu");
