@@ -39,6 +39,16 @@ public class SettingsPane extends JFrame
         JPanel programSettingsPanel = new JPanel();
         JPanel courseSettingsPanel = new JPanel();
         
+        
+        JButton importDatesButton = new JButton("Import Assignment Dates");
+        importDatesButton.setBackground(Color.white);
+        importDatesButton.setFocusable(false);
+        programSettingsPanel.add(importDatesButton);
+        
+        
+        c.add(BorderLayout.NORTH, programSettingsPanel);
+        c.add(courseSettingsPanel);
+        
         setVisible(true);
     }
         

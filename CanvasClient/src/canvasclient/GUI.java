@@ -173,6 +173,7 @@ public class GUI extends JFrame
         JButton launchStudentViewer = new JButton("View Students");
         //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
         majorActionsPanel.add(launchStudentViewer);
+        launchStudentViewer.setFocusable(false);
         launchStudentViewer.setBackground(Color.lightGray);
         launchStudentViewer.addActionListener(
             new ActionListener()
