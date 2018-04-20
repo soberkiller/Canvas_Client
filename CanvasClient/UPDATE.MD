@@ -2,6 +2,15 @@
 
 04/20/18
 
+1. fixed the problem that you can't run client without entering your Token first;
+
+2. fixed the problem that client wont run if you fail to connect to Canvas;
+
+
+//===================================================================
+
+04/20/18
+
 In order to get data from Canvas by using your own token, you have to do following:
 
 1. Click settings button located at top left area of main window;
