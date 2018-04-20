@@ -6,6 +6,10 @@
 package canvasclient;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,7 +21,8 @@ import javax.swing.border.EmptyBorder;
 public class SettingsPane extends JFrame
 {
     private Container c;
-    
+    private static final String FILENAME = "token.dat";
+    private final Base64.Encoder encoder = Base64.getEncoder();
     
     public SettingsPane (Course currentCourse)
     {
@@ -44,6 +49,28 @@ public class SettingsPane extends JFrame
         
         JLabel tokenLabel = new JLabel("Token");
         JTextField tokenField = new JTextField();
+        tokenField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == tokenField) {
+
+                    try {
+                        FileOutputStream fos = new FileOutputStream(FILENAME);
+                        byte[] data = tokenField.getText().getBytes();
+
+                        fos.write(encoder.encode(data));
+                        fos.close();
+                    } catch (Exception ee) {
+                        ee.printStackTrace();
+                    }
+
+                    if(tokenField.getText() != "") {
+                        System.out.println(tokenField.getText());
+                        tokenField.setText("");
+                    }
+                }
+            }
+        });
         programSettingsPanel.add(tokenLabel);
         programSettingsPanel.add(tokenField);
         
@@ -63,5 +90,5 @@ public class SettingsPane extends JFrame
         
         setVisible(true);
     }
-        
+
 }
