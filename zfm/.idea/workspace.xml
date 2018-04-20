@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="867246f3-7ccf-4d7f-8143-797915194a4d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../CanvasClient/reference/ref.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CanvasClient/UPDATE.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CanvasClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/CanvasClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/CanvasClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/CourseSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/CourseSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/SettingsPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CanvasClient/src/canvasclient/SettingsPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
@@ -288,7 +282,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14866000" />
+    <option name="totallyTimeSpent" value="15460000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
