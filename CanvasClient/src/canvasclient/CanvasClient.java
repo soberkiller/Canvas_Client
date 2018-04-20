@@ -5,7 +5,9 @@
  */
 package canvasclient;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -15,6 +17,7 @@ import java.util.List;
 public class CanvasClient {
 
     private static Course currentCourse;
+    private final Base64.Decoder decoder = Base64.getDecoder();
 
     private ArrayList<Course> courseList = new ArrayList<Course>();
     private List<String> fields = new ArrayList<String>();
@@ -23,8 +26,11 @@ public class CanvasClient {
     private static final String GET = "GET";
     private static final String PUT = "PUT";
     private static final String POST = "POST";
+    private static final String FILENAME = "token.dat";
+    private String OAUTH2;
 
-    public CanvasClient(Course currentCourse) {
+
+    public CanvasClient(Course currentCourse) throws UnsupportedEncodingException {
 
         //fetch all courses from canvas
         //create course object for each course
@@ -33,7 +39,15 @@ public class CanvasClient {
         //currentCourse = courseList(0);
         //make temporary course objects for testing purposes.
         fields.add("courses");
-        connection = new ConnectionPool(fields, 0.1);
+
+        // testing encode class for future
+//        byte[] tb = getOAUTH2().getBytes("UTF-8");
+//        System.out.println(encoder.encode(tb));
+//        String c = new String(decoder.decode(getOAUTH2()), "UTF-8");
+//        System.out.println(c + "that is what Im talking about");
+        // test test test...
+
+        connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);
         getCourses(courseList);
         fields.clear();
@@ -53,7 +67,14 @@ public class CanvasClient {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        File tokenFile = new File(FILENAME);
+        if(!tokenFile.exists()) {
+            tokenFile.createNewFile();
+        }
+        tokenFile.setReadable(true);
+        tokenFile.setWritable(true);
+
         new CanvasClient(null);
     }
 
@@ -65,7 +86,16 @@ public class CanvasClient {
         return currentCourse;
     }
 
-    public void getCourses(ArrayList<Course> courseList) {
+    public String getOAUTH2() {
+        File tFile = new File(FILENAME);
+        StringBuffer content = new StringBuffer();
+        // the length of stream read from file is larger than the content of that file, so have to deal with it
+        Course.getFromFile(tFile, content);
+
+        return content.toString();
+    }
+
+    public void getCourses(ArrayList<Course> courseList) throws UnsupportedEncodingException {
         if(responses != "")
             responses = "";
         responses = connection.buildConnection();

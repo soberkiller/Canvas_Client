@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 /**
@@ -47,7 +48,11 @@ public class CourseSelector extends JFrame {
                             for (int j = 0; j < courseList.size(); j++) {
                                 if (buttonArray.get(a).getText() == courseList.get(j).getCourseName()) {
                                     //create a new instance of the program with the selected course
-                                    CanvasClient canvasClient = new CanvasClient(courseList.get(j));
+                                    try {
+                                        CanvasClient canvasClient = new CanvasClient(courseList.get(j));
+                                    } catch (UnsupportedEncodingException e1) {
+                                        e1.printStackTrace();
+                                    }
                                 }
                             }
                         }
