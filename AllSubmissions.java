@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package canvasproject;
+package gui;
+
+/**
+ *
+ * @author Xiao
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -21,9 +26,9 @@ import javax.swing.border.EmptyBorder;
  */
 public class AllSubmissions extends JFrame{
     public AllSubmissions(){
-        setSize(1024,768);
+        setSize(1024,1000);
         Container c = getContentPane();
-        addWindowListener(new MyWindowListener());
+   //     addWindowListener(new MyWindowListener());
         
         try 
         {
@@ -95,10 +100,9 @@ public class AllSubmissions extends JFrame{
         
         c.add(BorderLayout.NORTH, topBar);
         
-        JPanel main = new JPanel();
-        main.setBackground(Color.white);
+        submissionDetail subMain = new submissionDetail();
         
-        c.add(BorderLayout.CENTER, main);
+        c.add(BorderLayout.CENTER, subMain.jPanel1);
         
         int numberOfButtons=20;
         JPanel submissionsPanel = new JPanel();
@@ -118,7 +122,7 @@ public class AllSubmissions extends JFrame{
             buttons[i] = new JButton("Submition "+i);
             buttons[i].setPreferredSize(new Dimension(180, 50));
             buttons[i].setBackground(Color.WHITE);
-            
+            buttons[i].addActionListener(new subListener());
             submissionsListPanel.add(buttons[i]);
         }
 
@@ -129,6 +133,13 @@ public class AllSubmissions extends JFrame{
         
         
         setVisible(true);
+    }
+    public class subListener implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+    /* if(e.getSource() == buttons[i]){
+        
+     }*/
+    }
     }
     public static void main(String[] args) {
         AllSubmissions as = new AllSubmissions();
