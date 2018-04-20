@@ -432,3 +432,20 @@
 "lock_explanation":"This assignment was locked Dec 10
  2017 at 11:59pm."
 "submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87045/submissions?zip=1"}
+
+
+*********************************************************************************************************************
+"C:\Program Files\Java\jdk-9.0.4\bin\java" "-javaagent:D:\Program Files\JetBrains\IntelliJ IDEA 2018.1\lib\idea_rt.jar=58748:D:\Program Files\JetBrains\IntelliJ IDEA 2018.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\course\Java\Java project\Canvas\CanvasClient\out\production\CanvasClient" canvasclient.CanvasClient
+cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
+Server returned HTTP response code: 401 for URL: https://sit.instructure.com/api/v1/courses
+null
+null
+cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
+https://sit.instructure.com/api/v1/courses/null/assignments
+null
+Exception in thread "main" java.lang.NullPointerException
+	at canvasclient.Course.getAssignments(Course.java:151)
+	at canvasclient.Course.<init>(Course.java:67)
+	at canvasclient.CanvasClient.getCourses(CanvasClient.java:132)
+	at canvasclient.CanvasClient.<init>(CanvasClient.java:52)
+	at canvasclient.CanvasClient.main(CanvasClient.java:78)
