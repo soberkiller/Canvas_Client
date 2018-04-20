@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package canvasproject;
+package gui;
 
 /**
  *
- * @author lvtia
+ * @author Xiao
  */
 public class submissionDetail extends javax.swing.JFrame {
 
@@ -235,7 +235,7 @@ public class submissionDetail extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    public  javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea3;
