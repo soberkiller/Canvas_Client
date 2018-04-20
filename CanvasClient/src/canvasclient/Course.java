@@ -5,7 +5,9 @@
  */
 package canvasclient;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 
@@ -43,8 +45,11 @@ public class Course {
     private static final String PUT = "PUT";
     private static final String POST = "POST";
 
+    // get token from file
+    private final Base64.Decoder decoder = Base64.getDecoder();
+    private static final String FILENAME = "token.dat";
 
-    public Course(String courseName, String courseID) {
+    public Course(String courseName, String courseID) throws UnsupportedEncodingException {
 
         this.courseName = courseName;
         this.courseID = courseID;
@@ -57,7 +62,7 @@ public class Course {
         fields.add("courses");
         fields.add(courseID);
         fields.add("assignments");
-        connection = new ConnectionPool(fields, 0.1);
+        connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);
         getAssignments(assignmentsList);
         fields.clear();
@@ -213,6 +218,30 @@ public class Course {
                 assignmentsList.get(i).setDueDate(dueDate.get(i));
                 assignmentsList.get(i).setOpenDate(openDate.get(i));
             }
+        }
+    }
+
+    public String getOAUTH2() {
+        File tFile = new File(FILENAME);
+        StringBuffer content = new StringBuffer();
+        // the length of stream read from file is larger than the content of that file, so have to deal with it
+        getFromFile(tFile, content);
+
+        return content.toString();
+    }
+
+    static void getFromFile(File tfile, StringBuffer content) {
+        try {
+            byte[] data = new byte[1024];
+            FileInputStream fis = new FileInputStream(tfile);
+            int n = fis.read(data);
+            content.append(new String(data, 0, n));
+            fis.close();
+
+        } catch (FileNotFoundException e) {
+            e.getMessage();
+        } catch (IOException e) {
+            e.getMessage();
         }
     }
 

@@ -20,15 +20,15 @@ public class ConnectionPool {
     private String METHOD = "GET";
     private String TYPE = "application/json";
     private String USER_AGENT = "Mozilla/5.0";
-    private String OAUTH2 = "Bearer 1030~fbR2aVe1dHcAchNxElgU01CgqYpb3snPKZLwKp3UOWyUhcQS2x4nT5tdxEL76t5o";  // Token
+    private String OAUTH2 = "Bearer ";  // Token
     private String data = "";
     private URL connection;
     private HttpURLConnection finalConnection;
 
     private String fields = "";
-    public ConnectionPool(List<String> endpoint, double version) {
+    public ConnectionPool(List<String> endpoint, double version, String oauth2) {
         this.API_VERSSION = version;
-    // ini url
+        this.OAUTH2 += oauth2;
         setURL(endpoint);
     }
 
