@@ -99,31 +99,36 @@ public class CanvasClient {
         if(responses != "")
             responses = "";
         responses = connection.buildConnection();
-        String[] rawResp = responses.split(",");
-        if(rawResp != null) {
-            List<String> strID = new ArrayList<>();
-            List<String> strName = new ArrayList<>();
-            for (String s : rawResp) {
-                if (s.startsWith("{"))
-                    s = s.substring(1);
-                if (s.charAt(s.length() - 1) == '}')
-                    s = s.substring(0, s.length() - 1);
-                if (s.startsWith("[{"))
-                    s = s.substring(2);
-                if (s.charAt(s.length() - 2) == ']')
-                    s = s.substring(0, s.length() - 3);
 
-                // get useful information from responses
-                if (s.startsWith("\"id\"")) {
-                    strID.add(s.substring(5));
+        if (responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                List<String> strID = new ArrayList<>();
+                List<String> strName = new ArrayList<>();
+                for (String s : rawResp) {
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+
+                    // get useful information from responses
+                    if (s.startsWith("\"id\"")) {
+                        strID.add(s.substring(5));
+                    }
+                    if (s.startsWith("\"name\"")) {
+                        strName.add(s.substring(8, s.length() - 1));
+                    }
                 }
-                if (s.startsWith("\"name\"")) {
-                    strName.add(s.substring(8, s.length() - 1));
+                for (int i = 0; i < strID.size(); i++) {
+                    courseList.add(new Course(strName.get(i), strID.get(i)));
                 }
             }
-            for(int i = 0; i < strID.size(); i++) {
-                courseList.add(new Course(strName.get(i), strID.get(i)));
-            }
+        } else {
+            courseList.add(new Course("Unavailable", "Unavailable"));
         }
     }
 

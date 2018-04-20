@@ -148,76 +148,84 @@ public class Course {
         if(responses != "")
             responses = "";
         responses = connection.buildConnection();
-        String[] rawResp = responses.split(",");
-        if(rawResp != null) {
-            List<String> strID = new ArrayList<>();
-            List<String> strName = new ArrayList<>();
-            List<String> openDate = new ArrayList<>();
-            List<String> closeDate = new ArrayList<>();
-            List<String> dueDate = new ArrayList<>();
-            List<String> descrip = new ArrayList<>();
-            String des= "";
+        if(responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                List<String> strID = new ArrayList<>();
+                List<String> strName = new ArrayList<>();
+                List<String> openDate = new ArrayList<>();
+                List<String> closeDate = new ArrayList<>();
+                List<String> dueDate = new ArrayList<>();
+                List<String> descrip = new ArrayList<>();
+                String des = "";
 
-            for (String s : rawResp) {
-                if (s.startsWith("{"))
-                    s = s.substring(1);
-                if (s.charAt(s.length() - 1) == '}')
-                    s = s.substring(0, s.length() - 1);
-                if (s.startsWith("[{"))
-                    s = s.substring(2);
-                if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
-                    s = s.substring(0, s.length() - 3);
-                if (!s.startsWith("\""))
-                    if(!des.isEmpty())
-                        des += s;
+                for (String s : rawResp) {
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+                    if (!s.startsWith("\""))
+                        if (!des.isEmpty())
+                            des += s;
 
-                // get useful information from responses
-                if (s.startsWith("\"id\"")) {
-                    strID.add(s.substring(5));
-                }
-                if (s.startsWith("\"name\"")) {
-                    strName.add(s.substring(8, s.length() - 1));
-                }
-                if (s.startsWith("\"created_at\"")) {
-                    openDate.add((s.substring(14, s.length() - 1)));
-                }
-                if (s.startsWith("\"due_at\"")) {
-                    if(!des.isEmpty()) {
-                        descrip.add(des);
-                        des = "";
+                    // get useful information from responses
+                    if (s.startsWith("\"id\"")) {
+                        strID.add(s.substring(5));
                     }
-                    if(s.substring(9).equals("null")) {
-                        dueDate.add(s.substring(9));
-                    } else {
-                        dueDate.add(s.substring(10, s.length() - 1));
+                    if (s.startsWith("\"name\"")) {
+                        strName.add(s.substring(8, s.length() - 1));
                     }
-                }
-                if (s.startsWith("\"lock_at\"")) {
-                    if(s.substring(10).equals("null")) {
-                        closeDate.add(s.substring(10));
-                        closeDate.add(s.substring(10));
-                    } else {
-                        closeDate.add(s.substring(11, s.length() - 1));
+                    if (s.startsWith("\"created_at\"")) {
+                        openDate.add((s.substring(14, s.length() - 1)));
                     }
-                }
-                if (s.startsWith("\"description\"")) {
-                    if(!des.isEmpty()) {
-                        des  = "";
-                        des += s.substring(14);
-                    } else {
-                        des += s.substring(14);
+                    if (s.startsWith("\"due_at\"")) {
+                        if (!des.isEmpty()) {
+                            descrip.add(des);
+                            des = "";
+                        }
+                        if (s.substring(9).equals("null")) {
+                            dueDate.add(s.substring(9));
+                        } else {
+                            dueDate.add(s.substring(10, s.length() - 1));
+                        }
                     }
+                    if (s.startsWith("\"lock_at\"")) {
+                        if (s.substring(10).equals("null")) {
+                            closeDate.add(s.substring(10));
+                            closeDate.add(s.substring(10));
+                        } else {
+                            closeDate.add(s.substring(11, s.length() - 1));
+                        }
+                    }
+                    if (s.startsWith("\"description\"")) {
+                        if (!des.isEmpty()) {
+                            des = "";
+                            des += s.substring(14);
+                        } else {
+                            des += s.substring(14);
+                        }
 
-                }
+                    }
 //                System.out.println(s);
+                }
+                for (int i = 0; i < strID.size(); i++) {
+                    assignmentsList.add(new Assignment(strName.get(i), strID.get(i)));
+                    assignmentsList.get(i).setAssignmentDescription(descrip.get(i));
+                    assignmentsList.get(i).setCloseDate(closeDate.get(i * 2));
+                    assignmentsList.get(i).setDueDate(dueDate.get(i));
+                    assignmentsList.get(i).setOpenDate(openDate.get(i));
+                }
             }
-            for(int i = 0; i < strID.size(); i++) {
-                assignmentsList.add(new Assignment(strName.get(i), strID.get(i)));
-                assignmentsList.get(i).setAssignmentDescription(descrip.get(i));
-                assignmentsList.get(i).setCloseDate(closeDate.get(i*2));
-                assignmentsList.get(i).setDueDate(dueDate.get(i));
-                assignmentsList.get(i).setOpenDate(openDate.get(i));
-            }
+        } else {
+            assignmentsList.add(new Assignment("Unavailable", "Unavailable"));
+            assignmentsList.get(0).setAssignmentDescription("Unavailable");
+            assignmentsList.get(0).setCloseDate("Unavailable");
+            assignmentsList.get(0).setDueDate("Unavailable");
+            assignmentsList.get(0).setOpenDate("Unavailable");
         }
     }
 
@@ -235,7 +243,9 @@ public class Course {
             byte[] data = new byte[1024];
             FileInputStream fis = new FileInputStream(tfile);
             int n = fis.read(data);
-            content.append(new String(data, 0, n));
+            if(n != -1) {
+                content.append(new String(data, 0, n));
+            }
             fis.close();
 
         } catch (FileNotFoundException e) {
