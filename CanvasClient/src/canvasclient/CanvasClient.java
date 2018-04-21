@@ -7,28 +7,19 @@ package canvasclient;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 /**
  * @author MattSorrentino
  */
 
-public class CanvasClient {
+public class CanvasClient extends PublicResouce {
 
     private static Course currentCourse;
-    private final Base64.Decoder decoder = Base64.getDecoder();
 
     private ArrayList<Course> courseList = new ArrayList<Course>();
-    private List<String> fields = new ArrayList<String>();
     public ConnectionPool connection;
     private String responses = "";
-    private static final String GET = "GET";
-    private static final String PUT = "PUT";
-    private static final String POST = "POST";
-    private static final String FILENAME = "token.dat";
-    private String OAUTH2;
-
 
     public CanvasClient(Course currentCourse) throws UnsupportedEncodingException {
 
@@ -38,14 +29,10 @@ public class CanvasClient {
 
         //currentCourse = courseList(0);
         //make temporary course objects for testing purposes.
-        fields.add("courses");
 
-        // testing encode class for future
-//        byte[] tb = getOAUTH2().getBytes("UTF-8");
-//        System.out.println(encoder.encode(tb));
-//        String c = new String(decoder.decode(getOAUTH2()), "UTF-8");
-//        System.out.println(c + "that is what Im talking about");
-        // test test test...
+        if(!fields.isEmpty())
+            fields.clear();
+        fields.add("courses");
 
         connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);

@@ -7,14 +7,13 @@ package canvasclient;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 
 /**
  * @author MattSorrentino
  */
-public class Course {
+public class Course extends PublicResouce {
 
     // the name of the Course, data from Canvas
     private String courseName;
@@ -38,16 +37,10 @@ public class Course {
     private boolean dueDateIsMidnightAfter;
 
     // set up connection
-    private List<String> fields = new ArrayList<String>();
     public ConnectionPool connection;
     private String responses = "";
-    private static final String GET = "GET";
-    private static final String PUT = "PUT";
-    private static final String POST = "POST";
 
     // get token from file
-    private final Base64.Decoder decoder = Base64.getDecoder();
-    private static final String FILENAME = "token.dat";
 
     public Course(String courseName, String courseID) throws UnsupportedEncodingException {
 
@@ -58,6 +51,9 @@ public class Course {
 
         //fetch name and ID of course from Canvas
         //fetch all Assignments from Canvas and add to assignmentsList : new Assignment(assignmentName, assignmentID);
+
+        if(!fields.isEmpty())
+            fields.clear();
 
         fields.add("courses");
         fields.add(courseID);
