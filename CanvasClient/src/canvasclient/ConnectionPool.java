@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 /**
@@ -45,7 +46,7 @@ public class ConnectionPool {
                 }
                 reader.close();
                 finalConnection.disconnect();
-                return content.toString();
+                return unicode2String(content.toString());
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
@@ -119,4 +120,27 @@ public class ConnectionPool {
     public void setOauth2(String oauth2) {
         this.OAUTH2 = oauth2;
     }
+    
+    public static String unicode2String(String unicode) {  
+        StringBuffer string = new StringBuffer(); 
+        Pattern pattern1 = Pattern.compile("[\\\\][u][0-9abcde]{4}$");
+        for (int i=0; i<unicode.length(); i++) {
+        	String out=""+unicode.charAt(i);
+        	if (i+6<unicode.length()&&pattern1.matcher(unicode.substring(i, i+6)).matches()) {
+           		out="";
+				for (int j =i+2;j<i+6;j++) {
+					out=out+unicode.charAt(j);
+				}
+				int hexVal = Integer.parseInt(out, 16);
+				out =""+ (char)hexVal;
+				i=i+5;
+        	}        	
+        	string.append(out);        
+        }
+        String result = string.toString();
+        result = result.replace("\\r\\n","");
+        return result;
+    }
+
+    
 }
