@@ -62,6 +62,7 @@ public class submissionDetail extends javax.swing.JFrame {
         jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
+        jTextArea3.append(AllSubmissions.submission);
         jScrollPane3.setViewportView(jTextArea3);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -70,6 +71,7 @@ public class submissionDetail extends javax.swing.JFrame {
         jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
+        jTextArea4.append(AllSubmissions.comments);//display submission in the textarea
         jScrollPane4.setViewportView(jTextArea4);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -82,13 +84,13 @@ public class submissionDetail extends javax.swing.JFrame {
         jLabel14.setText("Submission Time");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel15.setText("Student Name");
+        jLabel15.setText(AllSubmissions.studentname);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel16.setText("Student ID");
+        jLabel16.setText(AllSubmissions.studentid);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel17.setText("LocalDateTime");
+        jLabel17.setText(AllSubmissions.subtime);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel18.setText("Submission");
@@ -97,7 +99,7 @@ public class submissionDetail extends javax.swing.JFrame {
         jLabel19.setText("Points");
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel20.setText("Grade");
+        jLabel20.setText(AllSubmissions.grade);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
