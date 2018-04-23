@@ -122,6 +122,7 @@ public class CanvasClient {
                     if (s.startsWith("\"name\"")) {
                         strName.add(s.substring(8, s.length() - 1));
                     }
+//                    System.out.println(s);
                 }
                 for (int i = 0; i < strID.size(); i++) {
                     courseList.add(new Course(strName.get(i), strID.get(i)));
