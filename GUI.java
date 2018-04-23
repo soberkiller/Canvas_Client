@@ -3,36 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package canvasclient;
+package gui;
 
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 /**
  *
- * @author MattSorrentino
+ * @author Xiao
  */
+public class GUI extends JFrame{
 
-//runtime r = Runtime.getRuntime();
-//r.exec("Plagarism Dir");
-
-/**
- *
- * @class GUI
- * Handles the GUI of the CanvasClient Application.
- */
-
-public class GUI extends JFrame 
-{
     private Container c;
     
     public GUI ()
@@ -42,7 +46,7 @@ public class GUI extends JFrame
         setSize(1024,768);
         c = getContentPane();
         
-        addWindowListener(new MyWindowListener());
+      //  addWindowListener(new MyWindowListener());
         
         try 
         {
@@ -120,7 +124,7 @@ public class GUI extends JFrame
         //logoPanel.setPreferredSize(new Dimension(180, 100));
         logoPanel.setBackground(Color.WHITE);
         
-        BufferedImage stevensLogo;
+       /* BufferedImage stevensLogo;
         try 
         {
             stevensLogo = ImageIO.read(new File("stevenslogo.jpeg"));
@@ -133,7 +137,7 @@ public class GUI extends JFrame
         {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-     
+     */
         
         topBar.add(logoPanel);
 
@@ -221,11 +225,9 @@ public class GUI extends JFrame
         //  Contains whatever content is necessary for the current view
         //  
         ////////////////////////////////////////////////////////////////////////
-        
-        JPanel main = new JPanel();
-        main.setBackground(Color.gray);
-        c.add(BorderLayout.CENTER, main);
-        
+        Main main = new Main();
+        //Container m = getContentPane();
+        c.add(BorderLayout.CENTER, main.jPanel1);//add main panel to container
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
@@ -254,7 +256,7 @@ public class GUI extends JFrame
         //temporary value for the number of assignments a class has
         int numberOfButtons=15;
 
-        JPanel assignmentsPanel = new JPanel();
+       // JPanel assignmentsPanel = new JPanel();
         
         /*
         JButton newAssignmentButton = new JButton("New Assignment");
@@ -299,6 +301,8 @@ public class GUI extends JFrame
 
     }
     
+    public static void main(String[] args) {
+        new GUI();// TODO code application logic here
+    }
     
 }
-
