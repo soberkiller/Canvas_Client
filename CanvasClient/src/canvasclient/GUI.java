@@ -297,6 +297,7 @@ public class GUI extends JFrame {
         //Using a for loop we create temporary JButtons.    
 
         JButton newAssignmentButton = new JButton("New Assignment");
+        newAssignmentButton.setFocusable(false);
         newAssignmentButton.setBackground(Color.lightGray);
         newAssignmentButton.addActionListener(e -> {
             if(e.getSource() == newAssignmentButton) {

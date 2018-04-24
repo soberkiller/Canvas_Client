@@ -56,11 +56,10 @@ public class CanvasClient extends PublicResouce {
 
     public static void main(String[] args) throws IOException {
         File tokenFile = new File(FILENAME);
-        if(!tokenFile.exists()) {
-            tokenFile.createNewFile();
-            tokenFile.setReadable(true);
-            tokenFile.setWritable(true);
-            new TokenPrompt();
+        
+        if(!tokenFile.exists()) 
+        {
+            new TokenPrompt(tokenFile); 
         }
         else
         {
