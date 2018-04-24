@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * @author MattSorrentino
  */
 public class CourseSelector extends JFrame {
+    
     ArrayList<JButton> buttonArray = new ArrayList(5);
 
     public CourseSelector(ArrayList<Course> courseList) {
@@ -50,7 +51,8 @@ public class CourseSelector extends JFrame {
                                     //create a new instance of the program with the selected course
                                     try {
                                         CanvasClient canvasClient = new CanvasClient(courseList.get(j));
-                                    } catch (UnsupportedEncodingException e1) {
+                                    } 
+                                    catch (Exception e1) {
                                         e1.printStackTrace();
                                     }
                                 }

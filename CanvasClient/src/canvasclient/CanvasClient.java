@@ -58,11 +58,16 @@ public class CanvasClient extends PublicResouce {
         File tokenFile = new File(FILENAME);
         if(!tokenFile.exists()) {
             tokenFile.createNewFile();
+            tokenFile.setReadable(true);
+            tokenFile.setWritable(true);
+            new TokenPrompt();
         }
-        tokenFile.setReadable(true);
-        tokenFile.setWritable(true);
-
-        new CanvasClient(null);
+        else
+        {
+            tokenFile.setReadable(true);
+            tokenFile.setWritable(true);
+            new CanvasClient(null);
+        }
     }
 
     public ArrayList<Course> getCourseList() {
