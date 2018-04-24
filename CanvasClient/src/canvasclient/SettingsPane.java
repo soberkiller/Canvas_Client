@@ -65,7 +65,7 @@ public class SettingsPane extends JFrame
                 }
 
                 if(tokenField.getText() != "") {
-                    System.out.println(tokenField.getText());
+//                    System.out.println(tokenField.getText());
                     tokenField.setText("");
 
                     if(tokenField.getText() != "") {
