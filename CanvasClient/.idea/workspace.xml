@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d53ad92-93d5-4a72-a378-ca57b1b4cf89" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UPDATE.MD" beforeDir="false" afterPath="$PROJECT_DIR$/UPDATE.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reference/ref.dat" beforeDir="false" afterPath="$PROJECT_DIR$/reference/ref.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +18,32 @@
       <file leaf-file-name="CanvasClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-715">
+            <state relative-caret-position="-919">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ref.dat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reference/ref.dat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="5322" column="17" selection-start-line="5322" selection-start-column="1" selection-end-line="5322" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UPDATE.MD" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UPDATE.MD">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="238">
+                <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -45,8 +64,8 @@
       <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1532">
-              <caret line="187" column="17" lean-forward="true" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+            <state relative-caret-position="215">
+              <caret line="304" column="16" selection-start-line="304" selection-start-column="16" selection-end-line="304" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,6 +78,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="111">
               <caret line="23" column="76" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsPane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -78,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentViewer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentViewer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+            <state relative-caret-position="485">
+              <caret line="133" column="25" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -99,6 +127,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>system</find>
+      <find>blank_2</find>
+      <find>null</find>
+      <find>&quot;lock_at&quot;:null</find>
+      <find>95791</find>
+      <find>2017-10-03T03:59:59Z</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,11 +140,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/Student.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" />
+        <option value="$PROJECT_DIR$/reference/ref.dat" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" />
+        <option value="$PROJECT_DIR$/UPDATE.MD" />
       </list>
     </option>
   </component>
@@ -122,10 +157,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="y" value="-15" />
-    <option name="width" value="3873" />
-    <option name="height" value="2093" />
+    <option name="x" value="3832" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -251,32 +286,32 @@
       <option name="presentableId" value="Default" />
       <updated>1524068124325</updated>
       <workItem from="1524068129379" duration="26326000" />
-      <workItem from="1524248234852" duration="17443000" />
+      <workItem from="1524248234852" duration="23970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4072000" />
+    <option name="totallyTimeSpent" value="10599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="3832" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32859176" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.3278867" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.28165007" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.40958604" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25217974" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.20042644" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
@@ -516,23 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UPDATE.MD">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="102">
-            <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reference/ref.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="436" column="117" selection-start-line="436" selection-start-column="117" selection-end-line="436" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -557,27 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3502">
           <caret line="206" column="12" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-715">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -612,20 +613,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1532">
-          <caret line="187" column="17" lean-forward="true" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+        <state relative-caret-position="485">
+          <caret line="133" column="25" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-919">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
+    <entry file="file://$PROJECT_DIR$/reference/ref.dat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+        <state relative-caret-position="350">
+          <caret line="5322" column="17" selection-start-line="5322" selection-start-column="1" selection-end-line="5322" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="304" column="16" selection-start-line="304" selection-start-column="16" selection-end-line="304" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UPDATE.MD">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="238">
+            <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,15 @@
 //===================================================================
 
+4/24/18
+
+1. Fixed the bug that strID stores unrelated IDs which are from rubric section;
+
+2. Fixed the bug that closeDate stores redundant one when assignment is a discussion topic;
+
+3. The console will no longer display token after entering new token;
+
+//===================================================================
+
 04/20/18
 
 1. fixed the problem that you can't run client without entering your Token first;
