@@ -36,13 +36,9 @@ import java.util.logging.Logger;
 
 public class GUI extends JFrame {
     private Container c;
-    private static List<String> fields = new ArrayList<String>();
-    private static final String GET = "GET";
-    private static final String PUT = "PUT";
-    private static final String POST = "POST";
 
     private final Base64.Decoder decoder = Base64.getDecoder();
-    private static final String FILENAME = "token.dat";
+    private final String FILENAME = "token.dat";
 
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         super(currentCourse.getCourseName());
@@ -305,15 +301,25 @@ public class GUI extends JFrame {
 
                 try {
                     // ini field and endpoint;
+                    List<String> fields = new ArrayList<String>();
+                    final String GET = "GET";
+                    final String PUT = "PUT";
+                    final String POST = "POST";
 
+                    String endpoints = "";
 
+                    fields.add("courses");
+                    fields.add(currentCourse.getCourseID());
+                    fields.add("assignments");
+                    endpoints += "?";
 
+                    fields.add(endpoints);
                     ConnectionPool newAssignment = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
-                    newAssignment.setMethod(GET);
+                    newAssignment.setMethod(POST);
                     // add function to set up new assignment
 
 
-
+                    // get response from Canvas and refresh main window. If new assignment is added, add new assignment button on the left.
 
                 } catch (UnsupportedEncodingException e1) {
                     e1.printStackTrace();
