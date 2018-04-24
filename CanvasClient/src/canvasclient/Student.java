@@ -21,9 +21,10 @@ public class Student {
     private double courseGrade;
 
 
-    public Student(String studentName, String studentID) {
+    public Student(String studentName, String studentID, String studentEmail) {
         this.studentName = studentName;
         this.studentID = studentID;
+        this.studentEmail = studentEmail;
     }
 
     public String getStudentName() {

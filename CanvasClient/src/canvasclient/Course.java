@@ -7,14 +7,13 @@ package canvasclient;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 
 /**
  * @author MattSorrentino
  */
-public class Course {
+public class Course extends PublicResouce {
 
     // the name of the Course, data from Canvas
     private String courseName;
@@ -23,7 +22,7 @@ public class Course {
     private String courseID;
 
     // ArrayList of Assignment objects, one for each assignment
-    private ArrayList<Student> studentsList = new ArrayList<>(50);
+    private List<Student> studentsList = new ArrayList<>();
 
     // ArrayList of Assignment objects, one for each assignment
     private List<Assignment> assignmentsList = new ArrayList<>();
@@ -38,16 +37,10 @@ public class Course {
     private boolean dueDateIsMidnightAfter;
 
     // set up connection
-    private List<String> fields = new ArrayList<String>();
     public ConnectionPool connection;
     private String responses = "";
-    private static final String GET = "GET";
-    private static final String PUT = "PUT";
-    private static final String POST = "POST";
 
     // get token from file
-    private final Base64.Decoder decoder = Base64.getDecoder();
-    private static final String FILENAME = "token.dat";
 
     public Course(String courseName, String courseID) throws UnsupportedEncodingException {
 
@@ -58,6 +51,9 @@ public class Course {
 
         //fetch name and ID of course from Canvas
         //fetch all Assignments from Canvas and add to assignmentsList : new Assignment(assignmentName, assignmentID);
+
+        if(!fields.isEmpty())
+            fields.clear();
 
         fields.add("courses");
         fields.add(courseID);
@@ -83,22 +79,29 @@ public class Course {
 //        assignmentsList.add(new Assignment("13 assignment", "1043295"));
 
         //fetch all Students from Canvas and add to studentsList
-        
+        fields.add("courses");
+        fields.add(courseID);
+        fields.add("students");
+        connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
+        connection.setMethod(GET);
+        getStudentsinfo(studentsList);
+        fields.clear();
+
         //adding fake students to test
-        studentsList.add(new Student("student 1", "133463"));
-        studentsList.get(0).setStudentEmail("emailme@stevens.edu");
-        studentsList.add(new Student("student 2", "133463"));
-        studentsList.add(new Student("student 3", "133463"));
-        studentsList.add(new Student("student 4", "133463"));
-        studentsList.add(new Student("student 5", "133463"));
-        studentsList.add(new Student("student 6", "133463"));
-        studentsList.add(new Student("student 7", "133463"));
-        studentsList.add(new Student("student 8", "133463"));
-        studentsList.add(new Student("student 9", "133463"));
-        studentsList.add(new Student("student 10", "133463"));
-        studentsList.add(new Student("student 11", "133463"));
-        studentsList.add(new Student("student 12", "133463"));
-        studentsList.add(new Student("student 13", "133463"));
+//        studentsList.add(new Student("student 1", "133463"));
+//        studentsList.get(0).setStudentEmail("emailme@stevens.edu");
+//        studentsList.add(new Student("student 2", "133463"));
+//        studentsList.add(new Student("student 3", "133463"));
+//        studentsList.add(new Student("student 4", "133463"));
+//        studentsList.add(new Student("student 5", "133463"));
+//        studentsList.add(new Student("student 6", "133463"));
+//        studentsList.add(new Student("student 7", "133463"));
+//        studentsList.add(new Student("student 8", "133463"));
+//        studentsList.add(new Student("student 9", "133463"));
+//        studentsList.add(new Student("student 10", "133463"));
+//        studentsList.add(new Student("student 11", "133463"));
+//        studentsList.add(new Student("student 12", "133463"));
+//        studentsList.add(new Student("student 13", "133463"));
 
 
     }
@@ -116,7 +119,7 @@ public class Course {
         return assignmentsList;
     }
 
-    public ArrayList<Student> getStudentsList() {
+    public List<Student> getStudentsList() {
         return studentsList;
     }
 
@@ -142,6 +145,55 @@ public class Course {
 
     public void setDueDateIsNextClassPeriod(boolean dueDateIsNextClassPeriod) {
         this.dueDateIsNextClassPeriod = dueDateIsNextClassPeriod;
+    }
+    public void getStudentsinfo(List<Student> studentsList) {
+        if(responses != "")
+            responses = "";
+        responses = connection.buildConnection();
+        if(responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                List<String> strID = new ArrayList<>();
+                List<String> strName = new ArrayList<>();
+                List<String> strMail = new ArrayList<>();
+
+                for (String s : rawResp) {
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+
+                    // get useful information from responses
+                    if (s.startsWith("\"sis_user_id\"")) {
+                        strID.add(s.substring(15, s.length() - 1));
+                    }
+                    if (s.startsWith("\"name\"")) {
+                        strName.add(s.substring(8, s.length() - 1));
+                    }
+                    if (s.startsWith("\"login_id\"")) {
+                        strMail.add(s.substring(12, s.length() - 1));
+                    }
+                }
+
+//  if current user does not have access that is higher than teacher, current user will not get student id and student Email
+                if(strID.size() == 0) {
+                    for (int i = 0; i < strName.size(); i++) {
+                        strID.add("Unavailable");
+                        strMail.add("Unavailable");
+                    }
+                }
+                for (int i = 0; i < strName.size(); i++) {
+                    studentsList.add(new Student(strName.get(i), strID.get(i), strMail.get(i)));
+                }
+
+            } else {
+                studentsList.add(new Student("Unavailable", "Unavailable", "Unavailable"));
+            }
+        }
     }
 
     public void getAssignments(List<Assignment> assignmentsList) {
