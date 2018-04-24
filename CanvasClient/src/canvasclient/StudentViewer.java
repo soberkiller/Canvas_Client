@@ -54,7 +54,7 @@ public class StudentViewer extends JFrame {
 
         for (int i = 0; i < currentCourse.getStudentsList().size(); i++) {
             //studentListPanel.add(new JButton(currentCourse.getStudentsList().get(i).getStudentName()));
-            System.out.println(currentCourse.getStudentsList().get(i).getStudentName());
+            // System.out.println(currentCourse.getStudentsList().get(i).getStudentName());
             b = new JButton(currentCourse.getStudentsList().get(i).getStudentName());
             b.setPreferredSize(new Dimension(200, 30));
             b.setBackground(Color.WHITE);

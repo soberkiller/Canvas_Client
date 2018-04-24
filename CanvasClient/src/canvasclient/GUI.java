@@ -174,6 +174,8 @@ public class GUI extends JFrame {
         launchStudentViewer.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        // add students
+
                         StudentViewer sv = new StudentViewer(currentCourse);
                     }
                 }
