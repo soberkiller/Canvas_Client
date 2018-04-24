@@ -189,11 +189,17 @@ public class Course extends PublicResouce {
                             dueDate.add(s.substring(10, s.length() - 1));
                         }
                     }
+                    if(s.startsWith("\"lock_info\"")) {
+                        closeDate.remove(closeDate.size()-1);
+                        closeDate.remove(closeDate.size()-1);
+
+                    }
                     if (s.startsWith("\"lock_at\"")) {
                         if (s.substring(10).equals("null")) {
                             closeDate.add(s.substring(10));
                             closeDate.add(s.substring(10));
                         } else {
+                            closeDate.add(s.substring(11, s.length() - 1));
                             closeDate.add(s.substring(11, s.length() - 1));
                         }
                     }
@@ -208,6 +214,7 @@ public class Course extends PublicResouce {
                     }
 //                System.out.println(s);
                 }
+
                 for (int i = 0; i < strID.size(); i++) {
                     assignmentsList.add(new Assignment(strName.get(i), strID.get(i)));
                     assignmentsList.get(i).setAssignmentDescription(descrip.get(i));

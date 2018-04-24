@@ -62,9 +62,16 @@ public class SettingsPane extends JFrame
                     ee.printStackTrace();
                 }
 
+<<<<<<< HEAD
                 if(tokenField.getText() != "") {
                     System.out.println(tokenField.getText());
                     tokenField.setText("");
+=======
+                    if(tokenField.getText() != "") {
+//                        System.out.println(tokenField.getText());
+                        tokenField.setText("");
+                    }
+>>>>>>> 0a1edc1ed9a90584d5d62a77a9aa05f71f5c6aca
                 }
             }
         });
