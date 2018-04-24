@@ -225,7 +225,7 @@ public class Course extends PublicResouce {
                             des += s;
 
                     // get useful information from responses
-                    if (s.startsWith("\"id\"")) {
+                    if (s.startsWith("\"id\"") && !s.substring(5, 6).equals("\"")) {
                         strID.add(s.substring(5));
                     }
                     if (s.startsWith("\"name\"")) {
@@ -245,17 +245,13 @@ public class Course extends PublicResouce {
                             dueDate.add(s.substring(10, s.length() - 1));
                         }
                     }
-                    if(s.startsWith("\"lock_info\"")) {
+                    if(s.startsWith("\"lock_info\"") || s.startsWith("\"discussion_topic\"")) {
                         closeDate.remove(closeDate.size()-1);
-                        closeDate.remove(closeDate.size()-1);
-
                     }
                     if (s.startsWith("\"lock_at\"")) {
                         if (s.substring(10).equals("null")) {
                             closeDate.add(s.substring(10));
-                            closeDate.add(s.substring(10));
                         } else {
-                            closeDate.add(s.substring(11, s.length() - 1));
                             closeDate.add(s.substring(11, s.length() - 1));
                         }
                     }
@@ -268,13 +264,22 @@ public class Course extends PublicResouce {
                         }
 
                     }
-//                System.out.println(s);
-                }
+//                    System.out.println(s);
 
+                }
+                // do not delete the following. these codes are for test purpose.
+//                for(int i = 0; i < closeDate.size(); i++)
+//                System.out.println(closeDate.get(i));
+//                System.out.println(strID.size());
+//                System.out.println(strName.size());
+//                System.out.println(descrip.size());
+//                System.out.println(closeDate.size());
+//                System.out.println(dueDate.size());
+//                System.out.println(openDate.size());
                 for (int i = 0; i < strID.size(); i++) {
                     assignmentsList.add(new Assignment(strName.get(i), strID.get(i)));
                     assignmentsList.get(i).setAssignmentDescription(descrip.get(i));
-                    assignmentsList.get(i).setCloseDate(closeDate.get(i * 2));
+                    assignmentsList.get(i).setCloseDate(closeDate.get(i));
                     assignmentsList.get(i).setDueDate(dueDate.get(i));
                     assignmentsList.get(i).setOpenDate(openDate.get(i));
                 }
