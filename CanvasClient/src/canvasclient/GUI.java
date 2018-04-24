@@ -14,7 +14,10 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,6 +37,8 @@ import java.util.logging.Logger;
 public class GUI extends JFrame {
     private Container c;
 
+    private final Base64.Decoder decoder = Base64.getDecoder();
+    private final String FILENAME = "token.dat";
 
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         super(currentCourse.getCourseName());
@@ -169,6 +174,8 @@ public class GUI extends JFrame {
         launchStudentViewer.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        // add students
+
                         StudentViewer sv = new StudentViewer(currentCourse);
                     }
                 }
@@ -291,6 +298,36 @@ public class GUI extends JFrame {
 
         JButton newAssignmentButton = new JButton("New Assignment");
         newAssignmentButton.setBackground(Color.lightGray);
+        newAssignmentButton.addActionListener(e -> {
+            if(e.getSource() == newAssignmentButton) {
+
+                try {
+                    // ini field and endpoint;
+                    List<String> fields = new ArrayList<String>();
+                    final String GET = "GET";
+                    final String PUT = "PUT";
+                    final String POST = "POST";
+
+                    String endpoints = "";
+
+                    fields.add("courses");
+                    fields.add(currentCourse.getCourseID());
+                    fields.add("assignments");
+                    endpoints += "?";
+
+                    fields.add(endpoints);
+                    ConnectionPool newAssignment = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
+                    newAssignment.setMethod(POST);
+                    // add function to set up new assignment
+
+
+                    // get response from Canvas and refresh main window. If new assignment is added, add new assignment button on the left.
+
+                } catch (UnsupportedEncodingException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
         assignmentsListPanel.add(newAssignmentButton);
 
         for(int i = 0; i < numberOfAssignments; i++)
@@ -319,6 +356,14 @@ public class GUI extends JFrame {
 
         setVisible(true);
 
+    }
+    public String getOAUTH2() {
+        File tFile = new File(FILENAME);
+        StringBuffer content = new StringBuffer();
+        // the length of stream read from file is larger than the content of that file, so have to deal with it
+        Course.getFromFile(tFile, content);
+
+        return content.toString();
     }
 
 }
