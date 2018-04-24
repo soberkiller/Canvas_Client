@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -20,9 +21,13 @@ import java.util.logging.Logger;
  */
 public class StudentViewer extends JFrame {
 
-    JButton b;
-    JPanel infoPanel;
-    Student currentStudent;
+    private JButton b;
+    private JPanel infoPanel;
+    private Student currentStudent;
+    
+    private JLabel nameLabel, idLabel, emailLabel, gradeLabel;
+    
+    
     private Container c;
 
     public StudentViewer(Course currentCourse) {
@@ -32,9 +37,12 @@ public class StudentViewer extends JFrame {
         this.setLocationRelativeTo(null);
         c = getContentPane();
 
-        try {
+        try 
+        {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             e.printStackTrace();
         }
 
@@ -52,12 +60,47 @@ public class StudentViewer extends JFrame {
         }
         */
 
-        for (int i = 0; i < currentCourse.getStudentsList().size(); i++) {
+        for (int i = 0; i < currentCourse.getStudentsList().size(); i++) 
+        {
             //studentListPanel.add(new JButton(currentCourse.getStudentsList().get(i).getStudentName()));
             // System.out.println(currentCourse.getStudentsList().get(i).getStudentName());
-            b = new JButton(currentCourse.getStudentsList().get(i).getStudentName());
+            final Student thisStudent = currentCourse.getStudentsList().get(i);
+            b = new JButton(thisStudent.getStudentName());
             b.setPreferredSize(new Dimension(200, 30));
             b.setBackground(Color.WHITE);
+            b.addActionListener(
+                new ActionListener()
+                {
+                    @Override
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        currentStudent = thisStudent;
+                        updateInfoPanel();
+                    }
+                }
+            );
+            /*
+            b.addFocusListener(
+                new FocusListener()
+                {
+                    @Override
+                    public void focusGained(FocusEvent e)
+                    {
+                        b.setBackground(Color.getHSBColor(210, 60, 100));
+                        b.setForeground(Color.WHITE);
+                        System.out.println("focusGained");
+                    }
+
+                    @Override
+                    public void focusLost(FocusEvent e) 
+                    {
+                        b.setBackground(Color.WHITE);
+                        b.setForeground(Color.BLACK);
+                        System.out.println("focusLost");
+                    }
+                }
+            );
+            */
             studentListPanel.add(b);
         }
 
@@ -89,10 +132,10 @@ public class StudentViewer extends JFrame {
         nameidPanel.setBorder(new EmptyBorder(25, 25, 25, 25));
 
 
-        JLabel nameLabel = new JLabel(currentStudent.getStudentName());
+        nameLabel = new JLabel(currentStudent.getStudentName());
         Font nameFont = new Font("Helvetica", Font.BOLD, 32);
         nameLabel.setFont(nameFont);
-        JLabel idLabel = new JLabel(currentStudent.getStudentID());
+        idLabel = new JLabel(currentStudent.getStudentID());
 
 
         BufferedImage profilePic;
@@ -112,8 +155,8 @@ public class StudentViewer extends JFrame {
         dataPanel.setBorder(new EmptyBorder(25, 25, 25, 25));
         dataPanel.setBackground(Color.white);
 
-        JLabel emailLabel = new JLabel("Email: " + currentStudent.getStudentEmail());
-        JLabel gradeLabel = new JLabel("Course Grade: " + currentStudent.getCourseGrade());
+        emailLabel = new JLabel("Email: " + currentStudent.getStudentEmail());
+        gradeLabel = new JLabel("Course Grade: " + currentStudent.getCourseGrade());
 
         dataPanel.add(emailLabel);
         dataPanel.add(gradeLabel);
@@ -133,7 +176,35 @@ public class StudentViewer extends JFrame {
 
         c.add(infoPanel);
     }
+    
+    
+    public void updateInfoPanel() {
+        
+        nameLabel.setText(currentStudent.getStudentName());
+        
+        idLabel.setText(currentStudent.getStudentID());
 
+        /*
+        BufferedImage profilePic;
+        try {
+            profilePic = ImageIO.read(new File("profilepic.png"));
+            Image dimg = profilePic.getScaledInstance(90, 90, Image.SCALE_SMOOTH);
+            ImageIcon imageIcon1 = new ImageIcon(dimg);
+            JLabel picLabel = new JLabel(imageIcon1);
+            imagePanel.add(BorderLayout.CENTER, picLabel);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+
+        emailLabel.setText("Email: " + currentStudent.getStudentEmail());
+        gradeLabel.setText("Course Grade: " + currentStudent.getCourseGrade());
+
+
+        //JLabel gradeLabel = new JLabel(Double.toString(currentStudent.getCourseGrade()));
+
+      
+    }
 }
     
     
