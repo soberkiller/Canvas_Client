@@ -35,14 +35,22 @@ import java.util.logging.Logger;
  */
 
 public class GUI extends JFrame {
+    private static Course cCourse;
+
     private Container c;
+
+    private static List<JButton> buttonsAssignment;
+    private static JPanel assignmentsListPanel = new JPanel();
+    private JLabel currentCourseNameLabel;
+    private JScrollPane scroller;
 
     private final Base64.Decoder decoder = Base64.getDecoder();
     private final String FILENAME = "token.dat";
 
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
-        super(currentCourse.getCourseName());
-
+        cCourse = currentCourse;
+        CourseSelector CSelector = new CourseSelector();
+        setTitle(cCourse.getCourseName());
         setSize(1024, 768);
         this.setLocationRelativeTo(null);
         c = getContentPane();
@@ -87,7 +95,7 @@ public class GUI extends JFrame {
 
         //currentCoursePanel.add(spacer1);
 
-        JLabel currentCourseNameLabel = new JLabel(" " + currentCourse.getCourseName());
+        currentCourseNameLabel = new JLabel(" " + cCourse.getCourseName());
         currentCoursePanel.add(currentCourseNameLabel);
         Font courseTitleFont = new Font("Helvetica", Font.BOLD, 16);
         currentCourseNameLabel.setFont(courseTitleFont);
@@ -105,7 +113,7 @@ public class GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    new SettingsPane(currentCourse);
+                    new SettingsPane(cCourse);
                 }
             }  
         );
@@ -120,7 +128,7 @@ public class GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    new CourseSelector(courseList);
+                    CSelector.createSelector(courseList);
                     setVisible(false); //closes previous GUI, garbage collector will delete instance eventually
                 }
             }
@@ -175,8 +183,8 @@ public class GUI extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         // add students
+                        StudentViewer sv = new StudentViewer(cCourse);
 
-                        StudentViewer sv = new StudentViewer(currentCourse);
                     }
                 }
         );
@@ -269,7 +277,7 @@ public class GUI extends JFrame {
 
 
         //fetch number of assignments the course has
-        int numberOfAssignments = currentCourse.getAssignmentsList().size();
+        int numberOfAssignments = cCourse.getAssignmentsList().size();
 
         JPanel assignmentsPanel = new JPanel();
         
@@ -286,17 +294,18 @@ public class GUI extends JFrame {
 
         // Panel to accomodate the labels
 
-        JPanel assignmentsListPanel = new JPanel();
+
         //panel.setMaximumSize(new Dimension(100, 768));
         assignmentsListPanel.setBackground(Color.WHITE);
 
         assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments + 1, 1));
 
-        JButton buttons[] = new JButton[numberOfAssignments];
+
 
         //Using a for loop we create temporary JButtons.    
 
         JButton newAssignmentButton = new JButton("New Assignment");
+        newAssignmentButton.setFocusable(false);
         newAssignmentButton.setBackground(Color.lightGray);
         newAssignmentButton.addActionListener(e -> {
             if(e.getSource() == newAssignmentButton) {
@@ -311,7 +320,7 @@ public class GUI extends JFrame {
                     String endpoints = "";
 
                     fields.add("courses");
-                    fields.add(currentCourse.getCourseID());
+                    fields.add(cCourse.getCourseID());
                     fields.add("assignments");
                     endpoints += "?";
 
@@ -329,7 +338,7 @@ public class GUI extends JFrame {
             }
         });
         assignmentsListPanel.add(newAssignmentButton);
-
+        buttonsAssignment = new ArrayList<>(numberOfAssignments);
         for(int i = 0; i < numberOfAssignments; i++)
         {
             String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
@@ -337,26 +346,29 @@ public class GUI extends JFrame {
             String closingTags = "</p></body></html>";
             String lineBreak = "<br/>";
             
-            String assignmentTitle = currentCourse.getAssignmentsList().get(i).getAssignmentName();
-            String assignmentDueDate = "due: " + currentCourse.getAssignmentsList().get(i).getDueDate();  
-            String assignmentCloseDate = "closes: " + currentCourse.getAssignmentsList().get(i).getCloseDate();  
-            
-            buttons[i] = new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
-            buttons[i].setHorizontalAlignment(SwingConstants.LEFT);
-            buttons[i].setPreferredSize(new Dimension(180, 100));
-            buttons[i].setBackground(Color.WHITE);
+            String assignmentTitle = cCourse.getAssignmentsList().get(i).getAssignmentName();
+            String assignmentDueDate = "due: " + cCourse.getAssignmentsList().get(i).getDueDate();
+            String assignmentCloseDate = "closes: " + cCourse.getAssignmentsList().get(i).getCloseDate();
 
-            assignmentsListPanel.add(buttons[i]);
+            buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
+            buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
+            buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
+            buttonsAssignment.get(i).setBackground(Color.WHITE);
+
+            assignmentsListPanel.add(buttonsAssignment.get(i));
         }
+//        assignmentsListPanel.removeAll();
 
 
-        JScrollPane scroller = new JScrollPane(assignmentsListPanel);
+        scroller = new JScrollPane(assignmentsListPanel);
         scroller.setPreferredSize(new Dimension(254, 768));
         c.add(BorderLayout.WEST, scroller);
 
         setVisible(true);
 
     }
+
+    // get token from token.dat
     public String getOAUTH2() {
         File tFile = new File(FILENAME);
         StringBuffer content = new StringBuffer();
@@ -364,6 +376,93 @@ public class GUI extends JFrame {
         Course.getFromFile(tFile, content);
 
         return content.toString();
+    }
+
+    // reset current course
+    public void setCurrentCourse(Course currentCourse) {
+        cCourse = currentCourse;
+    }
+
+    // reset current assignment panel and assignment buttons
+    public void resetAPB(Course currentCourse) {
+        setCurrentCourse(currentCourse);
+        assignmentsListPanel.removeAll();
+
+        setTitle(cCourse.getCourseName());
+        currentCourseNameLabel.setText(cCourse.getCourseName());
+
+
+        int numAssignments = cCourse.getAssignmentsList().size();
+        assignmentsListPanel.setLayout(new GridLayout(numAssignments + 1, 1));
+        // previous array of button is still there ??
+        buttonsAssignment = new ArrayList<>(numAssignments);
+        for(int i = 0; i < numAssignments; i++)
+        {
+            String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
+            String middleTags = "</h3><p>";
+            String closingTags = "</p></body></html>";
+            String lineBreak = "<br/>";
+
+            String assignmentTitle = cCourse.getAssignmentsList().get(i).getAssignmentName();
+            String assignmentDueDate = "due: " + cCourse.getAssignmentsList().get(i).getDueDate();
+            String assignmentCloseDate = "closes: " + cCourse.getAssignmentsList().get(i).getCloseDate();
+
+            buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
+            buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
+            buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
+            buttonsAssignment.get(i).setBackground(Color.WHITE);
+
+            assignmentsListPanel.add(buttonsAssignment.get(i));
+            setVisible(true);
+
+        }
+        assignmentsListPanel.repaint();
+
+    }
+
+    // inner class for switching current course to desire course
+    public class CourseSelector extends JFrame {
+        public CourseSelector() {
+            super("Course Selector");
+            this.setLocationRelativeTo(null);
+
+            try {
+                UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void createSelector(List<Course> courseList) {
+            List<JButton> buttonArray = new ArrayList();
+            setSize(200, courseList.size() * 50);
+
+            Container c = getContentPane();
+            JPanel buttonPanel = new JPanel();
+            buttonPanel.setLayout(new GridLayout(courseList.size(), 1, 0, 0));
+
+            for (int i = 0; i < courseList.size(); i++) {
+                String s = courseList.get(i).getCourseName();
+                buttonArray.add(new JButton(s));
+                buttonPanel.add(buttonArray.get(i));
+                final int a = i;
+                buttonArray.get(i).setBackground(Color.white);
+                buttonArray.get(i).setFocusable(false);
+                buttonArray.get(i).addActionListener(
+                        e -> {
+                            if(e.getSource() == buttonArray.get(a)) {
+                                //                                new CanvasClient(courseList.get(a));
+                                resetAPB(courseList.get(a));
+
+                                this.setVisible(false);
+                            }
+                        }
+                );
+            }
+            c.add(buttonPanel);
+
+            setVisible(true);
+        }
     }
 
 }

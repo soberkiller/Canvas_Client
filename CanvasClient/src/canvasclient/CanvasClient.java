@@ -5,6 +5,7 @@
  */
 package canvasclient;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +15,8 @@ import java.util.List;
  */
 
 public class CanvasClient extends PublicResouce {
-
-    private static Course currentCourse;
-
-    private ArrayList<Course> courseList = new ArrayList<Course>();
     public ConnectionPool connection;
     private String responses = "";
-
     public CanvasClient(Course currentCourse) throws UnsupportedEncodingException {
 
         //fetch all courses from canvas
@@ -30,46 +26,53 @@ public class CanvasClient extends PublicResouce {
         //currentCourse = courseList(0);
         //make temporary course objects for testing purposes.
 
-        if(!fields.isEmpty())
-            fields.clear();
-        fields.add("courses");
-
-        connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
-        connection.setMethod(GET);
-        getCourses(courseList);
-        fields.clear();
-
         //set currentCourse to be the Course object passed in 
         this.currentCourse = currentCourse;
 
         //if null, set currentCourse to be the first course loaded in through the API
         if (this.currentCourse == null) {
-            currentCourse = courseList.get(0);
+
+            if(!fields.isEmpty())
+                fields.clear();
+            fields.add("courses?per_page=100");
+
+            connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
+            connection.setMethod(GET);
+//        getCourses(courseList);
+            //List Not Student role courses
+            courseList = connection.getNotStudentCourses();
+            fields.clear();
+            if(courseList.size() > 0)
+                currentCourse = courseList.get(0);
         }
 
 
         //create instance of main GUI
-        GUI myGUI = new GUI(currentCourse, courseList);
+        new GUI(currentCourse, courseList);
 
 
     }
 
     public static void main(String[] args) throws IOException {
         File tokenFile = new File(FILENAME);
-        if(!tokenFile.exists()) {
-            tokenFile.createNewFile();
+        
+        if(!tokenFile.exists()) 
+        {
+            new TokenPrompt(tokenFile); 
         }
-        tokenFile.setReadable(true);
-        tokenFile.setWritable(true);
-
-        new CanvasClient(null);
+        else
+        {
+            tokenFile.setReadable(true);
+            tokenFile.setWritable(true);
+            new CanvasClient(null);
+        }
     }
 
     public ArrayList<Course> getCourseList() {
         return courseList;
     }
 
-    public static Course getCurrentCourse() {
+    static Course getCurrentCourse() {
         return currentCourse;
     }
 
