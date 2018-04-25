@@ -5,6 +5,10 @@ import java.util.Base64;
 import java.util.List;
 
 public abstract class PublicResouce {
+
+    static Course currentCourse;
+    static ArrayList<Course> courseList = new ArrayList<Course>();
+
     // for connection to Canvas
     static List<String> fields = new ArrayList<String>();
     public static final String GET = "GET";

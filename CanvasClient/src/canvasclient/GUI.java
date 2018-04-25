@@ -36,6 +36,7 @@ import java.util.logging.Logger;
 
 public class GUI extends JFrame {
     private Container c;
+    private static CourseSelector CSelector = new CourseSelector();
 
     private final Base64.Decoder decoder = Base64.getDecoder();
     private final String FILENAME = "token.dat";
@@ -120,7 +121,7 @@ public class GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    new CourseSelector(courseList);
+                    CSelector.createSelector(courseList);
                     setVisible(false); //closes previous GUI, garbage collector will delete instance eventually
                 }
             }

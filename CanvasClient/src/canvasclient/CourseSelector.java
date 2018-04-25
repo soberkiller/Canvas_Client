@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author MattSorrentino
@@ -19,23 +20,23 @@ public class CourseSelector extends JFrame {
     
     ArrayList<JButton> buttonArray = new ArrayList(5);
 
-    public CourseSelector(ArrayList<Course> courseList) {
+    public CourseSelector() {
         super("Course Selector");
-        setSize(200, courseList.size() * 50);
         this.setLocationRelativeTo(null);
-
-        Container c = getContentPane();
 
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    public void createSelector(List<Course> courseList) {
+        setSize(200, courseList.size() * 50);
 
+        Container c = getContentPane();
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(courseList.size(), 1, 0, 0));
-
         for (int i = 0; i < courseList.size(); i++) {
             String s = courseList.get(i).getCourseName();
             buttonArray.add(new JButton(s));
@@ -50,8 +51,8 @@ public class CourseSelector extends JFrame {
                                 if (buttonArray.get(a).getText() == courseList.get(j).getCourseName()) {
                                     //create a new instance of the program with the selected course
                                     try {
-                                        CanvasClient canvasClient = new CanvasClient(courseList.get(j));
-                                    } 
+                                        new CanvasClient(courseList.get(j));
+                                    }
                                     catch (Exception e1) {
                                         e1.printStackTrace();
                                     }
@@ -61,7 +62,6 @@ public class CourseSelector extends JFrame {
                     }
             );
         }
-
         c.add(buttonPanel);
 
         setVisible(true);
