@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9d53ad92-93d5-4a72-a378-ca57b1b4cf89" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="9d53ad92-93d5-4a72-a378-ca57b1b4cf89" name="Default" comment="" />
+>>>>>>> 9d359eea7813ec28b402dd0634ded66849b06038
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +44,13 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Submission2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission2.java">
+=======
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
+>>>>>>> 9d359eea7813ec28b402dd0634ded66849b06038
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -79,11 +88,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-3145">
               <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+=======
+            <state relative-caret-position="323">
+              <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+>>>>>>> 9d359eea7813ec28b402dd0634ded66849b06038
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -310,7 +324,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="32639000" />
+=======
+    <option name="totallyTimeSpent" value="31993000" />
+>>>>>>> 9d359eea7813ec28b402dd0634ded66849b06038
   </component>
   <component name="ToolWindowManager">
     <frame x="3832" y="-8" width="1936" height="1056" extended-state="6" />
@@ -806,6 +824,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
