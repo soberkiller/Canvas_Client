@@ -36,7 +36,9 @@ public class CanvasClient extends PublicResouce {
 
         connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);
-        getCourses(courseList);
+        //getCourses(courseList); 
+        //List Not Student role courses
+        courseList=connection.getNotStudentCourses();
         fields.clear();
 
         //set currentCourse to be the Course object passed in 

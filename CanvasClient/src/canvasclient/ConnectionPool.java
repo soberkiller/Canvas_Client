@@ -3,14 +3,16 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
 
 /**
- * @author Fangming Zhao
+ * @author Fangming Zhao, Yifang Yuan
  * April. 2018
  */
 
@@ -121,6 +123,7 @@ public class ConnectionPool {
         this.OAUTH2 = oauth2;
     }
     
+    //Convert unicode to String
     public static String unicode2String(String unicode) {  
         StringBuffer string = new StringBuffer(); 
         Pattern pattern1 = Pattern.compile("[\\\\][u][0-9abcde]{4}$");
@@ -142,5 +145,53 @@ public class ConnectionPool {
         return result;
     }
 
+    //List Not Student role courses
+    public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException {
+        String responses = "";
+        List<String> fields = new ArrayList<String>();
+	 	fields.add("courses");
+	 	String url_backup=url;
+	 	setURL(fields);
+	 	//get all courses of token owner
+        responses = this.buildConnection();
+        url=url_backup;
+        ArrayList<Course> courseList =new ArrayList<>();
+        //processed string
+        if (responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                String t_id="";
+                String t_name="";
+                for (String s : rawResp) {
+                	//trim unused char
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+                    s=s.replace("\"enrollments\":[{", "");
+                    //get course id
+                    if (s.startsWith("\"id\"")) {
+                    	t_id=s.substring(5);
+                    }
+                    //get course name
+                    if (s.startsWith("\"name\"")) {
+                    	t_name=s.substring(8, s.length() - 1);
+                    }
+                    //if type !=student, add the course to arraylist
+                    if (s.startsWith("\"type\"")&&!s.substring(8, s.length() - 1).equals("student")) {
+                    	courseList.add(new Course(t_name,t_id));
+                    }
+                }
+            }
+        } else {
+            courseList.add(new Course("Unavailable","Unavailable"));
+        }
+        return courseList;
+    }    
+    
     
 }
