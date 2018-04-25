@@ -148,13 +148,9 @@ public class ConnectionPool {
     //List Not Student role courses
     public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException {
         String responses = "";
-        List<String> fields = new ArrayList<String>();
-	 	fields.add("courses");
-	 	String url_backup=url;
-	 	setURL(fields);
+
 	 	//get all courses of token owner
         responses = this.buildConnection();
-        url=url_backup;
         ArrayList<Course> courseList =new ArrayList<>();
         //processed string
         if (responses != null) {
