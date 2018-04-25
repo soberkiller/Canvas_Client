@@ -35,7 +35,7 @@ public class GUI extends JFrame {
     private Container c;
 
 
-    public GUI(Course currentCourse, ArrayList<Course> courseList, Submission submission) {
+    public GUI(Course currentCourse, ArrayList<Course> courseList) {
         super(currentCourse.getCourseName());
 
         setSize(1568, 968);
@@ -303,7 +303,7 @@ public class GUI extends JFrame {
             String assignmentDueDate = "due: " + currentCourse.getAssignmentsList().get(i).getDueDate();  
             String assignmentCloseDate = "closes: " + currentCourse.getAssignmentsList().get(i).getCloseDate();  
             String Description = currentCourse.getAssignmentsList().get(i).getAssignmentDescription();
-            String grade = Double.toString(submission.getSubmissionGrade());
+            String grade = Double.toString(new Submission().getSubmissionGrade());
             
             buttons[i] = new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
             buttons[i].setHorizontalAlignment(SwingConstants.LEFT);
