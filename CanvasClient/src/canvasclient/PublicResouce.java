@@ -1,5 +1,6 @@
 package canvasclient;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -8,7 +9,7 @@ public abstract class PublicResouce {
 
     static Course currentCourse;
     static ArrayList<Course> courseList = new ArrayList<Course>();
-
+    static CourseSelector CSelector = new CourseSelector();
     // for connection to Canvas
     static List<String> fields = new ArrayList<String>();
     public static final String GET = "GET";

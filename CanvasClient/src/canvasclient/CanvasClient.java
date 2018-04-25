@@ -5,6 +5,7 @@
  */
 package canvasclient;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +15,8 @@ import java.util.List;
  */
 
 public class CanvasClient extends PublicResouce {
-
     public ConnectionPool connection;
     private String responses = "";
-
     public CanvasClient(Course currentCourse) throws UnsupportedEncodingException {
 
         //fetch all courses from canvas
@@ -49,7 +48,7 @@ public class CanvasClient extends PublicResouce {
 
 
         //create instance of main GUI
-        GUI myGUI = new GUI(currentCourse, courseList);
+        new GUI(currentCourse, courseList);
 
 
     }
