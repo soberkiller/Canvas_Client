@@ -57,7 +57,9 @@ public class Course extends PublicResouce {
 
         fields.add("courses");
         fields.add(courseID);
-        fields.add("assignments?per_page=100");
+        //list at most 100 assignments for course
+        fields.add("assignments?&per_page=100");
+
         connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);
         getAssignments(assignmentsList);
