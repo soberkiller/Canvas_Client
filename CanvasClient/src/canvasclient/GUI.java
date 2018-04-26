@@ -5,6 +5,7 @@
  */
 package canvasclient;
 
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -22,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ *
  * @author MattSorrentino
  */
 
@@ -69,7 +71,6 @@ public class GUI extends JFrame {
         JLabel spacer1 = new JLabel(" ");
         JLabel spacer2 = new JLabel(" ");
 
-
         ////////////////////////////////////////////////////////////////////////
         //
         //  topBar Panel - Top Bar of GUI 
@@ -86,7 +87,6 @@ public class GUI extends JFrame {
 
         topBar.setLayout(new GridLayout(1, 3, 70, 25));
 
-
         ////////////////////////////////////////////////////////////////////////
 
         JPanel currentCoursePanel = new JPanel();
@@ -97,7 +97,9 @@ public class GUI extends JFrame {
 
         //currentCoursePanel.add(spacer1);
 
+
         currentCourseNameLabel = new JLabel(" " + cCourse.getCourseName());
+
         currentCoursePanel.add(currentCourseNameLabel);
         Font courseTitleFont = new Font("Helvetica", Font.BOLD, 16);
         currentCourseNameLabel.setFont(courseTitleFont);
@@ -106,6 +108,7 @@ public class GUI extends JFrame {
         courseOptionsPanel.setBackground(Color.WHITE);
         courseOptionsPanel.setLayout(new GridLayout(1, 2, 10, 0));
                 
+
         JButton settingsButton = new JButton("Settings");
         settingsButton.setBackground(Color.WHITE);
         settingsButton.setFocusable(false);
@@ -124,6 +127,7 @@ public class GUI extends JFrame {
         //switchCourseButton.setPreferredSize(new Dimension(120,40));
         switchCourseButton.setBackground(Color.WHITE);
         switchCourseButton.setFocusable(false);
+
         courseOptionsPanel.add(switchCourseButton);
         switchCourseButton.addActionListener(
             new ActionListener()
@@ -149,6 +153,7 @@ public class GUI extends JFrame {
 
         BufferedImage stevensLogo;
         try {
+
             stevensLogo = ImageIO.read(new File("stevenslogo.jpeg"));
             Image dimg = stevensLogo.getScaledInstance(180, 90, Image.SCALE_SMOOTH);
             ImageIcon imageIcon1 = new ImageIcon(dimg);
@@ -169,6 +174,7 @@ public class GUI extends JFrame {
         majorActionsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
         /*
+
         //majorActionsPanel.add(spacer2);
         JButton pushChangesToCanvas = new JButton("Push To Canvas");
         //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
@@ -198,10 +204,13 @@ public class GUI extends JFrame {
 
         c.add(BorderLayout.NORTH, topBar);
 
+
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
+
+
 
 
         ////////////////////////////////////////////////////////////////////////
@@ -246,6 +255,7 @@ public class GUI extends JFrame {
         ////////////////////////////////////////////////////////////////////////
 
 
+
         ////////////////////////////////////////////////////////////////////////
         //
         //  main Panel - The main panel of the main window
@@ -259,10 +269,12 @@ public class GUI extends JFrame {
         main = new Main();
         c.add(BorderLayout.CENTER, main.jPanel1);
 
+
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
+
 
 
         ////////////////////////////////////////////////////////////////////////
@@ -283,11 +295,13 @@ public class GUI extends JFrame {
         JPanel assignmentsPanel = new JPanel();
         
         
+
         /*
         JButton newAssignmentButton = new JButton("New Assignment");
         newAssignmentButton.setBackground(Color.lightGray);
         assignmentsPanel.add(BorderLayout.NORTH, newAssignmentButton);
         */
+
 
         // Label to display the message indicating which button generated the event.
 
