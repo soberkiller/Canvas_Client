@@ -43,6 +43,8 @@ public class GUI extends JFrame {
     private static JPanel assignmentsListPanel = new JPanel();
     private JLabel currentCourseNameLabel;
     private JScrollPane scroller;
+    private JButton newAssignmentButton = new JButton("New Assignment");
+    private Main main;
 
     private final Base64.Decoder decoder = Base64.getDecoder();
     private final String FILENAME = "token.dat";
@@ -254,9 +256,8 @@ public class GUI extends JFrame {
         //  
         ////////////////////////////////////////////////////////////////////////
 
-        JPanel main = new JPanel();
-        main.setBackground(Color.gray);
-        c.add(BorderLayout.CENTER, main);
+        main = new Main();
+        c.add(BorderLayout.CENTER, main.jPanel1);
 
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
@@ -304,7 +305,7 @@ public class GUI extends JFrame {
 
         //Using a for loop we create temporary JButtons.    
 
-        JButton newAssignmentButton = new JButton("New Assignment");
+
         newAssignmentButton.setFocusable(false);
         newAssignmentButton.setBackground(Color.lightGray);
         newAssignmentButton.addActionListener(e -> {
@@ -349,11 +350,20 @@ public class GUI extends JFrame {
             String assignmentTitle = cCourse.getAssignmentsList().get(i).getAssignmentName();
             String assignmentDueDate = "due: " + cCourse.getAssignmentsList().get(i).getDueDate();
             String assignmentCloseDate = "closes: " + cCourse.getAssignmentsList().get(i).getCloseDate();
-
+            final int a = i;
             buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
             buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
             buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
             buttonsAssignment.get(i).setBackground(Color.WHITE);
+            buttonsAssignment.get(i).addActionListener(e-> {
+                if(e.getSource() == buttonsAssignment.get(a)) {
+                    main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
+                    main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
+                    main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    main.jTextField8.setText("Unavailable");
+                }
+            });
 
             assignmentsListPanel.add(buttonsAssignment.get(i));
         }
@@ -394,6 +404,7 @@ public class GUI extends JFrame {
 
         int numAssignments = cCourse.getAssignmentsList().size();
         assignmentsListPanel.setLayout(new GridLayout(numAssignments + 1, 1));
+        assignmentsListPanel.add(newAssignmentButton);
         // previous array of button is still there ??
         buttonsAssignment = new ArrayList<>(numAssignments);
         for(int i = 0; i < numAssignments; i++)
@@ -406,12 +417,20 @@ public class GUI extends JFrame {
             String assignmentTitle = cCourse.getAssignmentsList().get(i).getAssignmentName();
             String assignmentDueDate = "due: " + cCourse.getAssignmentsList().get(i).getDueDate();
             String assignmentCloseDate = "closes: " + cCourse.getAssignmentsList().get(i).getCloseDate();
-
+            final int a = i;
             buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
             buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
             buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
             buttonsAssignment.get(i).setBackground(Color.WHITE);
-
+            buttonsAssignment.get(i).addActionListener(e-> {
+                if(e.getSource() == buttonsAssignment.get(a)) {
+                    main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
+                    main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
+                    main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    main.jTextField8.setText("Unavailable");
+                }
+            });
             assignmentsListPanel.add(buttonsAssignment.get(i));
             setVisible(true);
 
