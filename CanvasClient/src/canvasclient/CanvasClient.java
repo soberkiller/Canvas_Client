@@ -7,6 +7,7 @@ package canvasclient;
 
 import javax.swing.*;
 import java.io.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
 public class CanvasClient extends PublicResouce {
     public ConnectionPool connection;
     private String responses = "";
-    public CanvasClient(Course currentCourse) throws UnsupportedEncodingException {
+    public CanvasClient(Course currentCourse) throws UnsupportedEncodingException, ParseException {
 
         //fetch all courses from canvas
         //create course object for each course
@@ -53,7 +54,7 @@ public class CanvasClient extends PublicResouce {
 
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         File tokenFile = new File(FILENAME);
         
         if(!tokenFile.exists()) 
