@@ -422,6 +422,7 @@ public class GUI extends JFrame {
             buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
             buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
             buttonsAssignment.get(i).setBackground(Color.WHITE);
+
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
                     main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
