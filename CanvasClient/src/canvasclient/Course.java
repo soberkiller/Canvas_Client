@@ -7,6 +7,8 @@ package canvasclient;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 
@@ -21,6 +23,9 @@ public class Course extends PublicResouce {
     // the ID of the Course, data from Canvas
     private String courseID;
 
+    // the ID of the Course, data from Canvas
+    private Date courseStartDate;
+    
     // ArrayList of Assignment objects, one for each assignment
     private List<Student> studentsList = new ArrayList<>();
 
@@ -148,6 +153,34 @@ public class Course extends PublicResouce {
     public void setDueDateIsNextClassPeriod(boolean dueDateIsNextClassPeriod) {
         this.dueDateIsNextClassPeriod = dueDateIsNextClassPeriod;
     }
+    
+    
+    public Date getCourseStartDate() {
+		return courseStartDate;
+	}
+
+    @SuppressWarnings("deprecation")
+    //Sort by start date, newest first
+    public static class Comparators {
+        public static Comparator<Course> DateSort = new Comparator<Course>() {           
+			public int compare(Course c2, Course c1) {           	
+                return c1.getCourseStartDate().getYear() > c2.getCourseStartDate().getYear() ? 1 
+                        : c1.getCourseStartDate().getYear() < c2.getCourseStartDate().getYear() ? -1
+                                : c1.getCourseStartDate().getMonth() > c2.getCourseStartDate().getMonth() ? 1
+                                : c1.getCourseStartDate().getMonth() < c2.getCourseStartDate().getMonth() ? -1
+                                : c1.getCourseStartDate().getDay() > c2.getCourseStartDate().getDay() ? 1
+                                : c1.getCourseStartDate().getDay() < c2.getCourseStartDate().getDay() ?-1
+                                : 0;          		
+            }
+        };
+    }
+    
+
+	public void setCourseStartDate(Date courseStartDate) {
+		this.courseStartDate = courseStartDate;
+	}
+    
+    
     public void getStudentsinfo(List<Student> studentsList) {
         if(responses != "")
             responses = "";
