@@ -5,6 +5,9 @@
  */
 package canvasclient;
 
+import javax.swing.JEditorPane;
+import javax.swing.JTextPane;
+
 //import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.All;
 
 
@@ -48,6 +51,7 @@ public class Main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jTextPane = new JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,7 +69,10 @@ public class Main extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        
+        jTextPane.setEditable(false);
+        jTextPane.setContentType("text/html");
+        jScrollPane1.setViewportView(jTextPane);
 
         jTextField6.setEditable(false);
         jTextField6.setText(" ");
@@ -138,6 +145,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    //.addComponent(jTextPane)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
@@ -230,6 +238,7 @@ public class Main extends javax.swing.JFrame {
         jTextField9.setEditable(true);
         jTextField10.setEditable(true);
         jTextArea1.setEditable(true);
+        jTextPane.setEditable(true);
     }
     
     public void disable(){
@@ -239,6 +248,7 @@ public class Main extends javax.swing.JFrame {
         jTextField9.setEditable(false);
         jTextField10.setEditable(false);
         jTextArea1.setEditable(false);
+        jTextPane.setEditable(false);
     }
     
     public void buttonEnable(){
@@ -335,6 +345,7 @@ public class Main extends javax.swing.JFrame {
     public  javax.swing.JTextField jTextField7;
     public  javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    public JTextPane jTextPane;
     // End of variables declaration                   
 }
 
