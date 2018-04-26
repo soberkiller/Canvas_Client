@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9d53ad92-93d5-4a72-a378-ca57b1b4cf89" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,39 +14,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CanvasClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenPrompt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/TokenPrompt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="453" column="102" lean-forward="true" selection-start-line="453" selection-start-column="102" selection-end-line="453" selection-end-column="102" />
+            <state relative-caret-position="246">
+              <caret line="359" selection-start-line="359" selection-end-line="359" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3618#3619#0" expanded="true" />
-                <element signature="e#3683#3684#0" expanded="true" />
-                <element signature="e#14125#14126#0" expanded="true" />
-                <element signature="e#14163#14164#0" expanded="true" />
+                <element signature="e#3741#3742#0" expanded="true" />
+                <element signature="e#3806#3807#0" expanded="true" />
+                <element signature="e#11368#11376#0" expanded="true" />
+                <element signature="e#14335#14336#0" expanded="true" />
+                <element signature="e#14374#14375#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1240">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimilarityByEDAOnPlainText.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -56,8 +51,8 @@
       <file leaf-file-name="CourseSelector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="153">
+              <caret line="13" column="44" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -77,8 +72,8 @@
       <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+            <state relative-caret-position="-646">
+              <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentViewer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
+      <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+            <state relative-caret-position="364">
+              <caret line="60" column="42" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -116,7 +111,7 @@
       <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2210">
+            <state relative-caret-position="2363">
               <caret line="153" selection-start-line="153" selection-end-line="153" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -136,22 +131,14 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>system</find>
-      <find>blank_2</find>
-      <find>null</find>
-      <find>&quot;lock_at&quot;:null</find>
-      <find>95791</find>
-      <find>2017-10-03T03:59:59Z</find>
-      <find>courses</find>
-      <find>currentCourse</find>
-      <find>getCourseName</find>
+      <find>main</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev9" />
+        <entry key="$PROJECT_DIR$/.." value="dev10" />
       </map>
     </option>
   </component>
@@ -167,8 +154,9 @@
         <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
       </list>
     </option>
   </component>
@@ -189,9 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,6 +209,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -295,6 +283,8 @@
       <list>
         <item itemvalue="Application.CanvasClient" />
         <item itemvalue="Application.CanvasClient" />
+        <item itemvalue="Application.CanvasClient" />
+        <item itemvalue="Application.CanvasClient" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +304,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31433000" />
+    <option name="totallyTimeSpent" value="2513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3832" y="-8" width="1936" height="1056" extended-state="6" />
@@ -329,14 +319,13 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.40958604" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.40958604" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.20042644" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.20255864" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -349,7 +338,6 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
@@ -360,48 +348,19 @@
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="1" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.3278867" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20042644" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.40958604" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20042644" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Designer" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info id="UI Designer" order="1" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32859176" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.3278867" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,40 +368,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/token.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="75" selection-start-column="75" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="206" column="12" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -513,11 +438,11 @@
         <state relative-caret-position="307">
           <caret line="122" column="51" lean-forward="true" selection-start-line="122" selection-start-column="51" selection-end-line="122" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3618#3619#0" expanded="true" />
-            <element signature="e#3683#3684#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14163#14164#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#11368#11376#0" expanded="true" />
+            <element signature="e#14335#14336#0" expanded="true" />
+            <element signature="e#14374#14375#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -554,11 +479,11 @@
         <state relative-caret-position="374">
           <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3618#3619#0" expanded="true" />
-            <element signature="e#3683#3684#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14163#14164#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#11368#11376#0" expanded="true" />
+            <element signature="e#14335#14336#0" expanded="true" />
+            <element signature="e#14374#14375#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -687,11 +612,11 @@
         <state relative-caret-position="354">
           <caret line="237" column="71" selection-start-line="237" selection-start-column="71" selection-end-line="237" selection-end-column="71" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3618#3619#0" expanded="true" />
-            <element signature="e#3683#3684#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14163#14164#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#11368#11376#0" expanded="true" />
+            <element signature="e#14335#14336#0" expanded="true" />
+            <element signature="e#14374#14375#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -710,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/token.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -731,13 +649,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="206" column="12" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -772,20 +683,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+        <state relative-caret-position="629">
+          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+        <state relative-caret-position="136">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -805,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
+        <state relative-caret-position="2363">
           <caret line="153" selection-start-line="153" selection-end-line="153" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -813,43 +755,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="558">
+          <caret line="206" column="12" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="364">
+          <caret line="60" column="42" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="-1240">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="453" column="102" lean-forward="true" selection-start-line="453" selection-start-column="102" selection-end-line="453" selection-end-column="102" />
+        <state relative-caret-position="246">
+          <caret line="359" selection-start-line="359" selection-end-line="359" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3618#3619#0" expanded="true" />
-            <element signature="e#3683#3684#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14163#14164#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#11368#11376#0" expanded="true" />
+            <element signature="e#14335#14336#0" expanded="true" />
+            <element signature="e#14374#14375#0" expanded="true" />
           </folding>
         </state>
       </provider>
