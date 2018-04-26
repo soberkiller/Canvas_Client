@@ -27,7 +27,7 @@ public class SimilarityByEDAOnPlainText {
             str2=str2+rf2.getFileDetail().get(i);
         }
          
-        similarity= new EditDistanceAlgorithm().similarity(str1, str2);
+//        similarity= new EditDistanceAlgorithm().similarity(str1, str2);
         
     }
     
