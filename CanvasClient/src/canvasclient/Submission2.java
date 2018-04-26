@@ -38,12 +38,12 @@ public class Submission2 {
         attachedFiles = new ArrayList<>();
         
         String path = "/Users/dragon/CanvasFiles/Java/Assignment2/Student3/Submission1/";
-        File submissionfolder = new File(path);
-        String[] filenamelist = submissionfolder.list();
-        
-        for(String x:filenamelist){
-            attachedFiles.add(new File(path+x));
-        }
+//        File submissionfolder = new File(path);
+//        String[] filenamelist = submissionfolder.list();
+//
+//        for(String x:filenamelist){
+            attachedFiles.add(new File(path));
+//        }
         
        
     }

@@ -488,6 +488,7 @@ public class GUI extends JFrame {
             buttonsAssignment.get(i).setFocusable(false);
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
+
                    // main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     //System.out.println(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     //main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
@@ -511,6 +512,12 @@ public class GUI extends JFrame {
                     fileTypesField.setText("NOT IMPLEMENTED");
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
+
+                    //main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    //main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
+                    //main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
+                    //main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    //main.jTextField8.setText("Unavailable");
                 }
             });
             buttonsAssignment.get(0).setBackground(Color.cyan);
@@ -578,7 +585,6 @@ public class GUI extends JFrame {
 
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
-                   // main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());              	
                     main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
