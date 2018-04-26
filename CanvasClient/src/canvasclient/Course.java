@@ -258,7 +258,6 @@ public class Course extends PublicResouce {
                     if (!s.startsWith("\""))
                         if (!des.isEmpty())
                             des += s;
-
                     // get useful information from responses
                     if (s.startsWith("\"id\"") && !s.substring(5, 6).equals("\"")) {
                         strID.add(s.substring(5));
@@ -291,13 +290,13 @@ public class Course extends PublicResouce {
                         }
                     }
                     if (s.startsWith("\"description\"")) {
+                    	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
                         if (!des.isEmpty()) {
                             des = "";
                             des += s.substring(14);
-                        } else {
+                        } else {                   	
                             des += s.substring(14);
-                        }
-
+                        }                   	
                     }
 //                    System.out.println(s);
 
@@ -313,7 +312,11 @@ public class Course extends PublicResouce {
 //                System.out.println(openDate.size());
                 for (int i = 0; i < strID.size(); i++) {
                     assignmentsList.add(new Assignment(strName.get(i), strID.get(i)));
-                    assignmentsList.get(i).setAssignmentDescription(descrip.get(i));
+                    //filter the first and last "
+                    if (descrip.get(i).charAt(0)=='"'&&descrip.get(i).charAt(descrip.get(i).length()-1)=='"')                    	
+                    	assignmentsList.get(i).setAssignmentDescription(descrip.get(i).substring(1, descrip.get(i).length()-1));
+                    else
+                    	assignmentsList.get(i).setAssignmentDescription(descrip.get(i));
                     assignmentsList.get(i).setCloseDate(closeDate.get(i));
                     assignmentsList.get(i).setDueDate(dueDate.get(i));
                     assignmentsList.get(i).setOpenDate(openDate.get(i));

@@ -371,7 +371,9 @@ public class GUI extends JFrame {
             buttonsAssignment.get(i).setBackground(Color.WHITE);
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
-                    main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                   // main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                	System.out.println(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
@@ -438,7 +440,8 @@ public class GUI extends JFrame {
             buttonsAssignment.get(i).setBackground(Color.WHITE);
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
-                    main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                   // main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());              	
+                    main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
