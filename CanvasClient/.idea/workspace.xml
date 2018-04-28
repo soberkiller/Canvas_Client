@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d53ad92-93d5-4a72-a378-ca57b1b4cf89" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reference/ref.dat" beforeDir="false" afterPath="$PROJECT_DIR$/reference/ref.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,48 +17,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CanvasClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="370" lean-forward="true" selection-start-line="370" selection-end-line="370" />
+            <state relative-caret-position="274">
+              <caret line="368" column="50" lean-forward="true" selection-start-line="368" selection-start-column="50" selection-end-line="368" selection-end-column="50" />
               <folding>
-                <element signature="e#3741#3742#0" expanded="true" />
-                <element signature="e#3806#3807#0" expanded="true" />
-                <element signature="e#11368#11376#0" expanded="true" />
-                <element signature="e#14335#14336#0" expanded="true" />
-                <element signature="e#14374#14375#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3777#3778#0" expanded="true" />
+                <element signature="e#3842#3843#0" expanded="true" />
+                <element signature="e#16299#16307#0" expanded="true" />
+                <element signature="e#15063#15064#0" expanded="true" />
+                <element signature="e#15102#15103#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1342">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimilarityByEDAOnPlainText.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -61,20 +37,8 @@
       <file leaf-file-name="PublicResouce.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-646">
-              <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+            <state relative-caret-position="751">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,26 +49,44 @@
       <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="61" column="36" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="36" />
+            <state relative-caret-position="656">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/Student.java">
+      <file leaf-file-name="ref.dat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reference/ref.dat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="76" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="76" />
+            <state relative-caret-position="-551">
+              <caret line="6016" column="27" selection-start-line="6016" selection-start-column="23" selection-end-line="6016" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsPane.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
+      <file leaf-file-name="SubmissionViewer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="357">
+              <caret line="41" column="78" lean-forward="true" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseSelector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="13" column="44" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Submission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -112,10 +94,43 @@
       <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="2094">
+              <caret line="157" selection-start-line="157" selection-end-line="157" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1548">
+              <caret line="318" selection-start-line="318" selection-end-line="318" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4576#4577#0" expanded="true" />
+                <element signature="e#4609#4610#0" expanded="true" />
+                <element signature="e#4644#4645#0" expanded="true" />
+                <element signature="e#4675#4676#0" expanded="true" />
+                <element signature="e#4727#4728#0" expanded="true" />
+                <element signature="e#4765#4766#0" expanded="true" />
+                <element signature="e#4811#4812#0" expanded="true" />
+                <element signature="e#4846#4847#0" expanded="true" />
+                <element signature="e#4897#4898#0" expanded="true" />
+                <element signature="e#4933#4934#0" expanded="true" />
+                <element signature="e#5002#5003#0" expanded="true" />
+                <element signature="e#5052#5053#0" expanded="true" />
+                <element signature="e#5101#5102#0" expanded="true" />
+                <element signature="e#5146#5147#0" expanded="true" />
+                <element signature="e#5342#5343#0" expanded="true" />
+                <element signature="e#5389#5390#0" expanded="true" />
+                <element signature="e#5591#5592#0" expanded="true" />
+                <element signature="e#5620#5621#0" expanded="true" />
+                <element signature="e#5627#5659#0" expanded="true" />
+                <element signature="e#6657#6658#0" expanded="true" />
+                <element signature="e#6702#6703#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,6 +148,16 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>main</find>
+      <find>type</find>
+      <find>submission</find>
+      <find>assig</find>
+      <find>TA1</find>
+      <find>not</find>
+      <find>assignmentNameFont</find>
+      <find>allowed_extensions</find>
+      <find>java</find>
+      <find>Available</find>
+      <find>viewSubmissionsPanel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,15 +173,19 @@
       <list>
         <option value="$PROJECT_DIR$/src/canvasclient/Student.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/StudentViewer.java" />
-        <option value="$PROJECT_DIR$/reference/ref.dat" />
         <option value="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" />
         <option value="$PROJECT_DIR$/UPDATE.MD" />
         <option value="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/CourseSelector.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Main.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Submission2.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Assignment.java" />
+        <option value="$PROJECT_DIR$/reference/ref.dat" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
       </list>
     </option>
@@ -305,7 +334,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4914000" />
+    <option name="totallyTimeSpent" value="23136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3832" y="-8" width="1936" height="1056" extended-state="6" />
@@ -320,7 +349,7 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.40958604" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.40958604" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
@@ -331,7 +360,7 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39978212" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info id="Designer" order="0" />
@@ -399,23 +428,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="23" column="76" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -436,6 +448,27 @@
           <caret line="304" column="16" selection-start-line="304" selection-start-column="16" selection-end-line="304" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4576#4577#0" expanded="true" />
+            <element signature="e#4609#4610#0" expanded="true" />
+            <element signature="e#4644#4645#0" expanded="true" />
+            <element signature="e#4675#4676#0" expanded="true" />
+            <element signature="e#4727#4728#0" expanded="true" />
+            <element signature="e#4765#4766#0" expanded="true" />
+            <element signature="e#4811#4812#0" expanded="true" />
+            <element signature="e#4846#4847#0" expanded="true" />
+            <element signature="e#4897#4898#0" expanded="true" />
+            <element signature="e#4933#4934#0" expanded="true" />
+            <element signature="e#5002#5003#0" expanded="true" />
+            <element signature="e#5052#5053#0" expanded="true" />
+            <element signature="e#5101#5102#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5342#5343#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5591#5592#0" expanded="true" />
+            <element signature="e#5620#5621#0" expanded="true" />
+            <element signature="e#5627#5659#0" expanded="true" />
+            <element signature="e#6657#6658#0" expanded="true" />
+            <element signature="e#6702#6703#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -469,11 +502,12 @@
         <state relative-caret-position="307">
           <caret line="122" column="51" lean-forward="true" selection-start-line="122" selection-start-column="51" selection-end-line="122" selection-end-column="51" />
           <folding>
-            <element signature="e#3741#3742#0" expanded="true" />
-            <element signature="e#3806#3807#0" expanded="true" />
-            <element signature="e#11368#11376#0" expanded="true" />
-            <element signature="e#14335#14336#0" expanded="true" />
-            <element signature="e#14374#14375#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3777#3778#0" expanded="true" />
+            <element signature="e#3842#3843#0" expanded="true" />
+            <element signature="e#16299#16307#0" expanded="true" />
+            <element signature="e#15063#15064#0" expanded="true" />
+            <element signature="e#15102#15103#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -510,11 +544,12 @@
         <state relative-caret-position="374">
           <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
           <folding>
-            <element signature="e#3741#3742#0" expanded="true" />
-            <element signature="e#3806#3807#0" expanded="true" />
-            <element signature="e#11368#11376#0" expanded="true" />
-            <element signature="e#14335#14336#0" expanded="true" />
-            <element signature="e#14374#14375#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3777#3778#0" expanded="true" />
+            <element signature="e#3842#3843#0" expanded="true" />
+            <element signature="e#16299#16307#0" expanded="true" />
+            <element signature="e#15063#15064#0" expanded="true" />
+            <element signature="e#15102#15103#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -532,6 +567,27 @@
           <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4576#4577#0" expanded="true" />
+            <element signature="e#4609#4610#0" expanded="true" />
+            <element signature="e#4644#4645#0" expanded="true" />
+            <element signature="e#4675#4676#0" expanded="true" />
+            <element signature="e#4727#4728#0" expanded="true" />
+            <element signature="e#4765#4766#0" expanded="true" />
+            <element signature="e#4811#4812#0" expanded="true" />
+            <element signature="e#4846#4847#0" expanded="true" />
+            <element signature="e#4897#4898#0" expanded="true" />
+            <element signature="e#4933#4934#0" expanded="true" />
+            <element signature="e#5002#5003#0" expanded="true" />
+            <element signature="e#5052#5053#0" expanded="true" />
+            <element signature="e#5101#5102#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5342#5343#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5591#5592#0" expanded="true" />
+            <element signature="e#5620#5621#0" expanded="true" />
+            <element signature="e#5627#5659#0" expanded="true" />
+            <element signature="e#6657#6658#0" expanded="true" />
+            <element signature="e#6702#6703#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -620,6 +676,27 @@
           <caret line="180" selection-start-line="180" selection-end-line="180" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4576#4577#0" expanded="true" />
+            <element signature="e#4609#4610#0" expanded="true" />
+            <element signature="e#4644#4645#0" expanded="true" />
+            <element signature="e#4675#4676#0" expanded="true" />
+            <element signature="e#4727#4728#0" expanded="true" />
+            <element signature="e#4765#4766#0" expanded="true" />
+            <element signature="e#4811#4812#0" expanded="true" />
+            <element signature="e#4846#4847#0" expanded="true" />
+            <element signature="e#4897#4898#0" expanded="true" />
+            <element signature="e#4933#4934#0" expanded="true" />
+            <element signature="e#5002#5003#0" expanded="true" />
+            <element signature="e#5052#5053#0" expanded="true" />
+            <element signature="e#5101#5102#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5342#5343#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5591#5592#0" expanded="true" />
+            <element signature="e#5620#5621#0" expanded="true" />
+            <element signature="e#5627#5659#0" expanded="true" />
+            <element signature="e#6657#6658#0" expanded="true" />
+            <element signature="e#6702#6703#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -643,11 +720,12 @@
         <state relative-caret-position="354">
           <caret line="237" column="71" selection-start-line="237" selection-start-column="71" selection-end-line="237" selection-end-column="71" />
           <folding>
-            <element signature="e#3741#3742#0" expanded="true" />
-            <element signature="e#3806#3807#0" expanded="true" />
-            <element signature="e#11368#11376#0" expanded="true" />
-            <element signature="e#14335#14336#0" expanded="true" />
-            <element signature="e#14374#14375#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3777#3778#0" expanded="true" />
+            <element signature="e#3842#3843#0" expanded="true" />
+            <element signature="e#16299#16307#0" expanded="true" />
+            <element signature="e#15063#15064#0" expanded="true" />
+            <element signature="e#15102#15103#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -683,13 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reference/ref.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="5322" column="17" selection-start-line="5322" selection-start-column="1" selection-end-line="5322" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UPDATE.MD">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -721,37 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -773,30 +813,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="398">
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -805,35 +825,136 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/SimilarityByEDAOnPlainText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="306">
           <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1342">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="172">
+          <caret line="497" column="16" selection-start-line="497" selection-start-column="16" selection-end-line="497" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="44" column="43" lean-forward="true" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="41" column="78" lean-forward="true" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CourseSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2094">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/ref.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="6016" column="27" selection-start-line="6016" selection-start-column="23" selection-end-line="6016" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="318" selection-start-line="318" selection-end-line="318" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4576#4577#0" expanded="true" />
+            <element signature="e#4609#4610#0" expanded="true" />
+            <element signature="e#4644#4645#0" expanded="true" />
+            <element signature="e#4675#4676#0" expanded="true" />
+            <element signature="e#4727#4728#0" expanded="true" />
+            <element signature="e#4765#4766#0" expanded="true" />
+            <element signature="e#4811#4812#0" expanded="true" />
+            <element signature="e#4846#4847#0" expanded="true" />
+            <element signature="e#4897#4898#0" expanded="true" />
+            <element signature="e#4933#4934#0" expanded="true" />
+            <element signature="e#5002#5003#0" expanded="true" />
+            <element signature="e#5052#5053#0" expanded="true" />
+            <element signature="e#5101#5102#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5342#5343#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5591#5592#0" expanded="true" />
+            <element signature="e#5620#5621#0" expanded="true" />
+            <element signature="e#5627#5659#0" expanded="true" />
+            <element signature="e#6657#6658#0" expanded="true" />
+            <element signature="e#6702#6703#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/Assignment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="36" />
+        <state relative-caret-position="656">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="353" column="30" selection-start-line="353" selection-start-column="21" selection-end-line="353" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15433#15530#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="370" lean-forward="true" selection-start-line="370" selection-end-line="370" />
+        <state relative-caret-position="274">
+          <caret line="368" column="50" lean-forward="true" selection-start-line="368" selection-start-column="50" selection-end-line="368" selection-end-column="50" />
           <folding>
-            <element signature="e#3741#3742#0" expanded="true" />
-            <element signature="e#3806#3807#0" expanded="true" />
-            <element signature="e#11368#11376#0" expanded="true" />
-            <element signature="e#14335#14336#0" expanded="true" />
-            <element signature="e#14374#14375#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3777#3778#0" expanded="true" />
+            <element signature="e#3842#3843#0" expanded="true" />
+            <element signature="e#16299#16307#0" expanded="true" />
+            <element signature="e#15063#15064#0" expanded="true" />
+            <element signature="e#15102#15103#0" expanded="true" />
           </folding>
         </state>
       </provider>

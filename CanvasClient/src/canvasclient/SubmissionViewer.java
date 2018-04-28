@@ -276,4 +276,6 @@ public class SubmissionViewer extends JFrame{
    /* public static void main(String args[]){
       new SubmissionViewer(new Submission2());
     }*/
+
+   // set Viewer visible
 }
