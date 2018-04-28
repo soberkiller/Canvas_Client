@@ -244,7 +244,9 @@ public class Course extends PublicResouce {
                 List<String> closeDate = new ArrayList<>();
                 List<String> dueDate = new ArrayList<>();
                 List<String> descrip = new ArrayList<>();
+                List<String> subType = new ArrayList<>();
                 String des = "";
+                String allowExtention = "";
 
                 for (String s : rawResp) {
                     if (s.startsWith("{"))
@@ -255,9 +257,15 @@ public class Course extends PublicResouce {
                         s = s.substring(2);
                     if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
                         s = s.substring(0, s.length() - 3);
-                    if (!s.startsWith("\""))
+                    if (!s.startsWith("\"")) {
                         if (!des.isEmpty())
                             des += s;
+                    }
+                    if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
+                        if (!allowExtention.isEmpty())
+                            allowExtention += " " + s.substring(1, s.length() - 1);
+                    }
+
                     // get useful information from responses
                     if (s.startsWith("\"id\"") && !s.substring(5, 6).equals("\"")) {
                         strID.add(s.substring(5));
@@ -298,6 +306,24 @@ public class Course extends PublicResouce {
                             des += s.substring(14);
                         }                   	
                     }
+                    if (s.startsWith("\"allowed_extensions\"")) {
+                        if (!allowExtention.isEmpty()) {
+                            allowExtention = "";
+                                allowExtention += s.substring(23, s.length() - 1);
+                        } else {
+                                allowExtention += s.substring(23, s.length() - 1);
+                        }
+                    }
+                    if (s.startsWith("\"published\"")) {
+                        if (!allowExtention.isEmpty()) {
+                            subType.add(allowExtention.substring(0, allowExtention.length() - 1));
+                            allowExtention = "";
+                        } else {
+                            subType.add("null");
+                        }
+
+                        // reserved for published
+                    }
 //                    System.out.println(s);
 
                 }
@@ -320,6 +346,7 @@ public class Course extends PublicResouce {
                     assignmentsList.get(i).setCloseDate(closeDate.get(i));
                     assignmentsList.get(i).setDueDate(dueDate.get(i));
                     assignmentsList.get(i).setOpenDate(openDate.get(i));
+                    assignmentsList.get(i).setSubmissionTypes(subType.get(i));
                 }
             }
         } else {
