@@ -33,7 +33,7 @@ public class Assignment {
     private int percentPenalty;
 
     //array of strings containing the 
-    private String[] submissionTypes;
+    private String submissionTypes;
 
     private ArrayList<Submission> submissionsList;
 
@@ -99,11 +99,11 @@ public class Assignment {
     }
 
 
-    public String[] getSubmissionTypes() {
+    public String getSubmissionTypes() {
         return submissionTypes;
     }
 
-    public void setSubmissionTypes(String[] submissionTypes) {
+    public void setSubmissionTypes(String submissionTypes) {
         this.submissionTypes = submissionTypes;
     }
 

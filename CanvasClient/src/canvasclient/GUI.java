@@ -36,7 +36,7 @@ import java.util.logging.Logger;
  * Handles the GUI of the CanvasClient Application.
  */
 
-public class GUI extends JFrame {
+public class GUI extends PublicResouce {
     private static Course cCourse;
 
     private Container c;
@@ -55,7 +55,7 @@ public class GUI extends JFrame {
         cCourse = currentCourse;
         CourseSelector CSelector = new CourseSelector();
         setTitle(cCourse.getCourseName());
-        setSize(1024, 768);
+        setSize(1250, 768);
         this.setLocationRelativeTo(null);
         c = getContentPane();
 
@@ -257,21 +257,6 @@ public class GUI extends JFrame {
 
 
         ////////////////////////////////////////////////////////////////////////
-        //
-        //  main Panel - The main panel of the main window
-        //
-        //  Author: Matt Sorrentino
-        //
-        //  Contains whatever content is necessary for the current view
-        //  
-        ////////////////////////////////////////////////////////////////////////
-
-        main = new Main();
-        c.add(BorderLayout.CENTER, main.jPanel1);
-
-
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 
@@ -293,6 +278,124 @@ public class GUI extends JFrame {
         int numberOfAssignments = cCourse.getAssignmentsList().size();
 
         JPanel assignmentsPanel = new JPanel();
+        
+        
+        
+        
+                
+        
+        ////////////////////////////////////////////////////////////////////////
+        //
+        //  main Panel - The main panel of the main window
+        //
+        //  Author: Matt Sorrentino
+        //
+        //  Contains whatever content is necessary for the current view
+        //  
+        ////////////////////////////////////////////////////////////////////////
+
+        //main = new Main();
+        
+
+        mainPanel.setLayout(new GridLayout(3, 1, 10, 10));
+
+        assignmentName = new JLabel(cCourse.getAssignmentsList().get(0).getAssignmentName());
+        Font assignmentNameFont = new Font("Helvetica", Font.BOLD , 30);
+        assignmentName.setFont(assignmentNameFont);
+        assignmentNamePanel.add(assignmentName);
+
+
+        dateAvailableField.setEditable(false);
+        dateAvailableField.setBackground(Color.WHITE);
+        dateDueField.setEditable(false);
+        dateDueField.setBackground(Color.WHITE);
+        dateClosingField.setEditable(false);
+        dateClosingField.setBackground(Color.WHITE);
+        pointsField.setEditable(false);
+        pointsField.setBackground(Color.WHITE);
+        latePenaltyField.setEditable(false);
+        latePenaltyField.setBackground(Color.WHITE);
+        fileTypesField.setEditable(false);
+        fileTypesField.setBackground(Color.WHITE);
+        descriptionArea.setEditable(false);
+        descriptionArea.setContentType("text/html");
+        descriptionScroll.setViewportView(descriptionArea);
+
+        assignmentInfoPanel.setLayout(new GridLayout(2, 4, 20, 20));
+        //assignmentInfoPanel.setBorder(new EmptyBorder(50, 50, 50, 50));
+
+        dateAvailablePanel.setLayout(new GridLayout(1, 2, 10, 10));
+        dateAvailablePanel.add(dateAvailable);
+        dateAvailablePanel.add(dateAvailableField);
+        assignmentInfoPanel.add(dateAvailablePanel);
+
+        dateDuePanel.setLayout(new GridLayout(1, 2, 10, 10));
+        dateDuePanel.add(dateDue);
+        dateDuePanel.add(dateDueField);
+        assignmentInfoPanel.add(dateDuePanel);
+
+        JPanel dateClosingPanel = new JPanel();
+        dateClosingPanel.setLayout(new GridLayout(1, 2, 10, 10));
+        dateClosingPanel.add(dateClosing);
+        dateClosingPanel.add(dateClosingField);
+        assignmentInfoPanel.add(dateClosingPanel);
+
+        pointsPanel.setLayout(new GridLayout(1, 2, 10, 10));
+        pointsPanel.add(points);
+        pointsPanel.add(pointsField);
+        assignmentInfoPanel.add(pointsPanel);
+
+        latePenaltyPanel.setLayout(new GridLayout(1, 2, 10, 10));
+        latePenaltyPanel.add(latePenalty);
+        latePenaltyPanel.add(latePenaltyField);
+        assignmentInfoPanel.add(latePenaltyPanel);
+
+        fileTypesPanel.setLayout(new GridLayout(1, 2, 10, 10));
+        fileTypesPanel.add(fileTypes);
+        fileTypesPanel.add(fileTypesField);
+        assignmentInfoPanel.add(fileTypesPanel);
+
+        assignmentDescriptionPanel.setLayout(new GridLayout(1, 1, 10, 10));
+        assignmentDescriptionPanel.setBorder(new EmptyBorder(0, 30, 0, 30));
+        descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
+        descriptionArea.setMargin(new Insets(20, 20, 20, 20));
+        assignmentDescriptionPanel.add(descriptionScroll);
+
+        headerPanel.setLayout(new GridLayout(2, 1, 10, 10));
+        headerPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
+        headerPanel.add(assignmentNamePanel);
+        headerPanel.add(assignmentInfoPanel);
+        mainPanel.add(headerPanel);
+        mainPanel.add(assignmentDescriptionPanel);
+        mainPanel.add(assignmentGetSubmissionsPanel);
+
+        viewSubmissionsPanel.setLayout(new GridLayout(2, 1, 20, 20));
+        viewSubmissionsPanel.setBorder(new EmptyBorder(30, 50, 30, 50));
+
+        JButton viewSubmissions = new JButton("View Submissions");
+        viewSubmissions.addActionListener( e -> new AllSubmissions(
+                // add methods for submission
+
+        ) );
+        viewSubmissions.setBackground(Color.gray);
+        viewSubmissions.setForeground(Color.white);
+        viewSubmissions.setFocusable(false);
+        viewSubmissionsPanel.add(submissionsCount);
+        viewSubmissionsPanel.add(viewSubmissions);
+        
+        
+        
+        
+        assignmentGetSubmissionsPanel.add(viewSubmissionsPanel);
+        
+        c.add(BorderLayout.CENTER, mainPanel);
+        //c.add(BorderLayout.CENTER, main.jPanel1);
+
+
+        ////////////////////////////////////////////////////////////////////////
+
+        
+        
         
         
 
@@ -354,6 +457,10 @@ public class GUI extends JFrame {
         });
         assignmentsListPanel.add(newAssignmentButton);
         buttonsAssignment = new ArrayList<>(numberOfAssignments);
+
+        // init assignment panel
+        initAssignmentPanel();
+
         for(int i = 0; i < numberOfAssignments; i++)
         {
             String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
@@ -369,21 +476,34 @@ public class GUI extends JFrame {
             buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
             buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
             buttonsAssignment.get(i).setBackground(Color.WHITE);
+            buttonsAssignment.get(i).setFocusable(false);
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
-                   // main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                	System.out.println(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
-                    main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
-                    main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-                    main.jTextField8.setText("Unavailable");
+                    for (int k = 0; k < numberOfAssignments; k++) {
+                        buttonsAssignment.get(k).setBackground(Color.white);
+                    }
+                    buttonsAssignment.get(a).setBackground(Color.cyan);
+                    
+                    assignmentName.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
+                    dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
+                    dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
+                    dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    pointsField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    latePenaltyField.setText("NOT IMPLEMENTED");
+                    fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
+                    descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
+
                 }
             });
-
+            buttonsAssignment.get(0).setBackground(Color.cyan);
             assignmentsListPanel.add(buttonsAssignment.get(i));
         }
-//        assignmentsListPanel.removeAll();
+
+
+        
+
+
 
 
         scroller = new JScrollPane(assignmentsListPanel);
@@ -417,6 +537,8 @@ public class GUI extends JFrame {
         setTitle(cCourse.getCourseName());
         currentCourseNameLabel.setText(cCourse.getCourseName());
 
+        // init assignment panel
+        initAssignmentPanel();
 
         int numAssignments = cCourse.getAssignmentsList().size();
         assignmentsListPanel.setLayout(new GridLayout(numAssignments + 1, 1));
@@ -439,16 +561,27 @@ public class GUI extends JFrame {
             buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
             buttonsAssignment.get(i).setBackground(Color.WHITE);
 
+
             buttonsAssignment.get(i).addActionListener(e-> {
                 if(e.getSource() == buttonsAssignment.get(a)) {
-                   // main.jTextArea1.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());              	
-                    main.jTextPane.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    main.jTextField10.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
-                    main.jTextField6.setText(cCourse.getAssignmentsList().get(a).getDueDate());
-                    main.jTextField7.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-                    main.jTextField8.setText("Unavailable");
+                    for (int k = 0; k < numAssignments; k++)
+                    {
+                        buttonsAssignment.get(k).setBackground(Color.white);
+                    }
+                    buttonsAssignment.get(a).setBackground(Color.cyan);
+
+                    assignmentName.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
+                    dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
+                    dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
+                    dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    pointsField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
+                    latePenaltyField.setText("NOT IMPLEMENTED");
+                    fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
+                    descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
                 }
             });
+            buttonsAssignment.get(0).setBackground(Color.cyan);
             assignmentsListPanel.add(buttonsAssignment.get(i));
             setVisible(true);
 
@@ -500,6 +633,19 @@ public class GUI extends JFrame {
 
             setVisible(true);
         }
+    }
+
+    // init assignment panel
+    public void initAssignmentPanel() {
+        assignmentName.setText(cCourse.getAssignmentsList().get(0).getAssignmentName());
+        dateAvailableField.setText(cCourse.getAssignmentsList().get(0).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
+        dateDueField.setText(cCourse.getAssignmentsList().get(0).getDueDate());
+        dateClosingField.setText(cCourse.getAssignmentsList().get(0).getCloseDate());
+        pointsField.setText(cCourse.getAssignmentsList().get(0).getCloseDate());
+        latePenaltyField.setText("NOT IMPLEMENTED");
+        fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
+        descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
+        submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(0).getSubmissionsList().size() + " submissions.");
     }
 
 }
