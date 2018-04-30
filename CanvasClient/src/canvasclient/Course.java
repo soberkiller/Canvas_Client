@@ -244,9 +244,11 @@ public class Course extends PublicResouce {
                 List<String> closeDate = new ArrayList<>();
                 List<String> dueDate = new ArrayList<>();
                 List<String> descrip = new ArrayList<>();
+                List<String> points = new ArrayList<>();
                 String des = "";
 
                 for (String s : rawResp) {
+                	System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
@@ -292,11 +294,14 @@ public class Course extends PublicResouce {
                     if (s.startsWith("\"description\"")) {
                     	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
                         if (!des.isEmpty()) {
-                            des = "";
-                            des += s.substring(14);
+                            //des = "";
+                            des = s.substring(14);
                         } else {                   	
                             des += s.substring(14);
                         }                   	
+                    }
+                    if (s.startsWith("\"points_possible\"")) {
+                    	//points.add
                     }
 //                    System.out.println(s);
 
