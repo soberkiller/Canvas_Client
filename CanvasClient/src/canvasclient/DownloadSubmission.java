@@ -11,10 +11,10 @@ import java.net.URL;
 
 public class DownloadSubmission {
     private String METHOD = "GET";
-    private String API = "https://canvas.instructure.com/api/v1";
+    private String API = "https://sit.instructure.com/api/v1";
     private URL connection;
     private HttpsURLConnection downloadConnection;
-    private String FILEPATH = "c:\\assignments\\";
+    private String FILEPATH = "assignments";
     private FileOutputStream fileOut;
     private InputStream inputStream;
     private boolean isDown = false;

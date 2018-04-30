@@ -62,9 +62,11 @@ public class Course {
         fields.add("courses");
         fields.add(courseID);
         fields.add("assignments");
+        fields.add("?include[]=all_dates");
         connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);
         getAssignments(assignmentsList);
+        System.out.println(assignmentsList.size());
         fields.clear();
 
         //adding fake assignments to test
