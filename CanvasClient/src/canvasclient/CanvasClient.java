@@ -5,32 +5,20 @@
  */
 package canvasclient;
 
+import javax.swing.*;
 import java.io.*;
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 /**
  * @author MattSorrentino
  */
 
-public class CanvasClient {
-
-    private static Course currentCourse;
-    private final Base64.Decoder decoder = Base64.getDecoder();
-
-    private ArrayList<Course> courseList = new ArrayList<Course>();
-    private List<String> fields = new ArrayList<String>();
+public class CanvasClient extends PublicResouce {
     public ConnectionPool connection;
     private String responses = "";
-    private static final String GET = "GET";
-    private static final String PUT = "PUT";
-    private static final String POST = "POST";
-    private static final String FILENAME = "token.dat";
-    private String OAUTH2;
-
-
-    public CanvasClient(Course currentCourse) throws UnsupportedEncodingException {
+    public CanvasClient(Course currentCourse) throws UnsupportedEncodingException, ParseException {
 
         //fetch all courses from canvas
         //create course object for each course
@@ -38,51 +26,54 @@ public class CanvasClient {
 
         //currentCourse = courseList(0);
         //make temporary course objects for testing purposes.
-        fields.add("courses");
-
-        // testing encode class for future
-//        byte[] tb = getOAUTH2().getBytes("UTF-8");
-//        System.out.println(encoder.encode(tb));
-//        String c = new String(decoder.decode(getOAUTH2()), "UTF-8");
-//        System.out.println(c + "that is what Im talking about");
-        // test test test...
-
-        connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
-        connection.setMethod(GET);
-        getCourses(courseList);
-        fields.clear();
 
         //set currentCourse to be the Course object passed in 
         this.currentCourse = currentCourse;
 
         //if null, set currentCourse to be the first course loaded in through the API
         if (this.currentCourse == null) {
-            currentCourse = courseList.get(0);
+
+            if(!fields.isEmpty())
+                fields.clear();
+            fields.add("courses?per_page=100");
+
+            connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
+            connection.setMethod(GET);
+//        getCourses(courseList);
+            //List Not Student role courses
+            courseList = connection.getNotStudentCourses();
+            fields.clear();
+            if(courseList.size() > 0)
+                currentCourse = courseList.get(0);
         }
 
 
         //create instance of main GUI
-        GUI myGUI = new GUI(currentCourse, courseList);
+        new GUI(currentCourse, courseList);
 
 
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         File tokenFile = new File(FILENAME);
-        if(!tokenFile.exists()) {
-            tokenFile.createNewFile();
+        
+        if(!tokenFile.exists()) 
+        {
+            new TokenPrompt(tokenFile); 
         }
-        tokenFile.setReadable(true);
-        tokenFile.setWritable(true);
-
-        new CanvasClient(null);
+        else
+        {
+            tokenFile.setReadable(true);
+            tokenFile.setWritable(true);
+            new CanvasClient(null);
+        }
     }
 
     public ArrayList<Course> getCourseList() {
         return courseList;
     }
 
-    public static Course getCurrentCourse() {
+    static Course getCurrentCourse() {
         return currentCourse;
     }
 

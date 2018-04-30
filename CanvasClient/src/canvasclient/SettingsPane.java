@@ -14,6 +14,8 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+import static javax.swing.text.html.HTML.Tag.HEAD;
+
 /**
  *
  * @author MattSorrentino
@@ -49,20 +51,22 @@ public class SettingsPane extends JFrame
         
         JLabel tokenLabel = new JLabel("Token");
         JTextField tokenField = new JTextField();
-        tokenField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == tokenField) {
+        tokenField.addActionListener(e -> {
+            if(e.getSource() == tokenField) {
 
-                    try {
-                        FileOutputStream fos = new FileOutputStream(FILENAME);
-                        byte[] data = tokenField.getText().getBytes();
+                try {
+                    FileOutputStream fos = new FileOutputStream(FILENAME);
+                    byte[] data = tokenField.getText().getBytes();
 
-                        fos.write(encoder.encode(data));
-                        fos.close();
-                    } catch (Exception ee) {
-                        ee.printStackTrace();
-                    }
+                    fos.write(encoder.encode(data));
+                    fos.close();
+                } catch (Exception ee) {
+                    ee.printStackTrace();
+                }
+
+                if(tokenField.getText() != "") {
+//                    System.out.println(tokenField.getText());
+                    tokenField.setText("");
 
                     if(tokenField.getText() != "") {
 //                        System.out.println(tokenField.getText());

@@ -4424,3 +4424,1890 @@ cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
 "only_visible_to_overrides":false
 "locked_for_user":false
 "submissions_download_url":"https://sit.instructure.com/courses/23546/assignments/100984/submissions?zip=1"
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+"id":74222
+"description":"<p>Please see the pdf for your homework: <a id=\"\" class=\" instructure_scribd_file instructure_file_link\" title=\"homework-1.pdf\" href=\"https://sit.instructure.com/courses/16871/files/2607587/download?verifier=1zkeRqo3JngizUNfa7gInudeLqs6jNffP4hCbVgn&amp;wrap=1\" target=\"\" data-api-endpoint=\"https://sit.instructure.com/api/v1/courses/16871/files/2607587\" data-api-returntype=\"File\">homework-1.pdf</a></p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-03-01T04:59:00Z"
+"unlock_at":null
+"lock_at":null
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":28001
+"grading_standard_id":null
+"created_at":"2017-03-03T15:36:55Z"
+"updated_at":"2017-03-05T04:08:33Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":1
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjAwMDY3ZDY3LTZmZTQtNGQxNi1iMjNkLWE2MWRiNzRlY2JjMCJ9.FKrDDsY8AysoblBqHSj_-Uf-bderGDZmY-AnCzbcyCs"
+"course_id":16871
+"name":"Homework #1"
+"submission_types":["on_paper"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/74222"
+"use_rubric_for_grading":true
+"free_form_criterion_comments":false
+"rubric":[{"id":"_4558"
+"points":5.0
+"description":"1A"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"blank"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"blank_2"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_7877"
+"points":5.0
+"description":"1B"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_6021"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_3258"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_7621"
+"points":5.0
+"description":"1C"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_8030"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_4311"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_5405"
+"points":5.0
+"description":"1D"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_4695"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_9509"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_5989"
+"points":5.0
+"description":"1E"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_6761"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_1318"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_7568"
+"points":5.0
+"description":"2A"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_211"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_8615"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_2609"
+"points":5.0
+"description":"2B"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_6899"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_6663"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_3850"
+"points":5.0
+"description":"2C"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_974"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_7919"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_4765"
+"points":5.0
+"description":"2D"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_4632"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_7221"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_898"
+"points":5.0
+"description":"2E"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_4529"
+"points":5.0
+"description":"Full Marks"
+"long_description":""
+"id":"_3480"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_8829"
+"points":25.0
+"description":"3"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_2608"
+"points":25.0
+"description":"Full Marks"
+"long_description":""
+"id":"_8893"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]
+"id":"_545"
+"points":25.0
+"description":"4"
+"long_description":""
+"criterion_use_range":false
+"ratings":[{"id":"_8346"
+"points":25.0
+"description":"Full Marks"
+"long_description":""
+"id":"_4605"
+"points":0.0
+"description":"No Marks"
+"long_description":""}]}]
+"rubric_settings":{"id":1365
+"title":"Homework #1"
+"points_possible":100.0
+"free_form_criterion_comments":false
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/74222/submissions?zip=1"
+"id":75003
+"description":"<p>You are to write three separate programs
+ one each for stacks
+ queues
+ and linked-lists that broadly support adding
+ deleting and displaying data.</p><p>Each of your program should include a class definition for \"chunk\"
+ a class definition for the data structure (stack/queue/LL) as well as a main() function that should give a \"menu\" like interface to call the various functions. This \"menu\" like interface can be easily acheived with a \"while(1)\" loop and a \"switch\" statement nested within it
+ like we did in the Stack example during lecture. </p><p> </p><p>Functions required for each data structure: </p><ol><li><strong> Linked list: </strong></li></ol><p>- void insertAtHead(int value) <span style=\"color: #00ccff;\"><em>Hint: Similar to Stacks
+ insert at position 1</em></span></p><p>- void insertAtPosition(int position
+ int value)<span style=\"color: #00ccff;\"> <em>Hint: This should insert a node with ‘value’ at any position in the list as long as that position is valid</em></span></p><p>- void removeFromPosition(int position) <span style=\"color: #00ccff;\"><em>Hint: Similar to insert above
+ this should remove a node from a list as long as position is valid</em></span></p><p>- void displayContents()</p><p> </p><ol start=\"2\"><li><strong> Stacks: </strong></li></ol><p>- void push(int value)</p><p>- void pop()</p><p>- void displayContents() </p><p> </p><ol start=\"3\"><li><strong> Queues: </strong></li></ol><p>- void enqueue(int value)</p><p>- void dequeue() </p><p>- void displayContents() </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-03-29T03:59:00Z"
+"unlock_at":null
+"lock_at":"2017-03-29T03:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":28001
+"grading_standard_id":null
+"created_at":"2017-03-22T14:07:53Z"
+"updated_at":"2017-04-03T02:18:19Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":2
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_75003"
+"lock_at":"2017-03-29T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjRiMTFiZTM4LWUxNGEtNDE1Mi04NzU4LTBhMmY0YTA5MmJmZSJ9.xecBqWA3DP4iSMbSlW1KkmEaZpMJJgHYgnpbK7yJGeI"
+"course_id":16871
+"name":"Stacks
+ Queues and Linked-lists"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/75003"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Mar 28
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/75003/submissions?zip=1"
+"id":76552
+"description":"<p>Your next assignment is to incorporate the delete function in the BST class definition.<span> </span>Specifically
+ you are required to perform the following:</p><ol><li>Extend the code to define and implement \"void deleteNodeBST(int value
+ TreeNode *start)\" function. Your function should determine if a given value exists in the tree
+ what type of delete function this is (Case 1/2/3)
+ and appropriately delete that node from the tree.</li></ol><p> </p><ol start=\"2\"><li>Use a main function with while/switch to present a menu-like interface to the user
+ where the menu options include: adding
+ searching
+ traversing and deleting values<span></span>          </li></ol><p> </p><ol start=\"3\"><li>Use the following test sequence to test your code.<span></span><strong><em>(Step-1)</em></strong><span> add</span> elements 15
+ 6
+ 18
+ 3
+ 7
+ 17
+ 20
+ 2
+ 4
+ 13
+ and 9
+ in that order;<span> </span><strong><em>(Step-2)</em></strong><span> </span>Delete elements: 9
+ 7
+ 3 and 15;<span> </span><strong><em>(Step-3)</em></strong><span> </span>Perform in-order
+ pre-order and post-order traversals. </li></ol><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-04-30T03:59:00Z"
+"unlock_at":null
+"lock_at":"2017-04-30T03:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":28001
+"grading_standard_id":null
+"created_at":"2017-04-20T14:55:27Z"
+"updated_at":"2017-05-16T15:41:27Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":3
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_76552"
+"lock_at":"2017-04-30T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImM4YzBmY2U5LTJmMmMtNGFjOS05NGEyLTMwYmNlOWFiOTkwOSJ9.i6BXvt6mIO5MohkGA15Ynf1LeGGK_WeqiRcOSw6jeq4"
+"course_id":16871
+"name":"Build a BST"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/76552"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Apr 29
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/76552/submissions?zip=1"
+"id":75381
+"description":"<p>This portal to is to accept your take home submission. If you took any home
+ make sure you code down the function in question into your Linked list class definition and test it. You should have an implementation of Linked-list from your assignment. </p><p> </p><p>Simple zip up your Linked list code and upload; and you are all set! </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-04-03T03:59:00Z"
+"unlock_at":null
+"lock_at":"2017-04-03T03:59:00Z"
+"points_possible":60.0
+"grading_type":"points"
+"assignment_group_id":32703
+"grading_standard_id":null
+"created_at":"2017-03-29T23:53:58Z"
+"updated_at":"2017-05-15T02:29:06Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":2
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_75381"
+"lock_at":"2017-04-03T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjU3Y2I4MDBjLWMxYWItNDFkZS1hZDZhLTRkZGI4MGY3ZWQxYiJ9.y45Y8ntAuSO-d__ehnbsbflLRvpADBS9QkozPludbUU"
+"course_id":16871
+"name":"Take Home Submission"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/75381"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Apr 2
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/75381/submissions?zip=1"
+"id":76105
+"description":""
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":40.0
+"grading_type":"points"
+"assignment_group_id":32703
+"grading_standard_id":null
+"created_at":"2017-04-13T00:41:15Z"
+"updated_at":"2017-04-13T19:54:14Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":2
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImJkZGI1ZDAxLTVmNjEtNDJjZi1iYjE0LWE0OTc2ZjdhYzNkMyJ9.xb1hCJw2n3BnwC2Zw2SGgwed2URAAqaglndmMzFw6d4"
+"course_id":16871
+"name":"In Class Questions"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/76105"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/76105/submissions?zip=1"
+"id":78957
+"description":""
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":55.0
+"grading_type":"points"
+"assignment_group_id":36083
+"grading_standard_id":null
+"created_at":"2017-05-15T02:28:39Z"
+"updated_at":"2017-05-16T15:40:17Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":1
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjEzNjMxYjQ2LWNiZWUtNGQzYS1hMzFlLTk4ODEwZTdiZjBlZSJ9.XlYL2eP188mQPMC0u7RNN_4hltCpM_tD2ACISzKOWIY"
+"course_id":16871
+"name":"In Class Questions"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/78957"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/78957/submissions?zip=1"
+"id":77730
+"description":"<p>Take home submissions are due by midnight
+ Sunday
+ 05/07. </p><p>You are to write the function in question
+ and integrate that with the BST assignment. When done
+ simply zip your BST cpp file and upload! </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-05-08T03:59:00Z"
+"unlock_at":null
+"lock_at":"2017-05-08T03:59:59Z"
+"points_possible":45.0
+"grading_type":"points"
+"assignment_group_id":36083
+"grading_standard_id":null
+"created_at":"2017-05-05T12:13:18Z"
+"updated_at":"2017-05-16T16:10:46Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":3
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_77730"
+"lock_at":"2017-05-08T03:59:59Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImVkMTM5Y2EyLTJhNmUtNGNiYy1hOGQ4LTM5YjIzYTg2YjIwMCJ9.kOqraJoojcAyv2UyIf9jCoso8k3Vh1KD5Lt4qyLIYzE"
+"course_id":16871
+"name":"Take Home Submissions"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16871/assignments/77730"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked May 7
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/16871/assignments/77730/submissions?zip=1"
+74222
+"blank_2"
+"_7877"
+"_3258"
+"_7621"
+"_4311"
+"_5405"
+"_9509"
+"_5989"
+"_1318"
+"_7568"
+"_8615"
+"_2609"
+"_6663"
+"_3850"
+"_7919"
+"_4765"
+"_7221"
+"_898"
+"_3480"
+"_8829"
+"_8893"
+"_545"
+"_4605"
+75003
+76552
+75381
+76105
+78957
+77730
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+"id":95791
+"description":"<p>Find attached: [<a class=\"instructure_file_link instructure_scribd_file\" title=\"Finals.pdf\" href=\"https://sit.instructure.com/courses/20598/files/3294652/download?verifier=bKygSCzNK3eOcQaqTfChi3kRDeyOu2IwuX4Xp7Y4&amp;wrap=1\" data-api-endpoint=\"https://sit.instructure.com/api/v1/courses/20598/files/3294652\" data-api-returntype=\"File\">Finals.pdf</a>]</p><p>Zip up your response
+ and upload here! </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-12-14T04:59:59Z"
+"unlock_at":null
+"lock_at":"2017-12-14T04:59:59Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":34291
+"grading_standard_id":null
+"created_at":"2017-11-29T19:00:38Z"
+"updated_at":"2017-12-31T19:31:41Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":1
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_95791"
+"lock_at":"2017-12-14T04:59:59Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjBjNGUwNDEzLTRlYTEtNDMxOC04MzdmLTgwZTBlNjY5MDY1NiJ9.aPh-nVTz2-XgrPSLG7rrJGRpY0akx5Bs5_QC4XL04wY"
+"course_id":20598
+"name":"Take Home Finals"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20598/assignments/95791"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Dec 13
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20598/assignments/95791/submissions?zip=1"
+2017-12-14T04:59:59Z
+cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
+cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
+"id":73339
+"description":"<div class=\"description user_content teacher-version enhanced\">Hi All
+<br><br>Please submit your personal presentation slides by the weekend after your presentation. You should submit it within two days after your presentation. Name it as Conference name + Published Year + Paper title + Your name.<br><br>Thanks
+<br><br>Yingying</div><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-05-10T03:59:59Z"
+"unlock_at":"2017-02-07T05:00:00Z"
+"lock_at":"2017-05-10T03:59:00Z"
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":26259
+"grading_standard_id":null
+"created_at":"2017-02-15T01:49:53Z"
+"updated_at":"2017-08-27T16:38:35Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":1
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_73339"
+"lock_at":"2017-05-10T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImEzOGQ2ODE2LWMzOWYtNDg2NC04NDExLTgyMWM0YWJkOTBhZCJ9.sUGd0DXhxs5_fhNx-JVQbcNysQnFekdYK7UBpv5ZO0g"
+"course_id":16895
+"name":"Personal Presentation Slides "
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16895/assignments/73339"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked May 9
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/16895/assignments/73339/submissions?zip=1"
+"id":74783
+"description":""
+"due_at":"2017-03-22T03:59:59Z"
+"unlock_at":"2017-03-18T04:00:00Z"
+"lock_at":"2017-03-22T03:59:00Z"
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":26259
+"grading_standard_id":null
+"created_at":"2017-03-19T13:35:29Z"
+"updated_at":"2017-04-25T15:50:10Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":2
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_74783"
+"lock_at":"2017-03-22T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImMzMDQ0ZTNiLWU3ZTItNDU3NC1hNTk2LTlhMzRlZDAxOGVmMSJ9.k_1p3gyk5up1LedKDqB1SKWhDnP-trIWIUhn-xDKR1c"
+"course_id":16895
+"name":"Midterm Paper Submission 1"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16895/assignments/74783"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Mar 21
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/16895/assignments/74783/submissions?zip=1"
+
+______________________________________________________________________________________________________________________
+"id":76835
+"description":"<p>Please submit your paper in pdf version
+ thanks.</p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-04-27T03:59:59Z"
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":26259
+"grading_standard_id":null
+"created_at":"2017-04-25T16:35:26Z"
+"updated_at":"2017-05-05T15:13:32Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":3
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImJhZjM3NmY3LTI3ZjgtNDlhMS1iZWExLTU0YTMzZDU5NDc3ZCJ9.QYlXfbwklPPSXrk62q5vS7kN2EBbVkPpzejrEYSzjoc"
+"course_id":16895
+"name":"Midterm Paper Submission 2"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/16895/assignments/76835"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/16895/assignments/76835/submissions?zip=1"
+2017-05-10T03:59:00Z
+2017-03-22T03:59:00Z
+null
+cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
+cannot write to a URLConnection if doOutput=false - call setDoOutput(true)
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"id":90637
+"description":"<div>Quicksort</div><div></div><div>input file format:</div><div></div><div>number of test cases</div><div>number of elements to sort in test 1</div><div>data for test1</div><div>number of elements to sort in test 2</div><div>data for test2</div><div>...</div><div>etc.</div><div></div><div>For example
+ the following input file (must be called hw2a.dat)<br><br>\n</div><div>5</div><div>10</div><div>1 2 3 4 5 6 7 8 9 10</div><div>10</div><div>10 9 8 7 6 5 4 3 2 1</div><div>11</div><div>1 2 3 4 5 6 7 8 9 10 11</div><div>11</div><div>11 10 9 8 7 6 5 4 3 2 1</div><div>6</div><div>5 4 4 4 4 1</div><div></div><div>should output</div><div>1 2 3 4 5 6 7 8 9 10</div><div>1 2 3 4 5 6 7 8 9 10</div><div>1 2 3 4 56 7 8 9 10 11</div><div>12 3 4 5 6 7 8 9 10 11</div><div>1 4 4 4 4 5</div><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-09-26T03:59:59Z"
+"unlock_at":"2017-09-18T04:00:00Z"
+"lock_at":"2017-10-03T03:59:59Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":34285
+"grading_standard_id":null
+"created_at":"2017-09-18T13:51:49Z"
+"updated_at":"2017-12-02T07:39:03Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":1
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_90637"
+"lock_at":"2017-10-03T03:59:59Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImEzMzcwMmM5LWI0ZTUtNGE5OC04NzYzLTIxOGY1MzgxNzM5ZSJ9.r9STmHsDcev4Gj29mnpiJmlOQnwYkrwhU_yZ7rn4vn0"
+"course_id":20605
+"name":"HW2a Quicksort"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/90637"
+"allowed_extensions":["java"
+"cc"
+"cpp"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Oct 2
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/90637/submissions?zip=1"
+
+"id":90638
+"description":"<div>Heap Sort</div><div></div><div>input file format:</div><div></div><div>number of test cases</div><div>number of elements to sort in test 1</div><div>data for test1</div><div>number of elements to sort in test 2</div><div>data for test2</div><div>...</div><div>etc.</div><div></div><div>For example
+ the following input file (must be called hw2b.dat)<br><br>\n</div><div>5</div><div>10</div><div>1 2 3 4 5 6 7 8 9 10</div><div>10</div><div>10 9 8 7 6 5 4 3 2 1</div><div>11</div><div>1 2 3 4 5 6 7 8 9 10 11</div><div>11</div><div>11 10 9 8 7 6 5 4 3 2 1</div><div>6</div><div>5 4 4 4 4 1</div><div></div><div>should output</div><div><div>1 2 3 4 5 6 7 8 9 10</div><div>1 2 3 4 5 6 7 8 9 10</div><div>1 2 3 4 56 7 8 9 10 11</div><div>1 2 3 4 5 6 7 8 9 10 11</div><div>1 4 4 4 4 5</div></div><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-09-26T03:59:59Z"
+"unlock_at":"2017-09-18T04:00:00Z"
+"lock_at":"2017-10-03T03:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":34285
+"grading_standard_id":null
+"created_at":"2017-09-18T13:53:08Z"
+"updated_at":"2017-12-02T09:36:14Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":2
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_90638"
+"lock_at":"2017-10-03T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjkyYjFkYTkwLTlhYjUtNDg2Zi04N2ZmLTVkODFkNjQxYTZkYiJ9.BrxVmn8G5XNbClkXZLQPN60qg1EGvHnUCCcylVaWB-Y"
+"course_id":20605
+"name":"HW2b Heap Sort"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/90638"
+"allowed_extensions":["java"
+"cc"
+"cpp"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Oct 2
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/90638/submissions?zip=1"
+
+"id":87043
+"description":"<p>This forum is for asking questions about what we cover in this class.  Asking questions and answering other students' questions does not give you points
+ but will be taken into consideration should you be on the edge and need a boost to the next higher letter grade.</p>\n<p>Any programming language issue that you need answered to work on your homework (or just for interest)</p>\n<p>Any data structures questions.</p>\n<div>Please do not post your code if you are asking for help with homework!  For that kind of specific help
+ you may send email to me privately
+ come to office hours or come to a Wednesday practice session and get help in person.</div>\n<div></div>\n<div>Thanks!</div>\n<div>Dov Kruger</div><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":38221
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:38Z"
+"updated_at":"2017-10-16T13:10:55Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":3
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImFhOWY0YjE1LTk1YzEtNDgxMC1hYTRhLWU0NTQ3YmFiNzE5NiJ9.XLT94UMvFsMgdszoz8etAcFDScdJlSgHE2DW08dqABA"
+"course_id":20605
+"name":"Q & A"
+"submission_types":["discussion_topic"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87043"
+"discussion_topic":{"id":77176
+"title":"Q & A"
+"last_reply_at":"2017-10-16T13:10:55Z"
+"delayed_post_at":null
+"posted_at":null
+"assignment_id":87043
+"root_topic_id":null
+"position":12
+"podcast_has_student_posts":false
+"discussion_type":"threaded"
+"lock_at":null
+"allow_rating":false
+"only_graders_can_rate":false
+"sort_by_rating":false
+"is_section_specific":false
+"user_name":null
+"discussion_subentry_count":9
+"permissions":{"attach":false
+"update":false
+"reply":true
+"delete":false
+"require_initial_post":null
+"user_can_see_posts":true
+"podcast_url":null
+"read_state":"read"
+"unread_count":5
+"subscribed":false
+"topic_children":[]
+"group_topic_children":[]
+"attachments":[]
+"published":true
+"can_unpublish":false
+"locked":false
+"can_lock":true
+"comments_disabled":false
+"author":{
+"html_url":"https://sit.instructure.com/courses/20605/discussion_topics/77176"
+"url":"https://sit.instructure.com/courses/20605/discussion_topics/77176"
+"pinned":false
+"group_category_id":null
+"can_group":false
+"locked_for_user":false
+"message":"<p>This forum is for asking questions about what we cover in this class.  Asking questions and answering other students' questions does not give you points
+ but will be taken into consideration should you be on the edge and need a boost to the next higher letter grade.</p>\n<p>Any programming language issue that you need answered to work on your homework (or just for interest)</p>\n<p>Any data structures questions.</p>\n<div>Please do not post your code if you are asking for help with homework!  For that kind of specific help
+ you may send email to me privately
+ come to office hours or come to a Wednesday practice session and get help in person.</div>\n<div></div>\n<div>Thanks!</div>\n<div>Dov Kruger</div><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87043/submissions?zip=1"
+"id":87056
+"description":"<p>As discussed in class
+ the binomial function choose(n
+r) = n!/(r!(n-r)!)</p><p>To compute this is O(n) + O(r) + O(n-r) = O(n + r + (n-r)) = O(n  + n) = O(n).</p><p>O(n) is usually not so bad.  However
+ if we are doing enough of them
+ we would like to make it better.  Write a program to compute 10<sup>8</sup> = 100 million random binomials with n randomly selected from 1 to 52
+ and r randomly selected 0 to n.</p><p>Using memo-ization or something similar
+ come up with the fastest function you can to compute the binomial in O(1) time.  Obviously
+ do not print the answers
+ because that would take forever.</p><p>Print just a single one in the format:</p><p>n r   choose(n
+r)<br><br>for example:<br><br>52   1   52</p><p> </p><p>This assignment is optional.  Doing these extra ones is a good way to get practice doing something a bit hard
+ and also in case you need that little boost to get up to the next letter grade.</p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-09-13T03:59:00Z"
+"unlock_at":"2017-01-24T05:00:00Z"
+"lock_at":"2017-09-19T03:59:00Z"
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:42Z"
+"updated_at":"2017-12-02T10:39:49Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":5
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87056"
+"lock_at":"2017-09-19T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjU2YjI1MDI1LTRiN2UtNDYwMS05ZjU1LTcyYTMxZDk0Y2M1NiJ9._vwg-krvDonawjzI8my6xr8xCOgD9OzA_6CbnXJwK_w"
+"course_id":20605
+"name":"HW1b Compute binomials using memo-ization"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87056"
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Sep 18
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87056/submissions?zip=1"
+"id":87054
+"description":"<p>Write a program that accepts two whole numbers a and b
+ with a &lt; b &lt;= 10<sup>14</sup>. You must use Eratosthenes' sieve.</p><p>Of course
+ you can't store 10<sup>14</sup> numbers in an array
+ but you don't have to.  We can guarantee that you will not have to do more than 10<sup>9</sup> in any one problem.</p><p>Your program should should count the number of primes between a and b inclusive and output the number.</p><p>Example:</p><p>Input:</p><p>1 20</p><p>Output:</p><p>8</p><p> </p><p>Example2</p><p>Input:</p><p>11 20</p><p>Output:</p><p>4</p><p>While the numbers may be large
+ we will not give you a huge number to count.  For example
+ input:<br>2000000000000 2000000100000</p><p>would be the prime numbers between 2 trillion and 2 trillion + 100k.  Your code still have to be able to do this in very little time
+ we will terminate the job if it takes too long
+ so your code must be somewhat efficient.</p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-10-11T03:59:00Z"
+"unlock_at":"2017-02-07T05:00:00Z"
+"lock_at":"2017-10-17T03:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:41Z"
+"updated_at":"2017-12-04T08:11:43Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":6
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87054"
+"lock_at":"2017-10-17T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjFiZTNjZjMzLTU1ZDctNGUzYi04ZTkxLTg0ZDk2M2RiZWI3MyJ9.UFKJlFGnGpOYGVeD0OAcMxfEtelKx-_gO4dXJECha04"
+"course_id":20605
+"name":"HW1a - Compute primes"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87054"
+"allowed_extensions":["cc"
+"cpp"
+"java"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Oct 16
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87054/submissions?zip=1"
+"id":87069
+"description":"<p>Write a program that reads the following filename (it must have exactly this name) and outputs the desired output;</p><p>The file is \"HW4a.txt\"</p><p> </p><p>The input will be a list of the following instructions : ADD_FRONT
+ ADD_BACK
+ REMOVE_FRONT
+ REMOVE_BACK
+ OUTPUT.</p><p>Start with an empty GrowArray (not the kind we did in class
+ the one for homework is supposed to have a variable used and double each time it grows).  Here are the details of each instruction.</p><p>ADD_FRONT start:step:end  // means add start
+ start+step
+ start+2*step
+ ... end at the front of the array</p><p>ADD_BACK<span>start:step:end</span><span> </span> //<span> means add start
+ start+step
+ start+2*step
+ ... end at the end of the array</span></p><p>REMOVE_FRONT N  // means remove the first N numbers from the list</p><p>REMOVE_BACK M // means remove the last M numbers from the list</p><p>OUTPUT  // output the numbers in the array</p><p> </p><p>For example</p><p>ADD_FRONT 1:2:10</p><p>ADD_BACK  5:5:25</p><p>OUTPUT</p><p>REMOVE_FRONT 2</p><p>REMOVE_BACK 2</p><p>OUTPUT</p><p>would output:</p><p>9
+7
+5
+3
+1
+5
+10
+15
+20
+25</p><p>5
+3
+1
+5
+10
+15</p><p> </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-10-18T03:59:00Z"
+"unlock_at":null
+"lock_at":"2017-10-24T03:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:44Z"
+"updated_at":"2017-12-03T07:11:09Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":20
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87069"
+"lock_at":"2017-10-24T03:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjQ0OGJjYjM5LWQ2ZTctNDVhMy04NWQxLTUxNjE1OTBjYmE5ZCJ9.azmkoZsTeFgcPFJJsm6P9Zw_6gFIOb7T-kDXphf9WXs"
+"course_id":20605
+"name":"HW4a - GrowArray"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87069"
+"allowed_extensions":["java"
+"cc"
+"cpp"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Oct 23
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87069/submissions?zip=1"
+"id":87070
+"description":"<p>Same rules as the previous GrowArray assignment except this time you are to use the DoubleLinkedList2 implementation as described in class (has a pointer to head and tail
+ and each node has a next and prev pointer).</p><p>The file is \"HW4b.txt\"
+ and the input will be a bunch line of instructions.</p><p>See the previous assignment for details on the input format.</p><p> </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-11-08T04:59:00Z"
+"unlock_at":"2017-10-02T04:00:00Z"
+"lock_at":"2017-11-14T04:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:44Z"
+"updated_at":"2017-12-04T09:34:05Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":21
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87070"
+"lock_at":"2017-11-14T04:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjIyYjE4ZmQ2LTg0MjYtNDY2ZS1hOGFkLTY5ZGNhYTVjZTg5MiJ9.3pM3tswbsctTuAQoWMmE6bnLpNvTeV_o4oHC8jo_KHU"
+"course_id":20605
+"name":"HW4b - Linked List class"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87070"
+"allowed_extensions":["java"
+"cc"
+"cpp"
+"cxx"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Nov 13
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87070/submissions?zip=1"
+"id":87072
+"description":"<p>Implement a HashMap implementing linear probing.  </p><p>The key of HashMap is integer type
+ you need to make your own hash function.  You may copy one from burtleburtle.net or any other site .  Just cite where you got your hash function.</p><p>The program should take a single number n as test
+ and should insert numbers from 1 to n into the hash map </p><p>For example
+ the following main in C++ could be used to test the code:<br><br></p><p>int main() {<br>  int n;</p><p>  cin &gt;&gt; n;<br>  HashMapLinearProbing m;<br>  for (int i = 0; i &lt; n; i++)<br>    m.add(i);<br>  m.displayHistogram()<br>}</p><p>Needless to say
+ your hash map should work not just for consecutive integers.  This is just a first brute force test.<br>You could also try adding random values
+ like this:<br><br>  for (int i = 0; i &lt; n; i++)<br>    m.add(rand());</p><p>In java
+ this would look like:</p><p>Random r = new Random();</p><p>  for (int i = 0; i &lt; n; i++)<br>    m.add(r.nextInt());</p><p> </p><p>If you add the same value twice
+ the second one should replace the first one.</p><p> </p><p>The histogram should show how many bins are empty
+ how many have a value that was inserted with no collisions
+ how many bins had 2 values
+ 3 values
+ etc. up to 50.  The 51st bin should show the number of cells that had &gt; 50 collisions.</p><p>For example
+ consider the (very bad) hashmap n = 8 with hash function f(x) = x mod n<br>Given the numbers 1
+ 9
+ 10
+ 17
+ table[1] = 1.  Then 9 collides
+ then 10 collides with 9
+ and 17 collides with 9 and 10.  First count all the empty bins.  That is the count of zeros.  Then inside the add method
+ count the number of times the method has to loop before it finds an empty spot to insert the value.</p><p>In other words
+ you are calculating for each value you add
+ how long it takes.  In the example above
+ the table ends up looking like: </p><p>0
+ 1
+ 9
+ 10
+ 17
+ 0
+ 0
+ 0</p><p>there are 4 zeros
+ so the count of the empties (special case) = 4</p><p>The number 1 took 1 try to insert
+</p><p>The number 9 takes 2 tries to insert.</p><p>the number 10 takes 2 tries to insert. (starts at the bin with 9
+ collides
+ then tries to the right)</p><p>The number 17 takes 4 tries to insert.</p><p>The histogram must show<br> 0    4<br>1    1<br>2    2<br>3    0<br>4    1<br>5    0<br>6    0<br>7    0<br>8    0<br>9    0<br>...<br>up to 50 is the same<br>&gt;50 0</p><p> </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-11-25T04:59:00Z"
+"unlock_at":null
+"lock_at":"2017-12-01T04:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:45Z"
+"updated_at":"2017-12-16T16:56:32Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":23
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87072"
+"lock_at":"2017-12-01T04:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImYzOGVmZTg0LWYwNTYtNGRkNC1iZGY1LWJlNzNiMjZmN2EyZiJ9.FhIAEU_C-SdkEc794qkobbb6FSOKpwpHYJOcV7cwQfE"
+"course_id":20605
+"name":"HW5a - HashMapLinearProbing"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87072"
+"allowed_extensions":["cc"
+"cpp"
+"cxx"
+"java"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Nov 30
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87072/submissions?zip=1"
+"id":87045
+"description":"<p>The game of Boggle is a grid of letters
+ on which we search for words.  A word may start with any letter on the board
+ The full rules are here: <a href=\"http://www.fun-with-words.com/play_boggle.html\">http://www.fun-with-words.com/play_boggle.html</a></p><p>We will set up a simplified boggle.  I will not use the letter q
+ so no need for the special case of one letter being Qu (because Q never appears by itself in the English language).</p><p>First
+ read a dictionary into a trie. Here is the dictionary: <a href=\"https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view?usp=sharing\">https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view?usp=sharing</a></p><p>The trie should support methods</p><p>void add(string s)</p><p>bool contains(string s)</p><p>bool containsPrefix(string s)</p><p> </p><p>Here is the input file you must read in.  It is called boggle.dat: <a href=\"https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing\">https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing</a></p><p> </p><p> Here is a sample test boggle file showing some of the words that are present: <a href=\"https://drive.google.com/file/d/0Bwxfq4Y7f7vkYndOUlNkT0xEeUU/view?usp=sharing\">https://drive.google.com/file/d/0Bwxfq4Y7f7vkYndOUlNkT0xEeUU/view?usp=sharing</a></p><p>Your program should use backgtracking to find every possible word that is 3 letters or longer that is present in the dictionary.</p><p>For the following example:<br>4</p><p>A E M P<br>R S O T<br>F A L D<br>E S T O<br><br>SEAR is a word<br>POSE is a word<br>POSER is a word</p><p>but POSERS is not a word
+ because you cannot use the same letter S twice in the same word.<br>Accordingly
+ the longest possible word for a 4x4 board is 16 letters.  You should be able to handle up to 5x5 (and bigger) but we may only test with 4x4.</p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-12-11T04:59:00Z"
+"unlock_at":"2017-04-08T18:00:00Z"
+"lock_at":"2017-12-11T04:59:00Z"
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:40Z"
+"updated_at":"2017-12-17T23:49:18Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":25
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87045"
+"lock_at":"2017-12-11T04:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjM1OTM1YzQzLTI0YzgtNDAzMS1iM2FkLWQwMGY0MTc4NGIyYiJ9.4IFznL-xmVXXKYRI093s18gEq4o141rV4oyvQ6dQAvA"
+"course_id":20605
+"name":"Boggle (optional)"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87045"
+"allowed_extensions":["cc"
+"cpp"
+"cxx"
+"java"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Dec 10
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87045/submissions?zip=1"
+"id":87099
+"description":"<p>Load the dictionary given
+ and load the file hw5.txt.  For each word
+ print true if it is in the dictionary
+ false otherwise.</p><p> You will need 3 methods in your trie:</p><p>1. Insert a new word</p><p>2. find a word in the trie</p><p>3. Find a prefix (whether any words start with CATA...)</p><p>Dictionary: <a href=\"https://drive.google.com/file/d/0Bwxfq4Y7f7vkeW53OEYxSktWNmc/view?usp=sharing\">https://drive.google.com/file/d/0Bwxfq4Y7f7vkeW53OEYxSktWNmc/view?usp=sharing</a></p><p> </p><script src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"></script>"
+"due_at":"2017-12-02T04:59:00Z"
+"unlock_at":null
+"lock_at":"2017-12-11T04:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":38222
+"grading_standard_id":null
+"created_at":"2017-08-26T17:03:49Z"
+"updated_at":"2017-12-16T23:31:27Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":26
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"lock_info":{"asset_string":"assignment_87099"
+"lock_at":"2017-12-11T04:59:00Z"
+"can_view":true
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjI0MTIwYzQ3LWNlMDEtNGM4Zi05Y2Q2LWZhZDFkMDIxOTZjNiJ9.vTvzBXvSs5N4oU9HO_vBRiVnbviiXLrACmqzhBLhUQo"
+"course_id":20605
+"name":"Trie Dictionary"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/20605/assignments/87099"
+"allowed_extensions":["cc"
+"cxx"
+"cpp"
+"java"]
+"published":true
+"only_visible_to_overrides":false
+"locked_for_user":true
+"lock_explanation":"This assignment was locked Dec 10
+ 2017 at 11:59pm."
+"submissions_download_url":"https://sit.instructure.com/courses/20605/assignments/87099/submissions?zip=1"
+2017-10-03T03:59:59Z
+2017-10-03T03:59:00Z
+null
+null
+2017-09-19T03:59:00Z
+2017-10-17T03:59:00Z
+2017-10-24T03:59:00Z
+2017-11-14T04:59:00Z
+2017-12-01T04:59:00Z
+2017-12-11T04:59:00Z
+2017-12-11T04:59:00Z
+
+"allowed_extensions":["cpp"
+"java"]
+
+
+
+"id":89948
+"description":""
+"due_at":"2018-09-08T03:59:59Z"
+"unlock_at":null
+"lock_at":null
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2017-09-07T18:34:00Z"
+"updated_at":"2018-04-24T14:34:52Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":1
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjQxMDVlNjlhLTA2MDUtNDg2Yi1iNWQyLWU5MjY5ZjQzNzg2YyJ9.lbVrLnvXkDYZ4VexYytmN9d03eMJy-c7h7sDsTB5RSQ"
+"course_id":133
+"name":"C Projects"
+"submission_types":["online_upload"]
+"has_submitted_submissions":true
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/89948"
+"has_overrides":false
+"needs_grading_count":1
+"integration_id":null
+"integration_data":{
+"published":true
+"unpublishable":false
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/89948/submissions?zip=1"
+"id":89949
+"description":"\u003cp\u003eThis is a test assignment.\u003c/p\u003e\r\n\u003cp\u003eThis is a test assignment.\u003c/p\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"\u003e\u003c/script\u003e"
+"due_at":"2018-09-08T03:59:00Z"
+"unlock_at":null
+"lock_at":null
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2017-09-07T18:34:22Z"
+"updated_at":"2018-04-26T05:08:51Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":2
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjVlNTI3NDA5LWM3MGUtNGUyZS04NmNiLWFiNjJiZWI1MDg2YiJ9.AiU-Kl5fTHnJLwUu_XdEb5bqW2z0h4SaTjprkMt4gaM"
+"course_id":133
+"name":"Java Projects"
+"submission_types":["online_upload"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/89949"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":true
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/89949/submissions?zip=1"
+"id":109538
+"description":""
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-03-27T19:09:38Z"
+"updated_at":"2018-04-26T04:59:28Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":5
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImIxY2JkYTI4LTcwZGQtNDU3ZC05ZDU4LTUxNTA2NWE5NTFhYSJ9.lOubNvWFhbA9cNWDmJjE1s02WAYa26NZL5Yj0qC3RMU"
+"course_id":133
+"name":"Test \u0026\u0026 user"
+"submission_types":["online_upload"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/109538"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":true
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/109538/submissions?zip=1"
+"id":111480
+"description":"\u003cp\u003e\u003cspan\u003eThis assignment was locked Feb 19 at 11:59pm.\u003c/span\u003e\u003c/p\u003e\r\n\u003cdiv class=\"clear\"\u003e\u003c/div\u003e\r\n\u003cdiv class=\"description user_content student-version enhanced\"\u003e\r\n\u003cp\u003eNote: If you have problems with OpenGL
+ contact me for an alternate assignment.\u003c/p\u003e\r\n\u003cp\u003eWrite a program to draw an earth rotating as we did in class.  In addition
+ create the moon.  You may use a cartoon distance of 4 diameters of earth away (much closer than in reality) or if you wish
+ use the real number (approximately 30 diameters away).  If you use the second number earth and moon will look quite small on the screen.  Make the moon go around the earth at correct scale speed.  In other words
+ however fast your earth rotates once (approximately a day) it should take the moon 28.5 days to orbit the earth.  \u003c/p\u003e\r\n\u003cp\u003eThe earth
+ as we drew it in class
+ is tilted approximately 23.5 degrees relative to the plane of the solar system (the ecliptic).  The moon orbits the earth in a plane 5.6 degrees off the ecliptic.\u003c/p\u003e\r\n\u003cp\u003eYou must call the image of the moon \"moon.jpg\" because we can only handle your code
+ not your data files as well (Canvas supports one file per homework).\u003c/p\u003e\r\n\u003cp\u003eYou will need to get a cylindrical projection of the moon from planetpixelemporium.com\u003c/p\u003e\r\n\u003cp\u003emy image directory is linked here:\u003ca class=\"external\" href=\"https://drive.google.com/open?id=0ByWFfdXuM_awZmgzTS1LTkNyRDQ\" target=\"_blank\"\u003e\u003cspan\u003ehttps://drive.google.com/open?id=0ByWFfdXuM_awZmgzTS1LTkNyRDQ\u003cspan class=\"screenreader-only\"\u003e \u003c/span\u003e\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e\r\n\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\"\u003e\u003c/script\u003e"
+"due_at":"2018-04-28T03:59:00Z"
+"unlock_at":null
+"lock_at":null
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-20T21:41:24Z"
+"updated_at":"2018-04-26T04:55:39Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":10
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImJlOWY5ZDQxLTIzMjMtNDcyZS04NzkyLWZmZmQxNDcyM2E1NCJ9.UkXH3teXLIAIzGgqGEfoOZBgMCQxumhcLrS5uSUE4KM"
+"course_id":133
+"name":"552-Copy-Earth-Moon System"
+"submission_types":["online_upload"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111480"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"allowed_extensions":["java"]
+"published":true
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111480/submissions?zip=1"
+"id":111632
+"description":""
+"due_at":"2018-04-30T03:59:00Z"
+"unlock_at":"2018-04-27T04:00:00Z"
+"lock_at":"2018-05-01T03:59:00Z"
+"points_possible":100.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-23T21:20:07Z"
+"updated_at":"2018-04-27T15:08:14Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":11
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjI5NjMyODljLWY5ODEtNGE0MS1hNTI3LWY0N2I0YWZkMTk3YSJ9.3KCZNc8Fif63gxoE7BR8UXfDbo6PYrdCNDG5a267_y4"
+
+
+"course_id":133
+"name":"TA1"
+"submission_types":["online_upload"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"published"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111632"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"allowed_extensions":["cpp"
+"java"]
+"published":true
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111632/submissions?zip=1"
+"id":111633
+"description":null
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-23T21:20:27Z"
+"updated_at":"2018-04-23T21:20:27Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":12
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImZmNDY0MWMzLTBjOTEtNDYyOC1hYjEyLWY2OWQ0ODg4Mjc3OCJ9.tJSXtUfPwfCtAFicLTOMK12fDzkoVnC5IVmm0yU1I5k"
+
+
+"course_id":133
+"name":"TA2"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"unpublished"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111633"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":false
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111633/submissions?zip=1"
+"id":111634
+"description":null
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-23T21:20:34Z"
+"updated_at":"2018-04-23T21:20:34Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":13
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImNmZWQ0Mzk4LTQ2YTAtNDY3Yy04ZGRhLTMyOTJlMTEwZWMwYSJ9.NpWEiJqQtwxhZr6a6ONk_Mm0MVgxL0DwmRby-W1bvYA"
+"course_id":133
+"name":"TA3"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"unpublished"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111634"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":false
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111634/submissions?zip=1"
+"id":111635
+"description":null
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-23T21:20:39Z"
+"updated_at":"2018-04-23T21:20:39Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":14
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6Ijg5NjJmZTJjLTY1YzktNDM1Yi04MjNkLWZiYzFjOTBmYzczYyJ9.5Pefxwev5QpRiLsftSsaocQspHkcvmKETzTuh4aNZNk"
+"course_id":133
+"name":"TA4"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"unpublished"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111635"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":false
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111635/submissions?zip=1"
+"id":111636
+"description":null
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-23T21:20:45Z"
+"updated_at":"2018-04-23T21:20:45Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":15
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjVjZjFjNDBlLWUwMzgtNGUxMC1hZjJiLTZjZDk2NzhlNDAwMiJ9.9ABT8U-k42c0djeTZejY0Qm5_1Gf8rJqv737jnyImMw"
+"course_id":133
+"name":"TA5"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"unpublished"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111636"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":false
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111636/submissions?zip=1"
+"id":111637
+"description":null
+"due_at":null
+"unlock_at":null
+"lock_at":null
+"points_possible":0.0
+"grading_type":"points"
+"assignment_group_id":39178
+"grading_standard_id":null
+"created_at":"2018-04-23T21:20:50Z"
+"updated_at":"2018-04-23T21:20:50Z"
+"peer_reviews":false
+"automatic_peer_reviews":false
+"position":16
+"grade_group_students_individually":false
+"anonymous_peer_reviews":false
+"group_category_id":null
+"post_to_sis":false
+"moderated_grading":false
+"omit_from_final_grade":false
+"intra_group_peer_reviews":false
+"anonymous_instructor_annotations":false
+"anonymous_grading":false
+"secure_params":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjhkMTI5NzY3LTgzYjctNGUzYy1iYjM1LThhN2RjZWVjMzBkMyJ9.iGNGF4SPtHWuwQJhxd_t3GUG0wq4x63gw0feB7l3x7Q"
+"course_id":133
+"name":"TA6"
+"submission_types":["none"]
+"has_submitted_submissions":false
+"due_date_required":false
+"max_name_length":255
+"in_closed_grading_period":false
+"is_quiz_assignment":false
+"can_duplicate":true
+"original_assignment_id":null
+"original_assignment_name":null
+"workflow_state":"unpublished"
+"muted":false
+"html_url":"https://sit.instructure.com/courses/133/assignments/111637"
+"has_overrides":false
+"needs_grading_count":0
+"integration_id":null
+"integration_data":{
+"published":false
+"unpublishable":true
+"only_visible_to_overrides":false
+"locked_for_user":false
+"submissions_download_url":"https://sit.instructure.com/courses/133/assignments/111637/submissions?zip=1"
+
+
+deal with subtype length
