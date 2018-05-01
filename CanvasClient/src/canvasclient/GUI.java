@@ -46,7 +46,6 @@ public class GUI extends PublicResouce {
     private JLabel currentCourseNameLabel;
     private JScrollPane scroller;
     private JButton newAssignmentButton = new JButton("New Assignment");
-    private Main main;
 
     private final Base64.Decoder decoder = Base64.getDecoder();
     private final String FILENAME = "token.dat";
@@ -61,15 +60,15 @@ public class GUI extends PublicResouce {
 
         addWindowListener(new MyWindowListener());
 
-        try {
+        try 
+        {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             e.printStackTrace();
         }
 
-        //JLabel to be used as a spacer for GridLayout Panels
-        JLabel spacer1 = new JLabel(" ");
-        JLabel spacer2 = new JLabel(" ");
 
         ////////////////////////////////////////////////////////////////////////
         //
@@ -94,8 +93,6 @@ public class GUI extends PublicResouce {
         currentCoursePanel.setLayout(new GridLayout(2, 1, 10, 0));
         currentCoursePanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-
-        //currentCoursePanel.add(spacer1);
 
 
         currentCourseNameLabel = new JLabel(" " + cCourse.getCourseName());
@@ -145,6 +142,7 @@ public class GUI extends PublicResouce {
 
         topBar.add(currentCoursePanel);
 
+        
         ////////////////////////////////////////////////////////////////////////
 
         JPanel logoPanel = new JPanel();
@@ -173,14 +171,7 @@ public class GUI extends PublicResouce {
         majorActionsPanel.setLayout(new GridLayout(1, 1, 0, 0));
         majorActionsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        /*
-
-        //majorActionsPanel.add(spacer2);
-        JButton pushChangesToCanvas = new JButton("Push To Canvas");
-        //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
-        majorActionsPanel.add(pushChangesToCanvas);
-        pushChangesToCanvas.setBackground(Color.lightGray);
-        */
+       
 
         JButton launchStudentViewer = new JButton("View Students");
         //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
@@ -205,60 +196,6 @@ public class GUI extends PublicResouce {
         c.add(BorderLayout.NORTH, topBar);
 
 
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-
-
-
-
-        ////////////////////////////////////////////////////////////////////////
-        //
-        //  leftToolbar Panel - Left Bar of GUI
-        //
-        //  Author: Matt Sorrentino
-        //
-        //  Contains buttons
-        //  
-        ////////////////////////////////////////////////////////////////////////
-        /*
-        JPanel leftToolbar = new JPanel();
-        leftToolbar.setPreferredSize(new Dimension(100, 768));
-        leftToolbar.setLayout(new GridLayout(3, 1, 0, 0));
-        leftToolbar.setBorder(new EmptyBorder(0, 0, 0, 0));
-        leftToolbar.setBackground(Color.GRAY);
-        
-        
-        
-        JButton editAssignmentButton = new JButton("Edit");
-        editAssignmentButton.setPreferredSize(new Dimension(80, 80));
-        editAssignmentButton.setBackground(Color.lightGray);
-        leftToolbar.add(editAssignmentButton);
-        
-        JButton newAssignmentButton = new JButton("New Assignment");
-        newAssignmentButton.setPreferredSize(new Dimension(80, 80));
-        newAssignmentButton.setBackground(Color.lightGray);
-        leftToolbar.add(newAssignmentButton);
-        
-        JButton courseSettingsButton = new JButton("Course Settings");
-        courseSettingsButton.setPreferredSize(new Dimension(80, 80));
-        courseSettingsButton.setBackground(Color.lightGray);
-        leftToolbar.add(courseSettingsButton);
-        
-        c.add(BorderLayout.WEST, leftToolbar);
-        */
-
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-
-
-
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
 
 
 
@@ -394,32 +331,10 @@ public class GUI extends PublicResouce {
         ////////////////////////////////////////////////////////////////////////
 
         
-        
-        
-        
-
-        /*
-        JButton newAssignmentButton = new JButton("New Assignment");
-        newAssignmentButton.setBackground(Color.lightGray);
-        assignmentsPanel.add(BorderLayout.NORTH, newAssignmentButton);
-        */
-
-
-        // Label to display the message indicating which button generated the event.
-
-        //JLabel label=new JLabel();
-
-        // Panel to accomodate the labels
-
-
-        //panel.setMaximumSize(new Dimension(100, 768));
+   
         assignmentsListPanel.setBackground(Color.WHITE);
 
-        assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments + 1, 1));
-
-
-
-        //Using a for loop we create temporary JButtons.    
+        assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments + 1, 1));    
 
 
         newAssignmentButton.setFocusable(false);
