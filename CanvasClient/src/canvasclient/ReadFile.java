@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package canvasclient;
+
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
 /**
  *
- * @author Xiao
+ * @author dragon
  */
 public class ReadFile {
     
