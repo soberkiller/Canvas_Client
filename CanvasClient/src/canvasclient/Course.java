@@ -244,11 +244,7 @@ public class Course extends PublicResouce {
                 List<String> closeDate = new ArrayList<>();
                 List<String> dueDate = new ArrayList<>();
                 List<String> descrip = new ArrayList<>();
-<<<<<<< HEAD
-                List<String> points = new ArrayList<>();
-=======
                 List<String> subType = new ArrayList<>();
->>>>>>> 0f03b3b768024d87243974b461d13681d5c63d76
                 String des = "";
                 String allowExtention = "";
 
@@ -311,10 +307,6 @@ public class Course extends PublicResouce {
                             des += s.substring(14);
                         }                   	
                     }
-<<<<<<< HEAD
-                    if (s.startsWith("\"points_possible\"")) {
-                    	//points.add
-=======
                     if (s.startsWith("\"allowed_extensions\"")) {
                         if (!allowExtention.isEmpty()) {
                             allowExtention = "";
@@ -332,7 +324,6 @@ public class Course extends PublicResouce {
                         }
 
                         // reserved for published
->>>>>>> 0f03b3b768024d87243974b461d13681d5c63d76
                     }
 //                    System.out.println(s);
 
