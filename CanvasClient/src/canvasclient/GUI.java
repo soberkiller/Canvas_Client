@@ -373,15 +373,14 @@ public class GUI extends PublicResouce {
         viewSubmissionsPanel.setBorder(new EmptyBorder(30, 50, 30, 50));
 
         JButton viewSubmissions = new JButton("View Submissions");
-        viewSubmissions.addActionListener( e -> new AllSubmissions(
-                // add methods for submission
-
-        ) );
+        viewSubmissions.addActionListener( e -> new SubmissionViewer(cCourse.getAssignmentsList().get(0)));
         viewSubmissions.setBackground(Color.gray);
         viewSubmissions.setForeground(Color.white);
         viewSubmissions.setFocusable(false);
         viewSubmissionsPanel.add(submissionsCount);
         viewSubmissionsPanel.add(viewSubmissions);
+  
+        
         
         
         
