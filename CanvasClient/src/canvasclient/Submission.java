@@ -22,13 +22,16 @@ public class Submission {
     private Student student;
 
     // time and date of submission
-    private LocalDateTime submissionTime;
+    private String submissionTime;
 
     //the grade given for the submission
     private double submissionGrade;
 
     // comments the student added to the submission
-    private String comments;
+    private String studentComments;
+    
+    // comments the grader added to the submission
+    private String graderComments;
 
     // ArrayList of files the student submitted
     // We'd like to be able to process submissions with multiple files
@@ -46,22 +49,30 @@ public class Submission {
         return student;
     }
 
-    public LocalDateTime getSubmissionTime() {
+    public String getSubmissionTime() {
         return submissionTime;
     }
 
-    public void setSubmissionTime(LocalDateTime submissionTime) {
+    public void setSubmissionTime(String submissionTime) {
         this.submissionTime = submissionTime;
     }
+
+    public String getGraderComments() {
+        return graderComments;
+    }
+
+    public void setGraderComments(String graderComments) {
+        this.graderComments = graderComments;
+    }
+
+    public String getStudentComments() {
+        return studentComments;
+    }
+
+    public void setStudentComments(String studentComments) {
+        this.studentComments = studentComments;
+    }
     
-
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
     
 
     public ArrayList<File> getAttachedFiles() {

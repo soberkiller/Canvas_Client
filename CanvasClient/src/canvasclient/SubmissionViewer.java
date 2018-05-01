@@ -53,11 +53,13 @@ public class SubmissionViewer extends JFrame{
         File a = new File("/Desktop/Servlet.java");
         currentAssignment.getSubmissionsList().add(new Submission(new Student("First Last", "12345678", "test@stevens.edu")));
         currentAssignment.getSubmissionsList().get(0).getAttachedFiles().add(a);
+        currentAssignment.getSubmissionsList().get(0).setSubmissionTime("temp time");
         
         
         currentSubmission = currentAssignment.getSubmissionsList().get(0);
 
-        setSize(1024,1000);
+        setSize(1024,820);
+        this.setLocationRelativeTo(null);
         Container c = getContentPane();
    //     addWindowListener(new MyWindowListener());
         
@@ -145,85 +147,122 @@ public class SubmissionViewer extends JFrame{
    
         
         JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(3, 1, 0, 0));
         
         JPanel infoPanel = new JPanel();
-        JPanel graderPanel = new JPanel();
+        JPanel dataPanel = new JPanel();
+        //JPanel graderPanel = new JPanel();
         JPanel actionPanel = new JPanel();
         
-        infoPanel.setPreferredSize(new Dimension(770,50));
-        graderPanel.setBackground(Color.white);
+        //infoPanel.setPreferredSize(new Dimension(770,50));
+        infoPanel.setLayout(new GridLayout(3, 3, 20, 20));
+        infoPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
+        
+        dataPanel.setLayout(new GridLayout(1, 2, 20, 20));
+        dataPanel.setBorder(new EmptyBorder(0, 30, 0, 30));
+        
+        
+        //graderPanel.setBackground(Color.white);
+        
         actionPanel.setPreferredSize(new Dimension(770,100));
-        actionPanel.setBackground(Color.gray);
-        actionPanel.setLayout(new GridLayout(1, 3, 40, 40));
+        actionPanel.setLayout(new GridLayout(2, 1, 20, 20));
         actionPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
         
         
         JLabel studentName = new JLabel(currentSubmission.getStudent().getStudentName());
         JLabel studentID = new JLabel(currentSubmission.getStudent().getStudentID());
-        
-        infoPanel.add(studentName);
-        infoPanel.add(studentID);
-        
-        mainPanel.add(BorderLayout.NORTH, infoPanel);
-        mainPanel.add(BorderLayout.CENTER, graderPanel);
-        mainPanel.add(BorderLayout.SOUTH, actionPanel);
-        
-        
-        JButton setExpectedResult = new JButton("Set Expected Result");
-        setExpectedResult.setBackground(Color.white);
-        setExpectedResult.setFocusable(false);
-        actionPanel.add(setExpectedResult);
-        
-        JButton saveGrade = new JButton("Save Grade");
-        saveGrade.setBackground(Color.white);
-        saveGrade.setFocusable(false);
-        actionPanel.add(saveGrade);
-        
-        JButton nextSubmission = new JButton("Next Submission");
-        nextSubmission.setBackground(Color.white);
-        nextSubmission.setFocusable(false);
-        actionPanel.add(nextSubmission);
-        
-        JPanel leftPanel = new JPanel();
-        leftPanel.setPreferredSize(new Dimension(600,678));
-        SpringLayout layout = new SpringLayout();
-        JPanel rightPanel = new JPanel(layout);
-        rightPanel.setPreferredSize(new Dimension(168,678));
-        graderPanel.add(BorderLayout.WEST,leftPanel);
-        graderPanel.add(BorderLayout.EAST,rightPanel);
-        
+        JLabel submissionTime = new JLabel("Submitted at: " + currentSubmission.getSubmissionTime());
         
         JComboBox selectfile = new JComboBox();
-        selectfile.setPreferredSize(new Dimension(300,30));
         selectfile.addItem("Select File");
         for(int i=0;i<currentAssignment.getSubmissionsList().get(0).getAttachedFiles().size();i++)
         {
             selectfile.addItem(currentAssignment.getSubmissionsList().get(0).getAttachedFiles().get(i).getName());
         }
-        JLabel filelb = new JLabel("AttachedFiles");
-        filelb.setPreferredSize(new Dimension(550,20));
-        JLabel codelb = new JLabel("Code");
-        codelb.setPreferredSize(new Dimension(550,20));
-        JLabel resultlb = new JLabel("Result");
-        resultlb.setPreferredSize(new Dimension(550,20));
+        
+        //JLabel filelb = new JLabel("AttachedFiles");
+        JButton run = new JButton("run");
+        
+        JTextField studentCommentsField = new JTextField(currentSubmission.getStudentComments());
+        
+        infoPanel.add(studentName);
+        infoPanel.add(studentID);
+        infoPanel.add(submissionTime);
+        //infoPanel.add(filelb);
+        infoPanel.add(selectfile);
+        infoPanel.add(run);
+        infoPanel.add(studentCommentsField);
+        infoPanel.add(new JLabel("Code"));
+        infoPanel.add(new JLabel(" "));
+        infoPanel.add(new JLabel("Output"));
+        
+        
+        JPanel gradeandCommentsPanel = new JPanel();
+        JPanel actionOptionsPanel = new JPanel();
+        actionOptionsPanel.setLayout(new GridLayout(1, 3, 10, 10));
+        
+        JLabel gradeLabel = new JLabel("Grade");
+        JLabel commentsLabel = new JLabel("Comments");
+        
+        String grade = Double.toString(currentSubmission.getSubmissionGrade());
+        JTextField gradeField = new JTextField(grade);
+        gradeField.setPreferredSize(new Dimension(50, 30));
+        JTextField commentsField = new JTextField(currentSubmission.getGraderComments());
+        commentsField.setPreferredSize(new Dimension(400, 30));
+        
+        gradeandCommentsPanel.add(gradeLabel);
+        gradeandCommentsPanel.add(gradeField);
+        gradeandCommentsPanel.add(new JLabel("           "));
+        gradeandCommentsPanel.add(commentsLabel);
+        gradeandCommentsPanel.add(commentsField);
+        
+        
+        JButton setExpectedResult = new JButton("Set Expected Result");
+        setExpectedResult.setBackground(Color.white);
+        setExpectedResult.setFocusable(false);
+        actionOptionsPanel.add(setExpectedResult);
+        
+        JButton save = new JButton("Save");
+        save.setBackground(Color.cyan);
+        save.setFocusable(false);
+        actionOptionsPanel.add(save);
+        
+        JButton nextSubmission = new JButton("Next Submission");
+        nextSubmission.setBackground(Color.white);
+        nextSubmission.setFocusable(false);
+        actionOptionsPanel.add(nextSubmission);
+        
+        JPanel leftPanel = new JPanel();
+        leftPanel.setLayout(new GridLayout(3, 1, 10, 10));
+        leftPanel.setPreferredSize(new Dimension(768,678));
+        SpringLayout layout = new SpringLayout();
+        //JPanel rightPanel = new JPanel(layout);
+        //rightPanel.setPreferredSize(new Dimension(168,678));
+        //graderPanel.add(BorderLayout.WEST,leftPanel);
+        //graderPanel.add(BorderLayout.EAST,rightPanel);
+        
+        
+        
+        //JLabel codelb = new JLabel("Code");
+        //codelb.setPreferredSize(new Dimension(550,20));
+        //JLabel resultlb = new JLabel("Result");
+        //resultlb.setPreferredSize(new Dimension(550,20));
         JTextArea codeta = new JTextArea();
         JTextArea resultta = new JTextArea();
         
         JScrollPane jspcode=new JScrollPane(codeta);
-        jspcode.setPreferredSize(new Dimension(550,250));
+        jspcode.setPreferredSize(new Dimension(350,250));
         JScrollPane jspresult=new JScrollPane(resultta);
-        jspresult.setPreferredSize(new Dimension(550,250));
-        
-        leftPanel.add(filelb);
-        leftPanel.add(selectfile);
-        leftPanel.add(codelb);
-        leftPanel.add(jspcode);
-        leftPanel.add(resultlb);
-        leftPanel.add(jspresult);
+        jspresult.setPreferredSize(new Dimension(350,250));
         
         
-        JButton run = new JButton("run");
-        run.setPreferredSize(new Dimension(50,20));
+        //dataPanel.add(codelb);
+        dataPanel.add(jspcode);
+        //dataPanel.add(resultlb);
+        dataPanel.add(jspresult);
+        
+        
+        
         JButton savegrade = new JButton("Save Grade");
         savegrade.setPreferredSize(new Dimension(100,20));
         JButton savecomment = new JButton("Save Comment");
@@ -236,13 +275,13 @@ public class SubmissionViewer extends JFrame{
         gradelb.setPreferredSize(new Dimension(150,20));
         JLabel commentlb = new JLabel("Comment");
         commentlb.setPreferredSize(new Dimension(150,20));
-        rightPanel.add(run);
-        rightPanel.add(gradelb);
-        rightPanel.add(gradetf);
-        rightPanel.add(savegrade);
-        rightPanel.add(commentlb);
-        rightPanel.add(commenttf);
-        rightPanel.add(savecomment);
+        //leftPanel.add(run);
+        //graderPanel.add(gradelb);
+        //graderPanel.add(gradetf);
+        //graderPanel.add(savegrade);
+        //graderPanel.add(commentlb);
+        //graderPanel.add(commenttf);
+        //graderPanel.add(savecomment);
         
         SpringLayout.Constraints runCons = layout.getConstraints(run);
         runCons.setX(Spring.constant(59));
@@ -299,7 +338,7 @@ public class SubmissionViewer extends JFrame{
                 public void actionPerformed (ActionEvent e1)
                 {
                     double gra = Double.valueOf(gradetf.getText());
-                    submission.setGrade(gra);
+                    currentSubmission.setSubmissionGrade(gra);
                     try
                     {
                     Save_Grade sg= new Save_Grade(gra,path);
@@ -318,7 +357,7 @@ public class SubmissionViewer extends JFrame{
                 public void actionPerformed (ActionEvent e1)
                 {
                     String com = commenttf.getText();
-                    submission.setComments(com);
+                    currentSubmission.setGraderComments(com);
                     try
                     {
                     Save_Comment sc= new Save_Comment(com,path);
@@ -408,6 +447,16 @@ public class SubmissionViewer extends JFrame{
                 
             }    
         );
+        
+        
+        actionPanel.add(gradeandCommentsPanel);
+        actionPanel.add(actionOptionsPanel);
+        
+        
+        mainPanel.add(infoPanel);
+        mainPanel.add(dataPanel);
+        //mainPanel.add(graderPanel);
+        mainPanel.add(actionPanel);
         
         c.add(mainPanel);
         
