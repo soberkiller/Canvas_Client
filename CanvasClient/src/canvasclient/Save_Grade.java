@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package canvasclient;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-
-/**
- *
- * @author Xiao
- */
 public class Save_Grade 
 {
 	private double grade;
@@ -40,4 +31,10 @@ public class Save_Grade
 		p.println("Grade:"+this.grade);
 		p.close();
 	}
+	/*public static void main(String argus[]) throws IOException 
+	{
+		double x=50.5;
+		Save_Grade a=new Save_Grade(x);
+		
+	}*/
 }

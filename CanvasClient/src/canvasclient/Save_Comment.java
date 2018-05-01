@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package canvasclient;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-
-/**
- *
- * @author Xiao
- */
 public class Save_Comment 
 {
 	private String comment;
@@ -39,4 +30,10 @@ public class Save_Comment
 		p.println("Comment:"+this.comment);
 		p.close();
 	}
+	/*public static void main(String argus[]) throws IOException 
+	{
+		String x="Well done!";
+		Save_Comment a=new Save_Comment(x);
+		
+	}*/
 }

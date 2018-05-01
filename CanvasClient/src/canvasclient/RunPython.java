@@ -13,13 +13,13 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Xiao
+ * @author dragon
  */
 public class RunPython {
-    private String path;
+    private File parentfile;
     private String fullname;
-    private ArrayList result = new ArrayList();
     private double pregrade;
+    private ArrayList result = new ArrayList();
     private ArrayList runerror = new ArrayList();
     private ArrayList runresult = new ArrayList();
     private double runexit;
@@ -27,7 +27,7 @@ public class RunPython {
     
     public RunPython(File file) throws Exception
     {
-        path = file.getParent();
+        parentfile = file.getParentFile();
         fullname = file.getName();
         
         Run();
@@ -45,7 +45,7 @@ public class RunPython {
     
     
     public void Run() throws Exception{
-        Process p = Runtime.getRuntime().exec("python "+fullname, null, new File(path));
+        Process p = Runtime.getRuntime().exec("python "+fullname, null, parentfile);
         
         InputStream is1 = p.getInputStream();
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(is1));
