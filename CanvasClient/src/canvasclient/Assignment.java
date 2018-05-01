@@ -44,6 +44,7 @@ public class Assignment {
 
         this.assignmentName = assignmentName;
         this.assignmentID = assignmentID;
+        this.percentPenalty = 0;
 
     }
 
