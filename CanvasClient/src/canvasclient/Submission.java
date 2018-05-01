@@ -36,7 +36,9 @@ public class Submission {
     private ArrayList<File> attachedFiles;
 
 
-    public Submission() {
+
+    public Submission(Student student) {
+        this.student = student;
         attachedFiles = new ArrayList<>(1);
     }
 
@@ -48,18 +50,25 @@ public class Submission {
         return submissionTime;
     }
 
+    public void setSubmissionTime(LocalDateTime submissionTime) {
+        this.submissionTime = submissionTime;
+    }
+    
+
     public String getComments() {
         return comments;
     }
 
-    public ArrayList<File> getattachedFiles() {
-        return attachedFiles;
+    public void setComments(String comments) {
+        this.comments = comments;
     }
+    
 
     public ArrayList<File> getAttachedFiles() {
         return attachedFiles;
     }
 
+ 
     public double getSubmissionGrade() {
         return submissionGrade;
     }
