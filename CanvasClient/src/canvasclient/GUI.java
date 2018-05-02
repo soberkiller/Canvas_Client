@@ -27,13 +27,11 @@ import java.util.logging.Logger;
  * @author MattSorrentino
  */
 
-//runtime r = Runtime.getRuntime();
-//r.exec("Plagarism Dir");
 
 /**
  *
  * @class GUI
- * Handles the GUI of the CanvasClient Application.
+ * Handles the main GUI frame of the CanvasClient Application.
  */
 
 public class GUI extends PublicResouce {
@@ -50,6 +48,14 @@ public class GUI extends PublicResouce {
     private final Base64.Decoder decoder = Base64.getDecoder();
     private final String FILENAME = "token.dat";
 
+    
+    /**
+     * Draws main frame of program and pulls assignment data from Canvas.
+     * @param currentCourse indicates the course currently selected.
+     * @param courseList contains all courses for which the user has teacher, course administrator, TA, or grader permissions.
+     * 
+     */
+    
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         cCourse = currentCourse;
         CourseSelector CSelector = new CourseSelector();
@@ -214,12 +220,6 @@ public class GUI extends PublicResouce {
         //fetch number of assignments the course has
         int numberOfAssignments = cCourse.getAssignmentsList().size();
 
-        JPanel assignmentsPanel = new JPanel();
-        
-        
-        
-        
-                
         
         ////////////////////////////////////////////////////////////////////////
         //
@@ -230,8 +230,6 @@ public class GUI extends PublicResouce {
         //  Contains whatever content is necessary for the current view
         //  
         ////////////////////////////////////////////////////////////////////////
-
-        //main = new Main();
         
 
         mainPanel.setLayout(new GridLayout(3, 1, 10, 10));
@@ -317,10 +315,6 @@ public class GUI extends PublicResouce {
         viewSubmissionsPanel.add(submissionsCount);
         viewSubmissionsPanel.add(viewSubmissions);
   
-        
-        
-        
-        
         
         assignmentGetSubmissionsPanel.add(viewSubmissionsPanel);
         
@@ -415,11 +409,6 @@ public class GUI extends PublicResouce {
         }
 
 
-        
-
-
-
-
         scroller = new JScrollPane(assignmentsListPanel);
         scroller.setPreferredSize(new Dimension(254, 768));
         c.add(BorderLayout.WEST, scroller);
@@ -504,7 +493,7 @@ public class GUI extends PublicResouce {
 
     }
 
-    // inner class for switching current course to desire course
+    // inner class for switching current course to desired course
     public class CourseSelector extends JFrame {
         public CourseSelector() {
             super("Course Selector");
