@@ -50,7 +50,7 @@ public class CanvasClient extends PublicResouce {
 
         //create instance of main GUI
         new GUI(currentCourse, courseList);
-
+        
 
     }
 

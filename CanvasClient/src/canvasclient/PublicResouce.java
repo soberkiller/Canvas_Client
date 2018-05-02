@@ -24,6 +24,7 @@ public abstract class PublicResouce extends JFrame{
     public  JPanel mainPanel = new JPanel();
 
     public JPanel headerPanel = new JPanel();
+    public JPanel assignmentNameButtonPanel = new JPanel();
     public JPanel assignmentNamePanel = new JPanel();
     public JPanel assignmentInfoPanel = new JPanel();
     public JPanel assignmentDescriptionPanel = new JPanel();
@@ -36,7 +37,7 @@ public abstract class PublicResouce extends JFrame{
     JLabel points = new JLabel("Points");
     JLabel latePenalty = new JLabel("Late Penalty");
     JLabel fileTypes = new JLabel("File Types");
-
+    JButton editAssignment = new JButton("Edit");
     JPanel dateAvailablePanel = new JPanel();
 
     JPanel dateDuePanel = new JPanel();
@@ -54,6 +55,8 @@ public abstract class PublicResouce extends JFrame{
     JLabel submissionsCount = new JLabel();
 
     JLabel assignmentName = new JLabel();
+    
+    JTextField assignmentNameField = new JTextField();
 
     JTextField dateAvailableField = new JTextField();
 
