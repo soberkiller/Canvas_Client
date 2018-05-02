@@ -385,4 +385,8 @@ public class Course extends PublicResouce {
         }
     }
 
+    void addAssignment(Assignment assignment) {
+    	if (assignment!=null&&assignment.getAssignmentName().equals("Unavailable"))
+    		this.assignmentsList.add(assignment);
+    }
 }
