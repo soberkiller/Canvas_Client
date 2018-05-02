@@ -239,19 +239,19 @@ public class GUI extends PublicResouce {
         assignmentName = new JLabel(cCourse.getAssignmentsList().get(0).getAssignmentName());
         Font assignmentNameFont = new Font("Helvetica", Font.BOLD , 30);        
         assignmentName.setFont(assignmentNameFont);
-        assignmentNamePanel.setLayout(new OverlayLayout(assignmentNamePanel));
-        assignmentNamePanel.add(assignmentName);
-        
+        //assignmentNamePanel.setLayout(new OverlayLayout(assignmentNamePanel));
+        assignmentNameButtonPanel.add(assignmentName);
+        assignmentNameButtonPanel.add(new JLabel("          "));
         
         assignmentNameField.setEditable(true);
         assignmentNameField.setBackground(Color.WHITE);
         assignmentNameField.setVisible(false);
-        assignmentNamePanel.add(assignmentNameField,BorderLayout.CENTER);
+        assignmentNameField.setFont(assignmentNameFont);
+        //assignmentNamePanel.add(assignmentNameField,BorderLayout.WEST);
 
-        assignmentNameButtonPanel.setLayout(new GridLayout(1, 0));
-        assignmentNameButtonPanel.add(assignmentNamePanel,BorderLayout.CENTER);
-        
-        
+        //assignmentNameButtonPanel.setLayout(new GridLayout(2, 1));
+        assignmentNameButtonPanel.add(BorderLayout.WEST, assignmentNameField);
+        //assignmentNamePanel.setPreferredSize(new Dimension(550, 100));
         
         editAssignment.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -307,8 +307,8 @@ public class GUI extends PublicResouce {
         }
 );
         editAssignment.setFocusable(false);
-        editAssignment.setPreferredSize(new Dimension(3,3));
-        assignmentNameButtonPanel.add(editAssignment,BorderLayout.EAST);
+        editAssignment.setPreferredSize(new Dimension(100,50));
+        assignmentNameButtonPanel.add(BorderLayout.EAST, editAssignment);
 
 
         dateAvailableField.setEditable(false);
@@ -398,7 +398,12 @@ public class GUI extends PublicResouce {
         
    
         assignmentsListPanel.setBackground(Color.WHITE);
-
+        
+        //commented out gridlayout because it was giving us a problem.
+        //when we added more assignments, it would switch to two columns.
+        //numberOfAssignments*110+220 gives enough room for all asignment buttons plus extra for added ones.
+        //this isn't a permanant fix
+        //assignmentsListPanel.setPreferredSize(new Dimension(282, numberOfAssignments*110+440));
         assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments + 1, 1));    
 
 
@@ -426,13 +431,17 @@ public class GUI extends PublicResouce {
 //                    newAssignment.setMethod(POST);
                     // add function to set up new assignment
                     editMode();
+                    
                     clearText();
+                    //we should jump to the new assignmnet listing after we submit.
+                    
                     status=-1;
                     assignmentNameField.setText("");
+                    assignmentNameField.setPreferredSize(new Dimension(400, 50));
                     editAssignment.setText("Update");
 
                     // get response from Canvas and refresh main window. If new assignment is added, add new assignment button on the left.
-
+                    resetAPB(currentCourse);
 //                } catch (UnsupportedEncodingException e1) {
 //                    e1.printStackTrace();
 //               }
@@ -485,7 +494,7 @@ public class GUI extends PublicResouce {
 
 
         scroller = new JScrollPane(assignmentsListPanel);
-        scroller.setPreferredSize(new Dimension(254, 768));
+        scroller.setPreferredSize(new Dimension(300, 768));
         c.add(BorderLayout.WEST, scroller);
 
         setVisible(true);
