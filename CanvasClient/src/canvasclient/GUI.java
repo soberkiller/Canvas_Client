@@ -422,7 +422,7 @@ public class GUI extends PublicResouce {
             
             String assignmentTitle = cCourse.getAssignmentsList().get(i).getAssignmentName();
             String assignmentDueDate = "due: " + cCourse.getAssignmentsList().get(i).getDueDate();
-            String assignmentCloseDate = "closes: " + cCourse.getAssignmentsList().get(i).getCloseDate();
+            String assignmentCloseDate = "closing: " + cCourse.getAssignmentsList().get(i).getCloseDate();
             final int a = i;
             buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
             buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
@@ -506,7 +506,7 @@ public class GUI extends PublicResouce {
     
     public void readMode() {   
     	if (status>=0&&cCourse.getAssignmentsList().get(status)!=null)
-    		assignmentName.setText(cCourse.getAssignmentsList().get(0).getAssignmentName());
+    		assignmentName.setText(cCourse.getAssignmentsList().get(status).getAssignmentName());
     	assignmentName.setVisible(true);
     	assignmentNameField.setVisible(false);
         editAssignment.setText("Edit");
@@ -545,7 +545,7 @@ public class GUI extends PublicResouce {
 
             String assignmentTitle = cCourse.getAssignmentsList().get(i).getAssignmentName();
             String assignmentDueDate = "due: " + cCourse.getAssignmentsList().get(i).getDueDate();
-            String assignmentCloseDate = "closes: " + cCourse.getAssignmentsList().get(i).getCloseDate();
+            String assignmentCloseDate = "closing: " + cCourse.getAssignmentsList().get(i).getCloseDate();
             final int a = i;
             buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
             buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
@@ -686,7 +686,7 @@ public class GUI extends PublicResouce {
         String lineBreak = "<br/>";        
         String assignmentTitle = e.getAssignmentName();
         String assignmentDueDate = "due: " + e.getDueDate();
-        String assignmentCloseDate = "closes: " + e.getCloseDate();
+        String assignmentCloseDate = "closing: " + e.getCloseDate();
         buttonsAssignment.get(index).setText(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
     }
 }

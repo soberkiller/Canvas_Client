@@ -263,9 +263,12 @@ public class Course extends PublicResouce {
                         if (!des.isEmpty())
                             des += s;
                     }
-                    if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
-                        if (!allowExtention.isEmpty())
-                            allowExtention += "," + s.substring(1, s.length() - 1);
+ //                   if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
+//                        if (!allowExtention.isEmpty())
+//                            allowExtention = allowExtention + "," + s.substring(1, s.length() - 1);
+ //                   }
+                    if (!allowExtention.isEmpty() &&!allowExtention.endsWith("\"")) {
+                    	allowExtention=allowExtention+","+s.substring(1, s.length() - 1);
                     }
 
                     // get useful information from responses
@@ -314,12 +317,15 @@ public class Course extends PublicResouce {
                     }
 
                     if (s.startsWith("\"allowed_extensions\"")) {
-                        if (!allowExtention.isEmpty()) {
-                            allowExtention = "";
-                                allowExtention += s.substring(23, s.length() - 1);
-                        } else {
-                                allowExtention += s.substring(23, s.length() - 1);
-                        }
+//                    	System.out.println("bb"+allowExtention);
+//                        if (!allowExtention.isEmpty()) {
+//                            allowExtention = "";
+//                                allowExtention += s.substring(23, s.length() - 1);
+//                        } else {
+//                                allowExtention += s.substring(23, s.length() - 1);
+//                        }
+//                        System.out.println("bb"+allowExtention);
+                    	allowExtention=s.substring(23,s.length()-1);
                     }
                     if (s.startsWith("\"points_possible\"")) {
                     	points.add(s.substring(18));

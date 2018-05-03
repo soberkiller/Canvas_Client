@@ -343,7 +343,7 @@ public class ConnectionPool {
                     }
                     if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
                         if (!allowExtention.isEmpty())
-                            allowExtention += " " + s.substring(1, s.length() - 1);
+                            allowExtention =allowExtention + "," + s.substring(1, s.length() - 1);
                     }
                     // get useful information from responses
                     if (s.startsWith("\"id\"") && !s.substring(5, 6).equals("\"")) {
