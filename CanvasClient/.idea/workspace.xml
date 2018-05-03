@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="531a98aa-2d1a-4b83-81e0-2488bfe3afb6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/Course.java" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +37,8 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="536" column="42" lean-forward="true" selection-start-line="536" selection-start-column="42" selection-end-line="536" selection-end-column="42" />
+            <state relative-caret-position="224">
+              <caret line="549" column="89" lean-forward="true" selection-start-line="549" selection-start-column="89" selection-end-line="549" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -263,12 +261,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525117331650</updated>
-      <workItem from="1525117338208" duration="2541000" />
+      <workItem from="1525117338208" duration="3147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2541000" />
+    <option name="totallyTimeSpent" value="3147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
@@ -369,8 +367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="536" column="42" lean-forward="true" selection-start-line="536" selection-start-column="42" selection-end-line="536" selection-end-column="42" />
+        <state relative-caret-position="224">
+          <caret line="549" column="89" lean-forward="true" selection-start-line="549" selection-start-column="89" selection-end-line="549" selection-end-column="89" />
           <folding />
         </state>
       </provider>
