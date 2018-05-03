@@ -191,6 +191,7 @@ public class Course extends PublicResouce {
         if(responses != null) {
             String[] rawResp = responses.split(",");
             if (rawResp != null) {
+                List<String> str_sis_ID = new ArrayList<>();
                 List<String> strID = new ArrayList<>();
                 List<String> strName = new ArrayList<>();
                 List<String> strMail = new ArrayList<>();
@@ -206,8 +207,12 @@ public class Course extends PublicResouce {
                         s = s.substring(0, s.length() - 3);
 
                     // get useful information from responses
+                    if (s.startsWith("\"id\"")) {           // user_id
+                        strID.add(s.substring(5));
+//                        System.out.println(s.substring(5));
+                    }
                     if (s.startsWith("\"sis_user_id\"")) {
-                        strID.add(s.substring(15, s.length() - 1));
+                        str_sis_ID.add(s.substring(15, s.length() - 1));
                     }
                     if (s.startsWith("\"name\"")) {
                         strName.add(s.substring(8, s.length() - 1));
@@ -218,18 +223,20 @@ public class Course extends PublicResouce {
                 }
 
 //  if current user does not have access that is higher than teacher, current user will not get student id and student Email
-                if(strID.size() == 0) {
+                if(str_sis_ID.size() == 0) {
                     for (int i = 0; i < strName.size(); i++) {
-                        strID.add("Unavailable");
+                        str_sis_ID.add("Unavailable");
                         strMail.add("Unavailable");
                     }
                 }
                 for (int i = 0; i < strName.size(); i++) {
-                    studentsList.add(new Student(strName.get(i), strID.get(i), strMail.get(i)));
+                    studentsList.add(new Student(strName.get(i), str_sis_ID.get(i), strMail.get(i), strID.get(i)));
+                    // for get student's information by user_id
+                    id_user_info.put(strID.get(i), studentsList.get(i));
                 }
 
             } else {
-                studentsList.add(new Student("Unavailable", "Unavailable", "Unavailable"));
+                studentsList.add(new Student("Unavailable", "Unavailable", "Unavailable", "Unavailable"));
             }
         }
     }
@@ -252,6 +259,7 @@ public class Course extends PublicResouce {
                 String allowExtention = "";
 
                 for (String s : rawResp) {
+//                	System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
@@ -303,8 +311,8 @@ public class Course extends PublicResouce {
                     if (s.startsWith("\"description\"")) {
                     	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
                         if (!des.isEmpty()) {
-                            des = "";
-                            des += s.substring(14);
+                            //des = "";
+                            des = s.substring(14);
                         } else {                   	
                             des += s.substring(14);
                         }                   	
@@ -387,4 +395,8 @@ public class Course extends PublicResouce {
         }
     }
 
+    void addAssignment(Assignment assignment) {
+    	if (assignment!=null&&assignment.getAssignmentName().equals("Unavailable"))
+    		this.assignmentsList.add(assignment);
+    }
 }

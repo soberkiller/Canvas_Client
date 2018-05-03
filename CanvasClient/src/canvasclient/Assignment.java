@@ -34,15 +34,17 @@ public class Assignment {
 
     //array of strings containing the 
     private String submissionTypes;
-
+    // List of submissions
     private ArrayList<Submission> submissionsList;
 
 
     public Assignment(String assignmentName, String assignmentID) {
-        submissionsList = new ArrayList<>();
+        
+        submissionsList = new ArrayList<>(20);
 
         this.assignmentName = assignmentName;
         this.assignmentID = assignmentID;
+        this.percentPenalty = 0;
 
     }
 
