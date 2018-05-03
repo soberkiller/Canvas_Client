@@ -670,7 +670,7 @@ public class GUI extends PublicResouce {
                             if(e.getSource() == buttonArray.get(a)) {
                                 //                                new CanvasClient(courseList.get(a));
                                 resetAPB(courseList.get(a));
-
+                                currentCourse = courseList.get(a);
                                 this.setVisible(false);
                             }
                         }

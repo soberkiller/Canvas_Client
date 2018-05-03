@@ -33,11 +33,6 @@ public class Submission {
     // name of submitted file
     private List<String> fileName;
 
-
-
-    // Sudent object of student who made the submission
-    private Student student;
-
     // time and date of submission
     private String submissionTime;
 
@@ -57,24 +52,21 @@ public class Submission {
 
 
 //<<<<<<< HEAD
-//    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName) {
-//        this.studentId = studentId;
-//        this.submittedAt = submittedAt;
-//        this.grade = grade;
-//        this.late = late;
-//        this.fileName = fileName;
+    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName) {
+        this.studentId = studentId;
+        this.submittedAt = submittedAt;
+        this.grade = grade;
+        this.late = late;
+        this.fileName = fileName;
+        attachedFiles = new ArrayList<>(1);
+    }
 //
 //=======
 
-    public Submission(Student student) {
-        this.student = student;
-        attachedFiles = new ArrayList<>(1);
-//>>>>>>> efb2c9edd3cfbae814544b8d88eefc87bfd77527
-    }
-
-    public Student getStudent() {
-        return student;
-    }
+//    public Submission(Student student) {
+//
+////>>>>>>> efb2c9edd3cfbae814544b8d88eefc87bfd77527
+//    }
 
     public String getSubmissionTime() {
         return submissionTime;

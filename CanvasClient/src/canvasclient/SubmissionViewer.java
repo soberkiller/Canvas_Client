@@ -32,12 +32,9 @@ import javax.swing.border.EmptyBorder;
 public class SubmissionViewer extends PublicResouce{
 
     // set up connection
-    public ConnectionPool connection;
+    public ConnectionPool submission;
     private String responses = "";
 
-    // list of submssion
-    List<Submission> submissionList = new ArrayList<>();
-   
     private String filename;
     private File file;
 
@@ -54,15 +51,17 @@ public class SubmissionViewer extends PublicResouce{
         fields.add("assignments");
         fields.add(currentAssignment.getAssignmentID());
         fields.add("submissions");
-
-        ConnectionPool submission = null;
+        String testS  = "";
+        for (int i = 0; i < fields.size(); i++)
+            testS += fields.get(i);
+        System.out.println(testS);
         try {
             submission = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
         } catch (UnsupportedEncodingException e) {
             e.getMessage();
         }
         submission.setMethod(GET);
-        getSubmission(submissionList);
+        currentAssignment.getSubmissionsList() = getSubmission();
 
 
         setTitle("Submissions for " + currentAssignment.getAssignmentName());
@@ -489,10 +488,11 @@ public class SubmissionViewer extends PublicResouce{
         setVisible(true);
     }
 
-    public void getSubmission(java.util.List<Submission> submissionList) {
+    public ArrayList<Submission> getSubmission () {
+        ArrayList<Submission> submissionList = new ArrayList<>();
         if (responses != "")
             responses = "";
-//        responses = connection.buildConnection();
+        responses = submission.buildConnection();
         if (responses != null) {
             String[] rawResp = responses.split(",");
             if (rawResp != null) {
@@ -502,10 +502,11 @@ public class SubmissionViewer extends PublicResouce{
                 List<String> strLate = new ArrayList<>();
                 List<String> strUrl = new ArrayList<>();
                 List<String> strFileName = new ArrayList<>();
-                List<java.util.List<String>> fileNameList = new ArrayList<>();
+                List<List<String>> fileNameList = new ArrayList<>();
                 List<List<String>> urlList = new ArrayList<>();
 
                 for (String s : rawResp) {
+                    System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
@@ -517,28 +518,72 @@ public class SubmissionViewer extends PublicResouce{
 
                     // get useful information from responses
                     if (s.startsWith("\"grade\"")) {
-                        strGrade.add(s.substring(5));
+                        if(s.substring(8).equals("null")) {
+                            strGrade.add(s.substring(8));
+                        } else {
+                            strGrade.add(s.substring(9, s.length() - 1));
+                        }
                     }
                     if (s.startsWith("\"submitted_at\"")) {
-                        strSubmitTime.add(s.substring(15, s.length() - 1));
+                        if(!strFileName.isEmpty()) {
+                            fileNameList.add(strFileName);
+                            urlList.add(strUrl);
+                            strFileName = new ArrayList<>();
+                            strUrl = new ArrayList<>();
+                        }
+
+                        if(s.substring(15).equals("null")) {
+                            strSubmitTime.add(s.substring(15));
+                            strFileName.add("unavailable");
+                            strUrl.add("unavailable");
+                                fileNameList.add(strFileName);
+                                urlList.add(strUrl);
+                                strFileName = new ArrayList<>();
+                                strUrl = new ArrayList<>();
+                        } else {
+                            strSubmitTime.add(s.substring(16, s.length() - 1));
+                        }
                     }
                     if (s.startsWith("\"user_id\"")) {
-                        strID.add(s.substring(8, s.length() - 1));
+                        strID.add(s.substring(10));
                     }
                     if (s.startsWith("\"late\"")) {
-                        strLate.add(s.substring(12, s.length() - 1));
+                        strLate.add(s.substring(7));
                     }
                     if (s.startsWith("\"filename\"")) {
+
                         strFileName.add(s.substring(12, s.length() - 1));
                     }
                     if (s.startsWith("\"url\"")) {
-                        strUrl.add(s.substring(12, s.length() - 1));
+                        // filter our url
+                        if((s.substring(6)).equals("null"))
+                            continue;
+                        strUrl.add(s.substring(7, s.length() - 1));
                     }
                 }
+                // in case filename and url are not added into List by the end of response.
+                if(!strFileName.isEmpty()) {
+                    fileNameList.add(strFileName);
+                    urlList.add(strUrl);
+                }
+                if(!submissionList.isEmpty())
+                    submissionList.clear();
+                for (int i = 0; i < strID.size(); i++) {
 
-                fileNameList.add(strFileName);
+                    Submission sub = new Submission();
+
+//                    System.out.println(strGrade.get(i));
+//                    System.out.println(strSubmitTime.get(i));
+//                    System.out.println(strLate.get(i));
+                    for(int j = 0; j < fileNameList.get(i).size(); j++)
+                    System.out.println(urlList.get(i).get(j));
+//                    System.out.println(fileNameList.size());
+//                    System.out.println(strGrade.get(i));
+                }
             }
         }
+
+        return submissionList;
     }
     
    /* public static void main(String args[]){

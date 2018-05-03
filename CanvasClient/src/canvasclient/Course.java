@@ -204,8 +204,9 @@ public class Course extends PublicResouce {
                         s = s.substring(0, s.length() - 3);
 
                     // get useful information from responses
-                    if (s.startsWith("\"id\"")) {
+                    if (s.startsWith("\"id\"")) {           // user_id
                         strID.add(s.substring(5));
+//                        System.out.println(s.substring(5));
                     }
                     if (s.startsWith("\"sis_user_id\"")) {
                         str_sis_ID.add(s.substring(15, s.length() - 1));
@@ -227,6 +228,7 @@ public class Course extends PublicResouce {
                 }
                 for (int i = 0; i < strName.size(); i++) {
                     studentsList.add(new Student(strName.get(i), str_sis_ID.get(i), strMail.get(i), strID.get(i)));
+                    // for get student's information by user_id
                     id_user_info.put(strID.get(i), studentsList.get(i));
                 }
 
@@ -254,7 +256,7 @@ public class Course extends PublicResouce {
                 String allowExtention = "";
 
                 for (String s : rawResp) {
-                	System.out.println(s);
+//                	System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
