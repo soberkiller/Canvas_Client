@@ -50,8 +50,6 @@ public class CanvasClient extends PublicResouce {
 
         //create instance of main GUI
         new GUI(super.currentCourse, courseList);
-
-
     }
 
     public static void main(String[] args) throws IOException, ParseException {

@@ -14,8 +14,11 @@ import java.io.*;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.border.EmptyBorder;
 //import canvasclient.Submission;
 //import canvasclient.ReadFile;
 //import canvasclient.SubmissionOfOtherStudents;
@@ -27,67 +30,265 @@ import java.util.List;
  * @author Xiao
  */
 public class SubmissionViewer extends PublicResouce{
+
+    // set up connection
+    public ConnectionPool connection;
+    private String responses = "";
+
+    // list of submssion
+    List<Submission> submissionList = new ArrayList<>();
    
     private String filename;
     private File file;
 
+    private Submission currentSubmission;
+    
+    public SubmissionViewer(Assignment currentAssignment)
+    {
 
-    public SubmissionViewer(Submission2 submission) {
-        // get submissions for current assignment
-        // add methods for getting submission
+        // get submission from Canvas
+        if(!fields.isEmpty())
+            fields.clear();
+        fields.add("courses");
+        fields.add(currentCourse.getCourseID());
+        fields.add("assignments");
+        fields.add(currentAssignment.getAssignmentID());
+        fields.add("submissions");
 
-        setTitle(submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getParentFile().getName()
+        ConnectionPool submission = null;
+        try {
+            submission = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.getMessage();
+        }
+        submission.setMethod(GET);
+        getSubmission(submissionList);
+
+
+        setTitle("Submissions for " + currentAssignment.getAssignmentName());
+        /*
+        super(submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getParentFile().getName()
+
         +" "+submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getName()
                 +" "+submission.getattachedFiles().get(0).getParentFile().getParentFile().getName()
                 +" "+submission.getattachedFiles().get(0).getParentFile().getName());
+        */
+        
+        // the following has conflicts
+        
+        File a = new File("/Desktop/Servlet.java");
+        currentAssignment.getSubmissionsList().add(new Submission(new Student("First Last", "12345678", "test@stevens.edu", "654321")));
+        currentAssignment.getSubmissionsList().get(0).getAttachedFiles().add(a);
+        currentAssignment.getSubmissionsList().get(0).setSubmissionTime("temp time");
+        
+        
+        currentSubmission = currentAssignment.getSubmissionsList().get(0);
 
-        setSize(768,668);
-        setResizable(false);
-        double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-        double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-        setLocation((int)(width-this.getWidth())/2,(int)(height-this.getHeight())/2);
+        setSize(1024,820);
+        this.setLocationRelativeTo(null);
         Container c = getContentPane();
+   //     addWindowListener(new MyWindowListener());
         
-        JPanel leftPanel = new JPanel();
-        leftPanel.setPreferredSize(new Dimension(600,668));
-        SpringLayout layout = new SpringLayout();
-        JPanel rightPanel = new JPanel(layout);
-        rightPanel.setPreferredSize(new Dimension(168,668));
-        c.add(BorderLayout.WEST,leftPanel);
-        c.add(BorderLayout.EAST,rightPanel);
+        try 
+        {
+           UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
         
+        JLabel spacer1 = new JLabel(" ");
+        JLabel spacer2 = new JLabel(" ");
+        
+        JPanel topBar = new JPanel();
+        topBar.setPreferredSize(new Dimension(1024, 100));
+        topBar.setBackground(Color.WHITE);
+        topBar.setLayout(new GridLayout(1, 3, 70, 25));
+        
+        JPanel assignmentName = new JPanel();
+        assignmentName.setBackground(Color.WHITE);
+        assignmentName.setLayout(new GridLayout(2, 1, 10, 0));
+        assignmentName.setBorder(new EmptyBorder(20, 20, 20, 20));
+        
+        //final String currentAssignment = "Assignment";
+        JLabel currentCourseNameLabel = new JLabel(" " + currentAssignment);
+        assignmentName.add(currentCourseNameLabel);
+        Font assignmentTitleFont = new Font("Helvetica", Font.BOLD, 16);
+        currentCourseNameLabel.setFont(assignmentTitleFont);
+        
+        JPanel submissionOptionsPanel = new JPanel();
+        submissionOptionsPanel.setBackground(Color.WHITE);
+        submissionOptionsPanel.setLayout(new GridLayout(1, 2, 10, 0));
+        
+       /* JButton submissionSettingsButton = new JButton("Settings");
+        submissionSettingsButton.setBackground(Color.WHITE);
+        submissionOptionsPanel.add(submissionSettingsButton);
+        
+        assignmentName.add(submissionOptionsPanel);
+        
+        topBar.add(assignmentName);*/
+        
+        
+        //SubmissionViewer view = new SubmissionViewer(new Submission2());
+        //JPanel viewPanel = (JPanel)view.getContentPane();
+        //c.add(BorderLayout.CENTER, viewPanel);
+        
+        //Course currentCourse = new Course();
+        int numberOfButtons=20;//new Course().getStudentsList().size();
+      //  JPanel submissionsPanel = new JPanel();
+        
+        JPanel submissionsListPanel = new JPanel(); 
+        submissionsListPanel.setBackground(Color.WHITE);
+
+        submissionsListPanel.setLayout(new GridLayout(numberOfButtons+1, 1));
+
+        JButton buttons[]=new JButton[numberOfButtons]; 
+        
+       /* JButton newSubmissionButton = new JButton("New Submission");
+        newSubmissionButton.setBackground(Color.lightGray);
+        submissionsListPanel.add(newSubmissionButton);*/
+       
+        
+        
+        for(int i=0;i<numberOfButtons;i++){
+            buttons[i] = new JButton("Submission "+(i+1));
+            buttons[i].setPreferredSize(new Dimension(180, 50));
+            buttons[i].setBackground(Color.WHITE);
+            buttons[i].addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+           // ArrayList<File> attachFile = new ArrayList<File>(new Submission2().getattachedFiles());
+            //String comment = new Submission2().getComments();
+            //new SubmissionViewer(new Submission2());
+            }
+            });
+            submissionsListPanel.add(buttons[i]);
+        }
+
+     
+       JScrollPane scroller = new JScrollPane(submissionsListPanel);
+       scroller.setPreferredSize(new Dimension(254, 768));
+       c.add(BorderLayout.WEST, scroller);
+        
+   
+        
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(3, 1, 0, 0));
+        
+        JPanel infoPanel = new JPanel();
+        JPanel dataPanel = new JPanel();
+        //JPanel graderPanel = new JPanel();
+        JPanel actionPanel = new JPanel();
+        
+        //infoPanel.setPreferredSize(new Dimension(770,50));
+        infoPanel.setLayout(new GridLayout(3, 3, 20, 20));
+        infoPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
+        
+        dataPanel.setLayout(new GridLayout(1, 2, 20, 20));
+        dataPanel.setBorder(new EmptyBorder(0, 30, 0, 30));
+        
+        
+        //graderPanel.setBackground(Color.white);
+        
+        actionPanel.setPreferredSize(new Dimension(770,100));
+        actionPanel.setLayout(new GridLayout(2, 1, 20, 20));
+        actionPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
+        
+        
+        JLabel studentName = new JLabel(currentSubmission.getStudent().getStudentName());
+        JLabel studentID = new JLabel(currentSubmission.getStudent().getStudentID());
+        JLabel submissionTime = new JLabel("Submitted at: " + currentSubmission.getSubmissionTime());
         
         JComboBox selectfile = new JComboBox();
-        selectfile.setPreferredSize(new Dimension(300,30));
         selectfile.addItem("Select File");
-        for(int i=0;i<submission.getattachedFiles().size();i++)
+        for(int i=0;i<currentAssignment.getSubmissionsList().get(0).getAttachedFiles().size();i++)
         {
-            selectfile.addItem(submission.getattachedFiles().get(i).getName());
+            selectfile.addItem(currentAssignment.getSubmissionsList().get(0).getAttachedFiles().get(i).getName());
         }
-        JLabel filelb = new JLabel("AttachedFiles");
-        filelb.setPreferredSize(new Dimension(550,20));
-        JLabel codelb = new JLabel("Code");
-        codelb.setPreferredSize(new Dimension(550,20));
-        JLabel resultlb = new JLabel("Result");
-        resultlb.setPreferredSize(new Dimension(550,20));
+        
+        //JLabel filelb = new JLabel("AttachedFiles");
+        JButton run = new JButton("run");
+        
+        JTextField studentCommentsField = new JTextField(currentSubmission.getStudentComments());
+        
+        infoPanel.add(studentName);
+        infoPanel.add(studentID);
+        infoPanel.add(submissionTime);
+        //infoPanel.add(filelb);
+        infoPanel.add(selectfile);
+        infoPanel.add(run);
+        infoPanel.add(studentCommentsField);
+        infoPanel.add(new JLabel("Code"));
+        infoPanel.add(new JLabel(" "));
+        infoPanel.add(new JLabel("Output"));
+        
+        
+        JPanel gradeandCommentsPanel = new JPanel();
+        JPanel actionOptionsPanel = new JPanel();
+        actionOptionsPanel.setLayout(new GridLayout(1, 3, 10, 10));
+        
+        JLabel gradeLabel = new JLabel("Grade");
+        JLabel commentsLabel = new JLabel("Comments");
+        
+        String grade = Double.toString(currentSubmission.getSubmissionGrade());
+        JTextField gradeField = new JTextField(grade);
+        gradeField.setPreferredSize(new Dimension(50, 30));
+        JTextField commentsField = new JTextField(currentSubmission.getGraderComments());
+        commentsField.setPreferredSize(new Dimension(400, 30));
+        
+        gradeandCommentsPanel.add(gradeLabel);
+        gradeandCommentsPanel.add(gradeField);
+        gradeandCommentsPanel.add(new JLabel("           "));
+        gradeandCommentsPanel.add(commentsLabel);
+        gradeandCommentsPanel.add(commentsField);
+        
+        
+        JButton setExpectedResult = new JButton("Set Expected Result");
+        setExpectedResult.setBackground(Color.white);
+        setExpectedResult.setFocusable(false);
+        actionOptionsPanel.add(setExpectedResult);
+        
+        JButton save = new JButton("Save");
+        save.setBackground(Color.cyan);
+        save.setFocusable(false);
+        actionOptionsPanel.add(save);
+        
+        JButton nextSubmission = new JButton("Next Submission");
+        nextSubmission.setBackground(Color.white);
+        nextSubmission.setFocusable(false);
+        actionOptionsPanel.add(nextSubmission);
+        
+        JPanel leftPanel = new JPanel();
+        leftPanel.setLayout(new GridLayout(3, 1, 10, 10));
+        leftPanel.setPreferredSize(new Dimension(768,678));
+        SpringLayout layout = new SpringLayout();
+        //JPanel rightPanel = new JPanel(layout);
+        //rightPanel.setPreferredSize(new Dimension(168,678));
+        //graderPanel.add(BorderLayout.WEST,leftPanel);
+        //graderPanel.add(BorderLayout.EAST,rightPanel);
+        
+        
+        
+        //JLabel codelb = new JLabel("Code");
+        //codelb.setPreferredSize(new Dimension(550,20));
+        //JLabel resultlb = new JLabel("Result");
+        //resultlb.setPreferredSize(new Dimension(550,20));
         JTextArea codeta = new JTextArea();
         JTextArea resultta = new JTextArea();
         
         JScrollPane jspcode=new JScrollPane(codeta);
-        jspcode.setPreferredSize(new Dimension(550,250));
+        jspcode.setPreferredSize(new Dimension(350,250));
         JScrollPane jspresult=new JScrollPane(resultta);
-        jspresult.setPreferredSize(new Dimension(550,250));
-        
-        leftPanel.add(filelb);
-        leftPanel.add(selectfile);
-        leftPanel.add(codelb);
-        leftPanel.add(jspcode);
-        leftPanel.add(resultlb);
-        leftPanel.add(jspresult);
+        jspresult.setPreferredSize(new Dimension(350,250));
         
         
-        JButton run = new JButton("run");
-        run.setPreferredSize(new Dimension(50,20));
+        //dataPanel.add(codelb);
+        dataPanel.add(jspcode);
+        //dataPanel.add(resultlb);
+        dataPanel.add(jspresult);
+        
+        
+        
         JButton savegrade = new JButton("Save Grade");
         savegrade.setPreferredSize(new Dimension(100,20));
         JButton savecomment = new JButton("Save Comment");
@@ -100,13 +301,13 @@ public class SubmissionViewer extends PublicResouce{
         gradelb.setPreferredSize(new Dimension(150,20));
         JLabel commentlb = new JLabel("Comment");
         commentlb.setPreferredSize(new Dimension(150,20));
-        rightPanel.add(run);
-        rightPanel.add(gradelb);
-        rightPanel.add(gradetf);
-        rightPanel.add(savegrade);
-        rightPanel.add(commentlb);
-        rightPanel.add(commenttf);
-        rightPanel.add(savecomment);
+        //leftPanel.add(run);
+        //graderPanel.add(gradelb);
+        //graderPanel.add(gradetf);
+        //graderPanel.add(savegrade);
+        //graderPanel.add(commentlb);
+        //graderPanel.add(commenttf);
+        //graderPanel.add(savecomment);
         
         SpringLayout.Constraints runCons = layout.getConstraints(run);
         runCons.setX(Spring.constant(59));
@@ -143,7 +344,7 @@ public class SubmissionViewer extends PublicResouce{
                         gradetf.setText("");
                         commenttf.setText("");
                         filename = e1.getItem().toString();
-                        file = new File(submission.getattachedFiles().get(0).getParent()+"/"+filename);
+                        file = new File(currentAssignment.getSubmissionsList().get(0).getAttachedFiles().get(0).getParent()+"/"+filename);
                         ReadFile rf = new ReadFile(file);
                         for(int i=0;i<rf.getFileDetail().size();i++){
                             codeta.setText(codeta.getText()+rf.getFileDetail().get(i));
@@ -155,7 +356,7 @@ public class SubmissionViewer extends PublicResouce{
             }    
         );
         
-        String path =submission.getattachedFiles().get(0).getParent();
+        String path = currentAssignment.getSubmissionsList().get(0).getAttachedFiles().get(0).getParent();
         
         savegrade.addActionListener(
             new ActionListener() 
@@ -163,7 +364,7 @@ public class SubmissionViewer extends PublicResouce{
                 public void actionPerformed (ActionEvent e1)
                 {
                     double gra = Double.valueOf(gradetf.getText());
-                    submission.setGrade(gra);
+                    currentSubmission.setSubmissionGrade(gra);
                     try
                     {
                     Save_Grade sg= new Save_Grade(gra,path);
@@ -182,7 +383,7 @@ public class SubmissionViewer extends PublicResouce{
                 public void actionPerformed (ActionEvent e1)
                 {
                     String com = commenttf.getText();
-                    submission.setComments(com);
+                    currentSubmission.setGraderComments(com);
                     try
                     {
                     Save_Comment sc= new Save_Comment(com,path);
@@ -274,12 +475,76 @@ public class SubmissionViewer extends PublicResouce{
         );
         
         
+        actionPanel.add(gradeandCommentsPanel);
+        actionPanel.add(actionOptionsPanel);
+        
+        
+        mainPanel.add(infoPanel);
+        mainPanel.add(dataPanel);
+        //mainPanel.add(graderPanel);
+        mainPanel.add(actionPanel);
+        
+        c.add(mainPanel);
         
         setVisible(true);
     }
+
+    public void getSubmission(java.util.List<Submission> submissionList) {
+        if (responses != "")
+            responses = "";
+//        responses = connection.buildConnection();
+        if (responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                List<String> strGrade = new ArrayList<>();
+                List<String> strID = new ArrayList<>();
+                List<String> strSubmitTime = new ArrayList<>();
+                List<String> strLate = new ArrayList<>();
+                List<String> strUrl = new ArrayList<>();
+                List<String> strFileName = new ArrayList<>();
+                List<java.util.List<String>> fileNameList = new ArrayList<>();
+                List<List<String>> urlList = new ArrayList<>();
+
+                for (String s : rawResp) {
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+
+                    // get useful information from responses
+                    if (s.startsWith("\"grade\"")) {
+                        strGrade.add(s.substring(5));
+                    }
+                    if (s.startsWith("\"submitted_at\"")) {
+                        strSubmitTime.add(s.substring(15, s.length() - 1));
+                    }
+                    if (s.startsWith("\"user_id\"")) {
+                        strID.add(s.substring(8, s.length() - 1));
+                    }
+                    if (s.startsWith("\"late\"")) {
+                        strLate.add(s.substring(12, s.length() - 1));
+                    }
+                    if (s.startsWith("\"filename\"")) {
+                        strFileName.add(s.substring(12, s.length() - 1));
+                    }
+                    if (s.startsWith("\"url\"")) {
+                        strUrl.add(s.substring(12, s.length() - 1));
+                    }
+                }
+
+                fileNameList.add(strFileName);
+            }
+        }
+    }
+    
    /* public static void main(String args[]){
       new SubmissionViewer(new Submission2());
     }*/
 
    // set Viewer visible
+    
 }

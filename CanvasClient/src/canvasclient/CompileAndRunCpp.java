@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package canvasclient;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
@@ -12,14 +13,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Xiao
+ * @author dragon
  */
 public class CompileAndRunCpp {
-    private String path;
+    private File parentfile;
     private String fullname;
     private String name;
-    private ArrayList result = new ArrayList();
     private double pregrade;
+    private ArrayList result = new ArrayList();
     private ArrayList compileerror = new ArrayList();
     private ArrayList runerror = new ArrayList();
     private ArrayList runresult = new ArrayList();
@@ -29,7 +30,7 @@ public class CompileAndRunCpp {
     
     public CompileAndRunCpp(File file) throws Exception
     {
-        path = file.getParent();
+        parentfile = file.getParentFile();
         fullname = file.getName();
         name = fullname.substring(0, fullname.length()-4);
         
@@ -55,7 +56,7 @@ public class CompileAndRunCpp {
     
     
     public void Compile() throws Exception{
-        Process p = Runtime.getRuntime().exec("g++ -o "+name+" "+fullname, null, new File(path));
+        Process p = Runtime.getRuntime().exec("g++ -o "+name+" "+fullname, null, parentfile);
         InputStream is = p.getErrorStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         String line;
@@ -71,7 +72,7 @@ public class CompileAndRunCpp {
     }
     
     public void Run() throws Exception{
-        Process p = Runtime.getRuntime().exec("./"+name, null, new File(path));
+        Process p = Runtime.getRuntime().exec("./"+name, null, parentfile);
         
         InputStream is1 = p.getInputStream();
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(is1));

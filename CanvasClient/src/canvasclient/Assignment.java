@@ -39,10 +39,12 @@ public class Assignment {
 
 
     public Assignment(String assignmentName, String assignmentID) {
-        submissionsList = new ArrayList<>();
+        
+        submissionsList = new ArrayList<>(20);
 
         this.assignmentName = assignmentName;
         this.assignmentID = assignmentID;
+        this.percentPenalty = 0;
 
     }
 

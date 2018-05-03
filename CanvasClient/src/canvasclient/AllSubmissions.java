@@ -29,33 +29,9 @@ import javax.swing.border.EmptyBorder;
  * @author lvtia
  */
 public class AllSubmissions extends PublicResouce {
-    // set up connection
-    public ConnectionPool connection;
-    private String responses = "";
 
-    // list of submssion
-    List<Submission> submissionList = new ArrayList<>();
 
     public AllSubmissions() {
-
-        // get submission from Canvas
-        if(!fields.isEmpty())
-            fields.clear();
-        fields.add("courses");
-        fields.add(currentCourse.getCourseID());
-        fields.add("assignments");
-        fields.add(currentAssignment.getAssignmentID());
-        fields.add("submissions");
-
-        ConnectionPool submission = null;
-        try {
-            submission = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.getMessage();
-        }
-        submission.setMethod(GET);
-        getSubmission(submissionList);
-
 
         setSize(1024,1000);
         Container c = getContentPane();
@@ -131,9 +107,9 @@ public class AllSubmissions extends PublicResouce {
         
         c.add(BorderLayout.NORTH, topBar);
         
-        SubmissionViewer view = new SubmissionViewer(new Submission2());
-        JPanel viewPanel = (JPanel)view.getContentPane();
-        c.add(BorderLayout.CENTER, viewPanel);
+//        SubmissionViewer view = new SubmissionViewer(new Submission2());
+//        JPanel viewPanel = (JPanel)view.getContentPane();
+//        c.add(BorderLayout.CENTER, viewPanel);
         
         //Course currentCourse = new Course();
         int numberOfButtons=20;//new Course().getStudentsList().size();
@@ -160,7 +136,7 @@ public class AllSubmissions extends PublicResouce {
             public void actionPerformed(ActionEvent e){
            // ArrayList<File> attachFile = new ArrayList<File>(new Submission2().getattachedFiles());
             //String comment = new Submission2().getComments();
-                new SubmissionViewer(new Submission2());
+//                new SubmissionViewer(new Submission2());
             }
             });
             submissionsListPanel.add(buttons[i]);
@@ -174,57 +150,7 @@ public class AllSubmissions extends PublicResouce {
         
         setVisible(true);
     }
-    public void getSubmission(List<Submission> submissionList) {
-        if (responses != "")
-            responses = "";
-        responses = connection.buildConnection();
-        if (responses != null) {
-            String[] rawResp = responses.split(",");
-            if (rawResp != null) {
-                List<String> strGrade = new ArrayList<>();
-                List<String> strID = new ArrayList<>();
-                List<String> strSubmitTime = new ArrayList<>();
-                List<String> strLate = new ArrayList<>();
-                List<String> strUrl = new ArrayList<>();
-                List<String> strFileName = new ArrayList<>();
-                List<List<String>> fileNameList = new ArrayList<>();
-                List<List<String>> urlList = new ArrayList<>();
 
-                for (String s : rawResp) {
-                    if (s.startsWith("{"))
-                        s = s.substring(1);
-                    if (s.charAt(s.length() - 1) == '}')
-                        s = s.substring(0, s.length() - 1);
-                    if (s.startsWith("[{"))
-                        s = s.substring(2);
-                    if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
-                        s = s.substring(0, s.length() - 3);
-
-                    // get useful information from responses
-                    if (s.startsWith("\"grade\"")) {
-                        strGrade.add(s.substring(5));
-                    }
-                    if (s.startsWith("\"submitted_at\"")) {
-                        strSubmitTime.add(s.substring(15, s.length() - 1));
-                    }
-                    if (s.startsWith("\"user_id\"")) {
-                        strID.add(s.substring(8, s.length() - 1));
-                    }
-                    if (s.startsWith("\"late\"")) {
-                        strLate.add(s.substring(12, s.length() - 1));
-                    }
-                    if (s.startsWith("\"filename\"")) {
-                        strFileName.add(s.substring(12, s.length() - 1));
-                    }
-                    if (s.startsWith("\"url\"")) {
-                        strUrl.add(s.substring(12, s.length() - 1));
-                    }
-                }
-
-                fileNameList.add(strFileName);
-            }
-        }
-    }
    /* public static void main(String[] args) {
         AllSubmissions as = new AllSubmissions();
     }*/

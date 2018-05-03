@@ -1,10 +1,12 @@
 package canvasclient;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -199,6 +201,198 @@ public class ConnectionPool extends PublicResouce {
 		return courseList;
     }  
  
+    public String addAssignment(String courseId,String name,String startdate,String duedate,String closedate,String points, String FileType, String description) throws MalformedURLException, IOException {
+    	List<String> fields = new ArrayList<>();
+    	fields.add("courses/"+courseId+"/assignments");
+    	String url_backup=url;
+    	this.setURL(fields);
+    	System.out.println(url);
+    	HttpURLConnection conn=(HttpURLConnection)((new URL(url)).openConnection());
+    	conn.setDoOutput(true);
+    	conn.setRequestMethod("POST");
+    	conn.setRequestProperty("Content-Type", TYPE);
+    	conn.setRequestProperty("Authorization", OAUTH2);
+    	StringBuilder inputsb=new StringBuilder(1024);
+    	inputsb.append("{\"assignment\": {\"name\":\""+name+"\"");
+    	if (!duedate.isEmpty()&&!duedate.equals("null"))
+    		inputsb.append(",\"due_at\":\""+duedate+"\"");	
+    	if (!startdate.isEmpty()&&!startdate.equals("null"))
+    		inputsb.append(",\"unlock_at\":\""+startdate+"\"");	
+    	if (!closedate.isEmpty()&&!closedate.equals("null"))
+    		inputsb.append(",\"lock_at\":\""+closedate+"\"");	
+    	if (!points.isEmpty()&&!points.equals("null"))
+    		inputsb.append(",\"points_possible\":"+points);	
+    	if (!FileType.isEmpty()&&!FileType.equals("null"))
+    		inputsb.append(",\"submission_types\":[\"online_upload\"],\"allowed_extensions\":[\""+FileType.replaceAll(",", "\",\"")+"\"]");	
+    	if (!description.isEmpty()&&!description.equals("null"))
+    		inputsb.append(",\"description\":\""+description.replaceAll("\"margin-top: 0\"", "").replaceAll("\n", "")+"\"");
+    	inputsb.append(",\"published\":true}}");
+    	String input=inputsb.toString();
+    	System.out.println(input);
+    	OutputStream os = conn.getOutputStream();
+    	os.write(input.getBytes());
+    	os.flush();    	
+    	BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));	    	
+    	input = br.readLine();
+    	conn.disconnect();
+    	url=url_backup;
+		if(input.length()>=7) {	
+			return input.substring(6,input.indexOf(",\""));
+		}  
+		return "";
+    	
+    }
     
+    public void updateAssignment(String courseId,String assignmentId,String name,String startdate,String duedate,String closedate,String points, String FileType, String description) throws MalformedURLException, IOException {
+    	List<String> fields = new ArrayList<>();
+    	fields.add("courses/"+courseId+"/assignments/"+assignmentId);
+    	String url_backup=url;
+    	this.setURL(fields);
+    	System.out.println(url);
+    	HttpURLConnection conn=(HttpURLConnection)((new URL(url)).openConnection());
+    	conn.setDoOutput(true);
+    	conn.setRequestMethod("PUT");
+    	conn.setRequestProperty("Content-Type", TYPE);
+    	conn.setRequestProperty("Authorization", OAUTH2);
+    	StringBuilder inputsb=new StringBuilder(1024);
+    	inputsb.append("{\"assignment\": {\"name\":\""+name+"\"");
+    	if (!duedate.isEmpty()&&!duedate.equals("null"))
+    		inputsb.append(",\"due_at\":\""+duedate+"\"");	
+    	if (!startdate.isEmpty()&&!startdate.equals("null"))
+    		inputsb.append(",\"unlock_at\":\""+startdate+"\"");	
+    	if (!closedate.isEmpty()&&!closedate.equals("null"))
+    		inputsb.append(",\"lock_at\":\""+closedate+"\"");	
+    	if (!points.isEmpty()&&!points.equals("null"))
+    		inputsb.append(",\"points_possible\":"+points);	
+    	if (!FileType.isEmpty()&&!FileType.equals("null"))
+    		inputsb.append(",\"submission_types\":[\"online_upload\"],\"allowed_extensions\":[\""+FileType.replaceAll(",", "\",\"")+"\"]");	
+    	if (!description.isEmpty()&&!description.equals("null"))
+    		inputsb.append(",\"description\":\""+description.replaceAll("\"margin-top: 0\"", "").replaceAll("\n", "")+"\"");
+    	inputsb.append(",\"published\":true}}");
+    	String input=inputsb.toString();
+    	System.out.println(input);
+    	OutputStream os = conn.getOutputStream();
+    	os.write(input.getBytes());   	
+    	conn.getInputStream();	
+    	conn.disconnect();
+    	url=url_backup;
+    }
+    
+    
+    
+    public Assignment getSingleAssignments(String courseId, String assignmentId) {
+    	String responses = "";
+    	String urlbackup = url;
+    	url = API+"/courses/"+courseId+"/assignments/"+assignmentId;
+        responses = this.buildConnection();
+        Assignment returnAssignment=new Assignment("Unavailable", "Unavailable");
+        if(responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                String strID = "";
+                String strName = "";
+                String openDate = "";
+                String closeDate = "";
+                String dueDate = "";
+                String descrip = "";
+                String subType = "";
+                String des = "";
+                String allowExtention = "";
+
+                for (String s : rawResp) {
+                	System.out.println(s);
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+                    if (!s.startsWith("\"")) {
+                        if (!des.isEmpty())
+                            des += s;
+                    }
+                    if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
+                        if (!allowExtention.isEmpty())
+                            allowExtention += " " + s.substring(1, s.length() - 1);
+                    }
+
+                    // get useful information from responses
+                    if (s.startsWith("\"id\"") && !s.substring(5, 6).equals("\"")) {
+                        strID=s.substring(5);
+                    }
+                    if (s.startsWith("\"name\"")) {
+                        strName=s.substring(8, s.length() - 1);
+                    }
+                    if (s.startsWith("\"created_at\"")) {
+                        openDate=(s.substring(14, s.length() - 1));
+                    }
+                    if (s.startsWith("\"due_at\"")) {
+                        if (!des.isEmpty()) {
+                            descrip=des;
+                            des = "";
+                        }
+                        if (s.substring(9).equals("null")) {
+                            dueDate=s.substring(9);
+                        } else {
+                            dueDate=s.substring(10, s.length() - 1);
+                        }
+                    }
+//                    if(s.startsWith("\"lock_info\"") || s.startsWith("\"discussion_topic\"")) {
+//                        closeDate.remove(closeDate.size()-1);
+//                    }
+                    if (s.startsWith("\"lock_at\"")) {
+                        if (s.substring(10).equals("null")) {
+                            closeDate=s.substring(10);
+                        } else {
+                            closeDate=s.substring(11, s.length() - 1);
+                        }
+                    }
+                    if (s.startsWith("\"description\"")) {
+                    	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
+                        if (!des.isEmpty()) {
+                            //des = "";
+                            des = s.substring(14);
+                        } else {                   	
+                            des += s.substring(14);
+                        }                   	
+                    }
+                    if (s.startsWith("\"allowed_extensions\"")) {
+                        if (!allowExtention.isEmpty()) {
+                            allowExtention = "";
+                                allowExtention += s.substring(23, s.length() - 1);
+                        } else {
+                                allowExtention += s.substring(23, s.length() - 1);
+                        }
+                    }
+                    if (s.startsWith("\"published\"")) {
+                        if (!allowExtention.isEmpty()) {
+                            subType=allowExtention.substring(0, allowExtention.length() - 1);
+                            allowExtention = "";
+                        } else {
+                            subType="null";
+                        }
+
+                        // reserved for published
+                    }
+//                    System.out.println(s);
+
+                }
+                returnAssignment=new Assignment(strName,strID);
+                if (descrip.charAt(0)=='"'&&descrip.charAt(descrip.length()-1)=='"')                    	
+                	returnAssignment.setAssignmentDescription(descrip.substring(1, descrip.length()-1));
+                    else
+                    	returnAssignment.setAssignmentDescription(descrip);
+                returnAssignment.setCloseDate(closeDate);
+                returnAssignment.setDueDate(dueDate);
+                returnAssignment.setOpenDate(openDate);
+                returnAssignment.setSubmissionTypes(subType);
+                }
+     
+        } 
+        return returnAssignment;
+    }
+
     
 }

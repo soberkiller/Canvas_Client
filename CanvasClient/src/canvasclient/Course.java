@@ -254,6 +254,7 @@ public class Course extends PublicResouce {
                 String allowExtention = "";
 
                 for (String s : rawResp) {
+                	System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
@@ -305,8 +306,8 @@ public class Course extends PublicResouce {
                     if (s.startsWith("\"description\"")) {
                     	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
                         if (!des.isEmpty()) {
-                            des = "";
-                            des += s.substring(14);
+                            //des = "";
+                            des = s.substring(14);
                         } else {                   	
                             des += s.substring(14);
                         }                   	
@@ -389,4 +390,8 @@ public class Course extends PublicResouce {
         }
     }
 
+    void addAssignment(Assignment assignment) {
+    	if (assignment!=null&&assignment.getAssignmentName().equals("Unavailable"))
+    		this.assignmentsList.add(assignment);
+    }
 }

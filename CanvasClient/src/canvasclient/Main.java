@@ -125,7 +125,7 @@ public class Main extends javax.swing.JFrame {
         jButton3.addActionListener(e -> {
             if(e.getSource() == jButton3) {
                 if(subViewer == null) {
-                    subViewer = new SubmissionViewer(submission);
+//                    subViewer = new SubmissionViewer(submission);
                 } else {
                     subViewer.setVisible(true);
                 }

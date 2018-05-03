@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 package canvasclient;
-//import canvasclient.SimilarityByEDAOnPlainText;
+
 import java.util.ArrayList;
 import java.io.File;
-
 /**
  *
- * @author Xiao
+ * @author dragon
  */
 public class IntergratedPlagiarismDetector {
     
@@ -28,19 +27,42 @@ public class IntergratedPlagiarismDetector {
         
         //compute similarity
 
-        for(File f2:sametypefile){
+        ReadFile rf1 = new ReadFile(currentfile);
+        ArrayList<String> filedetail1 = rf1.getFileDetail();
+        
+        String plaintext1 = "";
+            for(int i=0;i<filedetail1.size();i++){
+                plaintext1=plaintext1+filedetail1.get(i);
+            }
+        
+        CodeReduction cr1 = new CodeReduction(filedetail1,type);
+        String reducedcode1 = cr1.getReducedFileDetail();
+        
+        for(File f2:sametypefile){          
+            ReadFile rf2 = new ReadFile(f2);
+            ArrayList<String> filedetail2 = rf2.getFileDetail();
+            
+            //plaintext
+            String plaintext2 = "";
+            for(int i=0;i<filedetail2.size();i++){
+                plaintext2=plaintext2+filedetail2.get(i);
+            }
+            
+            //reduced code
+            CodeReduction cr2 = new CodeReduction(filedetail2,type);
+            String reducedcode2 = cr2.getReducedFileDetail();
+            
             //compute similarity by EDA on plain text
-            SimilarityByEDAOnPlainText sim1 = new SimilarityByEDAOnPlainText(currentfile,f2);
-            double simbyEDAOPT = sim1.getSimilarity();
+            double simbyEDAOPT = new EditDistanceAlgorithm().similarity(plaintext1, plaintext2);
             
             //compute similarity by EDA on reduced code
-
+            double simbyEDARDC = new EditDistanceAlgorithm().similarity(reducedcode1, reducedcode2);
             //compute similarity by LCS on plain text
                 
             //compute similarity by LCS on reduced code
                 
             //intergrate the similarity of each part
-            double similarityintegrated = simbyEDAOPT/2;
+            double similarityintegrated = simbyEDAOPT*0.1+simbyEDARDC*0.9;
                 
             if(similarityintegrated>similaritythreshold){
                 suspectedfile.add(f2);
