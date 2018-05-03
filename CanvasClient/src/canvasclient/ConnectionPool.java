@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
  * April. 2018
  */
 
-public class ConnectionPool {
+public class ConnectionPool extends PublicResouce {
     private double API_VERSSION = 0;
     private static final String API = "https://sit.instructure.com/api/v1";
     private String url = "";
@@ -125,28 +125,6 @@ public class ConnectionPool {
 
     public void setOauth2(String oauth2) {
         this.OAUTH2 = oauth2;
-    }
-    
-    //Convert unicode to String
-    public static String unicode2String(String unicode) {  
-        StringBuffer string = new StringBuffer(); 
-        Pattern pattern1 = Pattern.compile("[\\\\][u][0-9abcde]{4}$");
-        for (int i=0; i<unicode.length(); i++) {
-        	String out=""+unicode.charAt(i);
-        	if (i+6<unicode.length()&&pattern1.matcher(unicode.substring(i, i+6)).matches()) {
-           		out="";
-				for (int j =i+2;j<i+6;j++) {
-					out=out+unicode.charAt(j);
-				}
-				int hexVal = Integer.parseInt(out, 16);
-				out =""+ (char)hexVal;
-				i=i+5;
-        	}        	
-        	string.append(out);        
-        }
-        String result = string.toString();
-        result = result.replace("\\r\\n","");
-        return result;
     }
 
     //List Not Student role courses

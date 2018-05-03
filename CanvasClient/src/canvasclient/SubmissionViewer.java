@@ -15,6 +15,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.List;
 //import canvasclient.Submission;
 //import canvasclient.ReadFile;
 //import canvasclient.SubmissionOfOtherStudents;
@@ -25,14 +26,17 @@ import java.util.ArrayList;
  *
  * @author Xiao
  */
-public class SubmissionViewer extends JFrame{
+public class SubmissionViewer extends PublicResouce{
    
     private String filename;
     private File file;
-    
-    public SubmissionViewer(Submission2 submission)
-    {
-        super(submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getParentFile().getName()
+
+
+    public SubmissionViewer(Submission2 submission) {
+        // get submissions for current assignment
+        // add methods for getting submission
+
+        setTitle(submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getParentFile().getName()
         +" "+submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getName()
                 +" "+submission.getattachedFiles().get(0).getParentFile().getParentFile().getName()
                 +" "+submission.getattachedFiles().get(0).getParentFile().getName());

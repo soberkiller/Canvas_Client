@@ -8,6 +8,7 @@ package canvasclient;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author MattSorrentino
@@ -16,6 +17,22 @@ import java.util.ArrayList;
 public class Submission {
 
     //SUBMISSION DATA IS TAKEN FROM CANVAS
+
+    // student id in Canvas
+    private String studentId;
+
+    // time of when student submit
+    private String submittedAt;
+
+    // grade of submission
+    private String grade;
+
+    // is late
+    private String late;
+
+    // name of submitted file
+    private List<String> fileName;
+
 
 
     // Sudent object of student who made the submission
@@ -36,8 +53,13 @@ public class Submission {
     private ArrayList<File> attachedFiles;
 
 
-    public Submission() {
-        attachedFiles = new ArrayList<>(1);
+    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName) {
+        this.studentId = studentId;
+        this.submittedAt = submittedAt;
+        this.grade = grade;
+        this.late = late;
+        this.fileName = fileName;
+
     }
 
     public Student getStudent() {
@@ -67,6 +89,17 @@ public class Submission {
     public void setSubmissionGrade(double submissionGrade) {
         this.submissionGrade = submissionGrade;
     }
+
+    public String getStudentId() { return studentId; }
+
+    public String getSubmittedAt() { return submittedAt ;}
+
+    public String getGrade() { return grade; }
+
+    public String getLate() { return late; }
+
+    public List<String> getFileName() { return fileName; }
+
 
 
 }

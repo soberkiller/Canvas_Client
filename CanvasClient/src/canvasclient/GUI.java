@@ -49,8 +49,6 @@ public class GUI extends PublicResouce {
     private Main main;
 
     private final Base64.Decoder decoder = Base64.getDecoder();
-    private final String FILENAME = "token.dat";
-
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         cCourse = currentCourse;
         CourseSelector CSelector = new CourseSelector();
@@ -373,10 +371,11 @@ public class GUI extends PublicResouce {
         viewSubmissionsPanel.setBorder(new EmptyBorder(30, 50, 30, 50));
 
         JButton viewSubmissions = new JButton("View Submissions");
-        viewSubmissions.addActionListener( e -> new AllSubmissions(
-                // add methods for submission
-
-        ) );
+        viewSubmissions.addActionListener( e -> {
+                if(e.getSource() == viewSubmissions) {
+                    new AllSubmissions();
+                }
+        });
         viewSubmissions.setBackground(Color.gray);
         viewSubmissions.setForeground(Color.white);
         viewSubmissions.setFocusable(false);
@@ -483,7 +482,7 @@ public class GUI extends PublicResouce {
                         buttonsAssignment.get(k).setBackground(Color.white);
                     }
                     buttonsAssignment.get(a).setBackground(Color.cyan);
-                    
+                    currentAssignment = new Assignment(cCourse.getAssignmentsList().get(a).getAssignmentName(), cCourse.getAssignmentsList().get(a).getAssignmentID());
                     assignmentName.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
@@ -492,6 +491,7 @@ public class GUI extends PublicResouce {
                     latePenaltyField.setText("NOT IMPLEMENTED");
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    // the following Text may not be necessary
                     submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
 
                 }
@@ -514,15 +514,15 @@ public class GUI extends PublicResouce {
 
     }
 
-    // get token from token.dat
-    public String getOAUTH2() {
-        File tFile = new File(FILENAME);
-        StringBuffer content = new StringBuffer();
-        // the length of stream read from file is larger than the content of that file, so have to deal with it
-        Course.getFromFile(tFile, content);
-
-        return content.toString();
-    }
+//    // get token from token.dat
+//    public String getOAUTH2() {
+//        File tFile = new File(FILENAME);
+//        StringBuffer content = new StringBuffer();
+//        // the length of stream read from file is larger than the content of that file, so have to deal with it
+//        Course.getFromFile(tFile, content);
+//
+//        return content.toString();
+//    }
 
     // reset current course
     public void setCurrentCourse(Course currentCourse) {
@@ -569,7 +569,7 @@ public class GUI extends PublicResouce {
                         buttonsAssignment.get(k).setBackground(Color.white);
                     }
                     buttonsAssignment.get(a).setBackground(Color.cyan);
-
+                    currentAssignment = cCourse.getAssignmentsList().get(a);
                     assignmentName.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
@@ -578,6 +578,7 @@ public class GUI extends PublicResouce {
                     latePenaltyField.setText("NOT IMPLEMENTED");
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    // the following Text may not be necessary
                     submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
                 }
             });
@@ -637,6 +638,7 @@ public class GUI extends PublicResouce {
 
     // init assignment panel
     public void initAssignmentPanel() {
+        currentAssignment = cCourse.getAssignmentsList().get(0);
         assignmentName.setText(cCourse.getAssignmentsList().get(0).getAssignmentName());
         dateAvailableField.setText(cCourse.getAssignmentsList().get(0).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
         dateDueField.setText(cCourse.getAssignmentsList().get(0).getDueDate());
@@ -646,6 +648,7 @@ public class GUI extends PublicResouce {
         fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
         descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
         submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(0).getSubmissionsList().size() + " submissions.");
+
     }
 
 }
