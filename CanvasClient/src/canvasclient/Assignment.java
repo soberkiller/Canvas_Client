@@ -34,18 +34,9 @@ public class Assignment {
 
     //array of strings containing the 
     private String submissionTypes;
-    
-    private String points;
 
-    public String getPoints() {
-		return points;
-	}
-
-	public void setPoints(String points) {
-		this.points = points;
-	}
-
-	private ArrayList<Submission> submissionsList;
+    // List of submissions
+    private ArrayList<Submission> submissionsList;
 
 
     public Assignment(String assignmentName, String assignmentID) {

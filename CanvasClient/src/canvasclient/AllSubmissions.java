@@ -15,7 +15,9 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -26,8 +28,11 @@ import javax.swing.border.EmptyBorder;
  *
  * @author lvtia
  */
-public class AllSubmissions extends JFrame{
-    public AllSubmissions(){
+public class AllSubmissions extends PublicResouce {
+
+
+    public AllSubmissions() {
+
         setSize(1024,1000);
         Container c = getContentPane();
    //     addWindowListener(new MyWindowListener());
@@ -102,9 +107,9 @@ public class AllSubmissions extends JFrame{
         
         c.add(BorderLayout.NORTH, topBar);
         
-        SubmissionViewer view = new SubmissionViewer(new Submission2());
-        JPanel viewPanel = (JPanel)view.getContentPane();
-        c.add(BorderLayout.CENTER, viewPanel);
+//        SubmissionViewer view = new SubmissionViewer(new Submission2());
+//        JPanel viewPanel = (JPanel)view.getContentPane();
+//        c.add(BorderLayout.CENTER, viewPanel);
         
         //Course currentCourse = new Course();
         int numberOfButtons=20;//new Course().getStudentsList().size();
@@ -131,7 +136,7 @@ public class AllSubmissions extends JFrame{
             public void actionPerformed(ActionEvent e){
            // ArrayList<File> attachFile = new ArrayList<File>(new Submission2().getattachedFiles());
             //String comment = new Submission2().getComments();
-            new SubmissionViewer(new Submission2());
+//                new SubmissionViewer(new Submission2());
             }
             });
             submissionsListPanel.add(buttons[i]);
@@ -145,7 +150,7 @@ public class AllSubmissions extends JFrame{
         
         setVisible(true);
     }
-    
+
    /* public static void main(String[] args) {
         AllSubmissions as = new AllSubmissions();
     }*/

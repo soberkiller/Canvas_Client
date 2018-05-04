@@ -8,6 +8,7 @@ package canvasclient;
 import javax.swing.*;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
+import java.io.UnsupportedEncodingException;
 
 //import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.All;
 
@@ -124,7 +125,7 @@ public class Main extends javax.swing.JFrame {
         jButton3.addActionListener(e -> {
             if(e.getSource() == jButton3) {
                 if(subViewer == null) {
-                    subViewer = new SubmissionViewer(submission);
+//                    subViewer = new SubmissionViewer(submission);
                 } else {
                     subViewer.setVisible(true);
                 }
@@ -291,8 +292,8 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                            
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {  
-        new AllSubmissions();
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws UnsupportedEncodingException {
+//        new AllSubmissions();
        // setSize(1000,1000);
         
        }                                        

@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * April. 2018
  */
 
-public class ConnectionPool {
+public class ConnectionPool extends PublicResouce {
     private double API_VERSSION = 0;
     private static final String API = "https://sit.instructure.com/api/v1";
     private String url = "";
@@ -127,7 +127,6 @@ public class ConnectionPool {
     public void setOauth2(String oauth2) {
         this.OAUTH2 = oauth2;
     }
-    
     //Convert unicode to String
     public static String unicode2String(String unicode) {  
         StringBuffer string = new StringBuffer(); 
@@ -150,6 +149,7 @@ public class ConnectionPool {
         result = result.replace("\\r","");
         return result;
     }
+
 
     //List Not Student role courses
     public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException, ParseException {

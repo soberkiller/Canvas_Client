@@ -8,6 +8,7 @@ package canvasclient;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author MattSorrentino
@@ -17,9 +18,23 @@ public class Submission {
 
     //SUBMISSION DATA IS TAKEN FROM CANVAS
 
+    // student id in Canvas
+    private String studentId;
 
-    // Sudent object of student who made the submission
-    private Student student;
+    // time of when student submit
+    private String submittedAt;
+
+    // grade of submission
+    private String grade;
+
+    // is late
+    private String late;
+
+    // name of submitted file
+    private List<String> fileNameList;
+
+    // list of url for downloading files
+    private List<String> urlList;
 
     // time and date of submission
     private String submissionTime;
@@ -39,18 +54,26 @@ public class Submission {
     private ArrayList<File> attachedFiles;
 
 
-
-    public Submission(Student student) {
-        this.student = student;
+//<<<<<<< HEAD
+    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName, List<String> url) {
+        this.studentId = studentId;
+        this.submittedAt = submittedAt;
+        this.grade = grade;
+        this.late = late;
+        this.fileNameList = fileName;
+        this.urlList = url;
         attachedFiles = new ArrayList<>(1);
     }
+//
+//=======
 
-    public Student getStudent() {
-        return student;
-    }
+//    public Submission(Student student) {
+//
+////>>>>>>> efb2c9edd3cfbae814544b8d88eefc87bfd77527
+//    }
 
     public String getSubmissionTime() {
-        return submissionTime;
+        return submittedAt;
     }
 
     public void setSubmissionTime(String submissionTime) {
@@ -87,6 +110,19 @@ public class Submission {
     public void setSubmissionGrade(double submissionGrade) {
         this.submissionGrade = submissionGrade;
     }
+
+    public String getStudentId() { return studentId; }
+
+    public String getSubmittedAt() { return submittedAt ;}
+
+    public String getGrade() { return grade; }
+
+    public String getLate() { return late; }
+
+    public List<String> getFileName() { return fileNameList; }
+    
+    public List<String> getUrlList() { return urlList; }
+
 
 
 }

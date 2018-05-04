@@ -24,10 +24,10 @@ public class SubmissionGrader extends JFrame{
     
     public SubmissionGrader(Submission submission)
     {
-        super(submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getParentFile().getName()
-        +" "+submission.getattachedFiles().get(0).getParentFile().getParentFile().getParentFile().getName()
-                +" "+submission.getattachedFiles().get(0).getParentFile().getParentFile().getName()
-                +" "+submission.getattachedFiles().get(0).getParentFile().getName());
+        super(submission.getAttachedFiles().get(0).getParentFile().getParentFile().getParentFile().getParentFile().getName()
+        +" "+submission.getAttachedFiles().get(0).getParentFile().getParentFile().getParentFile().getName()
+                +" "+submission.getAttachedFiles().get(0).getParentFile().getParentFile().getName()
+                +" "+submission.getAttachedFiles().get(0).getParentFile().getName());
 
         setSize(768,668);
         setResizable(false);
@@ -48,9 +48,9 @@ public class SubmissionGrader extends JFrame{
         JComboBox selectfile = new JComboBox();
         selectfile.setPreferredSize(new Dimension(300,30));
         selectfile.addItem("Select File");
-        for(int i=0;i<submission.getattachedFiles().size();i++)
+        for(int i=0;i<submission.getAttachedFiles().size();i++)
         {
-            selectfile.addItem(submission.getattachedFiles().get(i).getName());
+            selectfile.addItem(submission.getAttachedFiles().get(i).getName());
         }
         JLabel filelb = new JLabel("AttachedFiles");
         filelb.setPreferredSize(new Dimension(550,20));
@@ -134,7 +134,7 @@ public class SubmissionGrader extends JFrame{
                         if(filename.equals("Select File")){
                         }
                         else{
-                            file = new File(submission.getattachedFiles().get(0).getParent()+"/"+filename);
+                            file = new File(submission.getAttachedFiles().get(0).getParent()+"/"+filename);
                             ReadFile rf = new ReadFile(file);
                             for(int i=0;i<rf.getFileDetail().size();i++){
                                 codeta.setText(codeta.getText()+rf.getFileDetail().get(i));
@@ -147,7 +147,7 @@ public class SubmissionGrader extends JFrame{
             }    
         );
         
-        String path =submission.getattachedFiles().get(0).getParent();
+        String path =submission.getAttachedFiles().get(0).getParent();
         
         savegrade.addActionListener(
             new ActionListener() 
