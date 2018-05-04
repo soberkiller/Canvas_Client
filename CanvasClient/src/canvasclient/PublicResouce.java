@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public abstract class PublicResouce extends JFrame{
 
     // set a hashmap for mapping id to student information
-    public Map<String, Student> id_user_info = new HashMap<String, Student>();
+    static Map<String, Student> id_user_info = new HashMap<String, Student>();
     static Student currentStu;
 
     static Course currentCourse;

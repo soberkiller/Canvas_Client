@@ -61,7 +61,7 @@ public class SubmissionViewer extends PublicResouce{
             e.getMessage();
         }
         submission.setMethod(GET);
-        currentAssignment.getSubmissionsList() = getSubmission();
+        currentAssignment.setSubmissionsList(getSubmission());
 
 
         setTitle("Submissions for " + currentAssignment.getAssignmentName());
@@ -76,9 +76,9 @@ public class SubmissionViewer extends PublicResouce{
         // the following has conflicts
         
         File a = new File("/Desktop/Servlet.java");
-        currentAssignment.getSubmissionsList().add(new Submission(new Student("First Last", "12345678", "test@stevens.edu", "654321")));
+//        currentAssignment.getSubmissionsList().add(new Submission(new Student("First Last", "12345678", "test@stevens.edu", "654321")));
         currentAssignment.getSubmissionsList().get(0).getAttachedFiles().add(a);
-        currentAssignment.getSubmissionsList().get(0).setSubmissionTime("temp time");
+//        currentAssignment.getSubmissionsList().get(0).setSubmissionTime("temp time");
         
         
         currentSubmission = currentAssignment.getSubmissionsList().get(0);
@@ -134,7 +134,8 @@ public class SubmissionViewer extends PublicResouce{
         //c.add(BorderLayout.CENTER, viewPanel);
         
         //Course currentCourse = new Course();
-        int numberOfButtons=20;//new Course().getStudentsList().size();
+        int numberOfButtons = currentAssignment.getSubmissionsList().size();//new Course().getStudentsList().size();
+        System.out.println(numberOfButtons);
       //  JPanel submissionsPanel = new JPanel();
         
         JPanel submissionsListPanel = new JPanel(); 
@@ -151,7 +152,7 @@ public class SubmissionViewer extends PublicResouce{
         
         
         for(int i=0;i<numberOfButtons;i++){
-            buttons[i] = new JButton("Submission "+(i+1));
+            buttons[i] = new JButton(id_user_info.get(currentAssignment.getSubmissionsList().get(i).getStudentId()).getStudentName());
             buttons[i].setPreferredSize(new Dimension(180, 50));
             buttons[i].setBackground(Color.WHITE);
             buttons[i].addActionListener(new ActionListener(){
@@ -192,10 +193,10 @@ public class SubmissionViewer extends PublicResouce{
         actionPanel.setPreferredSize(new Dimension(770,100));
         actionPanel.setLayout(new GridLayout(2, 1, 20, 20));
         actionPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
+        System.out.println(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
         
-        
-        JLabel studentName = new JLabel(currentSubmission.getStudent().getStudentName());
-        JLabel studentID = new JLabel(currentSubmission.getStudent().getStudentID());
+        JLabel studentName = new JLabel(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
+        JLabel studentID = new JLabel(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
         JLabel submissionTime = new JLabel("Submitted at: " + currentSubmission.getSubmissionTime());
         
         JComboBox selectfile = new JComboBox();
@@ -566,19 +567,10 @@ public class SubmissionViewer extends PublicResouce{
                     fileNameList.add(strFileName);
                     urlList.add(strUrl);
                 }
-                if(!submissionList.isEmpty())
-                    submissionList.clear();
+
                 for (int i = 0; i < strID.size(); i++) {
-
-                    Submission sub = new Submission();
-
-//                    System.out.println(strGrade.get(i));
-//                    System.out.println(strSubmitTime.get(i));
-//                    System.out.println(strLate.get(i));
-                    for(int j = 0; j < fileNameList.get(i).size(); j++)
-                    System.out.println(urlList.get(i).get(j));
-//                    System.out.println(fileNameList.size());
-//                    System.out.println(strGrade.get(i));
+                    submissionList.add(new Submission(strID.get(i), strSubmitTime.get(i), strGrade.get(i),
+                                                    strLate.get(i), fileNameList.get(i), urlList.get(i)));
                 }
             }
         }

@@ -31,7 +31,10 @@ public class Submission {
     private String late;
 
     // name of submitted file
-    private List<String> fileName;
+    private List<String> fileNameList;
+
+    // list of url for downloading files
+    private List<String> urlList;
 
     // time and date of submission
     private String submissionTime;
@@ -52,12 +55,13 @@ public class Submission {
 
 
 //<<<<<<< HEAD
-    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName) {
+    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName, List<String> url) {
         this.studentId = studentId;
         this.submittedAt = submittedAt;
         this.grade = grade;
         this.late = late;
-        this.fileName = fileName;
+        this.fileNameList = fileName;
+        this.urlList = url;
         attachedFiles = new ArrayList<>(1);
     }
 //
@@ -115,7 +119,9 @@ public class Submission {
 
     public String getLate() { return late; }
 
-    public List<String> getFileName() { return fileName; }
+    public List<String> getFileName() { return fileNameList; }
+    
+    public List<String> getUrlList() { return urlList; }
 
 
 
