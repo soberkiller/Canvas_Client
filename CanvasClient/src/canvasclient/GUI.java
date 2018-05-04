@@ -383,7 +383,7 @@ public class GUI extends PublicResouce {
 
         viewSubmissions.addActionListener( e -> {
                 if(e.getSource() == viewSubmissions) {
-                    new SubmissionViewer(cCourse.getAssignmentsList().get(0));
+                    new SubmissionViewer(currentAssignment);
                 }
         });
 

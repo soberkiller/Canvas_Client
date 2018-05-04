@@ -70,8 +70,14 @@ public class Course extends PublicResouce {
         connection = new ConnectionPool(fields, 0.1, new String(decoder.decode(getOAUTH2()), "UTF-8"));
         connection.setMethod(GET);
         getAssignments(assignmentsList);
-        System.out.println(assignmentsList.size());
         fields.clear();
+
+        // making directories for each assignment in current course, name them by their ID
+        for(Assignment a : assignmentsList) {
+            File dir = new File("./" + this.courseID + "/" + a.getAssignmentID());
+            if(!dir.exists())
+                dir.mkdir();
+        }
 
         //adding fake assignments to test
 //        assignmentsList.add(new Assignment("first assignment", "1043295"));

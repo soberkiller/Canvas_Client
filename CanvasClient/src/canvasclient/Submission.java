@@ -73,7 +73,7 @@ public class Submission {
 //    }
 
     public String getSubmissionTime() {
-        return submissionTime;
+        return submittedAt;
     }
 
     public void setSubmissionTime(String submissionTime) {

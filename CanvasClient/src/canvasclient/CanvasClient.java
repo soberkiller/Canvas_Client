@@ -43,6 +43,14 @@ public class CanvasClient extends PublicResouce {
             //List Not Student role courses
             courseList = connection.getNotStudentCourses();
             fields.clear();
+
+            // create directory for each course name them by their ID
+            for(Course c : courseList) {
+                File dir = new File(c.getCourseID());
+                if(!dir.exists())
+                    dir.mkdir();
+            }
+
             if(courseList.size() > 0)
                 super.currentCourse = courseList.get(0);
         }
