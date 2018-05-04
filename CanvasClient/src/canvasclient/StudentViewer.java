@@ -135,7 +135,7 @@ public class StudentViewer extends JFrame {
         nameLabel = new JLabel(currentStudent.getStudentName());
         Font nameFont = new Font("Helvetica", Font.BOLD, 32);
         nameLabel.setFont(nameFont);
-        idLabel = new JLabel(currentStudent.getStudentID());
+        idLabel = new JLabel(currentStudent.getStudentSISID());
 
 
         BufferedImage profilePic;
@@ -182,7 +182,7 @@ public class StudentViewer extends JFrame {
         
         nameLabel.setText(currentStudent.getStudentName());
         
-        idLabel.setText(currentStudent.getStudentID());
+        idLabel.setText(currentStudent.getStudentSISID());
 
         /*
         BufferedImage profilePic;

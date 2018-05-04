@@ -11,15 +11,16 @@ import java.net.URL;
 
 public class DownloadSubmission {
     private String METHOD = "GET";
-    private String API = "https://canvas.instructure.com/api/v1";
+    private String API = "https://sit.instructure.com/api/v1";
     private URL connection;
     private HttpsURLConnection downloadConnection;
-    private String FILEPATH = "c:\\assignments\\";
+    private String FILEPATH = "";
     private FileOutputStream fileOut;
     private InputStream inputStream;
     private boolean isDown = false;
 
-    public DownloadSubmission() {
+    public DownloadSubmission(String path) {
+        FILEPATH = path;
         File dFile = new File(FILEPATH);
         if(!dFile.exists()) {
             dFile.mkdir();
@@ -70,10 +71,15 @@ public class DownloadSubmission {
         }
     }
 
+    public void setAPI(String url) { this.API = url; }
 
+    public void setFILEPATH(String path) { FILEPATH += path; }
 
-
-    public void setAPI(String url) {
-        this.API = url;
+    public void resetFILEPATH(String path) {
+        FILEPATH = path;
+        File dFile = new File(FILEPATH);
+        if(!dFile.exists()) {
+            dFile.mkdir();
+        }
     }
 }

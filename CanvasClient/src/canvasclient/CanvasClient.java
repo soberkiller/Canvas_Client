@@ -28,10 +28,10 @@ public class CanvasClient extends PublicResouce {
         //make temporary course objects for testing purposes.
 
         //set currentCourse to be the Course object passed in 
-        this.currentCourse = currentCourse;
+        super.currentCourse = currentCourse;
 
         //if null, set currentCourse to be the first course loaded in through the API
-        if (this.currentCourse == null) {
+        if (super.currentCourse == null) {
 
             if(!fields.isEmpty())
                 fields.clear();
@@ -43,15 +43,21 @@ public class CanvasClient extends PublicResouce {
             //List Not Student role courses
             courseList = connection.getNotStudentCourses();
             fields.clear();
+
+            // create directory for each course name them by their ID
+            for(Course c : courseList) {
+                File dir = new File(c.getCourseID());
+                if(!dir.exists())
+                    dir.mkdir();
+            }
+
             if(courseList.size() > 0)
-                currentCourse = courseList.get(0);
+                super.currentCourse = courseList.get(0);
         }
 
 
         //create instance of main GUI
-        new GUI(currentCourse, courseList);
-
-
+        new GUI(super.currentCourse, courseList);
     }
 
     public static void main(String[] args) throws IOException, ParseException {
@@ -75,15 +81,6 @@ public class CanvasClient extends PublicResouce {
 
     static Course getCurrentCourse() {
         return currentCourse;
-    }
-
-    public String getOAUTH2() {
-        File tFile = new File(FILENAME);
-        StringBuffer content = new StringBuffer();
-        // the length of stream read from file is larger than the content of that file, so have to deal with it
-        Course.getFromFile(tFile, content);
-
-        return content.toString();
     }
 
     public void getCourses(ArrayList<Course> courseList) throws UnsupportedEncodingException {

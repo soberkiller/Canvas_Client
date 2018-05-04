@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -27,29 +28,36 @@ import java.util.logging.Logger;
  * @author MattSorrentino
  */
 
-//runtime r = Runtime.getRuntime();
-//r.exec("Plagarism Dir");
 
 /**
  *
  * @class GUI
- * Handles the GUI of the CanvasClient Application.
+ * Handles the main GUI frame of the CanvasClient Application.
  */
 
 public class GUI extends PublicResouce {
     private static Course cCourse;
 
     private Container c;
+    private int status;
 
     private static List<JButton> buttonsAssignment;
     private static JPanel assignmentsListPanel = new JPanel();
     private JLabel currentCourseNameLabel;
     private JScrollPane scroller;
     private JButton newAssignmentButton = new JButton("New Assignment");
-    private Main main;
 
     private final Base64.Decoder decoder = Base64.getDecoder();
+
     private final String FILENAME = "token.dat";
+
+    
+    /**
+     * Draws main frame of program and pulls assignment data from Canvas.
+     * @param currentCourse indicates the course currently selected.
+     * @param courseList contains all courses for which the user has teacher, course administrator, TA, or grader permissions.
+     * 
+     */
 
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         cCourse = currentCourse;
@@ -61,15 +69,15 @@ public class GUI extends PublicResouce {
 
         addWindowListener(new MyWindowListener());
 
-        try {
+        try 
+        {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             e.printStackTrace();
         }
 
-        //JLabel to be used as a spacer for GridLayout Panels
-        JLabel spacer1 = new JLabel(" ");
-        JLabel spacer2 = new JLabel(" ");
 
         ////////////////////////////////////////////////////////////////////////
         //
@@ -94,8 +102,6 @@ public class GUI extends PublicResouce {
         currentCoursePanel.setLayout(new GridLayout(2, 1, 10, 0));
         currentCoursePanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-
-        //currentCoursePanel.add(spacer1);
 
 
         currentCourseNameLabel = new JLabel(" " + cCourse.getCourseName());
@@ -122,7 +128,6 @@ public class GUI extends PublicResouce {
                 }
             }  
         );
-
         JButton switchCourseButton = new JButton("Switch Course");
         //switchCourseButton.setPreferredSize(new Dimension(120,40));
         switchCourseButton.setBackground(Color.WHITE);
@@ -145,6 +150,7 @@ public class GUI extends PublicResouce {
 
         topBar.add(currentCoursePanel);
 
+        
         ////////////////////////////////////////////////////////////////////////
 
         JPanel logoPanel = new JPanel();
@@ -173,14 +179,7 @@ public class GUI extends PublicResouce {
         majorActionsPanel.setLayout(new GridLayout(1, 1, 0, 0));
         majorActionsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        /*
-
-        //majorActionsPanel.add(spacer2);
-        JButton pushChangesToCanvas = new JButton("Push To Canvas");
-        //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
-        majorActionsPanel.add(pushChangesToCanvas);
-        pushChangesToCanvas.setBackground(Color.lightGray);
-        */
+       
 
         JButton launchStudentViewer = new JButton("View Students");
         //pushChangesToCanvas.setPreferredSize(new Dimension(160,80));
@@ -205,60 +204,6 @@ public class GUI extends PublicResouce {
         c.add(BorderLayout.NORTH, topBar);
 
 
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-
-
-
-
-        ////////////////////////////////////////////////////////////////////////
-        //
-        //  leftToolbar Panel - Left Bar of GUI
-        //
-        //  Author: Matt Sorrentino
-        //
-        //  Contains buttons
-        //  
-        ////////////////////////////////////////////////////////////////////////
-        /*
-        JPanel leftToolbar = new JPanel();
-        leftToolbar.setPreferredSize(new Dimension(100, 768));
-        leftToolbar.setLayout(new GridLayout(3, 1, 0, 0));
-        leftToolbar.setBorder(new EmptyBorder(0, 0, 0, 0));
-        leftToolbar.setBackground(Color.GRAY);
-        
-        
-        
-        JButton editAssignmentButton = new JButton("Edit");
-        editAssignmentButton.setPreferredSize(new Dimension(80, 80));
-        editAssignmentButton.setBackground(Color.lightGray);
-        leftToolbar.add(editAssignmentButton);
-        
-        JButton newAssignmentButton = new JButton("New Assignment");
-        newAssignmentButton.setPreferredSize(new Dimension(80, 80));
-        newAssignmentButton.setBackground(Color.lightGray);
-        leftToolbar.add(newAssignmentButton);
-        
-        JButton courseSettingsButton = new JButton("Course Settings");
-        courseSettingsButton.setPreferredSize(new Dimension(80, 80));
-        courseSettingsButton.setBackground(Color.lightGray);
-        leftToolbar.add(courseSettingsButton);
-        
-        c.add(BorderLayout.WEST, leftToolbar);
-        */
-
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-
-
-
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////
 
 
 
@@ -277,12 +222,6 @@ public class GUI extends PublicResouce {
         //fetch number of assignments the course has
         int numberOfAssignments = cCourse.getAssignmentsList().size();
 
-        JPanel assignmentsPanel = new JPanel();
-        
-        
-        
-        
-                
         
         ////////////////////////////////////////////////////////////////////////
         //
@@ -293,16 +232,84 @@ public class GUI extends PublicResouce {
         //  Contains whatever content is necessary for the current view
         //  
         ////////////////////////////////////////////////////////////////////////
-
-        //main = new Main();
         
 
         mainPanel.setLayout(new GridLayout(3, 1, 10, 10));
-
+        
+        //assignmentNameButtonPanel.setLayout(new GridLayout(1, 3, 10, 10));
         assignmentName = new JLabel(cCourse.getAssignmentsList().get(0).getAssignmentName());
-        Font assignmentNameFont = new Font("Helvetica", Font.BOLD , 30);
+        Font assignmentNameFont = new Font("Helvetica", Font.BOLD , 30);        
         assignmentName.setFont(assignmentNameFont);
-        assignmentNamePanel.add(assignmentName);
+        //assignmentNamePanel.setLayout(new OverlayLayout(assignmentNamePanel));
+        assignmentNameButtonPanel.add(assignmentName);
+        assignmentNameButtonPanel.add(new JLabel("          "));
+        
+        assignmentNameField.setEditable(true);
+        assignmentNameField.setBackground(Color.WHITE);
+        assignmentNameField.setVisible(false);
+        assignmentNameField.setFont(assignmentNameFont);
+        //assignmentNamePanel.add(assignmentNameField,BorderLayout.WEST);
+
+        //assignmentNameButtonPanel.setLayout(new GridLayout(2, 1));
+        assignmentNameButtonPanel.add(BorderLayout.WEST, assignmentNameField);
+        //assignmentNamePanel.setPreferredSize(new Dimension(550, 100));
+        
+        editAssignment.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (editAssignment.getText().equals("Edit")){
+                	editAssignment.setText("Update");
+                	editMode();
+                	System.out.println(cCourse.getAssignmentsList().get(status).getAssignmentName());               	
+                } else {
+                  //verification input by YYF
+                  List<String> fields = new ArrayList<String>();
+                  String endpoints = "";
+                  fields.add("courses");
+                  fields.add(cCourse.getCourseID());
+                  fields.add("assignments");
+                  endpoints += "?";
+                  fields.add(endpoints);
+                  ConnectionPool connection;
+                	if (status == -1) {                        
+						try {
+							
+							connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
+							String newAssignmentId= connection.addAssignment(cCourse.getCourseID(), assignmentNameField.getText(), dateAvailableField.getText(),
+									dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
+									descriptionArea.getText());
+							cCourse.getAssignmentsList().add(connection.getSingleAssignments(cCourse.getCourseID(), newAssignmentId));
+							//System.out.println(cCourse.getAssignmentsList().get(cCourse.getAssignmentsList().size()-1).getAssignmentName());
+							addAssignmentButton(cCourse.getAssignmentsList().get(cCourse.getAssignmentsList().size()-1));
+							clearText();
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+                	} else {
+                		
+                		try {
+                			connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
+							connection.updateAssignment(cCourse.getCourseID(), cCourse.getAssignmentsList().get(status).getAssignmentID(),assignmentNameField.getText(), dateAvailableField.getText(),
+										dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
+										descriptionArea.getText());
+							cCourse.getAssignmentsList().set(status, connection.getSingleAssignments(cCourse.getCourseID(), cCourse.getAssignmentsList().get(status).getAssignmentID()));
+//							System.out.println(cCourse.getAssignmentsList().get(status).getAssignmentName()); 
+							updateAssignmentButton(cCourse.getAssignmentsList().get(status),status);
+							editAssignment.setText("Edit");
+							readMode();
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+							            	
+                	}
+                }
+            }
+        }
+);
+        editAssignment.setFocusable(false);
+        editAssignment.setPreferredSize(new Dimension(100,50));
+        assignmentNameButtonPanel.add(BorderLayout.EAST, editAssignment);
 
 
         dateAvailableField.setEditable(false);
@@ -363,7 +370,7 @@ public class GUI extends PublicResouce {
 
         headerPanel.setLayout(new GridLayout(2, 1, 10, 10));
         headerPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
-        headerPanel.add(assignmentNamePanel);
+        headerPanel.add(assignmentNameButtonPanel);
         headerPanel.add(assignmentInfoPanel);
         mainPanel.add(headerPanel);
         mainPanel.add(assignmentDescriptionPanel);
@@ -373,18 +380,19 @@ public class GUI extends PublicResouce {
         viewSubmissionsPanel.setBorder(new EmptyBorder(30, 50, 30, 50));
 
         JButton viewSubmissions = new JButton("View Submissions");
-        viewSubmissions.addActionListener( e -> new AllSubmissions(
-                // add methods for submission
 
-        ) );
+        viewSubmissions.addActionListener( e -> {
+                if(e.getSource() == viewSubmissions) {
+                    new SubmissionViewer(currentAssignment);
+                }
+        });
+
         viewSubmissions.setBackground(Color.gray);
         viewSubmissions.setForeground(Color.white);
         viewSubmissions.setFocusable(false);
         viewSubmissionsPanel.add(submissionsCount);
         viewSubmissionsPanel.add(viewSubmissions);
-        
-        
-        
+  
         
         assignmentGetSubmissionsPanel.add(viewSubmissionsPanel);
         
@@ -395,32 +403,15 @@ public class GUI extends PublicResouce {
         ////////////////////////////////////////////////////////////////////////
 
         
-        
-        
-        
-
-        /*
-        JButton newAssignmentButton = new JButton("New Assignment");
-        newAssignmentButton.setBackground(Color.lightGray);
-        assignmentsPanel.add(BorderLayout.NORTH, newAssignmentButton);
-        */
-
-
-        // Label to display the message indicating which button generated the event.
-
-        //JLabel label=new JLabel();
-
-        // Panel to accomodate the labels
-
-
-        //panel.setMaximumSize(new Dimension(100, 768));
+   
         assignmentsListPanel.setBackground(Color.WHITE);
-
-        assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments + 1, 1));
-
-
-
-        //Using a for loop we create temporary JButtons.    
+        
+        //commented out gridlayout because it was giving us a problem.
+        //when we added more assignments, it would switch to two columns.
+        //numberOfAssignments*110+220 gives enough room for all asignment buttons plus extra for added ones.
+        //this isn't a permanant fix
+        //assignmentsListPanel.setPreferredSize(new Dimension(282, numberOfAssignments*110+440));
+        assignmentsListPanel.setLayout(new GridLayout(numberOfAssignments + 1, 1));    
 
 
         newAssignmentButton.setFocusable(false);
@@ -428,31 +419,39 @@ public class GUI extends PublicResouce {
         newAssignmentButton.addActionListener(e -> {
             if(e.getSource() == newAssignmentButton) {
 
-                try {
-                    // ini field and endpoint;
-                    List<String> fields = new ArrayList<String>();
-                    final String GET = "GET";
-                    final String PUT = "PUT";
-                    final String POST = "POST";
-
-                    String endpoints = "";
-
-                    fields.add("courses");
-                    fields.add(cCourse.getCourseID());
-                    fields.add("assignments");
-                    endpoints += "?";
-
-                    fields.add(endpoints);
-                    ConnectionPool newAssignment = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
-                    newAssignment.setMethod(POST);
+//                try {
+//                    // ini field and endpoint;
+//                    List<String> fields = new ArrayList<String>();
+//                    final String GET = "GET";
+//                    final String PUT = "PUT";
+//                    final String POST = "POST";
+//
+//                    String endpoints = "";
+//
+//                    fields.add("courses");
+//                    fields.add(cCourse.getCourseID());
+//                    fields.add("assignments");
+//                    endpoints += "?";
+//
+//                    fields.add(endpoints);
+//                    ConnectionPool newAssignment = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
+//                    newAssignment.setMethod(POST);
                     // add function to set up new assignment
-
+                    editMode();
+                    
+                    clearText();
+                    //we should jump to the new assignmnet listing after we submit.
+                    
+                    status=-1;
+                    assignmentNameField.setText("");
+                    assignmentNameField.setPreferredSize(new Dimension(400, 50));
+                    editAssignment.setText("Update");
 
                     // get response from Canvas and refresh main window. If new assignment is added, add new assignment button on the left.
-
-                } catch (UnsupportedEncodingException e1) {
-                    e1.printStackTrace();
-                }
+                    resetAPB(currentCourse);
+//                } catch (UnsupportedEncodingException e1) {
+//                    e1.printStackTrace();
+//               }
             }
         });
         assignmentsListPanel.add(newAssignmentButton);
@@ -460,7 +459,6 @@ public class GUI extends PublicResouce {
 
         // init assignment panel
         initAssignmentPanel();
-
         for(int i = 0; i < numberOfAssignments; i++)
         {
             String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
@@ -483,15 +481,21 @@ public class GUI extends PublicResouce {
                         buttonsAssignment.get(k).setBackground(Color.white);
                     }
                     buttonsAssignment.get(a).setBackground(Color.cyan);
-                    
+
+                    currentAssignment = new Assignment(cCourse.getAssignmentsList().get(a).getAssignmentName(), cCourse.getAssignmentsList().get(a).getAssignmentID());
+
+                    status = a;
+                    readMode();
+
                     assignmentName.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
                     pointsField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-                    latePenaltyField.setText("NOT IMPLEMENTED");
+                    latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    // the following Text may not be necessary
                     submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
 
                 }
@@ -501,34 +505,72 @@ public class GUI extends PublicResouce {
         }
 
 
-        
-
-
-
-
         scroller = new JScrollPane(assignmentsListPanel);
-        scroller.setPreferredSize(new Dimension(254, 768));
+        scroller.setPreferredSize(new Dimension(300, 768));
         c.add(BorderLayout.WEST, scroller);
 
         setVisible(true);
 
     }
 
-    // get token from token.dat
-    public String getOAUTH2() {
-        File tFile = new File(FILENAME);
-        StringBuffer content = new StringBuffer();
-        // the length of stream read from file is larger than the content of that file, so have to deal with it
-        Course.getFromFile(tFile, content);
-
-        return content.toString();
-    }
+//    // get token from token.dat
+//    public String getOAUTH2() {
+//        File tFile = new File(FILENAME);
+//        StringBuffer content = new StringBuffer();
+//        // the length of stream read from file is larger than the content of that file, so have to deal with it
+//        Course.getFromFile(tFile, content);
+//
+//        return content.toString();
+//    }
 
     // reset current course
     public void setCurrentCourse(Course currentCourse) {
         cCourse = currentCourse;
     }
 
+    public void editMode() {  
+    	assignmentNameField.setText(assignmentName.getText());
+    	assignmentNameField.setVisible(true);
+    	assignmentName.setVisible(false);
+    	dateAvailableField.setEditable(true);
+        dateDueField.setEditable(true);
+        dateClosingField.setEditable(true);
+        pointsField.setEditable(true);
+        latePenaltyField.setEditable(true);
+        fileTypesField.setEditable(true);
+        fileTypesField.setEditable(true);
+        descriptionArea.setEditable(true);
+        viewSubmissionsPanel.setVisible(false);
+    }
+    
+    public void clearText() {
+    	viewSubmissionsPanel.setVisible(false);
+    	assignmentNameField.setText("");
+    	dateAvailableField.setText(""); 
+        dateDueField.setText("");
+        dateClosingField.setText("");
+        pointsField.setText("");
+        latePenaltyField.setText("");
+        fileTypesField.setText("");
+        descriptionArea.setText("");
+    }
+    
+    public void readMode() {   
+    	if (status>=0&&cCourse.getAssignmentsList().get(status)!=null)
+    		assignmentName.setText(cCourse.getAssignmentsList().get(0).getAssignmentName());
+    	assignmentName.setVisible(true);
+    	assignmentNameField.setVisible(false);
+        editAssignment.setText("Edit");
+    	dateAvailableField.setEditable(false);
+        dateDueField.setEditable(false);
+        dateClosingField.setEditable(false);
+        pointsField.setEditable(false);
+        latePenaltyField.setEditable(false);
+        fileTypesField.setEditable(false);
+        fileTypesField.setEditable(false);
+        descriptionArea.setEditable(false);
+        viewSubmissionsPanel.setVisible(true);
+    }
     // reset current assignment panel and assignment buttons
     public void resetAPB(Course currentCourse) {
         setCurrentCourse(currentCourse);
@@ -570,14 +612,19 @@ public class GUI extends PublicResouce {
                     }
                     buttonsAssignment.get(a).setBackground(Color.cyan);
 
+                    currentAssignment = cCourse.getAssignmentsList().get(a);
+
+                    readMode();
+
                     assignmentName.setText(cCourse.getAssignmentsList().get(a).getAssignmentName());
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
                     pointsField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-                    latePenaltyField.setText("NOT IMPLEMENTED");
+                    latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
+                    // the following Text may not be necessary
                     submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
                 }
             });
@@ -590,7 +637,7 @@ public class GUI extends PublicResouce {
 
     }
 
-    // inner class for switching current course to desire course
+    // inner class for switching current course to desired course
     public class CourseSelector extends JFrame {
         public CourseSelector() {
             super("Course Selector");
@@ -623,7 +670,7 @@ public class GUI extends PublicResouce {
                             if(e.getSource() == buttonArray.get(a)) {
                                 //                                new CanvasClient(courseList.get(a));
                                 resetAPB(courseList.get(a));
-
+                                currentCourse = courseList.get(a);
                                 this.setVisible(false);
                             }
                         }
@@ -637,16 +684,70 @@ public class GUI extends PublicResouce {
 
     // init assignment panel
     public void initAssignmentPanel() {
+        currentAssignment = cCourse.getAssignmentsList().get(0);
         assignmentName.setText(cCourse.getAssignmentsList().get(0).getAssignmentName());
         dateAvailableField.setText(cCourse.getAssignmentsList().get(0).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
         dateDueField.setText(cCourse.getAssignmentsList().get(0).getDueDate());
         dateClosingField.setText(cCourse.getAssignmentsList().get(0).getCloseDate());
         pointsField.setText(cCourse.getAssignmentsList().get(0).getCloseDate());
-        latePenaltyField.setText("NOT IMPLEMENTED");
+        latePenaltyField.setText(""+cCourse.getAssignmentsList().get(0).getPercentPenalty());
         fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
         descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
         submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(0).getSubmissionsList().size() + " submissions.");
+
     }
 
+    
+    void addAssignmentButton(Assignment e) {
+        String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
+        String middleTags = "</h3><p>";
+        String closingTags = "</p></body></html>";
+        String lineBreak = "<br/>";
+        
+        String assignmentTitle = e.getAssignmentName();
+        String assignmentDueDate = "due: " + e.getDueDate();
+        String assignmentCloseDate = "closes: " + e.getCloseDate();
+        int i = cCourse.getAssignmentsList().size()-1;
+        final int a = i;
+        buttonsAssignment.add(new JButton(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags));
+      //  buttonsAssignment.get(i).setHorizontalAlignment(SwingConstants.LEFT);
+        buttonsAssignment.get(i).setPreferredSize(new Dimension(180, 100));
+        buttonsAssignment.get(i).setBackground(Color.WHITE);
+        buttonsAssignment.get(i).setFocusable(false);
+        buttonsAssignment.get(i).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == buttonsAssignment.get(a)) {
+//                for (int k = 0; k < numberOfAssignments; k++) {
+                    buttonsAssignment.get(i).setBackground(Color.white);
+ //               }
+                buttonsAssignment.get(i).setBackground(Color.cyan);
+                readMode();
+                status = i;
+                assignmentName.setText(cCourse.getAssignmentsList().get(i).getAssignmentName());
+                dateAvailableField.setText(cCourse.getAssignmentsList().get(i).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
+                dateDueField.setText(cCourse.getAssignmentsList().get(i).getDueDate());
+                dateClosingField.setText(cCourse.getAssignmentsList().get(i).getCloseDate());
+                pointsField.setText(cCourse.getAssignmentsList().get(i).getCloseDate());
+                latePenaltyField.setText(""+cCourse.getAssignmentsList().get(i).getPercentPenalty());
+                fileTypesField.setText(cCourse.getAssignmentsList().get(i).getSubmissionTypes());
+                descriptionArea.setText(cCourse.getAssignmentsList().get(i).getAssignmentDescription());
+                submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(i).getSubmissionsList().size() + " submissions.");
+
+            }}
+        });
+ //       buttonsAssignment.get(0).setBackground(Color.cyan);
+        assignmentsListPanel.add(buttonsAssignment.get(i));
+    }
+    
+    void updateAssignmentButton(Assignment e, int index) {
+        String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
+        String middleTags = "</h3><p>";
+        String closingTags = "</p></body></html>";
+        String lineBreak = "<br/>";        
+        String assignmentTitle = e.getAssignmentName();
+        String assignmentDueDate = "due: " + e.getDueDate();
+        String assignmentCloseDate = "closes: " + e.getCloseDate();
+        buttonsAssignment.get(index).setText(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
+    }
 }
 

@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package canvasclient;
+
 import java.io.File;
 import java.util.ArrayList;
-//import test.Submission;
 
 /**
  *
- * @author Xiao
+ * @author dragon
  */
 public class SubmissionOfOtherStudents {
     
