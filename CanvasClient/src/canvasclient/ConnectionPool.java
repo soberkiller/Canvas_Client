@@ -127,6 +127,7 @@ public class ConnectionPool extends PublicResouce {
     public void setOauth2(String oauth2) {
         this.OAUTH2 = oauth2;
     }
+
     //List Not Student role courses
     public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException, ParseException {
     	//not include role type student and observer 
@@ -396,7 +397,7 @@ public class ConnectionPool extends PublicResouce {
                 returnAssignment.setDueDate(dueDate);
                 returnAssignment.setOpenDate(openDate);
                 returnAssignment.setSubmissionTypes(subType);
-                returnAssignment.setPoints(points);
+//                returnAssignment.setPoints(points);
                 }
      
         } 

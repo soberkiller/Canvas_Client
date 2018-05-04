@@ -452,7 +452,7 @@ public class GUI extends PublicResouce {
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
+//                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
@@ -583,7 +583,7 @@ public class GUI extends PublicResouce {
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
+//                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
@@ -652,7 +652,7 @@ public class GUI extends PublicResouce {
         dateAvailableField.setText(cCourse.getAssignmentsList().get(0).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
         dateDueField.setText(cCourse.getAssignmentsList().get(0).getDueDate());
         dateClosingField.setText(cCourse.getAssignmentsList().get(0).getCloseDate());
-        pointsField.setText(cCourse.getAssignmentsList().get(0).getPoints());
+//        pointsField.setText(cCourse.getAssignmentsList().get(0).getPoints());
         latePenaltyField.setText(""+cCourse.getAssignmentsList().get(0).getPercentPenalty());
         fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
         descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
