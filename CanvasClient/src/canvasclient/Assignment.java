@@ -34,6 +34,7 @@ public class Assignment {
 
     //array of strings containing the 
     private String submissionTypes;
+
     // List of submissions
     private ArrayList<Submission> submissionsList;
 

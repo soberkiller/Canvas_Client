@@ -260,6 +260,7 @@ public class Course extends PublicResouce {
                 List<String> closeDate = new ArrayList<>();
                 List<String> dueDate = new ArrayList<>();
                 List<String> descrip = new ArrayList<>();
+                List<String> points = new ArrayList<>();
                 List<String> subType = new ArrayList<>();
                 String des = "";
                 String allowExtention = "";
@@ -278,9 +279,12 @@ public class Course extends PublicResouce {
                         if (!des.isEmpty())
                             des += s;
                     }
-                    if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
-                        if (!allowExtention.isEmpty())
-                            allowExtention += " " + s.substring(1, s.length() - 1);
+ //                   if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
+//                        if (!allowExtention.isEmpty())
+//                            allowExtention = allowExtention + "," + s.substring(1, s.length() - 1);
+ //                   }
+                    if (!allowExtention.isEmpty() &&!allowExtention.endsWith("\"")) {
+                    	allowExtention=allowExtention+","+s.substring(1, s.length() - 1);
                     }
 
                     // get useful information from responses
@@ -290,18 +294,31 @@ public class Course extends PublicResouce {
                     if (s.startsWith("\"name\"")) {
                         strName.add(s.substring(8, s.length() - 1));
                     }
-                    if (s.startsWith("\"created_at\"")) {
-                        openDate.add((s.substring(14, s.length() - 1)));
+                    if (s.startsWith("\"unlock_at\"")) {
+                        if (s.substring(12).equals("null")) {
+                            openDate.add(s.substring(12));
+                        } else {
+                        openDate.add((s.substring(13, s.length() - 11)));
+                        }
+                    }
+                    if (s.startsWith("\"description\"")) {  
+                    	if (!des.isEmpty()) {
+                            //des = "";
+                            des = s.substring(14);
+                        } else {                   	
+                            des += s.substring(14);
+                        }                   	
                     }
                     if (s.startsWith("\"due_at\"")) {
                         if (!des.isEmpty()) {
+                        	des= des.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");                              
                             descrip.add(des);
                             des = "";
                         }
                         if (s.substring(9).equals("null")) {
                             dueDate.add(s.substring(9));
                         } else {
-                            dueDate.add(s.substring(10, s.length() - 1));
+                            dueDate.add(s.substring(10, s.length() - 11));
                         }
                     }
                     if(s.startsWith("\"lock_info\"") || s.startsWith("\"discussion_topic\"")) {
@@ -311,25 +328,23 @@ public class Course extends PublicResouce {
                         if (s.substring(10).equals("null")) {
                             closeDate.add(s.substring(10));
                         } else {
-                            closeDate.add(s.substring(11, s.length() - 1));
+                            closeDate.add(s.substring(11, s.length() - 11));
                         }
                     }
-                    if (s.startsWith("\"description\"")) {
-                    	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
-                        if (!des.isEmpty()) {
-                            //des = "";
-                            des = s.substring(14);
-                        } else {                   	
-                            des += s.substring(14);
-                        }                   	
-                    }
+
                     if (s.startsWith("\"allowed_extensions\"")) {
-                        if (!allowExtention.isEmpty()) {
-                            allowExtention = "";
-                                allowExtention += s.substring(23, s.length() - 1);
-                        } else {
-                                allowExtention += s.substring(23, s.length() - 1);
-                        }
+//                    	System.out.println("bb"+allowExtention);
+//                        if (!allowExtention.isEmpty()) {
+//                            allowExtention = "";
+//                                allowExtention += s.substring(23, s.length() - 1);
+//                        } else {
+//                                allowExtention += s.substring(23, s.length() - 1);
+//                        }
+//                        System.out.println("bb"+allowExtention);
+                    	allowExtention=s.substring(23,s.length()-1);
+                    }
+                    if (s.startsWith("\"points_possible\"")) {
+                    	points.add(s.substring(18));
                     }
                     if (s.startsWith("\"published\"")) {
                         if (!allowExtention.isEmpty()) {
@@ -364,6 +379,7 @@ public class Course extends PublicResouce {
                     assignmentsList.get(i).setDueDate(dueDate.get(i));
                     assignmentsList.get(i).setOpenDate(openDate.get(i));
                     assignmentsList.get(i).setSubmissionTypes(subType.get(i));
+                    assignmentsList.get(i).setPoints(points.get(i));
                 }
             }
         } else {
@@ -372,6 +388,8 @@ public class Course extends PublicResouce {
             assignmentsList.get(0).setCloseDate("Unavailable");
             assignmentsList.get(0).setDueDate("Unavailable");
             assignmentsList.get(0).setOpenDate("Unavailable");
+            assignmentsList.get(0).setPoints("Unavailable");
+            assignmentsList.get(0).setSubmissionTypes("Unavailable");
         }
     }
 

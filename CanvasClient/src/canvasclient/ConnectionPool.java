@@ -46,7 +46,6 @@ public class ConnectionPool extends PublicResouce {
         StringBuilder  content = new StringBuilder();
         if(!this.getEndpoints().equalsIgnoreCase("") && !this.getEndpoints().isEmpty()) {
             try {
-            	//System.out.println(url);
                 connection = new URL(url);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(readWithAccess(connection, data)));
                 String line;
@@ -128,6 +127,29 @@ public class ConnectionPool extends PublicResouce {
     public void setOauth2(String oauth2) {
         this.OAUTH2 = oauth2;
     }
+    //Convert unicode to String
+    public static String unicode2String(String unicode) {  
+        StringBuffer string = new StringBuffer(); 
+        Pattern pattern1 = Pattern.compile("[\\\\][u][0-9abcde]{4}$");
+        for (int i=0; i<unicode.length(); i++) {
+        	String out=""+unicode.charAt(i);
+        	if (i+6<unicode.length()&&pattern1.matcher(unicode.substring(i, i+6)).matches()) {
+           		out="";
+				for (int j =i+2;j<i+6;j++) {
+					out=out+unicode.charAt(j);
+				}
+				int hexVal = Integer.parseInt(out, 16);
+				out =""+ (char)hexVal;
+				i=i+5;
+        	}        	
+        	string.append(out);        
+        }
+        String result = string.toString();
+        result = result.replace("\\n","");
+        result = result.replace("\\r","");
+        return result;
+    }
+
 
     //List Not Student role courses
     public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException, ParseException {
@@ -206,7 +228,6 @@ public class ConnectionPool extends PublicResouce {
     	fields.add("courses/"+courseId+"/assignments");
     	String url_backup=url;
     	this.setURL(fields);
-    	System.out.println(url);
     	HttpURLConnection conn=(HttpURLConnection)((new URL(url)).openConnection());
     	conn.setDoOutput(true);
     	conn.setRequestMethod("POST");
@@ -215,20 +236,25 @@ public class ConnectionPool extends PublicResouce {
     	StringBuilder inputsb=new StringBuilder(1024);
     	inputsb.append("{\"assignment\": {\"name\":\""+name+"\"");
     	if (!duedate.isEmpty()&&!duedate.equals("null"))
-    		inputsb.append(",\"due_at\":\""+duedate+"\"");	
+    		inputsb.append(",\"due_at\":\""+duedate+"T04:59:00Z\"");	
     	if (!startdate.isEmpty()&&!startdate.equals("null"))
-    		inputsb.append(",\"unlock_at\":\""+startdate+"\"");	
+    		inputsb.append(",\"unlock_at\":\""+startdate+"T04:59:00Z\"");	
     	if (!closedate.isEmpty()&&!closedate.equals("null"))
-    		inputsb.append(",\"lock_at\":\""+closedate+"\"");	
+    		inputsb.append(",\"lock_at\":\""+closedate+"T04:59:00Z\"");	
     	if (!points.isEmpty()&&!points.equals("null"))
-    		inputsb.append(",\"points_possible\":"+points);	
+    		inputsb.append(",\"grading_type\":\"points\",\"points_possible\":"+points);	
     	if (!FileType.isEmpty()&&!FileType.equals("null"))
     		inputsb.append(",\"submission_types\":[\"online_upload\"],\"allowed_extensions\":[\""+FileType.replaceAll(",", "\",\"")+"\"]");	
-    	if (!description.isEmpty()&&!description.equals("null"))
-    		inputsb.append(",\"description\":\""+description.replaceAll("\"margin-top: 0\"", "").replaceAll("\n", "")+"\"");
+    	if (description.length()>59) {
+    		description=description.substring(40,description.length()-18);
+    		if (description.endsWith("<br>\n")) {
+    			description=description.substring(4,description.length()-1);
+    		}
+    		inputsb.append(",\"description\":\""+description.replace("<br>","\n").replaceAll("(?s)<[^>]*>(\\s*<[^>]*>)*", "").replace("\n","<br>").replace("\\","").replaceAll(" ","&nbsp;")+"\"");
+    		}
     	inputsb.append(",\"published\":true}}");
     	String input=inputsb.toString();
-    	System.out.println(input);
+
     	OutputStream os = conn.getOutputStream();
     	os.write(input.getBytes());
     	os.flush();    	
@@ -248,7 +274,6 @@ public class ConnectionPool extends PublicResouce {
     	fields.add("courses/"+courseId+"/assignments/"+assignmentId);
     	String url_backup=url;
     	this.setURL(fields);
-    	System.out.println(url);
     	HttpURLConnection conn=(HttpURLConnection)((new URL(url)).openConnection());
     	conn.setDoOutput(true);
     	conn.setRequestMethod("PUT");
@@ -257,20 +282,24 @@ public class ConnectionPool extends PublicResouce {
     	StringBuilder inputsb=new StringBuilder(1024);
     	inputsb.append("{\"assignment\": {\"name\":\""+name+"\"");
     	if (!duedate.isEmpty()&&!duedate.equals("null"))
-    		inputsb.append(",\"due_at\":\""+duedate+"\"");	
+    		inputsb.append(",\"due_at\":\""+duedate+"T04:59:00Z\"");	
     	if (!startdate.isEmpty()&&!startdate.equals("null"))
-    		inputsb.append(",\"unlock_at\":\""+startdate+"\"");	
+    		inputsb.append(",\"unlock_at\":\""+startdate+"T04:59:00Z\"");	
     	if (!closedate.isEmpty()&&!closedate.equals("null"))
-    		inputsb.append(",\"lock_at\":\""+closedate+"\"");	
+    		inputsb.append(",\"lock_at\":\""+closedate+"T04:59:00Z\"");	
     	if (!points.isEmpty()&&!points.equals("null"))
-    		inputsb.append(",\"points_possible\":"+points);	
+    		inputsb.append(",\"grading_type\":\"points\",\"points_possible\":"+points);	
     	if (!FileType.isEmpty()&&!FileType.equals("null"))
     		inputsb.append(",\"submission_types\":[\"online_upload\"],\"allowed_extensions\":[\""+FileType.replaceAll(",", "\",\"")+"\"]");	
-    	if (!description.isEmpty()&&!description.equals("null"))
-    		inputsb.append(",\"description\":\""+description.replaceAll("\"margin-top: 0\"", "").replaceAll("\n", "")+"\"");
+    	if (description.length()>59) {
+    		description=description.substring(40,description.length()-18);
+    		if (description.endsWith("<br>\n")) {
+    			description=description.substring(4,description.length()-1);
+    		}
+    		inputsb.append(",\"description\":\""+description.replace("<br>","\n").replaceAll("(?s)<[^>]*>(\\s*<[^>]*>)*", "").replace("\n","<br>").replace("\\","").replaceAll(" ","&nbsp;")+"\"");
+    		} 
     	inputsb.append(",\"published\":true}}");
     	String input=inputsb.toString();
-    	System.out.println(input);
     	OutputStream os = conn.getOutputStream();
     	os.write(input.getBytes());   	
     	conn.getInputStream();	
@@ -298,9 +327,8 @@ public class ConnectionPool extends PublicResouce {
                 String subType = "";
                 String des = "";
                 String allowExtention = "";
-
+                String points="";
                 for (String s : rawResp) {
-                	System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
@@ -315,9 +343,8 @@ public class ConnectionPool extends PublicResouce {
                     }
                     if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
                         if (!allowExtention.isEmpty())
-                            allowExtention += " " + s.substring(1, s.length() - 1);
+                            allowExtention =allowExtention + "," + s.substring(1, s.length() - 1);
                     }
-
                     // get useful information from responses
                     if (s.startsWith("\"id\"") && !s.substring(5, 6).equals("\"")) {
                         strID=s.substring(5);
@@ -325,8 +352,14 @@ public class ConnectionPool extends PublicResouce {
                     if (s.startsWith("\"name\"")) {
                         strName=s.substring(8, s.length() - 1);
                     }
-                    if (s.startsWith("\"created_at\"")) {
-                        openDate=(s.substring(14, s.length() - 1));
+                    if (s.startsWith("\"unlock_at\"")) {
+                        if (s.startsWith("\"unlock_at\"")) {
+                            if (s.substring(12).equals("null")) {
+                                openDate=s.substring(12);
+                            } else {
+                            openDate=s.substring(13, s.length() - 11);
+                            }
+                        }
                     }
                     if (s.startsWith("\"due_at\"")) {
                         if (!des.isEmpty()) {
@@ -336,7 +369,7 @@ public class ConnectionPool extends PublicResouce {
                         if (s.substring(9).equals("null")) {
                             dueDate=s.substring(9);
                         } else {
-                            dueDate=s.substring(10, s.length() - 1);
+                            dueDate=s.substring(10, s.length() - 11);
                         }
                     }
 //                    if(s.startsWith("\"lock_info\"") || s.startsWith("\"discussion_topic\"")) {
@@ -346,7 +379,7 @@ public class ConnectionPool extends PublicResouce {
                         if (s.substring(10).equals("null")) {
                             closeDate=s.substring(10);
                         } else {
-                            closeDate=s.substring(11, s.length() - 1);
+                            closeDate=s.substring(11, s.length() - 11);
                         }
                     }
                     if (s.startsWith("\"description\"")) {
@@ -373,11 +406,10 @@ public class ConnectionPool extends PublicResouce {
                         } else {
                             subType="null";
                         }
-
-                        // reserved for published
                     }
-//                    System.out.println(s);
-
+                    if (s.startsWith("\"points_possible\"")) {
+                    	points=s.substring(18);
+                    }
                 }
                 returnAssignment=new Assignment(strName,strID);
                 if (descrip.charAt(0)=='"'&&descrip.charAt(descrip.length()-1)=='"')                    	
@@ -388,9 +420,11 @@ public class ConnectionPool extends PublicResouce {
                 returnAssignment.setDueDate(dueDate);
                 returnAssignment.setOpenDate(openDate);
                 returnAssignment.setSubmissionTypes(subType);
+                returnAssignment.setPoints(points);
                 }
      
         } 
+        url=urlbackup;
         return returnAssignment;
     }
 
