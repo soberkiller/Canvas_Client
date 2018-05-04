@@ -58,6 +58,7 @@ public class CompileAndRunCpp {
     public void Compile() throws Exception{
         Process p = Runtime.getRuntime().exec("g++ "+name+" "+fullname, null, parentfile);
 //        Process p = Runtime.getRuntime().exec("C:\Qt\5.7\msvc2015_64\bin\qmake.exe " + fullname + " -o" + " " + name, null, parentfile);
+//        Process p = Runtime.getRuntime().exec("C:\Qt\5.7\msvc2015_64\bin\qmake.exe " + fullname + " -o" + " " + name, null, parentfile);
         InputStream is = p.getErrorStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         String line;
