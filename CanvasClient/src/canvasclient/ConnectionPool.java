@@ -127,29 +127,6 @@ public class ConnectionPool extends PublicResouce {
     public void setOauth2(String oauth2) {
         this.OAUTH2 = oauth2;
     }
-    //Convert unicode to String
-    public static String unicode2String(String unicode) {  
-        StringBuffer string = new StringBuffer(); 
-        Pattern pattern1 = Pattern.compile("[\\\\][u][0-9abcde]{4}$");
-        for (int i=0; i<unicode.length(); i++) {
-        	String out=""+unicode.charAt(i);
-        	if (i+6<unicode.length()&&pattern1.matcher(unicode.substring(i, i+6)).matches()) {
-           		out="";
-				for (int j =i+2;j<i+6;j++) {
-					out=out+unicode.charAt(j);
-				}
-				int hexVal = Integer.parseInt(out, 16);
-				out =""+ (char)hexVal;
-				i=i+5;
-        	}        	
-        	string.append(out);        
-        }
-        String result = string.toString();
-        result = result.replace("\\n","");
-        result = result.replace("\\r","");
-        return result;
-    }
-
 
     //List Not Student role courses
     public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException, ParseException {
@@ -420,7 +397,7 @@ public class ConnectionPool extends PublicResouce {
                 returnAssignment.setDueDate(dueDate);
                 returnAssignment.setOpenDate(openDate);
                 returnAssignment.setSubmissionTypes(subType);
-                returnAssignment.setPoints(points);
+//                returnAssignment.setPoints(points);
                 }
      
         } 
