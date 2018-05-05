@@ -286,6 +286,24 @@ public class SubmissionViewer extends PublicResouce{
         nextSubmission.setBackground(Color.white);
         nextSubmission.setFocusable(false);
         actionOptionsPanel.add(nextSubmission);
+        nextSubmission.addActionListener(e-> {
+            if(e.getSource() == nextSubmission) {
+                int index = currentAssignment.getSubmissionsList().indexOf(currentSubmission);
+                if(index + 1 >= currentAssignment.getSubmissionsList().size())
+                    index = -1;
+                currentSubmission = currentAssignment.getSubmissionsList().get(index + 1);
+                studentName.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
+                studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
+                submissionTime.setText("Submitted at: " + currentSubmission.getSubmissionTime());
+                gradeField.setText(currentSubmission.getGrade());
+                selectfile.removeAllItems();
+                selectfile.addItem("Select File");
+                for(int i=0;i < currentSubmission.getAttachedFiles().size();i++)
+                {
+                    selectfile.addItem(currentSubmission.getAttachedFiles().get(i).getName());
+                }
+            }
+        });
         
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new GridLayout(3, 1, 10, 10));
