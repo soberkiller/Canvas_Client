@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c5cd2a-2e8d-4f1d-8ec0-7bbc50f11d8d" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
+
+>>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +26,15 @@
       <file leaf-file-name="SubmissionViewer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="567">
               <caret line="303" column="17" selection-start-line="303" selection-start-column="17" selection-end-line="303" selection-end-column="17" />
+=======
+
+            <state relative-caret-position="13354">
+
+              <caret line="618" column="30" selection-start-line="618" selection-start-column="30" selection-end-line="618" selection-end-column="30" />
+>>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,11 +42,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompileAndRunCpp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CompileAndRunCpp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/CompileAndRunCpp.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="1254">
               <caret line="65" column="35" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="35" />
+
             </state>
           </provider>
         </entry>
@@ -38,7 +56,7 @@
       <file leaf-file-name="DownloadSubmission.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1760">
+            <state relative-caret-position="694">
               <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
             </state>
           </provider>
@@ -47,8 +65,15 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-40">
               <caret line="644" column="9" lean-forward="true" selection-start-line="644" selection-start-column="9" selection-end-line="644" selection-end-column="9" />
+=======
+
+            <state relative-caret-position="1560">
+              <caret line="694" column="52" selection-start-line="694" selection-start-column="52" selection-end-line="694" selection-end-column="52" />
+
+>>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
             </state>
           </provider>
         </entry>
@@ -74,8 +99,10 @@
       <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="-348">
               <caret line="391" column="13" lean-forward="true" selection-start-line="391" selection-start-column="13" selection-end-line="391" selection-end-column="13" />
+
             </state>
           </provider>
         </entry>
@@ -94,6 +121,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="880">
               <caret line="48" selection-start-line="48" selection-end-line="50" selection-end-column="32" />
+
             </state>
           </provider>
         </entry>
@@ -106,6 +134,7 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
@@ -135,11 +164,19 @@
         <option value="$PROJECT_DIR$/src/canvasclient/Submission.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/canvasclient/CompileAndRunCpp.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" />
+=======
+        <option value="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
+
+>>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
       </list>
     </option>
   </component>
@@ -341,7 +378,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="28107000" />
+=======
+
+    <option name="totallyTimeSpent" value="26418000" />
+
+>>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,6 +489,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+
     <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -529,6 +573,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="180" selection-start-line="180" selection-end-line="180" />
+
         </state>
       </provider>
     </entry>
@@ -656,6 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="396">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
         </state>
