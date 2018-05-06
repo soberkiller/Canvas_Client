@@ -397,7 +397,7 @@ public class ConnectionPool extends PublicResouce {
                 returnAssignment.setDueDate(dueDate);
                 returnAssignment.setOpenDate(openDate);
                 returnAssignment.setSubmissionTypes(subType);
-//                returnAssignment.setPoints(points);
+                returnAssignment.setPoints(points);
                 }
      
         } 
