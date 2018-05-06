@@ -276,6 +276,9 @@ public class SubmissionViewer extends PublicResouce{
         setExpectedResult.setBackground(Color.white);
         setExpectedResult.setFocusable(false);
         actionOptionsPanel.add(setExpectedResult);
+        setExpectedResult.addActionListener(e->{
+            new SaveExpectedResult(currentSubmission.getAttachedFiles().get(0).getParentFile().getParent());
+        });
         
         JButton save = new JButton("Save");
         save.setBackground(Color.cyan);
