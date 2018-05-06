@@ -60,21 +60,6 @@ public class CanvasClient extends PublicResouce {
         new GUI(super.currentCourse, courseList);
     }
 
-    public static void main(String[] args) throws IOException, ParseException {
-        File tokenFile = new File(FILENAME);
-        
-        if(!tokenFile.exists()) 
-        {
-            new TokenPrompt(tokenFile); 
-        }
-        else
-        {
-            tokenFile.setReadable(true);
-            tokenFile.setWritable(true);
-            new CanvasClient(null);
-        }
-    }
-
     public ArrayList<Course> getCourseList() {
         return courseList;
     }
@@ -118,6 +103,21 @@ public class CanvasClient extends PublicResouce {
             }
         } else {
             courseList.add(new Course("Unavailable", "Unavailable"));
+        }
+    }
+    
+    public static void main(String[] args) throws IOException, ParseException {
+        File tokenFile = new File(FILENAME);
+        
+        if(!tokenFile.exists()) 
+        {
+            new TokenPrompt(tokenFile); 
+        }
+        else
+        {
+            tokenFile.setReadable(true);
+            tokenFile.setWritable(true);
+            new CanvasClient(null);
         }
     }
 
