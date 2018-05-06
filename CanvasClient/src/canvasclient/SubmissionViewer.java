@@ -455,46 +455,98 @@ public class SubmissionViewer extends PublicResouce{
                 public void actionPerformed (ActionEvent e1)
                 {
                     resultta.setText("");
-
+                    ArrayList<String> erdetail = new ArrayList<>();
+                    File erfile = new File(currentSubmission.getAttachedFiles().get(0).getParentFile().getParent()+"/expectedresult.txt");
+                    if(erfile.exists()){
+                        ReadFile rfer = new ReadFile(erfile);
+                        erdetail = rfer.getFileDetail();
+                    }
+                    try
+                    {
                     if(filename.endsWith(".java")){
-                        CompileAndRunJava cj = null;
-                        try {
-                            cj = new CompileAndRunJava(file);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        gradetf.setText(""+cj.getPregrade());
+                        CompileAndRunJava cj = new CompileAndRunJava(file);
                         for(int i=0;i<cj.getResult().size();i++){
                             resultta.setText(resultta.getText()+(String)cj.getResult().get(i));
                             resultta.append("\n");
                         }
-                    } else if(filename.endsWith(".cpp")){
-                        CompileAndRunCpp cc = null;
-                        try {
-                            cc = new CompileAndRunCpp(file);
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        double correctline = 0;
+                        int grade = 0;
+                        if(cj.getPregrade()==100.0){
+                            if(!erdetail.isEmpty()){
+                                for(int i=0;i<Math.min(erdetail.size(), cj.getResult().size());i++){
+                                    if(cj.getResult().get(i).equals(erdetail.get(i))){
+                                        correctline += 1;
+                                    }
+                                }
+                                grade = (int)(correctline/erdetail.size()*100.0);
+                            }
+                            else{
+                                grade = 100;
+                            }
                         }
-                        gradetf.setText(""+cc.getPregrade());
+                        else{
+                            grade = (int)cj.getPregrade();
+                        }
+                        gradetf.setText(""+grade);
+                    }
+                    else if(filename.endsWith(".cpp")){
+                        CompileAndRunCpp cc = new CompileAndRunCpp(file);
                         for(int i=0;i<cc.getResult().size();i++){
                             resultta.setText(resultta.getText()+(String)cc.getResult().get(i));
                             resultta.append("\n");
                         }
-                    } else if(filename.endsWith(".py")){
-                        RunPython cp = null;
-                        try {
-                            cp = new RunPython(file);
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        double correctline = 0;
+                        int grade = 0;
+                        if(cc.getPregrade()==100.0){
+                            if(!erdetail.isEmpty()){
+                                for(int i=0;i<Math.min(erdetail.size(), cc.getResult().size());i++){
+                                    if(cc.getResult().get(i).equals(erdetail.get(i))){
+                                        correctline += 1;
+                                    }
+                                }
+                                grade = (int)(correctline/erdetail.size()*100.0);
+                            }
+                            else{
+                                grade = 100;
+                            }
                         }
-                        gradetf.setText(""+cp.getPregrade());
+                        else{
+                            grade = (int)cc.getPregrade();
+                        }
+                        gradetf.setText(""+grade);
+                    }
+                    else if(filename.endsWith(".py")){
+                        RunPython cp = new RunPython(file);
                         for(int i=0;i<cp.getResult().size();i++){
                             resultta.setText(resultta.getText()+(String)cp.getResult().get(i));
                             resultta.append("\n");
                         }
+                        double correctline = 0;
+                        int grade = 0;
+                        if(cp.getPregrade()==100.0){
+                            if(!erdetail.isEmpty()){
+                                for(int i=0;i<Math.min(erdetail.size(), cp.getResult().size());i++){
+                                    if(cp.getResult().get(i).equals(erdetail.get(i))){
+                                        correctline += 1;
+                                    }
+                                }
+                                grade = (int)(correctline/erdetail.size()*100.0);
+                            }
+                            else{
+                                grade = 100;
+                            }
+                        }
+                        else{
+                            grade = (int)cp.getPregrade();
+                        }
+                        gradetf.setText(""+grade);
                     }
-
-
+                    }
+                    catch(Exception e2)
+                    {
+                    }
+                    
+                    if(file!=null){
                     SubmissionOfOtherStudents subofothers = new SubmissionOfOtherStudents(file);
                     ArrayList<File> fileofotherstudents = subofothers.getSubmissionOfOtherStudents();
                     String type = "";
@@ -513,23 +565,24 @@ public class SubmissionViewer extends PublicResouce{
                         if(detector.getSuspectedFile().isEmpty()){
                             resultta.append("\n");
                             resultta.append("\n");
-                            resultta.append(resultta.getText()+"No Plagiarism Detected");
+                            resultta.setText(resultta.getText()+"No Plagiarism Detected");
                         }
                         else{
                             resultta.append("\n");
                             resultta.append("\n");
-                            resultta.append(resultta.getText()+"WARNING: Plagiarism Detected!");
+                            resultta.setText(resultta.getText()+"WARNING: Plagiarism Detected!");
                             resultta.append("\n");
                             resultta.append("\n");
-                            resultta.append(resultta.getText()+"Suspected File:");
+                            resultta.setText(resultta.getText()+"Suspected File:");
                             resultta.append("\n");
                             resultta.append("\n");
                             for(File f:detector.getSuspectedFile()){
-                                resultta.append(resultta.getText()+f);
+                                resultta.setText(resultta.getText()+f);
                                 resultta.append("\n");
                                 resultta.append("\n");
                             }
                         }
+                    }
                     }
                 }
                 
