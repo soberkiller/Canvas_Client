@@ -18,9 +18,9 @@ public class SubmissionOfOtherStudents {
     
     public SubmissionOfOtherStudents(File file){
         
-        String path = file.getParentFile().getParentFile().getParent();
-        String currentstudent = file.getParentFile().getParentFile().getName();
-        File assignmentfolder = file.getParentFile().getParentFile().getParentFile(); 
+        String path = file.getParentFile().getParent();
+        String currentstudent = file.getParentFile().getName();
+        File assignmentfolder = file.getParentFile().getParentFile(); 
         String[] studentlist = assignmentfolder.list();
 
         for(String x:studentlist){
@@ -31,21 +31,13 @@ public class SubmissionOfOtherStudents {
             }
             else{
                 File studentfolder = new File(path+"/"+x);
-                String[] submissionlist = studentfolder.list();
-                for(String y:submissionlist){
+                String[] attachedfilelist = studentfolder.list();
+                for(String y:attachedfilelist){
                     if(y.startsWith(".")){ 
                     }
                     else{
-                        File submissionfolder = new File(path+"/"+x+"/"+y);
-                        String[] attachedfilelist = submissionfolder.list();
-                        for(String z:attachedfilelist){
-                            if(z.startsWith(".")){
-                            }
-                            else{
-                                allfilelist.add(new File(path+"/"+x+"/"+y+"/"+z));
-                            }
-                        }
-                    }
+                        allfilelist.add(new File(path+"/"+x+"/"+y));
+                       }
                 }
             }
         }

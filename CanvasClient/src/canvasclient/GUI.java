@@ -305,6 +305,7 @@ public class GUI extends PublicResouce {
         }
 );
         editAssignment.setFocusable(false);
+        editAssignment.setBackground(Color.white);
         editAssignment.setPreferredSize(new Dimension(100,50));
         assignmentNameButtonPanel.add(BorderLayout.EAST, editAssignment);
 
