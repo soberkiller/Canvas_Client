@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -254,6 +257,9 @@ public class GUI extends PublicResouce {
                 	editMode();            	
                 } else {
                   //verification input by YYF
+            	isDateValid(dateAvailableField.getText(),dateAvailableField,dateAvailable.getText());
+            	isDateValid(dateDueField.getText(),dateDueField,dateDue.getText());
+            	isDateValid(dateClosingField.getText(),dateClosingField,dateClosing.getText());
                   List<String> fields = new ArrayList<String>();
                   String endpoints = "";
                   fields.add("courses");
@@ -262,8 +268,11 @@ public class GUI extends PublicResouce {
                   endpoints += "?";
                   fields.add(endpoints);
                   ConnectionPool connection;
+
+              	try {
+
                 	if (status == -1) {                        
-						try {
+					
 							
 							connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
 							String newAssignmentId= connection.addAssignment(cCourse.getCourseID(), assignmentNameField.getText(), dateAvailableField.getText(),
@@ -273,12 +282,10 @@ public class GUI extends PublicResouce {
 							//addAssignmentButton(cCourse.getAssignmentsList().get(cCourse.getAssignmentsList().size()-1));
 							resetAPB(currentCourse);
 							clearText();
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
+						
                 	} else {
                 		
-                		try {
+                		
                 			connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
 							connection.updateAssignment(cCourse.getCourseID(), cCourse.getAssignmentsList().get(status).getAssignmentID(),assignmentNameField.getText(), dateAvailableField.getText(),
 										dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
@@ -287,10 +294,11 @@ public class GUI extends PublicResouce {
 							updateAssignmentButton(cCourse.getAssignmentsList().get(status),status);
 							editAssignment.setText("Edit");
 							readMode();
-						} catch (IOException e1) {
-							e1.printStackTrace();
+						
 						}
 							            	
+                	} catch (IOException e1) {
+						e1.printStackTrace();
                 	}
                 }
             }
@@ -452,7 +460,7 @@ public class GUI extends PublicResouce {
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-//                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
+                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
@@ -709,5 +717,35 @@ public class GUI extends PublicResouce {
         String assignmentCloseDate = "closing: " + e.getCloseDate();
         buttonsAssignment.get(index).setText(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
     }
-}
+    
+    
+    public static boolean isDateValid(String date,JTextField Jtext, String Jtextname) throws ParseException 
+    {                
+    	try {
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                df.setLenient(false);
+				df.parse(date);
+				if (date.length()<10) {
+					String[] dateStringReset=date.split("-");
+					StringBuilder dateStringBuilder= new StringBuilder(dateStringReset[0]+"-");
+					if (dateStringReset[1].length()!=2)
+						dateStringBuilder.append("0");
+					dateStringBuilder.append(dateStringReset[1]+"-");
+					if (dateStringReset[2].length()!=2)
+						dateStringBuilder.append("0");
+					dateStringBuilder.append(dateStringReset[1]);
+					date = dateStringBuilder.toString();
+					System.out.println(date);					
+				}
+				Jtext.setBackground(Color.white);
+	            return true;
+			} catch (ParseException e) {
+					JOptionPane.showMessageDialog(null, Jtextname+"date format is incorrect. It should be YYYY-MM-DD" , "alert",JOptionPane.ERROR_MESSAGE); 
+					Jtext.setBackground(Color.red);
+					throw e;					
+			}finally{return false;}
 
+
+    }
+    
+}
