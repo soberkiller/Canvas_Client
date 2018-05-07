@@ -39,6 +39,7 @@ import java.util.regex.Pattern;
 /**
  *
  * @class GUI
+ * @param status record the current index of assignment list
  * Handles the main GUI frame of the CanvasClient Application.
  */
 
@@ -65,6 +66,7 @@ public class GUI extends PublicResouce {
      * @param courseList contains all courses for which the user has teacher, course administrator, TA, or grader permissions.
      * 
      */
+
 
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         cCourse = currentCourse;
@@ -252,14 +254,22 @@ public class GUI extends PublicResouce {
         assignmentNameField.setFont(assignmentNameFont);
         assignmentNameButtonPanel.add(BorderLayout.WEST, assignmentNameField);
         
+        /**
+         * @author yifang
+         * Button for add new or update assignment
+         * @param validationMessage: recorde the error information
+         */
         editAssignment.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	//Switch from edit to update
                 if (editAssignment.getText().equals("Edit")){
                 	editAssignment.setText("Update");
                 	editMode();   
                 } else {
+                //If the button is "update", prepare to upload the assignment
                 StringBuilder validationMessage=new StringBuilder(""); 
                 assignmentNameField.setBackground(Color.WHITE);
+                //Verify all the field
                 if (assignmentNameField.getText().isEmpty() ) {
                 	assignmentNameField.setBackground(Color.RED);
                 	validationMessage.append("Assignemnt name cannot be null.\n");
@@ -272,6 +282,7 @@ public class GUI extends PublicResouce {
                 validationMessage.append(isDateLogicValid(dueDate,dateDueField,dateDue.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
                 validationMessage.append(isNumberValid(pointsField.getText(),pointsField,points.getText()));
                 validationMessage.append(isFileTypesValid(fileTypesField.getText(),fileTypesField,fileTypes.getText()));
+                //If error information is null(no error),starting upload, else print error
                 if (validationMessage.length()>1) {
                 	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 
                 }else {
@@ -283,7 +294,8 @@ public class GUI extends PublicResouce {
                   endpoints += "?";
                   fields.add(endpoints);
                   
-
+                  //status == -1 means it is a new assignment
+                  //status != means the index status of assignment is needed to update
                 	try{
                 		if (status == -1) {                        							
 							connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
@@ -514,6 +526,12 @@ public class GUI extends PublicResouce {
         cCourse = currentCourse;
     }
 
+    /**
+     * For new/update assignment function
+     * clear error color RED
+     * enable edit
+     * 
+     */
     public void editMode() {  
     	assignmentNameField.setText(assignmentName.getText());
     	assignmentNameField.setVisible(true);
@@ -534,6 +552,13 @@ public class GUI extends PublicResouce {
         fileTypesField.setBackground(Color.WHITE);
     }
     
+    /**
+     * For new assignment function
+     * clear error color RED
+     * clear all text, 
+     * 
+     */
+    
     public void clearText() {
     	viewSubmissionsPanel.setVisible(false);
     	assignmentNameField.setText("");
@@ -550,6 +575,13 @@ public class GUI extends PublicResouce {
         pointsField.setBackground(Color.WHITE);
         fileTypesField.setBackground(Color.WHITE);
     }
+    
+    /**
+     * For new/update assignment function
+     * clear error color RED
+     * disable edit
+     * 
+     */
     
     public void readMode() {   
     	if (status>=0&&cCourse.getAssignmentsList().get(status)!=null)
@@ -757,6 +789,10 @@ public class GUI extends PublicResouce {
         buttonsAssignment.get(index).setText(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
     }
     
+    /**
+     * count the how many student submit the assignment
+     * @return submitter count
+     */
     String getSubmissionCount() {
     	if(!fields.isEmpty())
             fields.clear();
@@ -790,7 +826,6 @@ public class GUI extends PublicResouce {
                         s = s.substring(0, s.length() - 3);
                     if (s.startsWith("\"user_id\"")) {
                         strID.add(s.substring(10));
-
                     }
                     if (s.startsWith("\"display_name\"")) {
                     	if (strID.size()>0)
@@ -803,7 +838,5 @@ public class GUI extends PublicResouce {
             }            
         }
         return "0";
-    }
-
-    
+    }    
 }

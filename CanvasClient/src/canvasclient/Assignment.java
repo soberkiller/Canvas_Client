@@ -29,7 +29,13 @@ public class Assignment {
     //date the assigment closes (no more submissions)
     private String closeDate;
 
+    
+    /**
+     * Display the number of student who submit the assignment
+     * 
+     */
     private int submitterCount;
+    
     public int getSubmitterCount() {
 		return submitterCount;
 	}
@@ -47,6 +53,10 @@ public class Assignment {
     // List of submissions
     private ArrayList<Submission> submissionsList;
 
+    /**
+     * The points of submission
+     * 
+     */
     private String points;
 
     public String getPoints() {
