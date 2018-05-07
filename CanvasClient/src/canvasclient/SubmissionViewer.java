@@ -272,42 +272,6 @@ public class SubmissionViewer extends PublicResouce{
         gradeandCommentsPanel.add(commentsField);
         
         
-        JButton setExpectedResult = new JButton("Set Expected Result");
-        setExpectedResult.setBackground(Color.white);
-        setExpectedResult.setFocusable(false);
-        actionOptionsPanel.add(setExpectedResult);
-        setExpectedResult.addActionListener(e->{
-            new SaveExpectedResult(currentSubmission.getAttachedFiles().get(0).getParentFile().getParent());
-        });
-        
-        JButton save = new JButton("Save");
-        save.setBackground(Color.cyan);
-        save.setFocusable(false);
-        actionOptionsPanel.add(save);
-        
-        JButton nextSubmission = new JButton("Next Submission");
-        nextSubmission.setBackground(Color.white);
-        nextSubmission.setFocusable(false);
-        actionOptionsPanel.add(nextSubmission);
-        nextSubmission.addActionListener(e-> {
-            if(e.getSource() == nextSubmission) {
-                int index = currentAssignment.getSubmissionsList().indexOf(currentSubmission);
-                if(index + 1 >= currentAssignment.getSubmissionsList().size())
-                    index = -1;
-                currentSubmission = currentAssignment.getSubmissionsList().get(index + 1);
-                studentName.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
-                studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
-                submissionTime.setText("Submitted at: " + currentSubmission.getSubmissionTime());
-                gradeField.setText(currentSubmission.getGrade());
-                selectfile.removeAllItems();
-                selectfile.addItem("Select File");
-                for(int i=0;i < currentSubmission.getAttachedFiles().size();i++)
-                {
-                    selectfile.addItem(currentSubmission.getAttachedFiles().get(i).getName());
-                }
-            }
-        });
-        
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new GridLayout(3, 1, 10, 10));
         leftPanel.setPreferredSize(new Dimension(768,678));
@@ -336,6 +300,52 @@ public class SubmissionViewer extends PublicResouce{
         dataPanel.add(jspcode);
         //dataPanel.add(resultlb);
         dataPanel.add(jspresult);
+        
+        
+        
+        
+        JButton setExpectedResult = new JButton("Set Expected Result");
+        setExpectedResult.setBackground(Color.white);
+        setExpectedResult.setFocusable(false);
+        actionOptionsPanel.add(setExpectedResult);
+        setExpectedResult.addActionListener(e->{
+            new SaveExpectedResult(currentSubmission.getAttachedFiles().get(0).getParentFile().getParent());
+        });
+        
+        JButton save = new JButton("Save");
+        save.setBackground(Color.cyan);
+        save.setFocusable(false);
+        actionOptionsPanel.add(save);
+        
+        JButton nextSubmission = new JButton("Next Submission");
+        nextSubmission.setBackground(Color.white);
+        nextSubmission.setFocusable(false);
+        actionOptionsPanel.add(nextSubmission);
+        nextSubmission.addActionListener(e-> {
+            if(e.getSource() == nextSubmission) {
+                
+                
+                gradeField.setText("");
+                commentsField.setText("");
+                codeta.setText("");
+                resultta.setText("");
+                
+                int index = currentAssignment.getSubmissionsList().indexOf(currentSubmission);
+                if(index + 1 >= currentAssignment.getSubmissionsList().size())
+                    index = -1;
+                currentSubmission = currentAssignment.getSubmissionsList().get(index + 1);
+                studentName.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
+                studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
+                submissionTime.setText("Submitted at: " + currentSubmission.getSubmissionTime());
+                gradeField.setText(currentSubmission.getGrade());
+                selectfile.removeAllItems();
+                selectfile.addItem("Select File");
+                for(int i=0;i < currentSubmission.getAttachedFiles().size();i++)
+                {
+                    selectfile.addItem(currentSubmission.getAttachedFiles().get(i).getName());
+                }
+            }
+        });
         
         
         
