@@ -24,7 +24,7 @@ public class SubmissionOfOtherStudents {
         String[] studentlist = assignmentfolder.list();
 
         for(String x:studentlist){
-            if(x.startsWith(".")){
+            if(!(new File(path+"/"+x)).isDirectory()){
             }
             //submissions of currentstudent should not be included 
             else if(x.equals(currentstudent)){
