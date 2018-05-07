@@ -67,45 +67,50 @@ public class CanvasClient extends PublicResouce {
     static Course getCurrentCourse() {
         return currentCourse;
     }
-
-    public void getCourses(ArrayList<Course> courseList) throws UnsupportedEncodingException {
-        if(responses != "")
-            responses = "";
-        responses = connection.buildConnection();
-
-        if (responses != null) {
-            String[] rawResp = responses.split(",");
-            if (rawResp != null) {
-                List<String> strID = new ArrayList<>();
-                List<String> strName = new ArrayList<>();
-                for (String s : rawResp) {
-                    if (s.startsWith("{"))
-                        s = s.substring(1);
-                    if (s.charAt(s.length() - 1) == '}')
-                        s = s.substring(0, s.length() - 1);
-                    if (s.startsWith("[{"))
-                        s = s.substring(2);
-                    if (s.charAt(s.length() - 2) == ']')
-                        s = s.substring(0, s.length() - 3);
-
-                    // get useful information from responses
-                    if (s.startsWith("\"id\"")) {
-                        strID.add(s.substring(5));
-                    }
-                    if (s.startsWith("\"name\"")) {
-                        strName.add(s.substring(8, s.length() - 1));
-                    }
-//                    System.out.println(s);
-                }
-                for (int i = 0; i < strID.size(); i++) {
-                    courseList.add(new Course(strName.get(i), strID.get(i)));
-                }
-            }
-        } else {
-            courseList.add(new Course("Unavailable", "Unavailable"));
-        }
-    }
     
+    /**
+     * @author yifang
+     * Replaced by getNotStudentCourses of class ConnectionPool
+     */
+//    public void getCourses(ArrayList<Course> courseList) throws UnsupportedEncodingException {
+//        if(responses != "")
+//            responses = "";
+//        responses = connection.buildConnection();
+//
+//        if (responses != null) {
+//            String[] rawResp = responses.split(",");
+//            if (rawResp != null) {
+//                List<String> strID = new ArrayList<>();
+//                List<String> strName = new ArrayList<>();
+//                for (String s : rawResp) {
+//                    if (s.startsWith("{"))
+//                        s = s.substring(1);
+//                    if (s.charAt(s.length() - 1) == '}')
+//                        s = s.substring(0, s.length() - 1);
+//                    if (s.startsWith("[{"))
+//                        s = s.substring(2);
+//                    if (s.charAt(s.length() - 2) == ']')
+//                        s = s.substring(0, s.length() - 3);
+//
+//                    // get useful information from responses
+//                    if (s.startsWith("\"id\"")) {
+//                        strID.add(s.substring(5));
+//                    }
+//                    if (s.startsWith("\"name\"")) {
+//                        strName.add(s.substring(8, s.length() - 1));
+//                    }
+////                    System.out.println(s);
+//                }
+//                for (int i = 0; i < strID.size(); i++) {
+//                    courseList.add(new Course(strName.get(i), strID.get(i)));
+//                }
+//            }
+//        } else {
+//            courseList.add(new Course("Unavailable", "Unavailable"));
+//        }
+//    }
+    
+
     public static void main(String[] args) throws IOException, ParseException {
         File tokenFile = new File(FILENAME);
         
