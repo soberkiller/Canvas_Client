@@ -30,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubmissionViewer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SubmissionViewer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
@@ -51,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Submission.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Submission.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="1122">
+              <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/Submission.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Submission.java" />
       </list>
     </option>
   </component>
@@ -180,6 +180,17 @@
               <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
               <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
               <item name="reference" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="canvasclient" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
@@ -306,11 +317,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19143000" />
+    <option name="totallyTimeSpent" value="19689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3832" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32897604" />
@@ -321,7 +331,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32897604" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
@@ -773,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1760">
@@ -794,6 +797,13 @@
           <folding>
             <element signature="class#24316:31197" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
         </state>
       </provider>
     </entry>
