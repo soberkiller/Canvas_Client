@@ -497,7 +497,7 @@ public class SubmissionViewer extends PublicResouce{
                         else{
                             grade = (int)cj.getPregrade();
                         }
-                        gradetf.setText(""+grade);
+                        gradeField.setText(""+grade);
                     }
                     else if(filename.endsWith(".cpp")){
                         CompileAndRunCpp cc = new CompileAndRunCpp(file);
@@ -523,7 +523,7 @@ public class SubmissionViewer extends PublicResouce{
                         else{
                             grade = (int)cc.getPregrade();
                         }
-                        gradetf.setText(""+grade);
+                        gradeField.setText(""+grade);
                     }
                     else if(filename.endsWith(".py")){
                         RunPython cp = new RunPython(file);
@@ -549,7 +549,7 @@ public class SubmissionViewer extends PublicResouce{
                         else{
                             grade = (int)cp.getPregrade();
                         }
-                        gradetf.setText(""+grade);
+                        gradeField.setText(""+grade);
                     }
                     }
                     catch(Exception e2)
