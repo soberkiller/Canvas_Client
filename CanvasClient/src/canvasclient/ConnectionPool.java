@@ -15,7 +15,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-import java.util.regex.Pattern;
 
 
 /**
@@ -34,6 +33,7 @@ public class ConnectionPool extends PublicResouce {
     private String data = "";
     private URL connection;
     private HttpURLConnection finalConnection;
+    private HttpURLConnection updateConnection;
 
     private String fields = "";
     public ConnectionPool(List<String> endpoint, double version, String oauth2) {
@@ -205,11 +205,11 @@ public class ConnectionPool extends PublicResouce {
     	fields.add("courses/"+courseId+"/assignments");
     	String url_backup=url;
     	this.setURL(fields);
-    	HttpURLConnection conn=(HttpURLConnection)((new URL(url)).openConnection());
-    	conn.setDoOutput(true);
-    	conn.setRequestMethod("POST");
-    	conn.setRequestProperty("Content-Type", TYPE);
-    	conn.setRequestProperty("Authorization", OAUTH2);
+    	updateConnection=(HttpURLConnection)((new URL(url)).openConnection());
+    	updateConnection.setDoOutput(true);
+    	updateConnection.setRequestMethod("POST");
+    	updateConnection.setRequestProperty("Content-Type", TYPE);
+    	updateConnection.setRequestProperty("Authorization", OAUTH2);
     	StringBuilder inputsb=new StringBuilder(1024);
     	inputsb.append("{\"assignment\": {\"name\":\""+name+"\"");
     	if (!duedate.isEmpty()&&!duedate.equals("null"))
@@ -232,12 +232,12 @@ public class ConnectionPool extends PublicResouce {
     	inputsb.append(",\"published\":true}}");
     	String input=inputsb.toString();
 
-    	OutputStream os = conn.getOutputStream();
+    	OutputStream os = updateConnection.getOutputStream();
     	os.write(input.getBytes());
     	os.flush();    	
-    	BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));	    	
+    	BufferedReader br = new BufferedReader(new InputStreamReader((updateConnection.getInputStream())));	    	
     	input = br.readLine();
-    	conn.disconnect();
+    	updateConnection.disconnect();
     	url=url_backup;
 		if(input.length()>=7) {	
 			return input.substring(6,input.indexOf(",\""));
@@ -251,11 +251,11 @@ public class ConnectionPool extends PublicResouce {
     	fields.add("courses/"+courseId+"/assignments/"+assignmentId);
     	String url_backup=url;
     	this.setURL(fields);
-    	HttpURLConnection conn=(HttpURLConnection)((new URL(url)).openConnection());
-    	conn.setDoOutput(true);
-    	conn.setRequestMethod("PUT");
-    	conn.setRequestProperty("Content-Type", TYPE);
-    	conn.setRequestProperty("Authorization", OAUTH2);
+    	updateConnection=(HttpURLConnection)((new URL(url)).openConnection());
+    	updateConnection.setDoOutput(true);
+    	updateConnection.setRequestMethod("PUT");
+    	updateConnection.setRequestProperty("Content-Type", TYPE);
+    	updateConnection.setRequestProperty("Authorization", OAUTH2);
     	StringBuilder inputsb=new StringBuilder(1024);
     	inputsb.append("{\"assignment\": {\"name\":\""+name+"\"");
     	if (!duedate.isEmpty()&&!duedate.equals("null"))
@@ -277,10 +277,10 @@ public class ConnectionPool extends PublicResouce {
     		} 
     	inputsb.append(",\"published\":true}}");
     	String input=inputsb.toString();
-    	OutputStream os = conn.getOutputStream();
+    	OutputStream os = updateConnection.getOutputStream();
     	os.write(input.getBytes());   	
-    	conn.getInputStream();	
-    	conn.disconnect();
+    	updateConnection.getInputStream();	
+    	updateConnection.disconnect();
     	url=url_backup;
     }
     
@@ -397,7 +397,7 @@ public class ConnectionPool extends PublicResouce {
                 returnAssignment.setDueDate(dueDate);
                 returnAssignment.setOpenDate(openDate);
                 returnAssignment.setSubmissionTypes(subType);
-//                returnAssignment.setPoints(points);
+                returnAssignment.setPoints(points);
                 }
      
         } 
@@ -405,5 +405,33 @@ public class ConnectionPool extends PublicResouce {
         return returnAssignment;
     }
 
+    public void gradeSubmission(String courseId,String assignmentId,String studentid, String grade, String comment) throws IOException {
+    	if (!grade.isEmpty()||!comment.isEmpty()) {
+    		List<String> fields = new ArrayList<>();
+    		fields.add("courses/"+courseId+"/assignments/"+assignmentId+"/submissions/"+studentid);
+    		this.setURL(fields);
+    		updateConnection=(HttpURLConnection)((new URL(url)).openConnection());
+    		updateConnection.setDoOutput(true);
+    		updateConnection.setRequestMethod("PUT");
+    		updateConnection.setRequestProperty("Content-Type", TYPE);
+    		updateConnection.setRequestProperty("Authorization", OAUTH2);
+    		StringBuilder inputsb=new StringBuilder(1024);
+    		inputsb.append('{');
+    		if (!grade.isEmpty())    	
+    			inputsb.append("\"submission\": {\"posted_grade\":"+grade);
+    		if (!comment.isEmpty()) {
+    			if (inputsb.charAt(inputsb.length()-1) != '{') {
+    				inputsb.append("},");
+    			}
+    			inputsb.append("\"comment\": {\"text_comment\":\""+comment+"\"");
+    		}
+    		inputsb.append("}}");
+    		String input = inputsb.toString();
+    		OutputStream os = updateConnection.getOutputStream();
+    		os.write(input.getBytes());   	
+    		updateConnection.getInputStream();	
+    		updateConnection.disconnect();
+    	}
+    }
     
 }

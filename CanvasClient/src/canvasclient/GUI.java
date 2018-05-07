@@ -17,11 +17,17 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -101,8 +107,6 @@ public class GUI extends PublicResouce {
         currentCoursePanel.setBackground(Color.WHITE);
         currentCoursePanel.setLayout(new GridLayout(2, 1, 10, 0));
         currentCoursePanel.setBorder(new EmptyBorder(20, 20, 20, 20));
-
-
 
         currentCourseNameLabel = new JLabel(" " + cCourse.getCourseName());
 
@@ -251,9 +255,25 @@ public class GUI extends PublicResouce {
             public void actionPerformed(ActionEvent e) {
                 if (editAssignment.getText().equals("Edit")){
                 	editAssignment.setText("Update");
-                	editMode();            	
+                	editMode();   
                 } else {
-                  //verification input by YYF
+                StringBuilder validationMessage=new StringBuilder(""); 
+                assignmentNameField.setBackground(Color.WHITE);
+                if (assignmentNameField.getText().isEmpty() ) {
+                	assignmentNameField.setBackground(Color.RED);
+                	validationMessage.append("Assignemnt name cannot be null.\n");
+                }
+                Date availableDate=isDateFormatValid(dateAvailableField.getText(),dateAvailableField,dateAvailable.getText(),validationMessage);
+                Date dueDate=isDateFormatValid(dateDueField.getText(),dateDueField,dateDue.getText(),validationMessage);
+                Date closingDate=isDateFormatValid(dateClosingField.getText(),dateClosingField,dateClosing.getText(),validationMessage);
+                validationMessage.append(isDateLogicValid(closingDate,dateClosingField,dateClosing.getText(),dueDate,dateDueField,dateDue.getText()));
+                validationMessage.append(isDateLogicValid(closingDate,dateClosingField,dateClosing.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
+                validationMessage.append(isDateLogicValid(dueDate,dateDueField,dateDue.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
+                validationMessage.append(isNumberValid(pointsField.getText(),pointsField,points.getText()));
+                validationMessage.append(isFileTypesValid(fileTypesField.getText(),fileTypesField,fileTypes.getText()));
+                if (validationMessage.length()>1) {
+                	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 
+                }else {
                   List<String> fields = new ArrayList<String>();
                   String endpoints = "";
                   fields.add("courses");
@@ -262,9 +282,9 @@ public class GUI extends PublicResouce {
                   endpoints += "?";
                   fields.add(endpoints);
                   ConnectionPool connection;
-                	if (status == -1) {                        
-						try {
-							
+
+                	try{
+                		if (status == -1) {                        							
 							connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
 							String newAssignmentId= connection.addAssignment(cCourse.getCourseID(), assignmentNameField.getText(), dateAvailableField.getText(),
 									dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
@@ -273,12 +293,8 @@ public class GUI extends PublicResouce {
 							//addAssignmentButton(cCourse.getAssignmentsList().get(cCourse.getAssignmentsList().size()-1));
 							resetAPB(currentCourse);
 							clearText();
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-                	} else {
-                		
-                		try {
+						
+                	} else {               		
                 			connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
 							connection.updateAssignment(cCourse.getCourseID(), cCourse.getAssignmentsList().get(status).getAssignmentID(),assignmentNameField.getText(), dateAvailableField.getText(),
 										dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
@@ -287,16 +303,19 @@ public class GUI extends PublicResouce {
 							updateAssignmentButton(cCourse.getAssignmentsList().get(status),status);
 							editAssignment.setText("Edit");
 							readMode();
-						} catch (IOException e1) {
-							e1.printStackTrace();
+						
 						}
 							            	
-                	}
+                	} catch (IOException e1) {
+						e1.printStackTrace();
+                	} 
+                }
                 }
             }
         }
 );
         editAssignment.setFocusable(false);
+        editAssignment.setBackground(Color.white);
         editAssignment.setPreferredSize(new Dimension(100,50));
         assignmentNameButtonPanel.add(BorderLayout.EAST, editAssignment);
 
@@ -452,7 +471,7 @@ public class GUI extends PublicResouce {
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-//                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
+                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
@@ -502,6 +521,11 @@ public class GUI extends PublicResouce {
         fileTypesField.setEditable(true);
         descriptionArea.setEditable(true);
         viewSubmissionsPanel.setVisible(false);
+        dateAvailableField.setBackground(Color.WHITE);
+        dateDueField.setBackground(Color.WHITE);
+        dateClosingField.setBackground(Color.WHITE);
+        pointsField.setBackground(Color.WHITE);
+        fileTypesField.setBackground(Color.WHITE);
     }
     
     public void clearText() {
@@ -514,6 +538,11 @@ public class GUI extends PublicResouce {
         latePenaltyField.setText("");
         fileTypesField.setText("");
         descriptionArea.setText("");
+        dateAvailableField.setBackground(Color.WHITE);
+        dateDueField.setBackground(Color.WHITE);
+        dateClosingField.setBackground(Color.WHITE);
+        pointsField.setBackground(Color.WHITE);
+        fileTypesField.setBackground(Color.WHITE);
     }
     
     public void readMode() {   
@@ -523,12 +552,17 @@ public class GUI extends PublicResouce {
     	assignmentNameField.setVisible(false);
         editAssignment.setText("Edit");
     	dateAvailableField.setEditable(false);
+    	dateAvailableField.setBackground(Color.WHITE);
         dateDueField.setEditable(false);
+        dateDueField.setBackground(Color.WHITE);
         dateClosingField.setEditable(false);
+        dateClosingField.setBackground(Color.WHITE);
         pointsField.setEditable(false);
+        pointsField.setBackground(Color.WHITE);
         latePenaltyField.setEditable(false);
         fileTypesField.setEditable(false);
         fileTypesField.setEditable(false);
+        fileTypesField.setBackground(Color.WHITE);
         descriptionArea.setEditable(false);
         viewSubmissionsPanel.setVisible(true);
     }
@@ -583,7 +617,7 @@ public class GUI extends PublicResouce {
                     dateAvailableField.setText(cCourse.getAssignmentsList().get(a).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
                     dateDueField.setText(cCourse.getAssignmentsList().get(a).getDueDate());
                     dateClosingField.setText(cCourse.getAssignmentsList().get(a).getCloseDate());
-//                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
+                    pointsField.setText(cCourse.getAssignmentsList().get(a).getPoints());
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
@@ -652,7 +686,7 @@ public class GUI extends PublicResouce {
         dateAvailableField.setText(cCourse.getAssignmentsList().get(0).getOpenDate()); //cCourse.getAssignmentsList().get(0).getDateAvailable());
         dateDueField.setText(cCourse.getAssignmentsList().get(0).getDueDate());
         dateClosingField.setText(cCourse.getAssignmentsList().get(0).getCloseDate());
-//        pointsField.setText(cCourse.getAssignmentsList().get(0).getPoints());
+        pointsField.setText(cCourse.getAssignmentsList().get(0).getPoints());
         latePenaltyField.setText(""+cCourse.getAssignmentsList().get(0).getPercentPenalty());
         fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
         descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
@@ -709,5 +743,6 @@ public class GUI extends PublicResouce {
         String assignmentCloseDate = "closing: " + e.getCloseDate();
         buttonsAssignment.get(index).setText(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
     }
-}
 
+    
+}

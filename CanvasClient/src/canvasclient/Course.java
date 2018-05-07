@@ -238,7 +238,8 @@ public class Course extends PublicResouce {
                 for (int i = 0; i < strName.size(); i++) {
                     studentsList.add(new Student(strName.get(i), str_sis_ID.get(i), strMail.get(i), strID.get(i)));
                     // for get student's information by user_id
-                    id_user_info.put(strID.get(i), studentsList.get(i));
+                    if(!id_user_info.containsKey(strID.get(i)))
+                        id_user_info.put(strID.get(i), studentsList.get(i));
                 }
 
             } else {
@@ -379,7 +380,7 @@ public class Course extends PublicResouce {
                     assignmentsList.get(i).setDueDate(dueDate.get(i));
                     assignmentsList.get(i).setOpenDate(openDate.get(i));
                     assignmentsList.get(i).setSubmissionTypes(subType.get(i));
-//                    assignmentsList.get(i).setPoints(points.get(i));
+                    assignmentsList.get(i).setPoints(points.get(i));
                 }
             }
         } else {
@@ -388,11 +389,12 @@ public class Course extends PublicResouce {
             assignmentsList.get(0).setCloseDate("Unavailable");
             assignmentsList.get(0).setDueDate("Unavailable");
             assignmentsList.get(0).setOpenDate("Unavailable");
-//            assignmentsList.get(0).setPoints("Unavailable");
+            assignmentsList.get(0).setPoints("Unavailable");
             assignmentsList.get(0).setSubmissionTypes("Unavailable");
         }
     }
 
+    // get token from token.dat
     public String getOAUTH2() {
         File tFile = new File(FILENAME);
         StringBuffer content = new StringBuffer();

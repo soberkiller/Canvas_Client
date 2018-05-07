@@ -30,6 +30,7 @@ public class CanvasClient extends PublicResouce {
         //set currentCourse to be the Course object passed in 
         super.currentCourse = currentCourse;
 
+
         //if null, set currentCourse to be the first course loaded in through the API
         if (super.currentCourse == null) {
 
@@ -58,21 +59,6 @@ public class CanvasClient extends PublicResouce {
 
         //create instance of main GUI
         new GUI(super.currentCourse, courseList);
-    }
-
-    public static void main(String[] args) throws IOException, ParseException {
-        File tokenFile = new File(FILENAME);
-        
-        if(!tokenFile.exists()) 
-        {
-            new TokenPrompt(tokenFile); 
-        }
-        else
-        {
-            tokenFile.setReadable(true);
-            tokenFile.setWritable(true);
-            new CanvasClient(null);
-        }
     }
 
     public ArrayList<Course> getCourseList() {
@@ -118,6 +104,21 @@ public class CanvasClient extends PublicResouce {
             }
         } else {
             courseList.add(new Course("Unavailable", "Unavailable"));
+        }
+    }
+    
+    public static void main(String[] args) throws IOException, ParseException {
+        File tokenFile = new File(FILENAME);
+        
+        if(!tokenFile.exists()) 
+        {
+            new TokenPrompt(tokenFile); 
+        }
+        else
+        {
+            tokenFile.setReadable(true);
+            tokenFile.setWritable(true);
+            new CanvasClient(null);
         }
     }
 
