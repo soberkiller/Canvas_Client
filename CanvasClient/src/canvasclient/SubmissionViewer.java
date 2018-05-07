@@ -248,6 +248,7 @@ public class SubmissionViewer extends PublicResouce{
 
         //JLabel filelb = new JLabel("AttachedFiles");
         JButton run = new JButton("run");
+        run.setBackground(Color.white);
         
         JTextField studentCommentsField = new JTextField(currentSubmission.getStudentComments());
         

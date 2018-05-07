@@ -479,7 +479,7 @@ public class GUI extends PublicResouce {
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
-                    	submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions.");     
+                    	submissionsCount.setText("There are currently " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions for this assignment.");     
                     } else {
                     	submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
                     }
@@ -628,7 +628,7 @@ public class GUI extends PublicResouce {
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
                     if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
-                    	submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions.");     
+                    	submissionsCount.setText("There are currently " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions for this assignment.");     
                     } else {
                     	submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
                     }
