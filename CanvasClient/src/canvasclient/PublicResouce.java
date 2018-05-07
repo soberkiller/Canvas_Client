@@ -1,5 +1,11 @@
 package canvasclient;
 
+import javax.mail.Session;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 import java.io.File;
 import java.util.*;
@@ -24,6 +30,11 @@ public abstract class PublicResouce extends JFrame{
     // for Token
     public final Base64.Decoder decoder = Base64.getDecoder();
     public static final String FILENAME = "token.dat";
+
+    // for notification sending
+    public static String username;
+    public static String password;
+    public static String dest;
 
     // for assignment window
     public  JPanel mainPanel = new JPanel();
@@ -110,6 +121,49 @@ public abstract class PublicResouce extends JFrame{
         Course.getFromFile(tFile, content);
 
         return content.toString();
+    }
+
+    public void sendLateNotification() {
+        String host = "smtp.stevens.edu";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.port", "587");
+        props.put("mail.debug", "true");
+        props.put("mail.smtp.starttls.enable","true");
+        props.put("mail.smtp.EnableSSL.enable","true");
+        props.put("mail.smtp.starttls.required", "true");
+        props.put("mail.smtp.ssl.trust", host);
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.auth", "true");
+
+        props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.setProperty("mail.smtp.socketFactory.fallback", "false");
+        props.setProperty("mail.smtp.port", "465");
+        props.setProperty("mail.smtp.socketFactory.port", "465");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+                        return new javax.mail.PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("Professor"));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(dest));
+            message.setSubject("Late Submission");
+            message.setText("Hi Mr. L,"
+                    + "\n\n This mail is to notify you that I still haven't get you submission. Please submit it ASAP!");
+            Transport.send(message);
+
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
