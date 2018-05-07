@@ -18,6 +18,32 @@ public class PythonCodeReduction {
     public PythonCodeReduction(ArrayList<String> filedetail){
         for(int i=0;i<filedetail.size();i++){
             String linedetail = filedetail.get(i);
+            int indexOfa1 = linedetail.indexOf("\'\'\'");
+            int indexOfa2 = linedetail.indexOf("\'\'\'",indexOfa1+1);
+            int indexOfb1 = linedetail.indexOf("\"\"\"");
+            int indexOfb2 = linedetail.indexOf("\"\"\"",indexOfb1+1);
+            if(indexOfa1 != -1){
+                if(indexOfa2 != -1){
+                    filedetail.set(i, "");
+                }
+                else{
+                    filedetail.set(i, linedetail.substring(0,indexOfa1));
+                    filedetail.set(i+1, "\'\'\'"+filedetail.get(i+1));
+                }
+            }
+            if(indexOfb1 != -1){
+                if(indexOfb2 != -1){
+                    filedetail.set(i, "");
+                }
+                else{
+                    filedetail.set(i, linedetail.substring(0,indexOfb1));
+                    filedetail.set(i+1, "\"\"\""+filedetail.get(i+1));
+                }
+            }
+        } 
+
+        for(int i=0;i<filedetail.size();i++){
+            String linedetail = filedetail.get(i);
             int indexOf1 = linedetail.indexOf("import");
             int indexOf2 = linedetail.indexOf("#");
             if(indexOf1 != -1){
@@ -34,16 +60,13 @@ public class PythonCodeReduction {
         for(int i=0;i<filedetail.size();i++){
             s1 = s1 + filedetail.get(i);
         }
-        String s2 = s1.replaceAll("\\/\\/[^\\n]*|\\/\\*([^\\*^\\/]*|[\\*^\\/*]*|[^\\**\\/]*)*\\*+\\/", "");
-        String s3 = s2.replaceAll("[\\pP\\p{Punct}]", "");
-        String s4 = s3.replaceAll("asm|auto|bool|break|case|catch|char|class|const|const_cast|continue|default|delete", "");
-        String s5 = s4.replaceAll("do|double|dynamic_cast|else|enum|explicit|export|extern|false|float|for|friend|goto", "");
-        String s6 = s5.replaceAll("if|inline|int|long|mutable|namespace|new|operator|private|protected|public|register", "");
-        String s7 = s6.replaceAll("reinterpret_cast|return|short|signed|sizeof|static|static_cast|struct|switch|template", "");
-        String s8 = s7.replaceAll("this|throw|true|try|typedef|typeid|typename|union|unsigned|using|virtual|void|volatile", "");
-        String s9 = s8.replaceAll("wchar_t|while|alignas|alignof|char16_t|char32_t|constexpr|decltype|noexcept|nullptr|static_assert|thread_local", "");
-        String s10 = s9.replaceAll(" ", "");
-        reducedfiledetail = s10;
+        String s2 = s1.replaceAll("[\\pP\\p{Punct}]", "");
+        String s3 = s2.replaceAll("False|None|True|and|as|assert|break|class|continue", "");
+        String s4 = s3.replaceAll("def|del|elif|else|except|finally|for|from|global", "");
+        String s5 = s4.replaceAll("if|import|in|is|lambda|nonlocal|not|or|pass|raise", "");
+        String s6 = s5.replaceAll("return|try|while|with|yield", "");
+        String s7 = s6.replaceAll(" ", "");
+        reducedfiledetail = s7;
     }
     
     public String getReducedFileDetail(){

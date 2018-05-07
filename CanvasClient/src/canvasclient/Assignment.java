@@ -38,7 +38,16 @@ public class Assignment {
     // List of submissions
     private ArrayList<Submission> submissionsList;
 
+    private String points;
 
+    public String getPoints() {
+		return points;
+	}
+
+	public void setPoints(String points) {
+		this.points = points;
+	}
+	
     public Assignment(String assignmentName, String assignmentID) {
         
         submissionsList = new ArrayList<>(20);

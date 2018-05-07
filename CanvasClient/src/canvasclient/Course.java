@@ -379,7 +379,7 @@ public class Course extends PublicResouce {
                     assignmentsList.get(i).setDueDate(dueDate.get(i));
                     assignmentsList.get(i).setOpenDate(openDate.get(i));
                     assignmentsList.get(i).setSubmissionTypes(subType.get(i));
-//                    assignmentsList.get(i).setPoints(points.get(i));
+                    assignmentsList.get(i).setPoints(points.get(i));
                 }
             }
         } else {
@@ -388,7 +388,7 @@ public class Course extends PublicResouce {
             assignmentsList.get(0).setCloseDate("Unavailable");
             assignmentsList.get(0).setDueDate("Unavailable");
             assignmentsList.get(0).setOpenDate("Unavailable");
-//            assignmentsList.get(0).setPoints("Unavailable");
+            assignmentsList.get(0).setPoints("Unavailable");
             assignmentsList.get(0).setSubmissionTypes("Unavailable");
         }
     }

@@ -7,8 +7,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.*;
+
+import java.awt.Color;
 import java.io.File;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class PublicResouce extends JFrame{
@@ -119,9 +125,89 @@ public abstract class PublicResouce extends JFrame{
         StringBuffer content = new StringBuffer();
         // the length of stream read from file is larger than the content of that file, so have to deal with it
         Course.getFromFile(tFile, content);
-
-        return content.toString();
+        return content.toString(); 
     }
+    
+    public Date isDateFormatValid(String dateString,JTextField Jtext, String Jtextname, StringBuilder errorInformation) 
+    {   
+    	Jtext.setBackground(Color.white);
+    	if (!dateString.isEmpty()) {
+    			if (dateString.length()!=10) {
+					Jtext.setBackground(Color.red);
+					errorInformation.append(Jtextname+" date length is not 10. It should be YYYY-MM-DD\n");
+					return null;
+    			}
+    	    	try {	
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                df.setLenient(false);
+				Date date = df.parse(dateString);
+	            return date;
+			} catch (ParseException e) {				
+				Jtext.setBackground(Color.red);
+				errorInformation.append(Jtextname+" date format is incorrect. It should be YYYY-MM-DD\n");
+				return null;
+			}
+    	}
+    	return null;
+    }
+
+    
+    public String isDateLogicValid(Date date1,JTextField Jtext1, String Jtextname1,Date date2,JTextField Jtext2, String Jtextname2) 
+    {   
+   
+    	if (date1!=null&&date2!=null&&date1.before(date2)) {
+			Jtext1.setBackground(Color.red);
+			Jtext2.setBackground(Color.red);
+			System.out.println(Jtextname1+" date connot be before "+ Jtextname2+"date.");
+    		return Jtextname1+" date connot be beofre "+ Jtextname2+"date.\n";
+    	}
+    	return "";
+    }
+    
+    public String isNumberValid(String pointString,JTextField Jtext, String Jtextname) {
+    	Jtext.setBackground(Color.WHITE);
+    	if(!pointString.isEmpty()) {
+    		if(pointString.startsWith("0")&&pointString.length()>2&&pointString.charAt(1)!='.') {
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. Please remove unnecessary \"0\".\n";  
+    		};	
+    		if(pointString.endsWith(".")||pointString.startsWith(".")) {
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. Can't start or end with \".\".\n";  
+    		};	
+    		Pattern pattern=Pattern.compile("^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$");
+    		                               
+    		Matcher match=pattern.matcher(pointString);   
+    		if(match.matches()==false){   
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. It is not number OR more than two digits after dot.\n";   
+    		}else{   
+    			return "";   
+    		} 
+    	}
+    	return "";
+    }
+    
+    public String isFileTypesValid(String FileTypesString,JTextField Jtext, String Jtextname) {
+    	Jtext.setBackground(Color.WHITE);
+    	if(!FileTypesString.isEmpty()||FileTypesString.equals("null")) {
+    		if(FileTypesString.startsWith(",")||FileTypesString.endsWith(",")) {
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. Can't start or end with \",\".\n";  
+    		};	
+    		Pattern pattern=Pattern.compile("^[A-Za-z0-9,]+$"); 
+    		Matcher match=pattern.matcher(FileTypesString);   
+    		if(match.matches()==false){   
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. It could include alphabet, digit and comma(for split)";   
+    		}else{   
+    			return "";   
+    		} 
+    	}
+    	return "";
+    }
+
+
 
     public void sendLateNotification() {
         String host = "smtp.stevens.edu";
