@@ -22,9 +22,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -254,8 +257,18 @@ public class GUI extends PublicResouce {
                 	editAssignment.setText("Update");
                 	editMode();            	
                 } else {
-                  //verification input by YYF
-
+                StringBuilder validationMessage=new StringBuilder("");                
+                Date availableDate=isDateFormatValid(dateAvailableField.getText(),dateAvailableField,dateAvailable.getText(),validationMessage);
+                Date dueDate=isDateFormatValid(dateDueField.getText(),dateDueField,dateDue.getText(),validationMessage);
+                Date closingDate=isDateFormatValid(dateClosingField.getText(),dateClosingField,dateClosing.getText(),validationMessage);
+                validationMessage.append(isDateLogicValid(closingDate,dateClosingField,dateClosing.getText(),dueDate,dateDueField,dateDue.getText()));
+                validationMessage.append(isDateLogicValid(closingDate,dateClosingField,dateClosing.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
+                validationMessage.append(isDateLogicValid(dueDate,dateDueField,dateDue.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
+                validationMessage.append(isPoints(pointsField.getText(),pointsField,points.getText()));
+                validationMessage.append(isFileTypes(fileTypesField.getText(),fileTypesField,fileTypes.getText()));
+                if (validationMessage.length()>1) {
+                	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 
+                }else {
                   List<String> fields = new ArrayList<String>();
                   String endpoints = "";
                   fields.add("courses");
@@ -265,13 +278,8 @@ public class GUI extends PublicResouce {
                   fields.add(endpoints);
                   ConnectionPool connection;
 
-              	try {
-                	isDateValid(dateAvailableField.getText(),dateAvailableField,dateAvailable.getText());
-                	isDateValid(dateDueField.getText(),dateDueField,dateDue.getText());
-                	isDateValid(dateClosingField.getText(),dateClosingField,dateClosing.getText());
-                	if (status == -1) {                        
-					
-							
+                	try{
+                		if (status == -1) {                        							
 							connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
 							String newAssignmentId= connection.addAssignment(cCourse.getCourseID(), assignmentNameField.getText(), dateAvailableField.getText(),
 									dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
@@ -281,9 +289,7 @@ public class GUI extends PublicResouce {
 							resetAPB(currentCourse);
 							clearText();
 						
-                	} else {
-                		
-                		
+                	} else {               		
                 			connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
 							connection.updateAssignment(cCourse.getCourseID(), cCourse.getAssignmentsList().get(status).getAssignmentID(),assignmentNameField.getText(), dateAvailableField.getText(),
 										dateDueField.getText(), dateClosingField.getText(), pointsField.getText(), fileTypesField.getText(), 
@@ -297,9 +303,8 @@ public class GUI extends PublicResouce {
 							            	
                 	} catch (IOException e1) {
 						e1.printStackTrace();
-                	} catch (ParseException e1) {
-                		
-                	}
+                	} 
+                }
                 }
             }
         }
@@ -511,6 +516,11 @@ public class GUI extends PublicResouce {
         fileTypesField.setEditable(true);
         descriptionArea.setEditable(true);
         viewSubmissionsPanel.setVisible(false);
+        dateAvailableField.setBackground(Color.WHITE);
+        dateDueField.setBackground(Color.WHITE);
+        dateClosingField.setBackground(Color.WHITE);
+        pointsField.setBackground(Color.WHITE);
+        fileTypesField.setBackground(Color.WHITE);
     }
     
     public void clearText() {
@@ -523,6 +533,11 @@ public class GUI extends PublicResouce {
         latePenaltyField.setText("");
         fileTypesField.setText("");
         descriptionArea.setText("");
+        dateAvailableField.setBackground(Color.WHITE);
+        dateDueField.setBackground(Color.WHITE);
+        dateClosingField.setBackground(Color.WHITE);
+        pointsField.setBackground(Color.WHITE);
+        fileTypesField.setBackground(Color.WHITE);
     }
     
     public void readMode() {   
@@ -532,12 +547,17 @@ public class GUI extends PublicResouce {
     	assignmentNameField.setVisible(false);
         editAssignment.setText("Edit");
     	dateAvailableField.setEditable(false);
+    	dateAvailableField.setBackground(Color.WHITE);
         dateDueField.setEditable(false);
+        dateDueField.setBackground(Color.WHITE);
         dateClosingField.setEditable(false);
+        dateClosingField.setBackground(Color.WHITE);
         pointsField.setEditable(false);
+        pointsField.setBackground(Color.WHITE);
         latePenaltyField.setEditable(false);
         fileTypesField.setEditable(false);
         fileTypesField.setEditable(false);
+        fileTypesField.setBackground(Color.WHITE);
         descriptionArea.setEditable(false);
         viewSubmissionsPanel.setVisible(true);
     }
@@ -720,34 +740,83 @@ public class GUI extends PublicResouce {
     }
     
     
-    public static boolean isDateValid(String date,JTextField Jtext, String Jtextname) throws ParseException 
+    public Date isDateFormatValid(String dateString,JTextField Jtext, String Jtextname, StringBuilder errorInformation) 
     {   
-    	if (!date.isEmpty()) {
-    	try {
+    	Jtext.setBackground(Color.white);
+    	if (!dateString.isEmpty()) {
+    			if (dateString.length()!=10) {
+					Jtext.setBackground(Color.red);
+					errorInformation.append(Jtextname+" date length is not 10. It should be YYYY-MM-DD\n");
+					return null;
+    			}
+    	    	try {	
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 df.setLenient(false);
-				df.parse(date);
-				if (date.length()<10) {
-					String[] dateStringReset=date.split("-");
-					StringBuilder dateStringBuilder= new StringBuilder(dateStringReset[0]+"-");
-					if (dateStringReset[1].length()!=2)
-						dateStringBuilder.append("0");
-					dateStringBuilder.append(dateStringReset[1]+"-");
-					if (dateStringReset[2].length()!=2)
-						dateStringBuilder.append("0");
-					dateStringBuilder.append(dateStringReset[1]);
-					date = dateStringBuilder.toString();
-					System.out.println(date);					
-				}
-				Jtext.setBackground(Color.white);
-	            return true;
-			} catch (ParseException e) {
-					JOptionPane.showMessageDialog(null, Jtextname+"date format is incorrect. It should be YYYY-MM-DD" , "alert",JOptionPane.ERROR_MESSAGE); 
-					Jtext.setBackground(Color.red);
-					throw e;					
-			}finally{return false;}
+				Date date = df.parse(dateString);
+	            return date;
+			} catch (ParseException e) {				
+				Jtext.setBackground(Color.red);
+				errorInformation.append(Jtextname+" date format is incorrect. It should be YYYY-MM-DD\n");
+				return null;
+			}
     	}
-    	return false;
+    	return null;
     }
+
+    
+    public String isDateLogicValid(Date date1,JTextField Jtext1, String Jtextname1,Date date2,JTextField Jtext2, String Jtextname2) 
+    {   
+   
+    	if (date1!=null&&date2!=null&&date1.before(date2)) {
+			Jtext1.setBackground(Color.red);
+			Jtext2.setBackground(Color.red);
+			System.out.println(Jtextname1+" date connot be before "+ Jtextname2+"date.");
+    		return Jtextname1+" date connot be beofre "+ Jtextname2+"date.\n";
+    	}
+    	return "";
+    }
+    
+    public String isPoints(String pointString,JTextField Jtext, String Jtextname) {
+    	Jtext.setBackground(Color.WHITE);
+    	if(!pointString.isEmpty()) {
+//    		if(pointString.startsWith("0")&&pointString.length()>2&&pointString.charAt(1)!='.') {
+//    			Jtext.setBackground(Color.RED);
+//    			return Jtextname+" format is incorrect. Please remove unnecessary \"0\".\n";  
+//    		};	
+    		if(pointString.endsWith(".")||pointString.startsWith(".")) {
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. Can't start or end with \".\".\n";  
+    		};	
+    		Pattern pattern=Pattern.compile("^[0-9]*+(.[0-9]{0,2})?$");
+    		Matcher match=pattern.matcher(pointString);   
+    		if(match.matches()==false){   
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. It is not number OR more than two digits after dot.\n";   
+    		}else{   
+    			return "";   
+    		} 
+    	}
+    	return "";
+    }
+    
+    public String isFileTypes(String FileTypesString,JTextField Jtext, String Jtextname) {
+    	Jtext.setBackground(Color.WHITE);
+    	if(!FileTypesString.isEmpty()||FileTypesString.equals("null")) {
+    		if(FileTypesString.startsWith(",")||FileTypesString.endsWith(",")) {
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. Can't start or end with \",\".\n";  
+    		};	
+    		Pattern pattern=Pattern.compile("^[A-Za-z0-9,]+$"); 
+    		Matcher match=pattern.matcher(FileTypesString);   
+    		if(match.matches()==false){   
+    			Jtext.setBackground(Color.RED);
+    			return Jtextname+" format is incorrect. It could include alphabet, digit and comma(for split)";   
+    		}else{   
+    			return "";   
+    		} 
+    	}
+    	return "";
+    }
+
     
 }
