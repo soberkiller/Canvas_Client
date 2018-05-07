@@ -20,7 +20,7 @@ import static javax.swing.text.html.HTML.Tag.HEAD;
  *
  * @author MattSorrentino
  */
-public class SettingsPane extends JFrame
+public class SettingsPane extends PublicResouce
 {
     private Container c;
     private static final String FILENAME = "token.dat";
@@ -28,7 +28,7 @@ public class SettingsPane extends JFrame
     
     public SettingsPane (Course currentCourse)
     {
-        super("Settings");
+        setTitle("Settings");
 
         setSize(420, 380);
         this.setLocationRelativeTo(null);
@@ -45,7 +45,7 @@ public class SettingsPane extends JFrame
         
         
         JPanel programSettingsPanel = new JPanel();
-        programSettingsPanel.setLayout(new GridLayout(2, 2, 10, 10));
+        programSettingsPanel.setLayout(new GridLayout(4, 2, 10, 10));
         programSettingsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         
         
@@ -82,10 +82,65 @@ public class SettingsPane extends JFrame
         JButton importDatesButton = new JButton("Select File (.txt)");
         importDatesButton.setBackground(Color.white);
         importDatesButton.setFocusable(false);
+
         programSettingsPanel.add(importDatesLabel);
         programSettingsPanel.add(importDatesButton);
-        
-        
+
+        // input for user Email and Password
+        JLabel emailLabel = new JLabel("Email Address");
+        JTextField addressField = new JTextField();
+        JLabel passwordLabel = new JLabel("Password");
+        JPasswordField passwordField = new JPasswordField();
+        passwordField.setEchoChar('*');
+
+        // action Listener
+        addressField.addActionListener(e->{
+            if(e.getSource() == addressField) {
+                if(addressField.getText().equals("") || passwordField.equals("")) {
+                    JOptionPane.showMessageDialog(addressField,
+                            "User Email or Password is missing!",
+                            "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    addressField.grabFocus();
+                    return;
+                }
+                if(!addressField.getText().contains("@") || !(addressField.getText().endsWith(".edu") ||
+                                                            addressField.getText().endsWith(".com") ||
+                                                            addressField.getText().endsWith(".org"))) {
+                    JOptionPane.showMessageDialog(addressField,
+                            "User Email is invalid!",
+                            "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    addressField.grabFocus();
+                    return;
+                }
+                passwordField.grabFocus();
+            }
+        });
+
+        passwordField.addActionListener(e->{
+            if(e.getSource() == passwordField) {
+                if(addressField.getText().equals("") || passwordField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(addressField,
+                            "User Email or Password is missing!",
+                            "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    passwordField.grabFocus();
+                    return;
+                }
+                username = "";
+                username = addressField.getText();
+                password = "";
+                password = passwordField.getText();
+                passwordField.setText("");
+            }
+        });
+
+        programSettingsPanel.add(emailLabel);
+        programSettingsPanel.add(addressField);
+        programSettingsPanel.add(passwordLabel);
+        programSettingsPanel.add(passwordField);
+
         c.add(BorderLayout.NORTH, programSettingsPanel);
         
         

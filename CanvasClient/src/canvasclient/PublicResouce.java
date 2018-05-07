@@ -8,12 +8,13 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 
-import java.awt.Color;
+import java.awt.*;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,8 +39,8 @@ public abstract class PublicResouce extends JFrame{
     public static final String FILENAME = "token.dat";
 
     // for notification sending
-    public static String username;
-    public static String password;
+    public static String username = "";
+    public static String password = "";
     public static String dest;
 
     // for assignment window
@@ -207,11 +208,10 @@ public abstract class PublicResouce extends JFrame{
     	return "";
     }
 
-
-
-    public void sendLateNotification() {
+    public void sendLateNotification(Component comp, Submission currentSubmission) {
         String host = "smtp.stevens.edu";
-
+        System.out.println(username);
+        System.out.println(password);
         Properties props = new Properties();
         props.put("mail.smtp.port", "587");
         props.put("mail.debug", "true");
@@ -237,17 +237,21 @@ public abstract class PublicResouce extends JFrame{
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("Professor"));
+            message.setFrom(new InternetAddress(username));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(dest));
             message.setSubject("Late Submission");
-            message.setText("Hi Mr. L,"
-                    + "\n\n This mail is to notify you that I still haven't get you submission. Please submit it ASAP!");
+            message.setText("Hi Mr. " + id_user_info.get(currentSubmission.getStudentId()).getStudentName()
+                    + "\n\n This mail is to notify you that I still haven't get you submission for " + currentAssignment.getAssignmentName() + ". Please submit it ASAP!");
             Transport.send(message);
-
+            comp.setEnabled(false);
             System.out.println("Done");
 
         } catch (MessagingException e) {
+            JOptionPane.showMessageDialog(comp,
+                    "The mail was not send for " + e.getMessage(),
+                    "Warning",
+                    JOptionPane.WARNING_MESSAGE);
             throw new RuntimeException(e);
         }
     }

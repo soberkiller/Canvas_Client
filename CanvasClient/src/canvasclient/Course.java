@@ -238,7 +238,8 @@ public class Course extends PublicResouce {
                 for (int i = 0; i < strName.size(); i++) {
                     studentsList.add(new Student(strName.get(i), str_sis_ID.get(i), strMail.get(i), strID.get(i)));
                     // for get student's information by user_id
-                    id_user_info.put(strID.get(i), studentsList.get(i));
+                    if(!id_user_info.containsKey(strID.get(i)))
+                        id_user_info.put(strID.get(i), studentsList.get(i));
                 }
 
             } else {
@@ -393,6 +394,7 @@ public class Course extends PublicResouce {
         }
     }
 
+    // get token from token.dat
     public String getOAUTH2() {
         File tFile = new File(FILENAME);
         StringBuffer content = new StringBuffer();
