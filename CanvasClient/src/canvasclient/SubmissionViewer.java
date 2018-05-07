@@ -10,6 +10,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.swing.border.EmptyBorder;
@@ -27,6 +28,7 @@ public class SubmissionViewer extends PublicResouce{
 
     private String filename;
     private File file;
+    private HashSet<String> submitter=new HashSet<>();
 
     private Submission currentSubmission;
 
@@ -216,6 +218,9 @@ public class SubmissionViewer extends PublicResouce{
             buttons[i] = new JButton(id_user_info.get(currentAssignment.getSubmissionsList().get(i).getStudentId()).getStudentName());
             buttons[i].setPreferredSize(new Dimension(180, 50));
             buttons[i].setBackground(Color.WHITE);
+            if (submitter.contains(currentAssignment.getSubmissionsList().get(i).getStudentId())) {
+            	buttons[i].setBackground(Color.cyan);
+            }
             int index = i;
             buttons[i].addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
@@ -324,7 +329,6 @@ public class SubmissionViewer extends PublicResouce{
             	if(!gradeField.getText().isEmpty()||!commentsField.getText().isEmpty()) {            		
             		validationMessage.append(isNumberValid(gradeField.getText(),gradeField, gradeLabel.getText()));
             	}
-            	System.out.println(validationMessage);
             	if (validationMessage.length()<1) {
                 	double value = Double.parseDouble(gradeField.getText());
                 	double point;
@@ -674,7 +678,7 @@ public class SubmissionViewer extends PublicResouce{
                 List<List<String>> urlList = new ArrayList<>();
 
                 for (String s : rawResp) {
-//                    System.out.println(s);
+ //                  System.out.println(s);
                     if (s.startsWith("{"))
                         s = s.substring(1);
                     if (s.charAt(s.length() - 1) == '}')
@@ -694,6 +698,8 @@ public class SubmissionViewer extends PublicResouce{
                     }
                     if (s.startsWith("\"submitted_at\"")) {
                         if(!strFileName.isEmpty()) {
+                        	if (strID.size()>0)
+                        		submitter.add(strID.get(strID.size()-1));
                             fileNameList.add(strFileName);
                             urlList.add(strUrl);
                             strFileName = new ArrayList<>();
@@ -714,6 +720,7 @@ public class SubmissionViewer extends PublicResouce{
                     }
                     if (s.startsWith("\"user_id\"")) {
                         strID.add(s.substring(10));
+
                     }
                     if (s.startsWith("\"late\"")) {
                         strLate.add(s.substring(7));
@@ -741,7 +748,6 @@ public class SubmissionViewer extends PublicResouce{
                 }
             }
         }
-
         return submissionList;
     }
     
