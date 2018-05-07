@@ -20,6 +20,10 @@ import java.util.List;
 /**
  * @author Fangming Zhao, Yifang Yuan
  * April. 2018
+ * @param updateConnection is for updating connection
+ * @param finalConnection is for reading connection
+ * @param field is for url generation
+ * 
  */
 
 public class ConnectionPool extends PublicResouce {
@@ -128,7 +132,12 @@ public class ConnectionPool extends PublicResouce {
         this.OAUTH2 = oauth2;
     }
 
-    //List Not Student role courses
+    /**
+     * List all courses, but not student role
+     * @return 
+     * @throws UnsupportedEncodingException
+     * @throws ParseException
+     */
     public ArrayList<Course> getNotStudentCourses() throws UnsupportedEncodingException, ParseException {
     	//not include role type student and observer 
     	String[] role_type_factory={"teacher","ta","designer"};
@@ -200,6 +209,11 @@ public class ConnectionPool extends PublicResouce {
 		return courseList;
     }  
  
+    /**
+     * addAssignment function, used by GUI button
+     * Process HTML, add default time for date
+     * 
+     */
     public String addAssignment(String courseId,String name,String startdate,String duedate,String closedate,String points, String FileType, String description) throws MalformedURLException, IOException {
     	List<String> fields = new ArrayList<>();
     	fields.add("courses/"+courseId+"/assignments");
@@ -231,7 +245,6 @@ public class ConnectionPool extends PublicResouce {
     		}
     	inputsb.append(",\"published\":true}}");
     	String input=inputsb.toString();
-
     	OutputStream os = updateConnection.getOutputStream();
     	os.write(input.getBytes());
     	os.flush();    	
@@ -246,6 +259,10 @@ public class ConnectionPool extends PublicResouce {
     	
     }
     
+    /**
+     * updateAssignment function, used by GUI button
+     * Process HTML, add default time for date
+     */
     public void updateAssignment(String courseId,String assignmentId,String name,String startdate,String duedate,String closedate,String points, String FileType, String description) throws MalformedURLException, IOException {
     	List<String> fields = new ArrayList<>();
     	fields.add("courses/"+courseId+"/assignments/"+assignmentId);
@@ -286,6 +303,12 @@ public class ConnectionPool extends PublicResouce {
     
     
     
+    /**
+     * Used only by Update/Edit button of class GUI. Update the latest information of assignment
+     * 
+     * the same as getAssignments of class Course
+     * 
+     */
     public Assignment getSingleAssignments(String courseId, String assignmentId) {
     	String responses = "";
     	String urlbackup = url;
@@ -349,9 +372,7 @@ public class ConnectionPool extends PublicResouce {
                             dueDate=s.substring(10, s.length() - 11);
                         }
                     }
-//                    if(s.startsWith("\"lock_info\"") || s.startsWith("\"discussion_topic\"")) {
-//                        closeDate.remove(closeDate.size()-1);
-//                    }
+
                     if (s.startsWith("\"lock_at\"")) {
                         if (s.substring(10).equals("null")) {
                             closeDate=s.substring(10);
@@ -362,7 +383,6 @@ public class ConnectionPool extends PublicResouce {
                     if (s.startsWith("\"description\"")) {
                     	s = s.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");
                         if (!des.isEmpty()) {
-                            //des = "";
                             des = s.substring(14);
                         } else {                   	
                             des += s.substring(14);
@@ -405,6 +425,11 @@ public class ConnectionPool extends PublicResouce {
         return returnAssignment;
     }
 
+    /**
+     * gradeSubmission, used by SubmissionViewer
+     * 
+     * 
+     */
     public void gradeSubmission(String courseId,String assignmentId,String studentid, String grade, String comment) throws IOException {
     	if (!grade.isEmpty()||!comment.isEmpty()) {
     		List<String> fields = new ArrayList<>();

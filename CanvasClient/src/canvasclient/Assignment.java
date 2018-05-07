@@ -29,7 +29,22 @@ public class Assignment {
     //date the assigment closes (no more submissions)
     private String closeDate;
 
-    // percentage penalty for late submission
+    
+    /**
+     * Display the number of student who submit the assignment
+     * 
+     */
+    private int submitterCount;
+    
+    public int getSubmitterCount() {
+		return submitterCount;
+	}
+
+	public void setSubmitterCount(int submitterCount) {
+		this.submitterCount = submitterCount;
+	}
+
+	// percentage penalty for late submission
     private int percentPenalty;
 
     //array of strings containing the 
@@ -38,6 +53,10 @@ public class Assignment {
     // List of submissions
     private ArrayList<Submission> submissionsList;
 
+    /**
+     * The points of submission
+     * 
+     */
     private String points;
 
     public String getPoints() {

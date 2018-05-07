@@ -168,6 +168,11 @@ public class Course extends PublicResouce {
 		return courseStartDate;
 	}
 
+    /**
+     * Sort the course list, newest first
+     * @author yifang
+     *
+     */
     @SuppressWarnings("deprecation")
     //Sort by start date, newest first
     public static class Comparators {
@@ -248,6 +253,7 @@ public class Course extends PublicResouce {
         }
     }
 
+
     public void getAssignments(List<Assignment> assignmentsList) {
         if(responses != "")
             responses = "";
@@ -280,6 +286,10 @@ public class Course extends PublicResouce {
                         if (!des.isEmpty())
                             des += s;
                     }
+                    /**
+                     * @author yifang
+                     * It is simpler than original one. Roll back if get problem
+                     */
  //                   if (s.substring(0,1).equals("\"") && !s.startsWith("\"published\"")) {
 //                        if (!allowExtention.isEmpty())
 //                            allowExtention = allowExtention + "," + s.substring(1, s.length() - 1);
@@ -312,6 +322,9 @@ public class Course extends PublicResouce {
                     }
                     if (s.startsWith("\"due_at\"")) {
                         if (!des.isEmpty()) {
+                            /**@author yifang
+                             * Remove the end code
+                             */
                         	des= des.replace("<script src=\\\"https://instructure-uploads.s3.amazonaws.com/account_10300000000000001/attachments/2602729/canvas_ga.js\\\"></script>", "");                              
                             descrip.add(des);
                             des = "";
@@ -332,9 +345,11 @@ public class Course extends PublicResouce {
                             closeDate.add(s.substring(11, s.length() - 11));
                         }
                     }
-
+                    /**
+                     * @author yifang
+                     * It is simpler than original one. Roll back if get problem
+                     */
                     if (s.startsWith("\"allowed_extensions\"")) {
-//                    	System.out.println("bb"+allowExtention);
 //                        if (!allowExtention.isEmpty()) {
 //                            allowExtention = "";
 //                                allowExtention += s.substring(23, s.length() - 1);

@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,6 +39,7 @@ import java.util.regex.Pattern;
 /**
  *
  * @class GUI
+ * @param status record the current index of assignment list
  * Handles the main GUI frame of the CanvasClient Application.
  */
 
@@ -46,7 +48,7 @@ public class GUI extends PublicResouce {
 
     private Container c;
     private int status;
-
+    private ConnectionPool connection;
     private static List<JButton> buttonsAssignment;
     private static JPanel assignmentsListPanel = new JPanel();
     private JLabel currentCourseNameLabel;
@@ -64,6 +66,7 @@ public class GUI extends PublicResouce {
      * @param courseList contains all courses for which the user has teacher, course administrator, TA, or grader permissions.
      * 
      */
+
 
     public GUI(Course currentCourse, ArrayList<Course> courseList) {
         cCourse = currentCourse;
@@ -251,14 +254,22 @@ public class GUI extends PublicResouce {
         assignmentNameField.setFont(assignmentNameFont);
         assignmentNameButtonPanel.add(BorderLayout.WEST, assignmentNameField);
         
+        /**
+         * @author yifang
+         * Button for add new or update assignment
+         * @param validationMessage: recorde the error information
+         */
         editAssignment.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	//Switch from edit to update
                 if (editAssignment.getText().equals("Edit")){
                 	editAssignment.setText("Update");
                 	editMode();   
                 } else {
+                //If the button is "update", prepare to upload the assignment
                 StringBuilder validationMessage=new StringBuilder(""); 
                 assignmentNameField.setBackground(Color.WHITE);
+                //Verify all the field
                 if (assignmentNameField.getText().isEmpty() ) {
                 	assignmentNameField.setBackground(Color.RED);
                 	validationMessage.append("Assignemnt name cannot be null.\n");
@@ -271,6 +282,7 @@ public class GUI extends PublicResouce {
                 validationMessage.append(isDateLogicValid(dueDate,dateDueField,dateDue.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
                 validationMessage.append(isNumberValid(pointsField.getText(),pointsField,points.getText()));
                 validationMessage.append(isFileTypesValid(fileTypesField.getText(),fileTypesField,fileTypes.getText()));
+                //If error information is null(no error),starting upload, else print error
                 if (validationMessage.length()>1) {
                 	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 
                 }else {
@@ -281,8 +293,9 @@ public class GUI extends PublicResouce {
                   fields.add("assignments");
                   endpoints += "?";
                   fields.add(endpoints);
-                  ConnectionPool connection;
-
+                  
+                  //status == -1 means it is a new assignment
+                  //status != means the index status of assignment is needed to update
                 	try{
                 		if (status == -1) {                        							
 							connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
@@ -391,7 +404,9 @@ public class GUI extends PublicResouce {
 
         viewSubmissions.addActionListener( e -> {
                 if(e.getSource() == viewSubmissions) {
-                    new SubmissionViewer(currentAssignment);
+    //                new SubmissionViewer(currentAssignment);
+                	 new SubmissionViewer(cCourse.getAssignmentsList().get(status));
+                	
                 }
         });
 
@@ -475,9 +490,12 @@ public class GUI extends PublicResouce {
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    // the following Text may not be necessary
-                    submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
-
+                    if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
+                    	submissionsCount.setText("There are currently " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions for this assignment.");     
+                    } else {
+                    	submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+                    }
+                    	
                 }
             });
             buttonsAssignment.get(0).setBackground(Color.cyan);
@@ -508,6 +526,12 @@ public class GUI extends PublicResouce {
         cCourse = currentCourse;
     }
 
+    /**
+     * For new/update assignment function
+     * clear error color RED
+     * enable edit
+     * 
+     */
     public void editMode() {  
     	assignmentNameField.setText(assignmentName.getText());
     	assignmentNameField.setVisible(true);
@@ -528,6 +552,13 @@ public class GUI extends PublicResouce {
         fileTypesField.setBackground(Color.WHITE);
     }
     
+    /**
+     * For new assignment function
+     * clear error color RED
+     * clear all text, 
+     * 
+     */
+    
     public void clearText() {
     	viewSubmissionsPanel.setVisible(false);
     	assignmentNameField.setText("");
@@ -544,6 +575,13 @@ public class GUI extends PublicResouce {
         pointsField.setBackground(Color.WHITE);
         fileTypesField.setBackground(Color.WHITE);
     }
+    
+    /**
+     * For new/update assignment function
+     * clear error color RED
+     * disable edit
+     * 
+     */
     
     public void readMode() {   
     	if (status>=0&&cCourse.getAssignmentsList().get(status)!=null)
@@ -621,8 +659,11 @@ public class GUI extends PublicResouce {
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    // the following Text may not be necessary
-                    submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
+                    if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
+                    	submissionsCount.setText("There are currently " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions for this assignment.");     
+                    } else {
+                    	submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+                    }
                 }
             });
             buttonsAssignment.get(0).setBackground(Color.cyan);
@@ -690,11 +731,15 @@ public class GUI extends PublicResouce {
         latePenaltyField.setText(""+cCourse.getAssignmentsList().get(0).getPercentPenalty());
         fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
         descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
-        submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(0).getSubmissionsList().size() + " submissions.");
+//        if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
+//        	submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions.");     
+//        } else {
+        submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+//       }
 
     }
 
-//Button layout issue    
+//Button layout issue    @YYF
 //    void addAssignmentButton(Assignment e) {
 //        String openTags = "<html><body><h3 style='padding-top:0px; margin-top:0px'>";
 //        String middleTags = "</h3><p>";
@@ -743,6 +788,55 @@ public class GUI extends PublicResouce {
         String assignmentCloseDate = "closing: " + e.getCloseDate();
         buttonsAssignment.get(index).setText(openTags + assignmentTitle + middleTags + assignmentDueDate + lineBreak + assignmentCloseDate + closingTags);
     }
-
     
+    /**
+     * count the how many student submit the assignment
+     * @return submitter count
+     */
+    String getSubmissionCount() {
+    	if(!fields.isEmpty())
+            fields.clear();
+        fields.add("courses");
+        fields.add(cCourse.getCourseID());
+        fields.add("assignments");
+        fields.add(cCourse.getAssignmentsList().get(status).getAssignmentID());
+        fields.add("submissions?per_page=100");
+ // Quick Way to summary, conflict with student list @YYF
+ // fields.add("submission_summary");
+        try {ConnectionPool submission;
+        	connection = new ConnectionPool(fields, 0.1,  new String(decoder.decode(getOAUTH2()), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.getMessage();
+        }
+        connection.setMethod(GET);
+        String responses = connection.buildConnection();
+        HashSet<String> submitter=new HashSet<>();
+        if (responses != null) {
+            String[] rawResp = responses.split(",");
+            if (rawResp != null) {
+                List<String> strID = new ArrayList<>();
+                for (String s : rawResp) {
+                    if (s.startsWith("{"))
+                        s = s.substring(1);
+                    if (s.charAt(s.length() - 1) == '}')
+                        s = s.substring(0, s.length() - 1);
+                    if (s.startsWith("[{"))
+                        s = s.substring(2);
+                    if (s.length() > 1 && s.charAt(s.length() - 2) == ']')
+                        s = s.substring(0, s.length() - 3);
+                    if (s.startsWith("\"user_id\"")) {
+                        strID.add(s.substring(10));
+                    }
+                    if (s.startsWith("\"display_name\"")) {
+                    	if (strID.size()>0)
+                    		submitter.add(strID.get(strID.size()-1));
+                    	continue;
+                    }
+                }
+                cCourse.getAssignmentsList().get(status).setSubmitterCount(submitter.size());
+                return submitter.size()+"/"+strID.size();
+            }            
+        }
+        return "0";
+    }    
 }

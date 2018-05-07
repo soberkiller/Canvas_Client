@@ -35,6 +35,7 @@ public class SubmissionViewer extends PublicResouce{
     // download object
     private DownloadSubmission ds;
     
+
     public SubmissionViewer(Assignment currentAssignment)
     {
 
@@ -228,6 +229,9 @@ public class SubmissionViewer extends PublicResouce{
                     //String comment = new Submission2().getComments();
                     //new SubmissionViewer(new Submission2());
                     if(e.getSource() == buttons[index]) {
+                    	gradeField.setBackground(Color.WHITE);
+                    	commentsField.setBackground(Color.WHITE);
+                    	commentsField.setText("");
                         currentSubmission = currentAssignment.getSubmissionsList().get(index);
                         studentName.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
                         studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentSISID());
@@ -249,6 +253,7 @@ public class SubmissionViewer extends PublicResouce{
 
         //JLabel filelb = new JLabel("AttachedFiles");
         JButton run = new JButton("run");
+
         late.addActionListener(e-> {
         if(e.getSource() == late) {
             if(username.equals("") || password.equals("")) {
@@ -265,6 +270,9 @@ public class SubmissionViewer extends PublicResouce{
             sendLateNotification(late, currentSubmission);
         }
     });
+
+        run.setBackground(Color.white);
+
         
         JTextField studentCommentsField = new JTextField(currentSubmission.getStudentComments());
         
@@ -334,8 +342,23 @@ public class SubmissionViewer extends PublicResouce{
         setExpectedResult.setFocusable(false);
         actionOptionsPanel.add(setExpectedResult);
         setExpectedResult.addActionListener(e->{
+        	gradeField.setBackground(Color.WHITE);
+        	commentsField.setBackground(Color.WHITE);
+        	commentsField.setText("");
             new SaveExpectedResult(currentSubmission.getAttachedFiles().get(0).getParentFile().getParent());
         });
+        
+        /**
+         * Save button is for uploading the grade and comment to Canvas server
+         * Known issue: not support negative in grade, some char in comment may be filtered like \"
+         * @author YF
+         * @param validationMessage Verify the input of grade is legal(is number and less than 1.5*point
+         * @param value save the grade in double, verify the point logic
+         * @param point save the points of the assignment in double,verify the point logic
+         * 		  For point logic verification, if the point is 0(null), canvas can accept any value
+         * 		  Verification function NOT SUPPORT MINUS, so you can't input negative 
+         * 
+         */
         
         JButton save = new JButton("Save");
         save.setBackground(Color.cyan);
@@ -365,13 +388,18 @@ public class SubmissionViewer extends PublicResouce{
                 		}
                 	}              		
             	}
-
-            	
+                /** 
+                 * If validationMessage is not null, pop up the Error information
+                 * else upload and update local submission class
+                 * @param currentAssignment
+                 */
             	if (validationMessage.length()>1) {
                 	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 
                 }else {
                 	try {
-						submission.gradeSubmission(currentCourse.getCourseID(), currentAssignment.getAssignmentID(), studentID.getText(), gradeField.getText(), commentsField.getText());
+						submission.gradeSubmission(currentCourse.getCourseID(), currentAssignment.getAssignmentID(), studentID.getText(), gradeField.getText(), commentsField.getText().replaceAll("\\\\|\"", ""));
+						currentSubmission.setGrade(gradeField.getText());
+						commentsField.setText("");
 					} catch (IOException e2) {
 						e2.printStackTrace();
 					}
@@ -388,7 +416,8 @@ public class SubmissionViewer extends PublicResouce{
         actionOptionsPanel.add(nextSubmission);
         nextSubmission.addActionListener(e-> {
             if(e.getSource() == nextSubmission) {
-                
+            	gradeField.setBackground(Color.WHITE);
+            	commentsField.setBackground(Color.WHITE);
                 
                 gradeField.setText("");
                 commentsField.setText("");
@@ -531,7 +560,10 @@ public class SubmissionViewer extends PublicResouce{
             new ActionListener() 
             {
                 public void actionPerformed (ActionEvent e1)
-                {
+                {   
+                	gradeField.setBackground(Color.WHITE);
+            		commentsField.setBackground(Color.WHITE);
+            		commentsField.setText("");
                     resultta.setText("");
                     ArrayList<String> erdetail = new ArrayList<>();
                     File erfile = new File(currentSubmission.getAttachedFiles().get(0).getParentFile().getParent()+"/expectedresult.txt");

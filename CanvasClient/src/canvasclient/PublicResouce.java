@@ -98,7 +98,13 @@ public abstract class PublicResouce extends JFrame{
 
     // public methods
 
-    //Convert unicode to String
+
+    /**
+     * Convert unicode to String
+     * @author yifang
+     * @param unicode
+     * @return
+     */
     public String unicode2String(String unicode) {
         StringBuffer string = new StringBuffer();
         Pattern pattern1 = Pattern.compile("[\\\\][u][0-9abcde]{4}$");
@@ -129,6 +135,12 @@ public abstract class PublicResouce extends JFrame{
         return content.toString(); 
     }
     
+    /**
+     * @author yifang
+     * Verify date, limited the length to 10 and format YYYY-MM-DD
+     * Set the text field to red if it is illegal
+     * @return Error information
+     */
     public Date isDateFormatValid(String dateString,JTextField Jtext, String Jtextname, StringBuilder errorInformation) 
     {   
     	Jtext.setBackground(Color.white);
@@ -152,7 +164,12 @@ public abstract class PublicResouce extends JFrame{
     	return null;
     }
 
-    
+    /**
+     * @author yifang
+     * Verify date logic, for closing,due,available date
+     * Set the text field to red if it is illegal
+     * @return Error information
+     */
     public String isDateLogicValid(Date date1,JTextField Jtext1, String Jtextname1,Date date2,JTextField Jtext2, String Jtextname2) 
     {   
    
@@ -164,6 +181,15 @@ public abstract class PublicResouce extends JFrame{
     	}
     	return "";
     }
+    
+    /**
+     * @author yifang
+     * Verify input is number, 
+     * 12.10,20,0.5,0 is legal; 0.555,-1,1aa1,0001,1.,.5 is illegal
+     * Set the text field to red if it is illegal
+     * Canvas can support 0.555 and minus, but
+     * @return Error information
+     */
     
     public String isNumberValid(String pointString,JTextField Jtext, String Jtextname) {
     	Jtext.setBackground(Color.WHITE);
@@ -188,7 +214,12 @@ public abstract class PublicResouce extends JFrame{
     	}
     	return "";
     }
-    
+    /**
+     * @author yifang
+     * Verify input file Type 
+     * a-z,A-Z,0-9 and comma is legal, but comma could not be at the begin or end
+     * @return Error information
+     */
     public String isFileTypesValid(String FileTypesString,JTextField Jtext, String Jtextname) {
     	Jtext.setBackground(Color.WHITE);
     	if(!FileTypesString.isEmpty()||FileTypesString.equals("null")) {

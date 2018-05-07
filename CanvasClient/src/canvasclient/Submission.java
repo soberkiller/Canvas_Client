@@ -27,8 +27,14 @@ public class Submission {
     // grade of submission
     private String grade;
 
+
     // is late
     private Boolean late;
+
+    public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
 
     // name of submitted file
     private List<String> fileNameList;
@@ -83,6 +89,7 @@ public class Submission {
     public String getGraderComments() {
         return graderComments;
     }
+
 
     public void setGraderComments(String graderComments) {
         this.graderComments = graderComments;
