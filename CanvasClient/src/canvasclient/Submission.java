@@ -60,7 +60,7 @@ public class Submission {
     private ArrayList<File> attachedFiles;
 
 
-//<<<<<<< HEAD
+
     public Submission(String studentId, String submittedAt, String grade, Boolean late, List<String> fileName, List<String> url) {
         this.studentId = studentId;
         this.submittedAt = submittedAt;
