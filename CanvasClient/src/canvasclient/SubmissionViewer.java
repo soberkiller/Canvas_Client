@@ -184,7 +184,7 @@ public class SubmissionViewer extends PublicResouce{
         JPanel actionPanel = new JPanel();
         
         //infoPanel.setPreferredSize(new Dimension(770,50));
-        infoPanel.setLayout(new GridLayout(3, 3, 20, 20));
+        infoPanel.setLayout(new GridLayout(4, 3, 20, 20));
         infoPanel.setBorder(new EmptyBorder(30, 30, 30, 30));
         
         dataPanel.setLayout(new GridLayout(1, 2, 20, 20));
@@ -200,7 +200,7 @@ public class SubmissionViewer extends PublicResouce{
         JLabel studentName = new JLabel(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
         JLabel studentID = new JLabel(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
         JLabel submissionTime = new JLabel("Submitted at: " + currentSubmission.getSubmissionTime());
-
+        JButton late = new JButton("Late Notification");
 
         String grade = currentSubmission.getGrade();
         JTextField gradeField = new JTextField(grade);
@@ -234,7 +234,7 @@ public class SubmissionViewer extends PublicResouce{
                     	commentsField.setText("");
                         currentSubmission = currentAssignment.getSubmissionsList().get(index);
                         studentName.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
-                        studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
+                        studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentSISID());
                         submissionTime.setText("Submitted at: " + currentSubmission.getSubmissionTime());
                         gradeField.setText(currentSubmission.getGrade());
                         selectfile.removeAllItems();
@@ -243,6 +243,7 @@ public class SubmissionViewer extends PublicResouce{
                         {
                             selectfile.addItem(currentSubmission.getAttachedFiles().get(i).getName());
                         }
+                        late.setEnabled(true);
                     }
                 }
             });
@@ -252,13 +253,35 @@ public class SubmissionViewer extends PublicResouce{
 
         //JLabel filelb = new JLabel("AttachedFiles");
         JButton run = new JButton("run");
+
+        late.addActionListener(e-> {
+        if(e.getSource() == late) {
+            if(username.equals("") || password.equals("")) {
+                JOptionPane.showMessageDialog(late,
+                        "User Email or Password is missing!",
+                        "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            dest = id_user_info.get(currentSubmission.getStudentId()).getStudentEmail();
+
+            System.out.println(dest);
+            sendLateNotification(late, currentSubmission);
+        }
+    });
+
         run.setBackground(Color.white);
+
         
         JTextField studentCommentsField = new JTextField(currentSubmission.getStudentComments());
         
         infoPanel.add(studentName);
         infoPanel.add(studentID);
         infoPanel.add(submissionTime);
+        infoPanel.add(new JLabel(" "));
+        infoPanel.add(new JLabel(" "));
+        infoPanel.add(late);
         //infoPanel.add(filelb);
         infoPanel.add(selectfile);
         infoPanel.add(run);
@@ -406,7 +429,7 @@ public class SubmissionViewer extends PublicResouce{
                     index = -1;
                 currentSubmission = currentAssignment.getSubmissionsList().get(index + 1);
                 studentName.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentName());
-                studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentID());
+                studentID.setText(id_user_info.get(currentSubmission.getStudentId()).getStudentSISID());
                 submissionTime.setText("Submitted at: " + currentSubmission.getSubmissionTime());
                 gradeField.setText(currentSubmission.getGrade());
                 selectfile.removeAllItems();
@@ -415,6 +438,8 @@ public class SubmissionViewer extends PublicResouce{
                 {
                     selectfile.addItem(currentSubmission.getAttachedFiles().get(i).getName());
                 }
+
+                late.setEnabled(true);
             }
         });
         
@@ -772,14 +797,19 @@ public class SubmissionViewer extends PublicResouce{
                 }
  
                 for (int i = 0; i < strID.size(); i++) {
-                    submissionList.add(new Submission(strID.get(i), strSubmitTime.get(i), strGrade.get(i),
-                                                    strLate.get(i), fileNameList.get(i), urlList.get(i)));
+                    if(strLate.get(i).equals("true")) {
+                        submissionList.add(new Submission(strID.get(i), strSubmitTime.get(i), strGrade.get(i),
+                                true, fileNameList.get(i), urlList.get(i)));
+                    } else {
+                        submissionList.add(new Submission(strID.get(i), strSubmitTime.get(i), strGrade.get(i),
+                                false, fileNameList.get(i), urlList.get(i)));
+                    }
                 }
             }
         }
         return submissionList;
     }
-    
+
    /* public static void main(String args[]){
       new SubmissionViewer(new Submission2());
     }*/

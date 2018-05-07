@@ -30,6 +30,7 @@ public class CanvasClient extends PublicResouce {
         //set currentCourse to be the Course object passed in 
         super.currentCourse = currentCourse;
 
+
         //if null, set currentCourse to be the first course loaded in through the API
         if (super.currentCourse == null) {
 

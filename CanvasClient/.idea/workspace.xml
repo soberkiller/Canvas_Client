@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c5cd2a-2e8d-4f1d-8ec0-7bbc50f11d8d" name="Default" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/CanvasClient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CanvasClient.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/canvasclient/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvasclient/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/GUI.java" afterDir="false" />
-
->>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/Submission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/Submission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,32 +21,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SubmissionViewer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="567">
-              <caret line="303" column="17" selection-start-line="303" selection-start-column="17" selection-end-line="303" selection-end-column="17" />
-=======
-
-            <state relative-caret-position="13354">
-
-              <caret line="618" column="30" selection-start-line="618" selection-start-column="30" selection-end-line="618" selection-end-column="30" />
->>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="334">
+              <caret line="130" column="36" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompileAndRunCpp.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/CompileAndRunCpp.java">
+      <file leaf-file-name="SettingsPane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="1254">
-              <caret line="65" column="35" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="35" />
-
+            <state relative-caret-position="282">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubmissionViewer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+              <folding>
+                <element signature="e#13785#15610#0" />
+                <element signature="e#19414#20402#0" />
+                <element signature="class#22007:28732" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,24 +56,8 @@
       <file leaf-file-name="DownloadSubmission.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
+            <state relative-caret-position="1760">
               <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="-40">
-              <caret line="644" column="9" lean-forward="true" selection-start-line="644" selection-start-column="9" selection-end-line="644" selection-end-column="9" />
-=======
-
-            <state relative-caret-position="1560">
-              <caret line="694" column="52" selection-start-line="694" selection-start-column="52" selection-end-line="694" selection-end-column="52" />
-
->>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
             </state>
           </provider>
         </entry>
@@ -81,8 +65,8 @@
       <file leaf-file-name="Submission.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2024">
-              <caret line="117" column="26" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="26" />
+            <state relative-caret-position="1734">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
             </state>
           </provider>
         </entry>
@@ -90,8 +74,24 @@
       <file leaf-file-name="PublicResouce.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+            <state relative-caret-position="172">
+              <caret line="244" column="140" selection-start-line="244" selection-start-column="140" selection-end-line="244" selection-end-column="140" />
+              <folding>
+                <element signature="e#647#664#0" expanded="true" />
+                <element signature="e#788#796#0" expanded="true" />
+                <element signature="e#979#987#0" expanded="true" />
+                <element signature="e#8120#8376#0" expanded="true" />
+                <element signature="e#8375#8376#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentViewer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="76" column="52" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -99,10 +99,21 @@
       <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="-348">
-              <caret line="391" column="13" lean-forward="true" selection-start-line="391" selection-start-column="13" selection-end-line="391" selection-end-column="13" />
-
+            <state relative-caret-position="189">
+              <caret line="240" column="54" selection-start-line="240" selection-start-column="49" selection-end-line="240" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/canvasclient/Student.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="33" />
+              <folding>
+                <element signature="e#997#998#0" expanded="true" />
+                <element signature="e#1032#1033#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,31 +121,8 @@
       <file leaf-file-name="ref.dat" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reference/ref.dat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151778">
+            <state relative-caret-position="1839">
               <caret line="6899" column="130" selection-start-line="6899" selection-start-column="10" selection-end-line="6899" selection-end-column="130" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CanvasClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="48" selection-start-line="48" selection-end-line="50" selection-end-column="32" />
-
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2530">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-
             </state>
           </provider>
         </entry>
@@ -147,6 +135,12 @@
       <find>code</find>
       <find>file</find>
       <find>running</find>
+      <find>send</find>
+      <find>next</find>
+      <find>nexteditAssignment</find>
+      <find>Edit</find>
+      <find>late</find>
+      <find>Settings</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,23 +154,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/CompileAndRunCpp.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
+        <option value="$PROJECT_DIR$/src/canvasclient/SettingsPane.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/PublicResouce.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/Submission.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/CanvasClient.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/DownloadSubmission.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/canvasclient/CompileAndRunCpp.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
         <option value="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" />
-=======
-        <option value="$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/ConnectionPool.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/Course.java" />
-        <option value="$PROJECT_DIR$/src/canvasclient/GUI.java" />
-
->>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
       </list>
     </option>
   </component>
@@ -185,12 +173,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3832" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -208,58 +190,11 @@
             <path>
               <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
               <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="133" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="133" type="462c0819:PsiDirectoryNode" />
-              <item name="89948" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="133" type="462c0819:PsiDirectoryNode" />
-              <item name="89948" type="462c0819:PsiDirectoryNode" />
-              <item name="30939" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="133" type="462c0819:PsiDirectoryNode" />
-              <item name="89948" type="462c0819:PsiDirectoryNode" />
-              <item name="30943" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="20950" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="23848" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
               <item name="reference" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CanvasClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanvasClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="canvasclient" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -272,6 +207,10 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/external libraries/mail.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -378,60 +317,46 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="28107000" />
-=======
-
-    <option name="totallyTimeSpent" value="26418000" />
-
->>>>>>> da979ac717b6a3e9ad39edf913b697e1f91131d8
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="18543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3832" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32897604" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="11" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32897604" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24946696" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="JSF" order="0" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette" order="10" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="12" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32897604" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
@@ -440,56 +365,53 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+      <window_info anchor="right" id="Database" order="14" />
+      <window_info anchor="right" id="Palette&#9;" order="16" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="15" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32897604" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32897604" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="right" id="JSF" order="0" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-
     <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -573,7 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="180" selection-start-line="180" selection-end-line="180" />
-
         </state>
       </provider>
     </entry>
@@ -619,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="206" column="12" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UPDATE.MD">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -647,27 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="76" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -701,9 +594,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="396">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#647#664#0" expanded="true" />
+            <element signature="e#788#796#0" expanded="true" />
+            <element signature="e#979#987#0" expanded="true" />
+            <element signature="e#8120#8376#0" expanded="true" />
+            <element signature="e#8375#8376#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -733,7 +632,9 @@
         <state relative-caret-position="2108">
           <caret line="139" column="8" lean-forward="true" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#13785#15610#0" />
+            <element signature="e#19414#20402#0" />
+            <element signature="class#22007:28732" />
           </folding>
         </state>
       </provider>
@@ -797,7 +698,98 @@
     <entry file="file://$PROJECT_DIR$/src/canvasclient/CompileAndRunCpp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
-          <caret line="65" column="35" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="35" />
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="206" column="12" selection-start-line="206" selection-start-column="12" selection-end-line="206" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="130" column="36" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="33" />
+          <folding>
+            <element signature="e#997#998#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="240" column="54" selection-start-line="240" selection-start-column="49" selection-end-line="240" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/StudentViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="76" column="52" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/ref.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1839">
+          <caret line="6899" column="130" selection-start-line="6899" selection-start-column="10" selection-end-line="6899" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/SettingsPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="244" column="140" selection-start-line="244" selection-start-column="140" selection-end-line="244" selection-end-column="140" />
+          <folding>
+            <element signature="e#647#664#0" expanded="true" />
+            <element signature="e#788#796#0" expanded="true" />
+            <element signature="e#979#987#0" expanded="true" />
+            <element signature="e#8120#8376#0" expanded="true" />
+            <element signature="e#8375#8376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
         </state>
       </provider>
     </entry>
@@ -808,67 +800,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Submission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="117" column="26" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/PublicResouce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reference/ref.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151778">
-          <caret line="6899" column="130" selection-start-line="6899" selection-start-column="10" selection-end-line="6899" selection-end-column="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/CanvasClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="48" selection-start-line="48" selection-end-line="50" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-348">
-          <caret line="391" column="13" lean-forward="true" selection-start-line="391" selection-start-column="13" selection-end-line="391" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/canvasclient/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="644" column="9" lean-forward="true" selection-start-line="644" selection-start-column="9" selection-end-line="644" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/canvasclient/SubmissionViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="303" column="17" selection-start-line="303" selection-start-column="17" selection-end-line="303" selection-end-column="17" />
+        <state relative-caret-position="286">
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#13785#15610#0" />
+            <element signature="e#19414#20402#0" />
+            <element signature="class#22007:28732" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CanvasClient</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -1,13 +1,20 @@
 package canvasclient;
 
+import javax.mail.Session;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 
-import java.awt.Color;
+import java.awt.*;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,6 +37,11 @@ public abstract class PublicResouce extends JFrame{
     // for Token
     public final Base64.Decoder decoder = Base64.getDecoder();
     public static final String FILENAME = "token.dat";
+
+    // for notification sending
+    public static String username = "";
+    public static String password = "";
+    public static String dest;
 
     // for assignment window
     public  JPanel mainPanel = new JPanel();
@@ -225,6 +237,54 @@ public abstract class PublicResouce extends JFrame{
     		} 
     	}
     	return "";
+    }
+
+    public void sendLateNotification(Component comp, Submission currentSubmission) {
+        String host = "smtp.stevens.edu";
+        System.out.println(username);
+        System.out.println(password);
+        Properties props = new Properties();
+        props.put("mail.smtp.port", "587");
+        props.put("mail.debug", "true");
+        props.put("mail.smtp.starttls.enable","true");
+        props.put("mail.smtp.EnableSSL.enable","true");
+        props.put("mail.smtp.starttls.required", "true");
+        props.put("mail.smtp.ssl.trust", host);
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.auth", "true");
+
+        props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.setProperty("mail.smtp.socketFactory.fallback", "false");
+        props.setProperty("mail.smtp.port", "465");
+        props.setProperty("mail.smtp.socketFactory.port", "465");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+                        return new javax.mail.PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(dest));
+            message.setSubject("Late Submission");
+            message.setText("Hi Mr. " + id_user_info.get(currentSubmission.getStudentId()).getStudentName()
+                    + "\n\n This mail is to notify you that I still haven't get you submission for " + currentAssignment.getAssignmentName() + ". Please submit it ASAP!");
+            Transport.send(message);
+            comp.setEnabled(false);
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            JOptionPane.showMessageDialog(comp,
+                    "The mail was not send for " + e.getMessage(),
+                    "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+            throw new RuntimeException(e);
+        }
     }
 
 }

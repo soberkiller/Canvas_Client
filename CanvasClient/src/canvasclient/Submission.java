@@ -27,12 +27,14 @@ public class Submission {
     // grade of submission
     private String grade;
 
+
+    // is late
+    private Boolean late;
+
     public void setGrade(String grade) {
 		this.grade = grade;
 	}
 
-	// is late
-    private String late;
 
     // name of submitted file
     private List<String> fileNameList;
@@ -59,7 +61,7 @@ public class Submission {
 
 
 //<<<<<<< HEAD
-    public Submission(String studentId, String submittedAt, String grade, String late, List<String> fileName, List<String> url) {
+    public Submission(String studentId, String submittedAt, String grade, Boolean late, List<String> fileName, List<String> url) {
         this.studentId = studentId;
         this.submittedAt = submittedAt;
         this.grade = grade;
@@ -122,7 +124,7 @@ public class Submission {
 
     public String getGrade() { return grade; }
 
-    public String getLate() { return late; }
+    public Boolean getLate() { return late; }
 
     public List<String> getFileName() { return fileNameList; }
     
