@@ -33,9 +33,6 @@ public class CompileAndRunCpp {
         parentfile = file.getParentFile();
         fullname = file.getName();
         name = fullname.substring(0, fullname.length()-4);
-        System.out.println(parentfile);
-        System.out.println(name);
-
         
         Compile();
         if(compileexit==0){
