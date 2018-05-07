@@ -29,7 +29,16 @@ public class Assignment {
     //date the assigment closes (no more submissions)
     private String closeDate;
 
-    // percentage penalty for late submission
+    private int submitterCount;
+    public int getSubmitterCount() {
+		return submitterCount;
+	}
+
+	public void setSubmitterCount(int submitterCount) {
+		this.submitterCount = submitterCount;
+	}
+
+	// percentage penalty for late submission
     private int percentPenalty;
 
     //array of strings containing the 

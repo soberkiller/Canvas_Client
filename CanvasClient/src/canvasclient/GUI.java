@@ -393,8 +393,8 @@ public class GUI extends PublicResouce {
         viewSubmissions.addActionListener( e -> {
                 if(e.getSource() == viewSubmissions) {
     //                new SubmissionViewer(currentAssignment);
-                	SubmissionViewer abc= new SubmissionViewer(cCourse.getAssignmentsList().get(status));
-                	abc.setVisible(false);
+                	 new SubmissionViewer(cCourse.getAssignmentsList().get(status));
+                	
                 }
         });
 
@@ -478,9 +478,12 @@ public class GUI extends PublicResouce {
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    // the following Text may not be necessary
-                    //submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
-                    submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+                    if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
+                    	submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions.");     
+                    } else {
+                    	submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+                    }
+                    	
                 }
             });
             buttonsAssignment.get(0).setBackground(Color.cyan);
@@ -624,9 +627,11 @@ public class GUI extends PublicResouce {
                     latePenaltyField.setText(""+cCourse.getAssignmentsList().get(a).getPercentPenalty());
                     fileTypesField.setText(cCourse.getAssignmentsList().get(a).getSubmissionTypes());
                     descriptionArea.setText(cCourse.getAssignmentsList().get(a).getAssignmentDescription());
-                    // the following Text may not be necessary
-                    //submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(a).getSubmissionsList().size() + " submissions.");
-                    submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+                    if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
+                    	submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions.");     
+                    } else {
+                    	submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+                    }
                 }
             });
             buttonsAssignment.get(0).setBackground(Color.cyan);
@@ -694,8 +699,11 @@ public class GUI extends PublicResouce {
         latePenaltyField.setText(""+cCourse.getAssignmentsList().get(0).getPercentPenalty());
         fileTypesField.setText(cCourse.getAssignmentsList().get(0).getSubmissionTypes());
         descriptionArea.setText(cCourse.getAssignmentsList().get(0).getAssignmentDescription());
- //       submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(0).getSubmissionsList().size() + " submissions.");
+//        if (cCourse.getAssignmentsList().get(a).getSubmissionsList().size()>0) {
+//        	submissionsCount.setText("This assignment currently has " + cCourse.getAssignmentsList().get(status).getSubmitterCount()+"/"+cCourse.getAssignmentsList().get(status).getSubmissionsList().size() + " submissions.");     
+//        } else {
         submissionsCount.setText("This assignment currently has " + getSubmissionCount() + " submissions.");
+//       }
 
     }
 
@@ -753,9 +761,9 @@ public class GUI extends PublicResouce {
     	if(!fields.isEmpty())
             fields.clear();
         fields.add("courses");
-        fields.add(currentCourse.getCourseID());
+        fields.add(cCourse.getCourseID());
         fields.add("assignments");
-        fields.add(currentAssignment.getAssignmentID());
+        fields.add(cCourse.getAssignmentsList().get(status).getAssignmentID());
         fields.add("submissions?per_page=100");
  // Quick Way to summary, conflict with student list @YYF
  // fields.add("submission_summary");
@@ -790,6 +798,7 @@ public class GUI extends PublicResouce {
                     	continue;
                     }
                 }
+                cCourse.getAssignmentsList().get(status).setSubmitterCount(submitter.size());
                 return submitter.size()+"/"+strID.size();
             }            
         }
