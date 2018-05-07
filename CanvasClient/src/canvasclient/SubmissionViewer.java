@@ -401,8 +401,8 @@ public class SubmissionViewer extends PublicResouce{
                             return;
                         codeta.setText("");
                         resultta.setText("");
-                        gradetf.setText("");
-                        commenttf.setText("");
+                        gradeField.setText("");
+                        commentsField.setText("");
                         filename = content;
                         file = currentSubmission.getAttachedFiles().get(index-1);
                         ReadFile rf = new ReadFile(file);
