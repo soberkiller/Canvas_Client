@@ -316,6 +316,47 @@ public class SubmissionViewer extends PublicResouce{
         save.setBackground(Color.cyan);
         save.setFocusable(false);
         actionOptionsPanel.add(save);
+        save.addActionListener(e-> {
+            if(e.getSource() == save) {
+            	gradeField.setBackground(Color.WHITE);
+            	commentsField.setBackground(Color.WHITE);
+            	StringBuilder validationMessage=new StringBuilder("");
+            	if(!gradeField.getText().isEmpty()||!commentsField.getText().isEmpty()) {            		
+            		validationMessage.append(isNumberValid(gradeField.getText(),gradeField, gradeLabel.getText()));
+            	}
+            	System.out.println(validationMessage);
+            	if (validationMessage.length()<1) {
+                	double value = Double.parseDouble(gradeField.getText());
+                	double point;
+                	if (currentAssignment.getPoints()!=null&&!currentAssignment.getPoints().isEmpty()) {
+                		point = Double.parseDouble(currentAssignment.getPoints());	
+                		if (point!=0 && value >point*1.5) {
+                			gradeField.setBackground(Color.RED);
+                			validationMessage.append("Grade should be less than "+ point*1.5);
+                		}
+                	} else {
+                		if (currentAssignment.getPoints()!=null) {
+                		gradeField.setBackground(Color.RED);
+                		validationMessage.append("Current assignment doesn't need to grade");
+                		}
+                	}              		
+            	}
+
+            	
+            	if (validationMessage.length()>1) {
+                	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 
+                }else {
+                	try {
+						submission.gradeSubmission(currentCourse.getCourseID(), currentAssignment.getAssignmentID(), studentID.getText(), gradeField.getText(), commentsField.getText());
+					} catch (IOException e2) {
+						e2.printStackTrace();
+					}
+                }
+            	
+            }
+        }
+        );
+        
         
         JButton nextSubmission = new JButton("Next Submission");
         nextSubmission.setBackground(Color.white);
@@ -401,8 +442,9 @@ public class SubmissionViewer extends PublicResouce{
                             return;
                         codeta.setText("");
                         resultta.setText("");
-                        gradeField.setText("");
-                        commentsField.setText("");
+                        //No need to Clear @yyf
+                        //gradeField.setText("");
+                        //commentsField.setText("");
                         filename = content;
                         file = currentSubmission.getAttachedFiles().get(index-1);
                         ReadFile rf = new ReadFile(file);
@@ -692,7 +734,7 @@ public class SubmissionViewer extends PublicResouce{
                     fileNameList.add(strFileName);
                     urlList.add(strUrl);
                 }
-
+ 
                 for (int i = 0; i < strID.size(); i++) {
                     submissionList.add(new Submission(strID.get(i), strSubmitTime.get(i), strGrade.get(i),
                                                     strLate.get(i), fileNameList.get(i), urlList.get(i)));

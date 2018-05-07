@@ -255,16 +255,21 @@ public class GUI extends PublicResouce {
             public void actionPerformed(ActionEvent e) {
                 if (editAssignment.getText().equals("Edit")){
                 	editAssignment.setText("Update");
-                	editMode();            	
+                	editMode();   
                 } else {
-                StringBuilder validationMessage=new StringBuilder("");                
+                StringBuilder validationMessage=new StringBuilder(""); 
+                assignmentNameField.setBackground(Color.WHITE);
+                if (assignmentNameField.getText().isEmpty() ) {
+                	assignmentNameField.setBackground(Color.RED);
+                	validationMessage.append("Assignemnt name cannot be null.\n");
+                }
                 Date availableDate=isDateFormatValid(dateAvailableField.getText(),dateAvailableField,dateAvailable.getText(),validationMessage);
                 Date dueDate=isDateFormatValid(dateDueField.getText(),dateDueField,dateDue.getText(),validationMessage);
                 Date closingDate=isDateFormatValid(dateClosingField.getText(),dateClosingField,dateClosing.getText(),validationMessage);
                 validationMessage.append(isDateLogicValid(closingDate,dateClosingField,dateClosing.getText(),dueDate,dateDueField,dateDue.getText()));
                 validationMessage.append(isDateLogicValid(closingDate,dateClosingField,dateClosing.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
                 validationMessage.append(isDateLogicValid(dueDate,dateDueField,dateDue.getText(),availableDate,dateAvailableField,dateAvailable.getText()));
-                validationMessage.append(isPointsValid(pointsField.getText(),pointsField,points.getText()));
+                validationMessage.append(isNumberValid(pointsField.getText(),pointsField,points.getText()));
                 validationMessage.append(isFileTypesValid(fileTypesField.getText(),fileTypesField,fileTypes.getText()));
                 if (validationMessage.length()>1) {
                 	JOptionPane.showMessageDialog(null, validationMessage.toString() , "Error below",JOptionPane.ERROR_MESSAGE); 

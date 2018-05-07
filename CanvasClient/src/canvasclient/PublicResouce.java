@@ -153,7 +153,7 @@ public abstract class PublicResouce extends JFrame{
     	return "";
     }
     
-    public String isPointsValid(String pointString,JTextField Jtext, String Jtextname) {
+    public String isNumberValid(String pointString,JTextField Jtext, String Jtextname) {
     	Jtext.setBackground(Color.WHITE);
     	if(!pointString.isEmpty()) {
     		if(pointString.startsWith("0")&&pointString.length()>2&&pointString.charAt(1)!='.') {
@@ -164,7 +164,8 @@ public abstract class PublicResouce extends JFrame{
     			Jtext.setBackground(Color.RED);
     			return Jtextname+" format is incorrect. Can't start or end with \".\".\n";  
     		};	
-    		Pattern pattern=Pattern.compile("^[0-9]*+(.[0-9]{0,2})?$");
+    		Pattern pattern=Pattern.compile("^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$");
+    		                               
     		Matcher match=pattern.matcher(pointString);   
     		if(match.matches()==false){   
     			Jtext.setBackground(Color.RED);
