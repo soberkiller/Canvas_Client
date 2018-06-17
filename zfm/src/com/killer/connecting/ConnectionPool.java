@@ -1,6 +1,4 @@
 package com.killer.connecting;
-
-import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -8,29 +6,29 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
+/**
+ * @author Fangming Zhao
+ * April. 2018
+ */
+
 public class ConnectionPool {
     private double API_VERSSION = 0;
-    private String API = "";
-
+    private static final String API = "https://sit.instructure.com/api/v1";
+    private String url = "";
     private String METHOD = "GET";
     private String TYPE = "application/json";
     private String USER_AGENT = "Mozilla/5.0";
-    private String OAUTH2 = "Bearer 1030~8XEzXvKON2BZHsr18b9uuw7lxoohyEKnMcftyNF49mrGZs51BhIqCPmzDQCo2Jbj";  // Token
+    private String OAUTH2 = "Bearer 1030~fbR2aVe1dHcAchNxElgU01CgqYpb3snPKZLwKp3UOWyUhcQS2x4nT5tdxEL76t5o";  // Token
     private String data = "";
     private URL connection;
     private HttpURLConnection finalConnection;
 
-//    private HashMap<String, String> fields = new HashMap<String, String>();
     private String fields = "";
-    public ConnectionPool(String[] endpoint, String url, double version) {
+    public ConnectionPool(String[] endpoint, double version) {
         this.API_VERSSION = version;
-        this.API = url;
-//        fields.put("version", String.valueOf(version));
-
-        for(int i = 0; i < endpoint.length; i++) {
-            fields += '/' + endpoint[i];
-        }
-        API += fields;
+        // ini url
+        setURL(endpoint);
     }
 
     public String buildConnection() {
@@ -38,13 +36,14 @@ public class ConnectionPool {
         if(!this.getEndpoints().equalsIgnoreCase("") && !this.getEndpoints().isEmpty()) {
             try {
 
-                connection = new URL(API);
+                connection = new URL(url);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(readWithAccess(connection, data)));
                 String line;
                 while ((line = reader.readLine()) != null) {
                     content.append(line + "\n");
                 }
                 reader.close();
+                finalConnection.disconnect();
                 return content.toString();
             } catch (Exception e) {
                 System.err.println(e.getMessage());
@@ -99,6 +98,17 @@ public class ConnectionPool {
 
     public void setMethod(String method) {
         this.METHOD = method;
+    }
+    public  void setURL(String[] field) {
+        if(fields != "")
+            this.fields = "";
+        if(url != "")
+            url = "";
+        url += API;
+        for(int i = 0; i < field.length; i++) {
+            fields += '/' + field[i];
+        }
+        url += fields;
     }
 
     public void setSubmissionType(String type) {

@@ -18,5 +18,23 @@
 *.tar.gz
 *.rar
 
+# directory made by client
+133
+20950
+23848
+
+
+# Token file for storing token
+token.dat
+
+# workspace.xml
+workspace.xml
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+conf
+*~
+
+/bin/
+/CanvasClient/build/
